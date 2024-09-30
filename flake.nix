@@ -28,11 +28,15 @@
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
           (rust-bin.fromRustupToolchainFile ./rust-toolchain.toml)
+
+          openssl
+          pkg-config
+
           git
-          pre-commit
         ];
 
         RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+        RUST_BACKTRACE = 1;
       };
     });
 }
