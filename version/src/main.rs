@@ -51,5 +51,5 @@ fn get_patch(upstream_version: &str) -> i32 {
 fn main() {
     let upstream_version = get_upstream_version();
     let patch = get_patch(&upstream_version);
-    println!("v{MAJOR_VERSION}.{upstream_version}.{patch}");
+    println!("{MAJOR_VERSION}.{upstream_version}.{patch}");
 }

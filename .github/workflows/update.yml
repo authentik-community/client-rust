@@ -43,7 +43,7 @@ jobs:
           git add .
           git commit -F "diff.test" || exit 0
           git push
-          git tag $version
+          git tag v$version
           git push --tags
           cargo publish
-          gh release create $version -F diff.test
+          gh release create v$version -F diff.test
