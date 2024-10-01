@@ -35,6 +35,7 @@ jobs:
           RUSTFLAGS: -Awarnings
         # ID from https://api.github.com/users/authentik-automation[bot]
         run: |
+          git diff && exit 0 || echo
           git config --global user.email "135050075+authentik-automation[bot]@users.noreply.github.com"
           git config --global user.name "authentik-automation[bot]"
           version=$(cd version && cargo run)
