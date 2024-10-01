@@ -43,5 +43,6 @@ jobs:
           git commit -F "diff.test" || exit 0
           git tag v$version
           cargo publish
-          git push --follow-tags
+          git push
+          git push --tags
           gh release create v$version -F diff.test
