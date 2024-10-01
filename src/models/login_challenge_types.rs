@@ -16,10 +16,10 @@ use serde::{Deserialize, Serialize};
 pub enum LoginChallengeTypes {
     #[serde(rename = "xak-flow-redirect")]
     XakFlowRedirect(models::RedirectChallenge),
-    #[serde(rename = "ak-source-plex")]
-    AkSourcePlex(models::PlexAuthenticationChallenge),
     #[serde(rename = "ak-source-oauth-apple")]
     AkSourceOauthApple(models::AppleLoginChallenge),
+    #[serde(rename = "ak-source-plex")]
+    AkSourcePlex(models::PlexAuthenticationChallenge),
 }
 
 impl Default for LoginChallengeTypes {
