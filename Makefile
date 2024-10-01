@@ -30,5 +30,5 @@ build:
 	rm -f .travis.yml git_push.sh
 	cargo fmt
 	mv diff.test /tmp/diff.test
-	echo -e "Update API Client\n\n" > diff.test
+	echo "Update API Client\n\n" > diff.test
 	cat /tmp/diff.test >> diff.test
