@@ -40,8 +40,7 @@ jobs:
           sed -i -e "s/^version.*/version = \"${version}\"/" Cargo.toml
           git add .
           git commit -F "diff.test" || exit 0
-          git push
           git tag v$version
-          git push --tags
           cargo publish
+          git push --follow-tags
           gh release create v$version -F diff.test
