@@ -4851,6 +4851,7 @@ pub async fn providers_saml_import_metadata_create(
     configuration: &configuration::Configuration,
     name: &str,
     authorization_flow: &str,
+    invalidation_flow: &str,
     file: std::path::PathBuf,
 ) -> Result<(), Error<ProvidersSamlImportMetadataCreateError>> {
     let local_var_configuration = configuration;
@@ -4869,6 +4870,7 @@ pub async fn providers_saml_import_metadata_create(
     let mut local_var_form = reqwest::multipart::Form::new();
     local_var_form = local_var_form.text("name", name.to_string());
     local_var_form = local_var_form.text("authorization_flow", authorization_flow.to_string());
+    local_var_form = local_var_form.text("invalidation_flow", invalidation_flow.to_string());
     // TODO: support file upload for 'file' parameter
     local_var_req_builder = local_var_req_builder.multipart(local_var_form);
 
@@ -4905,6 +4907,7 @@ pub async fn providers_saml_list(
     default_relay_state: Option<&str>,
     digest_algorithm: Option<&str>,
     encryption_kp: Option<&str>,
+    invalidation_flow: Option<&str>,
     is_backchannel: Option<bool>,
     issuer: Option<&str>,
     name: Option<&str>,
@@ -4960,6 +4963,9 @@ pub async fn providers_saml_list(
     }
     if let Some(ref local_var_str) = encryption_kp {
         local_var_req_builder = local_var_req_builder.query(&[("encryption_kp", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = invalidation_flow {
+        local_var_req_builder = local_var_req_builder.query(&[("invalidation_flow", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = is_backchannel {
         local_var_req_builder = local_var_req_builder.query(&[("is_backchannel", &local_var_str.to_string())]);

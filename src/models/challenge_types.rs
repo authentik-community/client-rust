@@ -56,6 +56,8 @@ pub enum ChallengeTypes {
     AkStagePrompt(models::PromptChallenge),
     #[serde(rename = "xak-flow-redirect")]
     XakFlowRedirect(models::RedirectChallenge),
+    #[serde(rename = "ak-stage-session-end")]
+    AkStageSessionEnd(models::SessionEndChallenge),
     #[serde(rename = "xak-flow-shell")]
     XakFlowShell(models::ShellChallenge),
     #[serde(rename = "ak-stage-user-login")]

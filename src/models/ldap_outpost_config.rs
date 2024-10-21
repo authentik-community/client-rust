@@ -23,6 +23,9 @@ pub struct LdapOutpostConfig {
     pub base_dn: Option<String>,
     #[serde(rename = "bind_flow_slug")]
     pub bind_flow_slug: String,
+    /// Get slug for unbind flow, defaulting to brand's default flow.
+    #[serde(rename = "unbind_flow_slug", deserialize_with = "Option::deserialize")]
+    pub unbind_flow_slug: Option<String>,
     /// Prioritise backchannel slug over direct application slug
     #[serde(rename = "application_slug")]
     pub application_slug: String,
@@ -52,12 +55,19 @@ pub struct LdapOutpostConfig {
 
 impl LdapOutpostConfig {
     /// LDAPProvider Serializer
-    pub fn new(pk: i32, name: String, bind_flow_slug: String, application_slug: String) -> LdapOutpostConfig {
+    pub fn new(
+        pk: i32,
+        name: String,
+        bind_flow_slug: String,
+        unbind_flow_slug: Option<String>,
+        application_slug: String,
+    ) -> LdapOutpostConfig {
         LdapOutpostConfig {
             pk,
             name,
             base_dn: None,
             bind_flow_slug,
+            unbind_flow_slug,
             application_slug,
             certificate: None,
             tls_server_name: None,

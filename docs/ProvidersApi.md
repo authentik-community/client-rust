@@ -2694,7 +2694,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_import_metadata_create
 
-> providers_saml_import_metadata_create(name, authorization_flow, file)
+> providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
 
 
 Create provider from SAML Metadata
@@ -2706,6 +2706,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **authorization_flow** | **uuid::Uuid** |  | [required] |
+**invalidation_flow** | **uuid::Uuid** |  | [required] |
 **file** | **std::path::PathBuf** |  | [required] |
 
 ### Return type
@@ -2726,7 +2727,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_list
 
-> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authorization_flow, backchannel_application, default_relay_state, digest_algorithm, encryption_kp, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
+> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authorization_flow, backchannel_application, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
 
 
 SAMLProvider Viewset
@@ -2746,6 +2747,7 @@ Name | Type | Description  | Required | Notes
 **default_relay_state** | Option<**String**> |  |  |
 **digest_algorithm** | Option<**String**> |  |  |
 **encryption_kp** | Option<**uuid::Uuid**> |  |  |
+**invalidation_flow** | Option<**uuid::Uuid**> |  |  |
 **is_backchannel** | Option<**bool**> |  |  |
 **issuer** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |

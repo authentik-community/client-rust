@@ -29,6 +29,9 @@ pub struct RacProvider {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     /// Get object component so that we know how to edit the object
@@ -78,6 +81,7 @@ impl RacProvider {
         pk: i32,
         name: String,
         authorization_flow: uuid::Uuid,
+        invalidation_flow: uuid::Uuid,
         component: String,
         assigned_application_slug: String,
         assigned_application_name: String,
@@ -93,6 +97,7 @@ impl RacProvider {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
             component,
             assigned_application_slug,

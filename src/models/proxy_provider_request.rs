@@ -27,6 +27,9 @@ pub struct ProxyProviderRequest {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "internal_host", skip_serializing_if = "Option::is_none")]
@@ -75,11 +78,17 @@ pub struct ProxyProviderRequest {
 
 impl ProxyProviderRequest {
     /// ProxyProvider Serializer
-    pub fn new(name: String, authorization_flow: uuid::Uuid, external_host: String) -> ProxyProviderRequest {
+    pub fn new(
+        name: String,
+        authorization_flow: uuid::Uuid,
+        invalidation_flow: uuid::Uuid,
+        external_host: String,
+    ) -> ProxyProviderRequest {
         ProxyProviderRequest {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
             internal_host: None,
             external_host,

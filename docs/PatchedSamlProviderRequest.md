@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | Option<**String**> |  | [optional]
 **authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
 **authorization_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used when authorizing this provider. | [optional]
+**invalidation_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used ending the session from a provider. | [optional]
 **property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **acs_url** | Option<**String**> |  | [optional]
 **audience** | Option<**String**> | Value of the audience restriction field of the assertion. When left empty, no audience restriction will be added. | [optional]

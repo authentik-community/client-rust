@@ -27,17 +27,21 @@ pub struct ProviderRequest {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
 }
 
 impl ProviderRequest {
     /// Provider Serializer
-    pub fn new(name: String, authorization_flow: uuid::Uuid) -> ProviderRequest {
+    pub fn new(name: String, authorization_flow: uuid::Uuid, invalidation_flow: uuid::Uuid) -> ProviderRequest {
         ProviderRequest {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
         }
     }

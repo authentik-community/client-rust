@@ -27,6 +27,9 @@ pub struct PatchedLdapProviderRequest {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow", skip_serializing_if = "Option::is_none")]
     pub authorization_flow: Option<uuid::Uuid>,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow", skip_serializing_if = "Option::is_none")]
+    pub invalidation_flow: Option<uuid::Uuid>,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     /// DN under which objects are accessible.
@@ -63,6 +66,7 @@ impl PatchedLdapProviderRequest {
             name: None,
             authentication_flow: None,
             authorization_flow: None,
+            invalidation_flow: None,
             property_mappings: None,
             base_dn: None,
             certificate: None,

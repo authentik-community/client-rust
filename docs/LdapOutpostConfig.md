@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **base_dn** | Option<**String**> | DN under which objects are accessible. | [optional]
 **bind_flow_slug** | **String** |  | 
+**unbind_flow_slug** | Option<**String**> | Get slug for unbind flow, defaulting to brand's default flow. | [readonly]
 **application_slug** | **String** | Prioritise backchannel slug over direct application slug | [readonly]
 **certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **tls_server_name** | Option<**String**> |  | [optional]

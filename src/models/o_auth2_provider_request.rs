@@ -27,6 +27,9 @@ pub struct OAuth2ProviderRequest {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     /// Confidential clients are capable of maintaining the confidentiality of their credentials. Public clients are incapable
@@ -48,7 +51,7 @@ pub struct OAuth2ProviderRequest {
     /// Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint.
     #[serde(rename = "include_claims_in_id_token", skip_serializing_if = "Option::is_none")]
     pub include_claims_in_id_token: Option<bool>,
-    /// Key used to sign the tokens. Only required when JWT Algorithm is set to RS256.
+    /// Key used to sign the tokens.
     #[serde(
         rename = "signing_key",
         default,
@@ -56,6 +59,14 @@ pub struct OAuth2ProviderRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub signing_key: Option<Option<uuid::Uuid>>,
+    /// Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs.
+    #[serde(
+        rename = "encryption_key",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub encryption_key: Option<Option<uuid::Uuid>>,
     /// Enter each URI on a new line.
     #[serde(rename = "redirect_uris", skip_serializing_if = "Option::is_none")]
     pub redirect_uris: Option<String>,
@@ -71,11 +82,12 @@ pub struct OAuth2ProviderRequest {
 
 impl OAuth2ProviderRequest {
     /// OAuth2Provider Serializer
-    pub fn new(name: String, authorization_flow: uuid::Uuid) -> OAuth2ProviderRequest {
+    pub fn new(name: String, authorization_flow: uuid::Uuid, invalidation_flow: uuid::Uuid) -> OAuth2ProviderRequest {
         OAuth2ProviderRequest {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
             client_type: None,
             client_id: None,
@@ -85,6 +97,7 @@ impl OAuth2ProviderRequest {
             refresh_token_validity: None,
             include_claims_in_id_token: None,
             signing_key: None,
+            encryption_key: None,
             redirect_uris: None,
             sub_mode: None,
             issuer_mode: None,

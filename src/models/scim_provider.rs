@@ -44,6 +44,8 @@ pub struct ScimProvider {
     /// Base URL to SCIM requests, usually ends in /v2
     #[serde(rename = "url")]
     pub url: String,
+    #[serde(rename = "verify_certificates", skip_serializing_if = "Option::is_none")]
+    pub verify_certificates: Option<bool>,
     /// Authentication token
     #[serde(rename = "token")]
     pub token: String,
@@ -84,6 +86,7 @@ impl ScimProvider {
             verbose_name_plural,
             meta_model_name,
             url,
+            verify_certificates: None,
             token,
             exclude_users_service_account: None,
             filter_group: None,

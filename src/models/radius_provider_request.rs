@@ -27,6 +27,9 @@ pub struct RadiusProviderRequest {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     /// List of CIDRs (comma-separated) that clients can connect from. A more specific CIDR will match before a looser one. Clients connecting from a non-specified CIDR will be dropped.
@@ -42,11 +45,12 @@ pub struct RadiusProviderRequest {
 
 impl RadiusProviderRequest {
     /// RadiusProvider Serializer
-    pub fn new(name: String, authorization_flow: uuid::Uuid) -> RadiusProviderRequest {
+    pub fn new(name: String, authorization_flow: uuid::Uuid, invalidation_flow: uuid::Uuid) -> RadiusProviderRequest {
         RadiusProviderRequest {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
             client_networks: None,
             shared_secret: None,

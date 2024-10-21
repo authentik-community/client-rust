@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | Option<**String**> |  | [optional]
 **authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
 **authorization_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used when authorizing this provider. | [optional]
+**invalidation_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used ending the session from a provider. | [optional]
 **property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **base_dn** | Option<**String**> | DN under which objects are accessible. | [optional]
 **certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]

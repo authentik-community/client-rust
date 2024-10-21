@@ -571,6 +571,7 @@ docs/SelectableStage.md
 docs/ServiceConnection.md
 docs/ServiceConnectionRequest.md
 docs/ServiceConnectionState.md
+docs/SessionEndChallenge.md
 docs/SessionUser.md
 docs/Settings.md
 docs/SettingsRequest.md
@@ -662,6 +663,7 @@ docs/UserWriteStage.md
 docs/UserWriteStageRequest.md
 docs/ValidationError.md
 docs/Version.md
+docs/VersionHistory.md
 docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
@@ -1244,6 +1246,7 @@ src/models/selectable_stage.rs
 src/models/service_connection.rs
 src/models/service_connection_request.rs
 src/models/service_connection_state.rs
+src/models/session_end_challenge.rs
 src/models/session_user.rs
 src/models/settings.rs
 src/models/settings_request.rs
@@ -1332,6 +1335,7 @@ src/models/user_write_stage.rs
 src/models/user_write_stage_request.rs
 src/models/validation_error.rs
 src/models/version.rs
+src/models/version_history.rs
 src/models/web_authn_device.rs
 src/models/web_authn_device_request.rs
 src/models/web_authn_device_type.rs

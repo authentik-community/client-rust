@@ -39,6 +39,8 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**admin_settings_update**](docs/AdminApi.md#admin_settings_update) | **PUT** /admin/settings/ | 
 *AdminApi* | [**admin_system_create**](docs/AdminApi.md#admin_system_create) | **POST** /admin/system/ | 
 *AdminApi* | [**admin_system_retrieve**](docs/AdminApi.md#admin_system_retrieve) | **GET** /admin/system/ | 
+*AdminApi* | [**admin_version_history_list**](docs/AdminApi.md#admin_version_history_list) | **GET** /admin/version/history/ | 
+*AdminApi* | [**admin_version_history_retrieve**](docs/AdminApi.md#admin_version_history_retrieve) | **GET** /admin/version/history/{id}/ | 
 *AdminApi* | [**admin_version_retrieve**](docs/AdminApi.md#admin_version_retrieve) | **GET** /admin/version/ | 
 *AdminApi* | [**admin_workers_retrieve**](docs/AdminApi.md#admin_workers_retrieve) | **GET** /admin/workers/ | 
 *AuthenticatorsApi* | [**authenticators_admin_all_list**](docs/AuthenticatorsApi.md#authenticators_admin_all_list) | **GET** /authenticators/admin/all/ | 
@@ -1462,6 +1464,7 @@ Class | Method | HTTP request | Description
  - [ServiceConnection](docs/ServiceConnection.md)
  - [ServiceConnectionRequest](docs/ServiceConnectionRequest.md)
  - [ServiceConnectionState](docs/ServiceConnectionState.md)
+ - [SessionEndChallenge](docs/SessionEndChallenge.md)
  - [SessionUser](docs/SessionUser.md)
  - [Settings](docs/Settings.md)
  - [SettingsRequest](docs/SettingsRequest.md)
@@ -1550,6 +1553,7 @@ Class | Method | HTTP request | Description
  - [UserWriteStageRequest](docs/UserWriteStageRequest.md)
  - [ValidationError](docs/ValidationError.md)
  - [Version](docs/Version.md)
+ - [VersionHistory](docs/VersionHistory.md)
  - [WebAuthnDevice](docs/WebAuthnDevice.md)
  - [WebAuthnDeviceRequest](docs/WebAuthnDeviceRequest.md)
  - [WebAuthnDeviceType](docs/WebAuthnDeviceType.md)

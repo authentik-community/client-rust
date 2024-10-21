@@ -29,6 +29,9 @@ pub struct OAuth2Provider {
     /// Flow used when authorizing this provider.
     #[serde(rename = "authorization_flow")]
     pub authorization_flow: uuid::Uuid,
+    /// Flow used ending the session from a provider.
+    #[serde(rename = "invalidation_flow")]
+    pub invalidation_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     /// Get object component so that we know how to edit the object
@@ -74,7 +77,7 @@ pub struct OAuth2Provider {
     /// Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint.
     #[serde(rename = "include_claims_in_id_token", skip_serializing_if = "Option::is_none")]
     pub include_claims_in_id_token: Option<bool>,
-    /// Key used to sign the tokens. Only required when JWT Algorithm is set to RS256.
+    /// Key used to sign the tokens.
     #[serde(
         rename = "signing_key",
         default,
@@ -82,6 +85,14 @@ pub struct OAuth2Provider {
         skip_serializing_if = "Option::is_none"
     )]
     pub signing_key: Option<Option<uuid::Uuid>>,
+    /// Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs.
+    #[serde(
+        rename = "encryption_key",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub encryption_key: Option<Option<uuid::Uuid>>,
     /// Enter each URI on a new line.
     #[serde(rename = "redirect_uris", skip_serializing_if = "Option::is_none")]
     pub redirect_uris: Option<String>,
@@ -101,6 +112,7 @@ impl OAuth2Provider {
         pk: i32,
         name: String,
         authorization_flow: uuid::Uuid,
+        invalidation_flow: uuid::Uuid,
         component: String,
         assigned_application_slug: String,
         assigned_application_name: String,
@@ -115,6 +127,7 @@ impl OAuth2Provider {
             name,
             authentication_flow: None,
             authorization_flow,
+            invalidation_flow,
             property_mappings: None,
             component,
             assigned_application_slug,
@@ -132,6 +145,7 @@ impl OAuth2Provider {
             refresh_token_validity: None,
             include_claims_in_id_token: None,
             signing_key: None,
+            encryption_key: None,
             redirect_uris: None,
             sub_mode: None,
             issuer_mode: None,

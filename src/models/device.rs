@@ -38,6 +38,9 @@ pub struct Device {
     pub last_updated: String,
     #[serde(rename = "last_used", deserialize_with = "Option::deserialize")]
     pub last_used: Option<String>,
+    /// Get extra description
+    #[serde(rename = "extra_description")]
+    pub extra_description: String,
 }
 
 impl Device {
@@ -53,6 +56,7 @@ impl Device {
         created: String,
         last_updated: String,
         last_used: Option<String>,
+        extra_description: String,
     ) -> Device {
         Device {
             verbose_name,
@@ -65,6 +69,7 @@ impl Device {
             created,
             last_updated,
             last_used,
+            extra_description,
         }
     }
 }

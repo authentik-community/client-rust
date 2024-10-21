@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**admin_settings_update**](AdminApi.md#admin_settings_update) | **PUT** /admin/settings/ | 
 [**admin_system_create**](AdminApi.md#admin_system_create) | **POST** /admin/system/ | 
 [**admin_system_retrieve**](AdminApi.md#admin_system_retrieve) | **GET** /admin/system/ | 
+[**admin_version_history_list**](AdminApi.md#admin_version_history_list) | **GET** /admin/version/history/ | 
+[**admin_version_history_retrieve**](AdminApi.md#admin_version_history_retrieve) | **GET** /admin/version/history/{id}/ | 
 [**admin_version_retrieve**](AdminApi.md#admin_version_retrieve) | **GET** /admin/version/ | 
 [**admin_workers_retrieve**](AdminApi.md#admin_workers_retrieve) | **GET** /admin/workers/ | 
 
@@ -226,6 +228,69 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::SystemInfo**](SystemInfo.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_version_history_list
+
+> Vec<models::VersionHistory> admin_version_history_list(build, ordering, search, version)
+
+
+VersionHistory Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**build** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**search** | Option<**String**> | A search term. |  |
+**version** | Option<**String**> |  |  |
+
+### Return type
+
+[**Vec<models::VersionHistory>**](VersionHistory.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_version_history_retrieve
+
+> models::VersionHistory admin_version_history_retrieve(id)
+
+
+VersionHistory Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Version history. | [required] |
+
+### Return type
+
+[**models::VersionHistory**](VersionHistory.md)
 
 ### Authorization
 

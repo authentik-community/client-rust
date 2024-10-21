@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
 **url** | **String** | Base URL to SCIM requests, usually ends in /v2 | 
+**verify_certificates** | Option<**bool**> |  | [optional]
 **token** | **String** | Authentication token | 
 **exclude_users_service_account** | Option<**bool**> |  | [optional]
 **filter_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
