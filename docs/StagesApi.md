@@ -20,6 +20,13 @@ Method | HTTP request | Description
 [**stages_authenticator_duo_retrieve**](StagesApi.md#stages_authenticator_duo_retrieve) | **GET** /stages/authenticator/duo/{stage_uuid}/ | 
 [**stages_authenticator_duo_update**](StagesApi.md#stages_authenticator_duo_update) | **PUT** /stages/authenticator/duo/{stage_uuid}/ | 
 [**stages_authenticator_duo_used_by_list**](StagesApi.md#stages_authenticator_duo_used_by_list) | **GET** /stages/authenticator/duo/{stage_uuid}/used_by/ | 
+[**stages_authenticator_endpoint_gdtc_create**](StagesApi.md#stages_authenticator_endpoint_gdtc_create) | **POST** /stages/authenticator/endpoint_gdtc/ | 
+[**stages_authenticator_endpoint_gdtc_destroy**](StagesApi.md#stages_authenticator_endpoint_gdtc_destroy) | **DELETE** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
+[**stages_authenticator_endpoint_gdtc_list**](StagesApi.md#stages_authenticator_endpoint_gdtc_list) | **GET** /stages/authenticator/endpoint_gdtc/ | 
+[**stages_authenticator_endpoint_gdtc_partial_update**](StagesApi.md#stages_authenticator_endpoint_gdtc_partial_update) | **PATCH** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
+[**stages_authenticator_endpoint_gdtc_retrieve**](StagesApi.md#stages_authenticator_endpoint_gdtc_retrieve) | **GET** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
+[**stages_authenticator_endpoint_gdtc_update**](StagesApi.md#stages_authenticator_endpoint_gdtc_update) | **PUT** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
+[**stages_authenticator_endpoint_gdtc_used_by_list**](StagesApi.md#stages_authenticator_endpoint_gdtc_used_by_list) | **GET** /stages/authenticator/endpoint_gdtc/{stage_uuid}/used_by/ | 
 [**stages_authenticator_sms_create**](StagesApi.md#stages_authenticator_sms_create) | **POST** /stages/authenticator/sms/ | 
 [**stages_authenticator_sms_destroy**](StagesApi.md#stages_authenticator_sms_destroy) | **DELETE** /stages/authenticator/sms/{stage_uuid}/ | 
 [**stages_authenticator_sms_list**](StagesApi.md#stages_authenticator_sms_list) | **GET** /stages/authenticator/sms/ | 
@@ -645,6 +652,223 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **stage_uuid** | **uuid::Uuid** | A UUID string identifying this Duo Authenticator Setup Stage. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_create
+
+> models::AuthenticatorEndpointGdtcStage stages_authenticator_endpoint_gdtc_create(authenticator_endpoint_gdtc_stage_request)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**authenticator_endpoint_gdtc_stage_request** | [**AuthenticatorEndpointGdtcStageRequest**](AuthenticatorEndpointGdtcStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::AuthenticatorEndpointGdtcStage**](AuthenticatorEndpointGDTCStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_destroy
+
+> stages_authenticator_endpoint_gdtc_destroy(stage_uuid)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_list
+
+> models::PaginatedAuthenticatorEndpointGdtcStageList stages_authenticator_endpoint_gdtc_list(configure_flow, name, ordering, page, page_size, search)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**configure_flow** | Option<**uuid::Uuid**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedAuthenticatorEndpointGdtcStageList**](PaginatedAuthenticatorEndpointGDTCStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_partial_update
+
+> models::AuthenticatorEndpointGdtcStage stages_authenticator_endpoint_gdtc_partial_update(stage_uuid, patched_authenticator_endpoint_gdtc_stage_request)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | [required] |
+**patched_authenticator_endpoint_gdtc_stage_request** | Option<[**PatchedAuthenticatorEndpointGdtcStageRequest**](PatchedAuthenticatorEndpointGdtcStageRequest.md)> |  |  |
+
+### Return type
+
+[**models::AuthenticatorEndpointGdtcStage**](AuthenticatorEndpointGDTCStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_retrieve
+
+> models::AuthenticatorEndpointGdtcStage stages_authenticator_endpoint_gdtc_retrieve(stage_uuid)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | [required] |
+
+### Return type
+
+[**models::AuthenticatorEndpointGdtcStage**](AuthenticatorEndpointGDTCStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_update
+
+> models::AuthenticatorEndpointGdtcStage stages_authenticator_endpoint_gdtc_update(stage_uuid, authenticator_endpoint_gdtc_stage_request)
+
+
+AuthenticatorEndpointGDTCStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | [required] |
+**authenticator_endpoint_gdtc_stage_request** | [**AuthenticatorEndpointGdtcStageRequest**](AuthenticatorEndpointGdtcStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::AuthenticatorEndpointGdtcStage**](AuthenticatorEndpointGDTCStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_endpoint_gdtc_used_by_list
+
+> Vec<models::UsedBy> stages_authenticator_endpoint_gdtc_used_by_list(stage_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Authenticator Google Device Trust Connector Stage. | [required] |
 
 ### Return type
 

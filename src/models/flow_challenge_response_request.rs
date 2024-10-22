@@ -38,6 +38,8 @@ pub enum FlowChallengeResponseRequest {
     AkStageDummy(models::DummyChallengeResponseRequest),
     #[serde(rename = "ak-stage-email")]
     AkStageEmail(models::EmailChallengeResponseRequest),
+    #[serde(rename = "xak-flow-frame")]
+    XakFlowFrame(models::FrameChallengeResponseRequest),
     #[serde(rename = "ak-stage-identification")]
     AkStageIdentification(models::IdentificationChallengeResponseRequest),
     #[serde(rename = "ak-provider-oauth2-device-code")]

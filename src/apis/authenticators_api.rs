@@ -76,6 +76,60 @@ pub enum AuthenticatorsAdminDuoUpdateError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`authenticators_admin_endpoint_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_admin_endpoint_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_admin_endpoint_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_admin_endpoint_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_admin_endpoint_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_admin_endpoint_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsAdminEndpointUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`authenticators_admin_sms_create`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -350,6 +404,33 @@ pub enum AuthenticatorsDuoUpdateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum AuthenticatorsDuoUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_endpoint_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsEndpointListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_endpoint_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsEndpointRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`authenticators_endpoint_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AuthenticatorsEndpointUsedByListError {
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -874,6 +955,280 @@ pub async fn authenticators_admin_duo_update(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<AuthenticatorsAdminDuoUpdateError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_create(
+    configuration: &configuration::Configuration,
+    endpoint_device_request: models::EndpointDeviceRequest,
+) -> Result<models::EndpointDevice, Error<AuthenticatorsAdminEndpointCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/authenticators/admin/endpoint/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&endpoint_device_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointCreateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_destroy(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+) -> Result<(), Error<AuthenticatorsAdminEndpointDestroyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/admin/endpoint/{uuid}/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointDestroyError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_list(
+    configuration: &configuration::Configuration,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+) -> Result<models::PaginatedEndpointDeviceList, Error<AuthenticatorsAdminEndpointListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/authenticators/admin/endpoint/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = name {
+        local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = ordering {
+        local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = search {
+        local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_partial_update(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+    patched_endpoint_device_request: Option<models::PatchedEndpointDeviceRequest>,
+) -> Result<models::EndpointDevice, Error<AuthenticatorsAdminEndpointPartialUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/admin/endpoint/{uuid}/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&patched_endpoint_device_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointPartialUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_retrieve(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+) -> Result<models::EndpointDevice, Error<AuthenticatorsAdminEndpointRetrieveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/admin/endpoint/{uuid}/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointRetrieveError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices (for admins)
+pub async fn authenticators_admin_endpoint_update(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+    endpoint_device_request: models::EndpointDeviceRequest,
+) -> Result<models::EndpointDevice, Error<AuthenticatorsAdminEndpointUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/admin/endpoint/{uuid}/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&endpoint_device_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsAdminEndpointUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
             content: local_var_content,
@@ -2275,6 +2630,149 @@ pub async fn authenticators_duo_used_by_list(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<AuthenticatorsDuoUsedByListError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices
+pub async fn authenticators_endpoint_list(
+    configuration: &configuration::Configuration,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+) -> Result<models::PaginatedEndpointDeviceList, Error<AuthenticatorsEndpointListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/authenticators/endpoint/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = name {
+        local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = ordering {
+        local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = search {
+        local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsEndpointListError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Viewset for Endpoint authenticator devices
+pub async fn authenticators_endpoint_retrieve(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+) -> Result<models::EndpointDevice, Error<AuthenticatorsEndpointRetrieveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/endpoint/{uuid}/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsEndpointRetrieveError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn authenticators_endpoint_used_by_list(
+    configuration: &configuration::Configuration,
+    uuid: &str,
+) -> Result<Vec<models::UsedBy>, Error<AuthenticatorsEndpointUsedByListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/authenticators/endpoint/{uuid}/used_by/",
+        local_var_configuration.base_path,
+        uuid = crate::apis::urlencode(uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<AuthenticatorsEndpointUsedByListError> =
+            serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
             content: local_var_content,

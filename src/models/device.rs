@@ -24,7 +24,7 @@ pub struct Device {
     #[serde(rename = "meta_model_name")]
     pub meta_model_name: String,
     #[serde(rename = "pk")]
-    pub pk: i32,
+    pub pk: String,
     #[serde(rename = "name")]
     pub name: String,
     /// Get type of device
@@ -49,7 +49,7 @@ impl Device {
         verbose_name: String,
         verbose_name_plural: String,
         meta_model_name: String,
-        pk: i32,
+        pk: String,
         name: String,
         r#type: String,
         confirmed: bool,

@@ -28,6 +28,8 @@ docs/AuthenticatorDuoStage.md
 docs/AuthenticatorDuoStageDeviceImportResponse.md
 docs/AuthenticatorDuoStageManualDeviceImportRequest.md
 docs/AuthenticatorDuoStageRequest.md
+docs/AuthenticatorEndpointGdtcStage.md
+docs/AuthenticatorEndpointGdtcStageRequest.md
 docs/AuthenticatorSmsChallenge.md
 docs/AuthenticatorSmsChallengeResponseRequest.md
 docs/AuthenticatorSmsStage.md
@@ -118,6 +120,8 @@ docs/EmailChallengeResponseRequest.md
 docs/EmailStage.md
 docs/EmailStageRequest.md
 docs/Endpoint.md
+docs/EndpointDevice.md
+docs/EndpointDeviceRequest.md
 docs/EndpointRequest.md
 docs/EnterpriseApi.md
 docs/ErrorDetail.md
@@ -153,6 +157,8 @@ docs/FlowStageBinding.md
 docs/FlowStageBindingRequest.md
 docs/FlowsApi.md
 docs/FooterLink.md
+docs/FrameChallenge.md
+docs/FrameChallengeResponseRequest.md
 docs/GenericError.md
 docs/GeoIpPolicy.md
 docs/GeoIpPolicyRequest.md
@@ -257,6 +263,7 @@ docs/OutpostsApi.md
 docs/PaginatedApplicationList.md
 docs/PaginatedAuthenticatedSessionList.md
 docs/PaginatedAuthenticatorDuoStageList.md
+docs/PaginatedAuthenticatorEndpointGdtcStageList.md
 docs/PaginatedAuthenticatorSmsStageList.md
 docs/PaginatedAuthenticatorStaticStageList.md
 docs/PaginatedAuthenticatorTotpStageList.md
@@ -275,6 +282,7 @@ docs/PaginatedDummyPolicyList.md
 docs/PaginatedDummyStageList.md
 docs/PaginatedDuoDeviceList.md
 docs/PaginatedEmailStageList.md
+docs/PaginatedEndpointDeviceList.md
 docs/PaginatedEndpointList.md
 docs/PaginatedEventList.md
 docs/PaginatedEventMatcherPolicyList.md
@@ -385,6 +393,7 @@ docs/PasswordStage.md
 docs/PasswordStageRequest.md
 docs/PatchedApplicationRequest.md
 docs/PatchedAuthenticatorDuoStageRequest.md
+docs/PatchedAuthenticatorEndpointGdtcStageRequest.md
 docs/PatchedAuthenticatorSmsStageRequest.md
 docs/PatchedAuthenticatorStaticStageRequest.md
 docs/PatchedAuthenticatorTotpStageRequest.md
@@ -403,6 +412,7 @@ docs/PatchedDummyPolicyRequest.md
 docs/PatchedDummyStageRequest.md
 docs/PatchedDuoDeviceRequest.md
 docs/PatchedEmailStageRequest.md
+docs/PatchedEndpointDeviceRequest.md
 docs/PatchedEndpointRequest.md
 docs/PatchedEventMatcherPolicyRequest.md
 docs/PatchedEventRequest.md
@@ -718,6 +728,8 @@ src/models/authenticator_duo_stage.rs
 src/models/authenticator_duo_stage_device_import_response.rs
 src/models/authenticator_duo_stage_manual_device_import_request.rs
 src/models/authenticator_duo_stage_request.rs
+src/models/authenticator_endpoint_gdtc_stage.rs
+src/models/authenticator_endpoint_gdtc_stage_request.rs
 src/models/authenticator_sms_challenge.rs
 src/models/authenticator_sms_challenge_response_request.rs
 src/models/authenticator_sms_stage.rs
@@ -805,6 +817,8 @@ src/models/email_challenge_response_request.rs
 src/models/email_stage.rs
 src/models/email_stage_request.rs
 src/models/endpoint.rs
+src/models/endpoint_device.rs
+src/models/endpoint_device_request.rs
 src/models/endpoint_request.rs
 src/models/error_detail.rs
 src/models/error_reporting_config.rs
@@ -837,6 +851,8 @@ src/models/flow_set_request.rs
 src/models/flow_stage_binding.rs
 src/models/flow_stage_binding_request.rs
 src/models/footer_link.rs
+src/models/frame_challenge.rs
+src/models/frame_challenge_response_request.rs
 src/models/generic_error.rs
 src/models/geo_ip_policy.rs
 src/models/geo_ip_policy_request.rs
@@ -939,6 +955,7 @@ src/models/outpost_type_enum.rs
 src/models/paginated_application_list.rs
 src/models/paginated_authenticated_session_list.rs
 src/models/paginated_authenticator_duo_stage_list.rs
+src/models/paginated_authenticator_endpoint_gdtc_stage_list.rs
 src/models/paginated_authenticator_sms_stage_list.rs
 src/models/paginated_authenticator_static_stage_list.rs
 src/models/paginated_authenticator_totp_stage_list.rs
@@ -957,6 +974,7 @@ src/models/paginated_dummy_policy_list.rs
 src/models/paginated_dummy_stage_list.rs
 src/models/paginated_duo_device_list.rs
 src/models/paginated_email_stage_list.rs
+src/models/paginated_endpoint_device_list.rs
 src/models/paginated_endpoint_list.rs
 src/models/paginated_event_list.rs
 src/models/paginated_event_matcher_policy_list.rs
@@ -1067,6 +1085,7 @@ src/models/password_stage.rs
 src/models/password_stage_request.rs
 src/models/patched_application_request.rs
 src/models/patched_authenticator_duo_stage_request.rs
+src/models/patched_authenticator_endpoint_gdtc_stage_request.rs
 src/models/patched_authenticator_sms_stage_request.rs
 src/models/patched_authenticator_static_stage_request.rs
 src/models/patched_authenticator_totp_stage_request.rs
@@ -1085,6 +1104,7 @@ src/models/patched_dummy_policy_request.rs
 src/models/patched_dummy_stage_request.rs
 src/models/patched_duo_device_request.rs
 src/models/patched_email_stage_request.rs
+src/models/patched_endpoint_device_request.rs
 src/models/patched_endpoint_request.rs
 src/models/patched_event_matcher_policy_request.rs
 src/models/patched_event_request.rs

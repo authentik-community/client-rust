@@ -157,6 +157,69 @@ pub enum StagesAuthenticatorDuoUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEndpointGdtcUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`stages_authenticator_sms_create`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -2223,6 +2286,333 @@ pub async fn stages_authenticator_duo_used_by_list(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<StagesAuthenticatorDuoUsedByListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_create(
+    configuration: &configuration::Configuration,
+    authenticator_endpoint_gdtc_stage_request: models::AuthenticatorEndpointGdtcStageRequest,
+) -> Result<models::AuthenticatorEndpointGdtcStage, Error<StagesAuthenticatorEndpointGdtcCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/",
+        local_var_configuration.base_path
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&authenticator_endpoint_gdtc_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcCreateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_destroy(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<(), Error<StagesAuthenticatorEndpointGdtcDestroyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcDestroyError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_list(
+    configuration: &configuration::Configuration,
+    configure_flow: Option<&str>,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+) -> Result<models::PaginatedAuthenticatorEndpointGdtcStageList, Error<StagesAuthenticatorEndpointGdtcListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/",
+        local_var_configuration.base_path
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = configure_flow {
+        local_var_req_builder = local_var_req_builder.query(&[("configure_flow", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = name {
+        local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = ordering {
+        local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = search {
+        local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_partial_update(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+    patched_authenticator_endpoint_gdtc_stage_request: Option<models::PatchedAuthenticatorEndpointGdtcStageRequest>,
+) -> Result<models::AuthenticatorEndpointGdtcStage, Error<StagesAuthenticatorEndpointGdtcPartialUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&patched_authenticator_endpoint_gdtc_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcPartialUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_retrieve(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<models::AuthenticatorEndpointGdtcStage, Error<StagesAuthenticatorEndpointGdtcRetrieveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcRetrieveError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEndpointGDTCStage Viewset
+pub async fn stages_authenticator_endpoint_gdtc_update(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+    authenticator_endpoint_gdtc_stage_request: models::AuthenticatorEndpointGdtcStageRequest,
+) -> Result<models::AuthenticatorEndpointGdtcStage, Error<StagesAuthenticatorEndpointGdtcUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&authenticator_endpoint_gdtc_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn stages_authenticator_endpoint_gdtc_used_by_list(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<Vec<models::UsedBy>, Error<StagesAuthenticatorEndpointGdtcUsedByListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/endpoint_gdtc/{stage_uuid}/used_by/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEndpointGdtcUsedByListError> =
             serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,

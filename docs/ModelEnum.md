@@ -87,6 +87,7 @@
 | ProvidersRacPeriodRacprovider | authentik_providers_rac.racprovider |
 | ProvidersRacPeriodEndpoint | authentik_providers_rac.endpoint |
 | ProvidersRacPeriodRacpropertymapping | authentik_providers_rac.racpropertymapping |
+| StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | StagesSourcePeriodSourcestage | authentik_stages_source.sourcestage |
 | EventsPeriodEvent | authentik_events.event |
 | EventsPeriodNotificationtransport | authentik_events.notificationtransport |

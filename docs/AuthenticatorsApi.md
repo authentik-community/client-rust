@@ -11,6 +11,12 @@ Method | HTTP request | Description
 [**authenticators_admin_duo_partial_update**](AuthenticatorsApi.md#authenticators_admin_duo_partial_update) | **PATCH** /authenticators/admin/duo/{id}/ | 
 [**authenticators_admin_duo_retrieve**](AuthenticatorsApi.md#authenticators_admin_duo_retrieve) | **GET** /authenticators/admin/duo/{id}/ | 
 [**authenticators_admin_duo_update**](AuthenticatorsApi.md#authenticators_admin_duo_update) | **PUT** /authenticators/admin/duo/{id}/ | 
+[**authenticators_admin_endpoint_create**](AuthenticatorsApi.md#authenticators_admin_endpoint_create) | **POST** /authenticators/admin/endpoint/ | 
+[**authenticators_admin_endpoint_destroy**](AuthenticatorsApi.md#authenticators_admin_endpoint_destroy) | **DELETE** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_list**](AuthenticatorsApi.md#authenticators_admin_endpoint_list) | **GET** /authenticators/admin/endpoint/ | 
+[**authenticators_admin_endpoint_partial_update**](AuthenticatorsApi.md#authenticators_admin_endpoint_partial_update) | **PATCH** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_retrieve**](AuthenticatorsApi.md#authenticators_admin_endpoint_retrieve) | **GET** /authenticators/admin/endpoint/{uuid}/ | 
+[**authenticators_admin_endpoint_update**](AuthenticatorsApi.md#authenticators_admin_endpoint_update) | **PUT** /authenticators/admin/endpoint/{uuid}/ | 
 [**authenticators_admin_sms_create**](AuthenticatorsApi.md#authenticators_admin_sms_create) | **POST** /authenticators/admin/sms/ | 
 [**authenticators_admin_sms_destroy**](AuthenticatorsApi.md#authenticators_admin_sms_destroy) | **DELETE** /authenticators/admin/sms/{id}/ | 
 [**authenticators_admin_sms_list**](AuthenticatorsApi.md#authenticators_admin_sms_list) | **GET** /authenticators/admin/sms/ | 
@@ -42,6 +48,9 @@ Method | HTTP request | Description
 [**authenticators_duo_retrieve**](AuthenticatorsApi.md#authenticators_duo_retrieve) | **GET** /authenticators/duo/{id}/ | 
 [**authenticators_duo_update**](AuthenticatorsApi.md#authenticators_duo_update) | **PUT** /authenticators/duo/{id}/ | 
 [**authenticators_duo_used_by_list**](AuthenticatorsApi.md#authenticators_duo_used_by_list) | **GET** /authenticators/duo/{id}/used_by/ | 
+[**authenticators_endpoint_list**](AuthenticatorsApi.md#authenticators_endpoint_list) | **GET** /authenticators/endpoint/ | 
+[**authenticators_endpoint_retrieve**](AuthenticatorsApi.md#authenticators_endpoint_retrieve) | **GET** /authenticators/endpoint/{uuid}/ | 
+[**authenticators_endpoint_used_by_list**](AuthenticatorsApi.md#authenticators_endpoint_used_by_list) | **GET** /authenticators/endpoint/{uuid}/used_by/ | 
 [**authenticators_sms_destroy**](AuthenticatorsApi.md#authenticators_sms_destroy) | **DELETE** /authenticators/sms/{id}/ | 
 [**authenticators_sms_list**](AuthenticatorsApi.md#authenticators_sms_list) | **GET** /authenticators/sms/ | 
 [**authenticators_sms_partial_update**](AuthenticatorsApi.md#authenticators_sms_partial_update) | **PATCH** /authenticators/sms/{id}/ | 
@@ -272,6 +281,192 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::DuoDevice**](DuoDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_create
+
+> models::EndpointDevice authenticators_admin_endpoint_create(endpoint_device_request)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_destroy
+
+> authenticators_admin_endpoint_destroy(uuid)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_list
+
+> models::PaginatedEndpointDeviceList authenticators_admin_endpoint_list(name, ordering, page, page_size, search)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_partial_update
+
+> models::EndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
+**patched_endpoint_device_request** | Option<[**PatchedEndpointDeviceRequest**](PatchedEndpointDeviceRequest.md)> |  |  |
+
+### Return type
+
+[**models::EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_retrieve
+
+> models::EndpointDevice authenticators_admin_endpoint_retrieve(uuid)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
+
+### Return type
+
+[**models::EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_admin_endpoint_update
+
+> models::EndpointDevice authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+
+
+Viewset for Endpoint authenticator devices (for admins)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
+**endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::EndpointDevice**](EndpointDevice.md)
 
 ### Authorization
 
@@ -1225,6 +1420,100 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Duo Device. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_endpoint_list
+
+> models::PaginatedEndpointDeviceList authenticators_endpoint_list(name, ordering, page, page_size, search)
+
+
+Viewset for Endpoint authenticator devices
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_endpoint_retrieve
+
+> models::EndpointDevice authenticators_endpoint_retrieve(uuid)
+
+
+Viewset for Endpoint authenticator devices
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
+
+### Return type
+
+[**models::EndpointDevice**](EndpointDevice.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## authenticators_endpoint_used_by_list
+
+> Vec<models::UsedBy> authenticators_endpoint_used_by_list(uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
 
 ### Return type
 

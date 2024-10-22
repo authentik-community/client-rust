@@ -42,6 +42,8 @@ pub enum ChallengeTypes {
     AkStageEmail(models::EmailChallenge),
     #[serde(rename = "ak-stage-flow-error")]
     AkStageFlowError(models::FlowErrorChallenge),
+    #[serde(rename = "xak-flow-frame")]
+    XakFlowFrame(models::FrameChallenge),
     #[serde(rename = "ak-stage-identification")]
     AkStageIdentification(models::IdentificationChallenge),
     #[serde(rename = "ak-provider-oauth2-device-code")]
