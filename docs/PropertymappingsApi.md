@@ -66,6 +66,13 @@ Method | HTTP request | Description
 [**propertymappings_provider_scope_retrieve**](PropertymappingsApi.md#propertymappings_provider_scope_retrieve) | **GET** /propertymappings/provider/scope/{pm_uuid}/ | 
 [**propertymappings_provider_scope_update**](PropertymappingsApi.md#propertymappings_provider_scope_update) | **PUT** /propertymappings/provider/scope/{pm_uuid}/ | 
 [**propertymappings_provider_scope_used_by_list**](PropertymappingsApi.md#propertymappings_provider_scope_used_by_list) | **GET** /propertymappings/provider/scope/{pm_uuid}/used_by/ | 
+[**propertymappings_source_kerberos_create**](PropertymappingsApi.md#propertymappings_source_kerberos_create) | **POST** /propertymappings/source/kerberos/ | 
+[**propertymappings_source_kerberos_destroy**](PropertymappingsApi.md#propertymappings_source_kerberos_destroy) | **DELETE** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_list**](PropertymappingsApi.md#propertymappings_source_kerberos_list) | **GET** /propertymappings/source/kerberos/ | 
+[**propertymappings_source_kerberos_partial_update**](PropertymappingsApi.md#propertymappings_source_kerberos_partial_update) | **PATCH** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_retrieve**](PropertymappingsApi.md#propertymappings_source_kerberos_retrieve) | **GET** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_update**](PropertymappingsApi.md#propertymappings_source_kerberos_update) | **PUT** /propertymappings/source/kerberos/{pm_uuid}/ | 
+[**propertymappings_source_kerberos_used_by_list**](PropertymappingsApi.md#propertymappings_source_kerberos_used_by_list) | **GET** /propertymappings/source/kerberos/{pm_uuid}/used_by/ | 
 [**propertymappings_source_ldap_create**](PropertymappingsApi.md#propertymappings_source_ldap_create) | **POST** /propertymappings/source/ldap/ | 
 [**propertymappings_source_ldap_destroy**](PropertymappingsApi.md#propertymappings_source_ldap_destroy) | **DELETE** /propertymappings/source/ldap/{pm_uuid}/ | 
 [**propertymappings_source_ldap_list**](PropertymappingsApi.md#propertymappings_source_ldap_list) | **GET** /propertymappings/source/ldap/ | 
@@ -2018,6 +2025,224 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **pm_uuid** | **uuid::Uuid** | A UUID string identifying this Scope Mapping. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_create
+
+> models::KerberosSourcePropertyMapping propertymappings_source_kerberos_create(kerberos_source_property_mapping_request)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**kerberos_source_property_mapping_request** | [**KerberosSourcePropertyMappingRequest**](KerberosSourcePropertyMappingRequest.md) |  | [required] |
+
+### Return type
+
+[**models::KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_destroy
+
+> propertymappings_source_kerberos_destroy(pm_uuid)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Kerberos Source Property Mapping. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_list
+
+> models::PaginatedKerberosSourcePropertyMappingList propertymappings_source_kerberos_list(managed, managed__isnull, name, ordering, page, page_size, search)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**managed** | Option<[**Vec<String>**](String.md)> |  |  |
+**managed__isnull** | Option<**bool**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedKerberosSourcePropertyMappingList**](PaginatedKerberosSourcePropertyMappingList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_partial_update
+
+> models::KerberosSourcePropertyMapping propertymappings_source_kerberos_partial_update(pm_uuid, patched_kerberos_source_property_mapping_request)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Kerberos Source Property Mapping. | [required] |
+**patched_kerberos_source_property_mapping_request** | Option<[**PatchedKerberosSourcePropertyMappingRequest**](PatchedKerberosSourcePropertyMappingRequest.md)> |  |  |
+
+### Return type
+
+[**models::KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_retrieve
+
+> models::KerberosSourcePropertyMapping propertymappings_source_kerberos_retrieve(pm_uuid)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Kerberos Source Property Mapping. | [required] |
+
+### Return type
+
+[**models::KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_update
+
+> models::KerberosSourcePropertyMapping propertymappings_source_kerberos_update(pm_uuid, kerberos_source_property_mapping_request)
+
+
+KerberosSource PropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Kerberos Source Property Mapping. | [required] |
+**kerberos_source_property_mapping_request** | [**KerberosSourcePropertyMappingRequest**](KerberosSourcePropertyMappingRequest.md) |  | [required] |
+
+### Return type
+
+[**models::KerberosSourcePropertyMapping**](KerberosSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_kerberos_used_by_list
+
+> Vec<models::UsedBy> propertymappings_source_kerberos_used_by_list(pm_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Kerberos Source Property Mapping. | [required] |
 
 ### Return type
 

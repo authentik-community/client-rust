@@ -12,6 +12,12 @@ Method | HTTP request | Description
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
+[**sources_group_connections_kerberos_destroy**](SourcesApi.md#sources_group_connections_kerberos_destroy) | **DELETE** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_list**](SourcesApi.md#sources_group_connections_kerberos_list) | **GET** /sources/group_connections/kerberos/ | 
+[**sources_group_connections_kerberos_partial_update**](SourcesApi.md#sources_group_connections_kerberos_partial_update) | **PATCH** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_retrieve**](SourcesApi.md#sources_group_connections_kerberos_retrieve) | **GET** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_update**](SourcesApi.md#sources_group_connections_kerberos_update) | **PUT** /sources/group_connections/kerberos/{id}/ | 
+[**sources_group_connections_kerberos_used_by_list**](SourcesApi.md#sources_group_connections_kerberos_used_by_list) | **GET** /sources/group_connections/kerberos/{id}/used_by/ | 
 [**sources_group_connections_oauth_create**](SourcesApi.md#sources_group_connections_oauth_create) | **POST** /sources/group_connections/oauth/ | 
 [**sources_group_connections_oauth_destroy**](SourcesApi.md#sources_group_connections_oauth_destroy) | **DELETE** /sources/group_connections/oauth/{id}/ | 
 [**sources_group_connections_oauth_list**](SourcesApi.md#sources_group_connections_oauth_list) | **GET** /sources/group_connections/oauth/ | 
@@ -32,6 +38,14 @@ Method | HTTP request | Description
 [**sources_group_connections_saml_retrieve**](SourcesApi.md#sources_group_connections_saml_retrieve) | **GET** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_update**](SourcesApi.md#sources_group_connections_saml_update) | **PUT** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_used_by_list**](SourcesApi.md#sources_group_connections_saml_used_by_list) | **GET** /sources/group_connections/saml/{id}/used_by/ | 
+[**sources_kerberos_create**](SourcesApi.md#sources_kerberos_create) | **POST** /sources/kerberos/ | 
+[**sources_kerberos_destroy**](SourcesApi.md#sources_kerberos_destroy) | **DELETE** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_list**](SourcesApi.md#sources_kerberos_list) | **GET** /sources/kerberos/ | 
+[**sources_kerberos_partial_update**](SourcesApi.md#sources_kerberos_partial_update) | **PATCH** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_retrieve**](SourcesApi.md#sources_kerberos_retrieve) | **GET** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_sync_status_retrieve**](SourcesApi.md#sources_kerberos_sync_status_retrieve) | **GET** /sources/kerberos/{slug}/sync/status/ | 
+[**sources_kerberos_update**](SourcesApi.md#sources_kerberos_update) | **PUT** /sources/kerberos/{slug}/ | 
+[**sources_kerberos_used_by_list**](SourcesApi.md#sources_kerberos_used_by_list) | **GET** /sources/kerberos/{slug}/used_by/ | 
 [**sources_ldap_create**](SourcesApi.md#sources_ldap_create) | **POST** /sources/ldap/ | 
 [**sources_ldap_debug_retrieve**](SourcesApi.md#sources_ldap_debug_retrieve) | **GET** /sources/ldap/{slug}/debug/ | 
 [**sources_ldap_destroy**](SourcesApi.md#sources_ldap_destroy) | **DELETE** /sources/ldap/{slug}/ | 
@@ -93,6 +107,13 @@ Method | HTTP request | Description
 [**sources_user_connections_all_retrieve**](SourcesApi.md#sources_user_connections_all_retrieve) | **GET** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_update**](SourcesApi.md#sources_user_connections_all_update) | **PUT** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_used_by_list**](SourcesApi.md#sources_user_connections_all_used_by_list) | **GET** /sources/user_connections/all/{id}/used_by/ | 
+[**sources_user_connections_kerberos_create**](SourcesApi.md#sources_user_connections_kerberos_create) | **POST** /sources/user_connections/kerberos/ | 
+[**sources_user_connections_kerberos_destroy**](SourcesApi.md#sources_user_connections_kerberos_destroy) | **DELETE** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_list**](SourcesApi.md#sources_user_connections_kerberos_list) | **GET** /sources/user_connections/kerberos/ | 
+[**sources_user_connections_kerberos_partial_update**](SourcesApi.md#sources_user_connections_kerberos_partial_update) | **PATCH** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_retrieve**](SourcesApi.md#sources_user_connections_kerberos_retrieve) | **GET** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_update**](SourcesApi.md#sources_user_connections_kerberos_update) | **PUT** /sources/user_connections/kerberos/{id}/ | 
+[**sources_user_connections_kerberos_used_by_list**](SourcesApi.md#sources_user_connections_kerberos_used_by_list) | **GET** /sources/user_connections/kerberos/{id}/used_by/ | 
 [**sources_user_connections_oauth_create**](SourcesApi.md#sources_user_connections_oauth_create) | **POST** /sources/user_connections/oauth/ | 
 [**sources_user_connections_oauth_destroy**](SourcesApi.md#sources_user_connections_oauth_destroy) | **DELETE** /sources/user_connections/oauth/{id}/ | 
 [**sources_user_connections_oauth_list**](SourcesApi.md#sources_user_connections_oauth_list) | **GET** /sources/user_connections/oauth/ | 
@@ -347,6 +368,191 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Vec<models::UserSetting>**](UserSetting.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_destroy
+
+> sources_group_connections_kerberos_destroy(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_list
+
+> models::PaginatedGroupKerberosSourceConnectionList sources_group_connections_kerberos_list(group, ordering, page, page_size, search, source__slug)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group** | Option<**uuid::Uuid**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**source__slug** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedGroupKerberosSourceConnectionList**](PaginatedGroupKerberosSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_partial_update
+
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_partial_update(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+
+### Return type
+
+[**models::GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_retrieve
+
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_retrieve(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+
+### Return type
+
+[**models::GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_update
+
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_update(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+
+### Return type
+
+[**models::GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_used_by_list
+
+> Vec<models::UsedBy> sources_group_connections_kerberos_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
 
 ### Authorization
 
@@ -952,6 +1158,260 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group SAML Source Connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_create
+
+> models::KerberosSource sources_kerberos_create(kerberos_source_request)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**kerberos_source_request** | [**KerberosSourceRequest**](KerberosSourceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_destroy
+
+> sources_kerberos_destroy(slug)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_list
+
+> models::PaginatedKerberosSourceList sources_kerberos_list(enabled, name, ordering, page, page_size, password_login_update_internal_password, realm, search, slug, spnego_server_name, sync_principal, sync_users, sync_users_password)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**enabled** | Option<**bool**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**password_login_update_internal_password** | Option<**bool**> |  |  |
+**realm** | Option<**String**> |  |  |
+**search** | Option<**String**> | A search term. |  |
+**slug** | Option<**String**> |  |  |
+**spnego_server_name** | Option<**String**> |  |  |
+**sync_principal** | Option<**String**> |  |  |
+**sync_users** | Option<**bool**> |  |  |
+**sync_users_password** | Option<**bool**> |  |  |
+
+### Return type
+
+[**models::PaginatedKerberosSourceList**](PaginatedKerberosSourceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_partial_update
+
+> models::KerberosSource sources_kerberos_partial_update(slug, patched_kerberos_source_request)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+**patched_kerberos_source_request** | Option<[**PatchedKerberosSourceRequest**](PatchedKerberosSourceRequest.md)> |  |  |
+
+### Return type
+
+[**models::KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_retrieve
+
+> models::KerberosSource sources_kerberos_retrieve(slug)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+[**models::KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_sync_status_retrieve
+
+> models::KerberosSyncStatus sources_kerberos_sync_status_retrieve(slug)
+
+
+Get source's sync status
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+[**models::KerberosSyncStatus**](KerberosSyncStatus.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_update
+
+> models::KerberosSource sources_kerberos_update(slug, kerberos_source_request)
+
+
+Kerberos Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+**kerberos_source_request** | [**KerberosSourceRequest**](KerberosSourceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::KerberosSource**](KerberosSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_kerberos_used_by_list
+
+> Vec<models::UsedBy> sources_kerberos_used_by_list(slug)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
 
 ### Return type
 
@@ -2901,6 +3361,222 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this user source connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_create
+
+> models::UserKerberosSourceConnection sources_user_connections_kerberos_create(user_kerberos_source_connection_request)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_kerberos_source_connection_request** | [**UserKerberosSourceConnectionRequest**](UserKerberosSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_destroy
+
+> sources_user_connections_kerberos_destroy(id)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Kerberos Source Connection. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_list
+
+> models::PaginatedUserKerberosSourceConnectionList sources_user_connections_kerberos_list(ordering, page, page_size, search, source__slug)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**source__slug** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedUserKerberosSourceConnectionList**](PaginatedUserKerberosSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_partial_update
+
+> models::UserKerberosSourceConnection sources_user_connections_kerberos_partial_update(id, patched_user_kerberos_source_connection_request)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Kerberos Source Connection. | [required] |
+**patched_user_kerberos_source_connection_request** | Option<[**PatchedUserKerberosSourceConnectionRequest**](PatchedUserKerberosSourceConnectionRequest.md)> |  |  |
+
+### Return type
+
+[**models::UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_retrieve
+
+> models::UserKerberosSourceConnection sources_user_connections_kerberos_retrieve(id)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Kerberos Source Connection. | [required] |
+
+### Return type
+
+[**models::UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_update
+
+> models::UserKerberosSourceConnection sources_user_connections_kerberos_update(id, user_kerberos_source_connection_request)
+
+
+Source Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Kerberos Source Connection. | [required] |
+**user_kerberos_source_connection_request** | [**UserKerberosSourceConnectionRequest**](UserKerberosSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UserKerberosSourceConnection**](UserKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_kerberos_used_by_list
+
+> Vec<models::UsedBy> sources_user_connections_kerberos_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Kerberos Source Connection. | [required] |
 
 ### Return type
 

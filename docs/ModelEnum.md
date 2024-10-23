@@ -30,6 +30,10 @@
 | ProvidersScimPeriodScimprovider | authentik_providers_scim.scimprovider |
 | ProvidersScimPeriodScimmapping | authentik_providers_scim.scimmapping |
 | RbacPeriodRole | authentik_rbac.role |
+| SourcesKerberosPeriodKerberossource | authentik_sources_kerberos.kerberossource |
+| SourcesKerberosPeriodKerberossourcepropertymapping | authentik_sources_kerberos.kerberossourcepropertymapping |
+| SourcesKerberosPeriodUserkerberossourceconnection | authentik_sources_kerberos.userkerberossourceconnection |
+| SourcesKerberosPeriodGroupkerberossourceconnection | authentik_sources_kerberos.groupkerberossourceconnection |
 | SourcesLdapPeriodLdapsource | authentik_sources_ldap.ldapsource |
 | SourcesLdapPeriodLdapsourcepropertymapping | authentik_sources_ldap.ldapsourcepropertymapping |
 | SourcesOauthPeriodOauthsource | authentik_sources_oauth.oauthsource |

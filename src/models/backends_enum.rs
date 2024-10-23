@@ -20,6 +20,8 @@ pub enum BackendsEnum {
     CorePeriodAuthPeriodTokenBackend,
     #[serde(rename = "authentik.sources.ldap.auth.LDAPBackend")]
     SourcesPeriodLdapPeriodAuthPeriodLdapBackend,
+    #[serde(rename = "authentik.sources.kerberos.auth.KerberosBackend")]
+    SourcesPeriodKerberosPeriodAuthPeriodKerberosBackend,
 }
 
 impl std::fmt::Display for BackendsEnum {
@@ -28,6 +30,9 @@ impl std::fmt::Display for BackendsEnum {
             Self::CorePeriodAuthPeriodInbuiltBackend => write!(f, "authentik.core.auth.InbuiltBackend"),
             Self::CorePeriodAuthPeriodTokenBackend => write!(f, "authentik.core.auth.TokenBackend"),
             Self::SourcesPeriodLdapPeriodAuthPeriodLdapBackend => write!(f, "authentik.sources.ldap.auth.LDAPBackend"),
+            Self::SourcesPeriodKerberosPeriodAuthPeriodKerberosBackend => {
+                write!(f, "authentik.sources.kerberos.auth.KerberosBackend")
+            }
         }
     }
 }

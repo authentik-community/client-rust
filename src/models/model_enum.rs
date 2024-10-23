@@ -66,6 +66,14 @@ pub enum ModelEnum {
     ProvidersScimPeriodScimmapping,
     #[serde(rename = "authentik_rbac.role")]
     RbacPeriodRole,
+    #[serde(rename = "authentik_sources_kerberos.kerberossource")]
+    SourcesKerberosPeriodKerberossource,
+    #[serde(rename = "authentik_sources_kerberos.kerberossourcepropertymapping")]
+    SourcesKerberosPeriodKerberossourcepropertymapping,
+    #[serde(rename = "authentik_sources_kerberos.userkerberossourceconnection")]
+    SourcesKerberosPeriodUserkerberossourceconnection,
+    #[serde(rename = "authentik_sources_kerberos.groupkerberossourceconnection")]
+    SourcesKerberosPeriodGroupkerberossourceconnection,
     #[serde(rename = "authentik_sources_ldap.ldapsource")]
     SourcesLdapPeriodLdapsource,
     #[serde(rename = "authentik_sources_ldap.ldapsourcepropertymapping")]
@@ -237,6 +245,16 @@ impl std::fmt::Display for ModelEnum {
             Self::ProvidersScimPeriodScimprovider => write!(f, "authentik_providers_scim.scimprovider"),
             Self::ProvidersScimPeriodScimmapping => write!(f, "authentik_providers_scim.scimmapping"),
             Self::RbacPeriodRole => write!(f, "authentik_rbac.role"),
+            Self::SourcesKerberosPeriodKerberossource => write!(f, "authentik_sources_kerberos.kerberossource"),
+            Self::SourcesKerberosPeriodKerberossourcepropertymapping => {
+                write!(f, "authentik_sources_kerberos.kerberossourcepropertymapping")
+            }
+            Self::SourcesKerberosPeriodUserkerberossourceconnection => {
+                write!(f, "authentik_sources_kerberos.userkerberossourceconnection")
+            }
+            Self::SourcesKerberosPeriodGroupkerberossourceconnection => {
+                write!(f, "authentik_sources_kerberos.groupkerberossourceconnection")
+            }
             Self::SourcesLdapPeriodLdapsource => write!(f, "authentik_sources_ldap.ldapsource"),
             Self::SourcesLdapPeriodLdapsourcepropertymapping => {
                 write!(f, "authentik_sources_ldap.ldapsourcepropertymapping")

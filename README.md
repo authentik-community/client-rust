@@ -442,6 +442,13 @@ Class | Method | HTTP request | Description
 *PropertymappingsApi* | [**propertymappings_provider_scope_retrieve**](docs/PropertymappingsApi.md#propertymappings_provider_scope_retrieve) | **GET** /propertymappings/provider/scope/{pm_uuid}/ | 
 *PropertymappingsApi* | [**propertymappings_provider_scope_update**](docs/PropertymappingsApi.md#propertymappings_provider_scope_update) | **PUT** /propertymappings/provider/scope/{pm_uuid}/ | 
 *PropertymappingsApi* | [**propertymappings_provider_scope_used_by_list**](docs/PropertymappingsApi.md#propertymappings_provider_scope_used_by_list) | **GET** /propertymappings/provider/scope/{pm_uuid}/used_by/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_create**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_create) | **POST** /propertymappings/source/kerberos/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_destroy**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_destroy) | **DELETE** /propertymappings/source/kerberos/{pm_uuid}/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_list**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_list) | **GET** /propertymappings/source/kerberos/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_partial_update**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_partial_update) | **PATCH** /propertymappings/source/kerberos/{pm_uuid}/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_retrieve**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_retrieve) | **GET** /propertymappings/source/kerberos/{pm_uuid}/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_update**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_update) | **PUT** /propertymappings/source/kerberos/{pm_uuid}/ | 
+*PropertymappingsApi* | [**propertymappings_source_kerberos_used_by_list**](docs/PropertymappingsApi.md#propertymappings_source_kerberos_used_by_list) | **GET** /propertymappings/source/kerberos/{pm_uuid}/used_by/ | 
 *PropertymappingsApi* | [**propertymappings_source_ldap_create**](docs/PropertymappingsApi.md#propertymappings_source_ldap_create) | **POST** /propertymappings/source/ldap/ | 
 *PropertymappingsApi* | [**propertymappings_source_ldap_destroy**](docs/PropertymappingsApi.md#propertymappings_source_ldap_destroy) | **DELETE** /propertymappings/source/ldap/{pm_uuid}/ | 
 *PropertymappingsApi* | [**propertymappings_source_ldap_list**](docs/PropertymappingsApi.md#propertymappings_source_ldap_list) | **GET** /propertymappings/source/ldap/ | 
@@ -634,6 +641,12 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_all_types_list**](docs/SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 *SourcesApi* | [**sources_all_used_by_list**](docs/SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 *SourcesApi* | [**sources_all_user_settings_list**](docs/SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_destroy**](docs/SourcesApi.md#sources_group_connections_kerberos_destroy) | **DELETE** /sources/group_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_list**](docs/SourcesApi.md#sources_group_connections_kerberos_list) | **GET** /sources/group_connections/kerberos/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_partial_update**](docs/SourcesApi.md#sources_group_connections_kerberos_partial_update) | **PATCH** /sources/group_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_retrieve**](docs/SourcesApi.md#sources_group_connections_kerberos_retrieve) | **GET** /sources/group_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_update**](docs/SourcesApi.md#sources_group_connections_kerberos_update) | **PUT** /sources/group_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_used_by_list**](docs/SourcesApi.md#sources_group_connections_kerberos_used_by_list) | **GET** /sources/group_connections/kerberos/{id}/used_by/ | 
 *SourcesApi* | [**sources_group_connections_oauth_create**](docs/SourcesApi.md#sources_group_connections_oauth_create) | **POST** /sources/group_connections/oauth/ | 
 *SourcesApi* | [**sources_group_connections_oauth_destroy**](docs/SourcesApi.md#sources_group_connections_oauth_destroy) | **DELETE** /sources/group_connections/oauth/{id}/ | 
 *SourcesApi* | [**sources_group_connections_oauth_list**](docs/SourcesApi.md#sources_group_connections_oauth_list) | **GET** /sources/group_connections/oauth/ | 
@@ -654,6 +667,14 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_group_connections_saml_retrieve**](docs/SourcesApi.md#sources_group_connections_saml_retrieve) | **GET** /sources/group_connections/saml/{id}/ | 
 *SourcesApi* | [**sources_group_connections_saml_update**](docs/SourcesApi.md#sources_group_connections_saml_update) | **PUT** /sources/group_connections/saml/{id}/ | 
 *SourcesApi* | [**sources_group_connections_saml_used_by_list**](docs/SourcesApi.md#sources_group_connections_saml_used_by_list) | **GET** /sources/group_connections/saml/{id}/used_by/ | 
+*SourcesApi* | [**sources_kerberos_create**](docs/SourcesApi.md#sources_kerberos_create) | **POST** /sources/kerberos/ | 
+*SourcesApi* | [**sources_kerberos_destroy**](docs/SourcesApi.md#sources_kerberos_destroy) | **DELETE** /sources/kerberos/{slug}/ | 
+*SourcesApi* | [**sources_kerberos_list**](docs/SourcesApi.md#sources_kerberos_list) | **GET** /sources/kerberos/ | 
+*SourcesApi* | [**sources_kerberos_partial_update**](docs/SourcesApi.md#sources_kerberos_partial_update) | **PATCH** /sources/kerberos/{slug}/ | 
+*SourcesApi* | [**sources_kerberos_retrieve**](docs/SourcesApi.md#sources_kerberos_retrieve) | **GET** /sources/kerberos/{slug}/ | 
+*SourcesApi* | [**sources_kerberos_sync_status_retrieve**](docs/SourcesApi.md#sources_kerberos_sync_status_retrieve) | **GET** /sources/kerberos/{slug}/sync/status/ | 
+*SourcesApi* | [**sources_kerberos_update**](docs/SourcesApi.md#sources_kerberos_update) | **PUT** /sources/kerberos/{slug}/ | 
+*SourcesApi* | [**sources_kerberos_used_by_list**](docs/SourcesApi.md#sources_kerberos_used_by_list) | **GET** /sources/kerberos/{slug}/used_by/ | 
 *SourcesApi* | [**sources_ldap_create**](docs/SourcesApi.md#sources_ldap_create) | **POST** /sources/ldap/ | 
 *SourcesApi* | [**sources_ldap_debug_retrieve**](docs/SourcesApi.md#sources_ldap_debug_retrieve) | **GET** /sources/ldap/{slug}/debug/ | 
 *SourcesApi* | [**sources_ldap_destroy**](docs/SourcesApi.md#sources_ldap_destroy) | **DELETE** /sources/ldap/{slug}/ | 
@@ -715,6 +736,13 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_user_connections_all_retrieve**](docs/SourcesApi.md#sources_user_connections_all_retrieve) | **GET** /sources/user_connections/all/{id}/ | 
 *SourcesApi* | [**sources_user_connections_all_update**](docs/SourcesApi.md#sources_user_connections_all_update) | **PUT** /sources/user_connections/all/{id}/ | 
 *SourcesApi* | [**sources_user_connections_all_used_by_list**](docs/SourcesApi.md#sources_user_connections_all_used_by_list) | **GET** /sources/user_connections/all/{id}/used_by/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_create**](docs/SourcesApi.md#sources_user_connections_kerberos_create) | **POST** /sources/user_connections/kerberos/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_destroy**](docs/SourcesApi.md#sources_user_connections_kerberos_destroy) | **DELETE** /sources/user_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_list**](docs/SourcesApi.md#sources_user_connections_kerberos_list) | **GET** /sources/user_connections/kerberos/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_partial_update**](docs/SourcesApi.md#sources_user_connections_kerberos_partial_update) | **PATCH** /sources/user_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_retrieve**](docs/SourcesApi.md#sources_user_connections_kerberos_retrieve) | **GET** /sources/user_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_update**](docs/SourcesApi.md#sources_user_connections_kerberos_update) | **PUT** /sources/user_connections/kerberos/{id}/ | 
+*SourcesApi* | [**sources_user_connections_kerberos_used_by_list**](docs/SourcesApi.md#sources_user_connections_kerberos_used_by_list) | **GET** /sources/user_connections/kerberos/{id}/used_by/ | 
 *SourcesApi* | [**sources_user_connections_oauth_create**](docs/SourcesApi.md#sources_user_connections_oauth_create) | **POST** /sources/user_connections/oauth/ | 
 *SourcesApi* | [**sources_user_connections_oauth_destroy**](docs/SourcesApi.md#sources_user_connections_oauth_destroy) | **DELETE** /sources/user_connections/oauth/{id}/ | 
 *SourcesApi* | [**sources_user_connections_oauth_list**](docs/SourcesApi.md#sources_user_connections_oauth_list) | **GET** /sources/user_connections/oauth/ | 
@@ -1091,6 +1119,7 @@ Class | Method | HTTP request | Description
  - [GoogleWorkspaceProviderUser](docs/GoogleWorkspaceProviderUser.md)
  - [GoogleWorkspaceProviderUserRequest](docs/GoogleWorkspaceProviderUserRequest.md)
  - [Group](docs/Group.md)
+ - [GroupKerberosSourceConnection](docs/GroupKerberosSourceConnection.md)
  - [GroupMatchingModeEnum](docs/GroupMatchingModeEnum.md)
  - [GroupMember](docs/GroupMember.md)
  - [GroupMemberRequest](docs/GroupMemberRequest.md)
@@ -1110,6 +1139,11 @@ Class | Method | HTTP request | Description
  - [InvitationStage](docs/InvitationStage.md)
  - [InvitationStageRequest](docs/InvitationStageRequest.md)
  - [IssuerModeEnum](docs/IssuerModeEnum.md)
+ - [KerberosSource](docs/KerberosSource.md)
+ - [KerberosSourcePropertyMapping](docs/KerberosSourcePropertyMapping.md)
+ - [KerberosSourcePropertyMappingRequest](docs/KerberosSourcePropertyMappingRequest.md)
+ - [KerberosSourceRequest](docs/KerberosSourceRequest.md)
+ - [KerberosSyncStatus](docs/KerberosSyncStatus.md)
  - [KubernetesServiceConnection](docs/KubernetesServiceConnection.md)
  - [KubernetesServiceConnectionRequest](docs/KubernetesServiceConnectionRequest.md)
  - [LdapCheckAccess](docs/LdapCheckAccess.md)
@@ -1213,6 +1247,7 @@ Class | Method | HTTP request | Description
  - [PaginatedGoogleWorkspaceProviderList](docs/PaginatedGoogleWorkspaceProviderList.md)
  - [PaginatedGoogleWorkspaceProviderMappingList](docs/PaginatedGoogleWorkspaceProviderMappingList.md)
  - [PaginatedGoogleWorkspaceProviderUserList](docs/PaginatedGoogleWorkspaceProviderUserList.md)
+ - [PaginatedGroupKerberosSourceConnectionList](docs/PaginatedGroupKerberosSourceConnectionList.md)
  - [PaginatedGroupList](docs/PaginatedGroupList.md)
  - [PaginatedGroupOAuthSourceConnectionList](docs/PaginatedGroupOAuthSourceConnectionList.md)
  - [PaginatedGroupPlexSourceConnectionList](docs/PaginatedGroupPlexSourceConnectionList.md)
@@ -1220,6 +1255,8 @@ Class | Method | HTTP request | Description
  - [PaginatedIdentificationStageList](docs/PaginatedIdentificationStageList.md)
  - [PaginatedInvitationList](docs/PaginatedInvitationList.md)
  - [PaginatedInvitationStageList](docs/PaginatedInvitationStageList.md)
+ - [PaginatedKerberosSourceList](docs/PaginatedKerberosSourceList.md)
+ - [PaginatedKerberosSourcePropertyMappingList](docs/PaginatedKerberosSourcePropertyMappingList.md)
  - [PaginatedKubernetesServiceConnectionList](docs/PaginatedKubernetesServiceConnectionList.md)
  - [PaginatedLdapOutpostConfigList](docs/PaginatedLdapOutpostConfigList.md)
  - [PaginatedLdapProviderList](docs/PaginatedLdapProviderList.md)
@@ -1288,6 +1325,7 @@ Class | Method | HTTP request | Description
  - [PaginatedUserAssignedObjectPermissionList](docs/PaginatedUserAssignedObjectPermissionList.md)
  - [PaginatedUserConsentList](docs/PaginatedUserConsentList.md)
  - [PaginatedUserDeleteStageList](docs/PaginatedUserDeleteStageList.md)
+ - [PaginatedUserKerberosSourceConnectionList](docs/PaginatedUserKerberosSourceConnectionList.md)
  - [PaginatedUserList](docs/PaginatedUserList.md)
  - [PaginatedUserLoginStageList](docs/PaginatedUserLoginStageList.md)
  - [PaginatedUserLogoutStageList](docs/PaginatedUserLogoutStageList.md)
@@ -1344,6 +1382,8 @@ Class | Method | HTTP request | Description
  - [PatchedIdentificationStageRequest](docs/PatchedIdentificationStageRequest.md)
  - [PatchedInvitationRequest](docs/PatchedInvitationRequest.md)
  - [PatchedInvitationStageRequest](docs/PatchedInvitationStageRequest.md)
+ - [PatchedKerberosSourcePropertyMappingRequest](docs/PatchedKerberosSourcePropertyMappingRequest.md)
+ - [PatchedKerberosSourceRequest](docs/PatchedKerberosSourceRequest.md)
  - [PatchedKubernetesServiceConnectionRequest](docs/PatchedKubernetesServiceConnectionRequest.md)
  - [PatchedLdapProviderRequest](docs/PatchedLdapProviderRequest.md)
  - [PatchedLdapSourcePropertyMappingRequest](docs/PatchedLdapSourcePropertyMappingRequest.md)
@@ -1394,6 +1434,7 @@ Class | Method | HTTP request | Description
  - [PatchedTokenRequest](docs/PatchedTokenRequest.md)
  - [PatchedTotpDeviceRequest](docs/PatchedTotpDeviceRequest.md)
  - [PatchedUserDeleteStageRequest](docs/PatchedUserDeleteStageRequest.md)
+ - [PatchedUserKerberosSourceConnectionRequest](docs/PatchedUserKerberosSourceConnectionRequest.md)
  - [PatchedUserLoginStageRequest](docs/PatchedUserLoginStageRequest.md)
  - [PatchedUserLogoutStageRequest](docs/PatchedUserLogoutStageRequest.md)
  - [PatchedUserOAuthSourceConnectionRequest](docs/PatchedUserOAuthSourceConnectionRequest.md)
@@ -1549,6 +1590,8 @@ Class | Method | HTTP request | Description
  - [UserFieldsEnum](docs/UserFieldsEnum.md)
  - [UserGroup](docs/UserGroup.md)
  - [UserGroupRequest](docs/UserGroupRequest.md)
+ - [UserKerberosSourceConnection](docs/UserKerberosSourceConnection.md)
+ - [UserKerberosSourceConnectionRequest](docs/UserKerberosSourceConnectionRequest.md)
  - [UserLoginChallenge](docs/UserLoginChallenge.md)
  - [UserLoginChallengeResponseRequest](docs/UserLoginChallengeResponseRequest.md)
  - [UserLoginStage](docs/UserLoginStage.md)

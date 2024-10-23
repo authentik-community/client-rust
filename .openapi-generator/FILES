@@ -172,6 +172,7 @@ docs/GoogleWorkspaceProviderRequest.md
 docs/GoogleWorkspaceProviderUser.md
 docs/GoogleWorkspaceProviderUserRequest.md
 docs/Group.md
+docs/GroupKerberosSourceConnection.md
 docs/GroupMatchingModeEnum.md
 docs/GroupMember.md
 docs/GroupMemberRequest.md
@@ -191,6 +192,11 @@ docs/InvitationRequest.md
 docs/InvitationStage.md
 docs/InvitationStageRequest.md
 docs/IssuerModeEnum.md
+docs/KerberosSource.md
+docs/KerberosSourcePropertyMapping.md
+docs/KerberosSourcePropertyMappingRequest.md
+docs/KerberosSourceRequest.md
+docs/KerberosSyncStatus.md
 docs/KubernetesServiceConnection.md
 docs/KubernetesServiceConnectionRequest.md
 docs/LdapCheckAccess.md
@@ -297,6 +303,7 @@ docs/PaginatedGoogleWorkspaceProviderGroupList.md
 docs/PaginatedGoogleWorkspaceProviderList.md
 docs/PaginatedGoogleWorkspaceProviderMappingList.md
 docs/PaginatedGoogleWorkspaceProviderUserList.md
+docs/PaginatedGroupKerberosSourceConnectionList.md
 docs/PaginatedGroupList.md
 docs/PaginatedGroupOAuthSourceConnectionList.md
 docs/PaginatedGroupPlexSourceConnectionList.md
@@ -304,6 +311,8 @@ docs/PaginatedGroupSamlSourceConnectionList.md
 docs/PaginatedIdentificationStageList.md
 docs/PaginatedInvitationList.md
 docs/PaginatedInvitationStageList.md
+docs/PaginatedKerberosSourceList.md
+docs/PaginatedKerberosSourcePropertyMappingList.md
 docs/PaginatedKubernetesServiceConnectionList.md
 docs/PaginatedLdapOutpostConfigList.md
 docs/PaginatedLdapProviderList.md
@@ -372,6 +381,7 @@ docs/PaginatedTotpDeviceList.md
 docs/PaginatedUserAssignedObjectPermissionList.md
 docs/PaginatedUserConsentList.md
 docs/PaginatedUserDeleteStageList.md
+docs/PaginatedUserKerberosSourceConnectionList.md
 docs/PaginatedUserList.md
 docs/PaginatedUserLoginStageList.md
 docs/PaginatedUserLogoutStageList.md
@@ -428,6 +438,8 @@ docs/PatchedGroupRequest.md
 docs/PatchedIdentificationStageRequest.md
 docs/PatchedInvitationRequest.md
 docs/PatchedInvitationStageRequest.md
+docs/PatchedKerberosSourcePropertyMappingRequest.md
+docs/PatchedKerberosSourceRequest.md
 docs/PatchedKubernetesServiceConnectionRequest.md
 docs/PatchedLdapProviderRequest.md
 docs/PatchedLdapSourcePropertyMappingRequest.md
@@ -478,6 +490,7 @@ docs/PatchedTenantRequest.md
 docs/PatchedTokenRequest.md
 docs/PatchedTotpDeviceRequest.md
 docs/PatchedUserDeleteStageRequest.md
+docs/PatchedUserKerberosSourceConnectionRequest.md
 docs/PatchedUserLoginStageRequest.md
 docs/PatchedUserLogoutStageRequest.md
 docs/PatchedUserOAuthSourceConnectionRequest.md
@@ -643,6 +656,8 @@ docs/UserDeleteStageRequest.md
 docs/UserFieldsEnum.md
 docs/UserGroup.md
 docs/UserGroupRequest.md
+docs/UserKerberosSourceConnection.md
+docs/UserKerberosSourceConnectionRequest.md
 docs/UserLoginChallenge.md
 docs/UserLoginChallengeResponseRequest.md
 docs/UserLoginStage.md
@@ -866,6 +881,7 @@ src/models/google_workspace_provider_request.rs
 src/models/google_workspace_provider_user.rs
 src/models/google_workspace_provider_user_request.rs
 src/models/group.rs
+src/models/group_kerberos_source_connection.rs
 src/models/group_matching_mode_enum.rs
 src/models/group_member.rs
 src/models/group_member_request.rs
@@ -885,6 +901,11 @@ src/models/invitation_request.rs
 src/models/invitation_stage.rs
 src/models/invitation_stage_request.rs
 src/models/issuer_mode_enum.rs
+src/models/kerberos_source.rs
+src/models/kerberos_source_property_mapping.rs
+src/models/kerberos_source_property_mapping_request.rs
+src/models/kerberos_source_request.rs
+src/models/kerberos_sync_status.rs
 src/models/kubernetes_service_connection.rs
 src/models/kubernetes_service_connection_request.rs
 src/models/ldap_check_access.rs
@@ -989,6 +1010,7 @@ src/models/paginated_google_workspace_provider_group_list.rs
 src/models/paginated_google_workspace_provider_list.rs
 src/models/paginated_google_workspace_provider_mapping_list.rs
 src/models/paginated_google_workspace_provider_user_list.rs
+src/models/paginated_group_kerberos_source_connection_list.rs
 src/models/paginated_group_list.rs
 src/models/paginated_group_o_auth_source_connection_list.rs
 src/models/paginated_group_plex_source_connection_list.rs
@@ -996,6 +1018,8 @@ src/models/paginated_group_saml_source_connection_list.rs
 src/models/paginated_identification_stage_list.rs
 src/models/paginated_invitation_list.rs
 src/models/paginated_invitation_stage_list.rs
+src/models/paginated_kerberos_source_list.rs
+src/models/paginated_kerberos_source_property_mapping_list.rs
 src/models/paginated_kubernetes_service_connection_list.rs
 src/models/paginated_ldap_outpost_config_list.rs
 src/models/paginated_ldap_provider_list.rs
@@ -1064,6 +1088,7 @@ src/models/paginated_totp_device_list.rs
 src/models/paginated_user_assigned_object_permission_list.rs
 src/models/paginated_user_consent_list.rs
 src/models/paginated_user_delete_stage_list.rs
+src/models/paginated_user_kerberos_source_connection_list.rs
 src/models/paginated_user_list.rs
 src/models/paginated_user_login_stage_list.rs
 src/models/paginated_user_logout_stage_list.rs
@@ -1120,6 +1145,8 @@ src/models/patched_group_request.rs
 src/models/patched_identification_stage_request.rs
 src/models/patched_invitation_request.rs
 src/models/patched_invitation_stage_request.rs
+src/models/patched_kerberos_source_property_mapping_request.rs
+src/models/patched_kerberos_source_request.rs
 src/models/patched_kubernetes_service_connection_request.rs
 src/models/patched_ldap_provider_request.rs
 src/models/patched_ldap_source_property_mapping_request.rs
@@ -1170,6 +1197,7 @@ src/models/patched_tenant_request.rs
 src/models/patched_token_request.rs
 src/models/patched_totp_device_request.rs
 src/models/patched_user_delete_stage_request.rs
+src/models/patched_user_kerberos_source_connection_request.rs
 src/models/patched_user_login_stage_request.rs
 src/models/patched_user_logout_stage_request.rs
 src/models/patched_user_o_auth_source_connection_request.rs
@@ -1325,6 +1353,8 @@ src/models/user_delete_stage_request.rs
 src/models/user_fields_enum.rs
 src/models/user_group.rs
 src/models/user_group_request.rs
+src/models/user_kerberos_source_connection.rs
+src/models/user_kerberos_source_connection_request.rs
 src/models/user_login_challenge.rs
 src/models/user_login_challenge_response_request.rs
 src/models/user_login_stage.rs

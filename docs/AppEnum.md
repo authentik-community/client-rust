@@ -26,6 +26,7 @@
 | ProvidersPeriodScim | authentik.providers.scim |
 | Rbac | authentik.rbac |
 | Recovery | authentik.recovery |
+| SourcesPeriodKerberos | authentik.sources.kerberos |
 | SourcesPeriodLdap | authentik.sources.ldap |
 | SourcesPeriodOauth | authentik.sources.oauth |
 | SourcesPeriodPlex | authentik.sources.plex |

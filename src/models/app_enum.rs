@@ -58,6 +58,8 @@ pub enum AppEnum {
     Rbac,
     #[serde(rename = "authentik.recovery")]
     Recovery,
+    #[serde(rename = "authentik.sources.kerberos")]
+    SourcesPeriodKerberos,
     #[serde(rename = "authentik.sources.ldap")]
     SourcesPeriodLdap,
     #[serde(rename = "authentik.sources.oauth")]
@@ -157,6 +159,7 @@ impl std::fmt::Display for AppEnum {
             Self::ProvidersPeriodScim => write!(f, "authentik.providers.scim"),
             Self::Rbac => write!(f, "authentik.rbac"),
             Self::Recovery => write!(f, "authentik.recovery"),
+            Self::SourcesPeriodKerberos => write!(f, "authentik.sources.kerberos"),
             Self::SourcesPeriodLdap => write!(f, "authentik.sources.ldap"),
             Self::SourcesPeriodOauth => write!(f, "authentik.sources.oauth"),
             Self::SourcesPeriodPlex => write!(f, "authentik.sources.plex"),
