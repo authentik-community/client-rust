@@ -20,6 +20,8 @@ pub struct DeviceChallengeRequest {
     pub device_uid: String,
     #[serde(rename = "challenge")]
     pub challenge: std::collections::HashMap<String, serde_json::Value>,
+    #[serde(rename = "last_used", deserialize_with = "Option::deserialize")]
+    pub last_used: Option<String>,
 }
 
 impl DeviceChallengeRequest {
@@ -28,11 +30,13 @@ impl DeviceChallengeRequest {
         device_class: String,
         device_uid: String,
         challenge: std::collections::HashMap<String, serde_json::Value>,
+        last_used: Option<String>,
     ) -> DeviceChallengeRequest {
         DeviceChallengeRequest {
             device_class,
             device_uid,
             challenge,
+            last_used,
         }
     }
 }
