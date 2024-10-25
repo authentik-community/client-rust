@@ -3250,7 +3250,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_identification_list
 
-> models::PaginatedIdentificationStageList stages_identification_list(case_insensitive_matching, enrollment_flow, name, ordering, page, page_size, password_stage, passwordless_flow, recovery_flow, search, show_matched_user, show_source_labels)
+> models::PaginatedIdentificationStageList stages_identification_list(captcha_stage, case_insensitive_matching, enrollment_flow, name, ordering, page, page_size, password_stage, passwordless_flow, recovery_flow, search, show_matched_user, show_source_labels)
 
 
 IdentificationStage Viewset
@@ -3260,6 +3260,7 @@ IdentificationStage Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**captcha_stage** | Option<**uuid::Uuid**> |  |  |
 **case_insensitive_matching** | Option<**bool**> |  |  |
 **enrollment_flow** | Option<**uuid::Uuid**> |  |  |
 **name** | Option<**String**> |  |  |

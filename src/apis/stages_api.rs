@@ -6218,6 +6218,7 @@ pub async fn stages_identification_destroy(
 /// IdentificationStage Viewset
 pub async fn stages_identification_list(
     configuration: &configuration::Configuration,
+    captcha_stage: Option<&str>,
     case_insensitive_matching: Option<bool>,
     enrollment_flow: Option<&str>,
     name: Option<&str>,
@@ -6238,6 +6239,9 @@ pub async fn stages_identification_list(
     let local_var_uri_str = format!("{}/stages/identification/", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = captcha_stage {
+        local_var_req_builder = local_var_req_builder.query(&[("captcha_stage", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = case_insensitive_matching {
         local_var_req_builder =
             local_var_req_builder.query(&[("case_insensitive_matching", &local_var_str.to_string())]);

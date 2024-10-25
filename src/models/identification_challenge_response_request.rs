@@ -25,6 +25,13 @@ pub struct IdentificationChallengeResponseRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub password: Option<Option<String>>,
+    #[serde(
+        rename = "captcha_token",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub captcha_token: Option<Option<String>>,
 }
 
 impl IdentificationChallengeResponseRequest {
@@ -34,6 +41,7 @@ impl IdentificationChallengeResponseRequest {
             component: None,
             uid_field,
             password: None,
+            captcha_token: None,
         }
     }
 }

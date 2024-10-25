@@ -30,6 +30,8 @@ pub struct IdentificationChallenge {
     pub application_pre: Option<String>,
     #[serde(rename = "flow_designation")]
     pub flow_designation: models::FlowDesignationEnum,
+    #[serde(rename = "captcha_stage", skip_serializing_if = "Option::is_none")]
+    pub captcha_stage: Option<models::CaptchaChallenge>,
     #[serde(rename = "enroll_url", skip_serializing_if = "Option::is_none")]
     pub enroll_url: Option<String>,
     #[serde(rename = "recovery_url", skip_serializing_if = "Option::is_none")]
@@ -62,6 +64,7 @@ impl IdentificationChallenge {
             allow_show_password: None,
             application_pre: None,
             flow_designation,
+            captcha_stage: None,
             enroll_url: None,
             recovery_url: None,
             passwordless_url: None,

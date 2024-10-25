@@ -29,6 +29,14 @@ pub struct PatchedIdentificationStageRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub password_stage: Option<Option<uuid::Uuid>>,
+    /// When set, adds functionality exactly like a Captcha stage, but baked into the Identification stage.
+    #[serde(
+        rename = "captcha_stage",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub captcha_stage: Option<Option<uuid::Uuid>>,
     /// When enabled, user fields are matched regardless of their casing.
     #[serde(rename = "case_insensitive_matching", skip_serializing_if = "Option::is_none")]
     pub case_insensitive_matching: Option<bool>,
@@ -77,6 +85,7 @@ impl PatchedIdentificationStageRequest {
             flow_set: None,
             user_fields: None,
             password_stage: None,
+            captcha_stage: None,
             case_insensitive_matching: None,
             show_matched_user: None,
             enrollment_flow: None,

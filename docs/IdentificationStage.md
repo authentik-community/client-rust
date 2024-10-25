@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **flow_set** | Option<[**Vec<models::FlowSet>**](FlowSet.md)> |  | [optional]
 **user_fields** | Option<[**Vec<models::UserFieldsEnum>**](UserFieldsEnum.md)> | Fields of the user object to match against. (Hold shift to select multiple options) | [optional]
 **password_stage** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | When set, shows a password field, instead of showing the password field as separate step. | [optional]
+**captcha_stage** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | When set, adds functionality exactly like a Captcha stage, but baked into the Identification stage. | [optional]
 **case_insensitive_matching** | Option<**bool**> | When enabled, user fields are matched regardless of their casing. | [optional]
 **show_matched_user** | Option<**bool**> | When a valid username/email has been entered, and this option is enabled, the user's username and avatar will be shown. Otherwise, the text that the user entered will be shown | [optional]
 **enrollment_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optional enrollment flow, which is linked at the bottom of the page. | [optional]
