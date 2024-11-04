@@ -76,7 +76,7 @@ pub struct PatchedKerberosSourceRequest {
     /// Credentials cache to authenticate to kadmin for sync. Must be in the form TYPE:residual
     #[serde(rename = "sync_ccache", skip_serializing_if = "Option::is_none")]
     pub sync_ccache: Option<String>,
-    /// Force the use of a specific server name for SPNEGO
+    /// Force the use of a specific server name for SPNEGO. Must be in the form HTTP@hostname
     #[serde(rename = "spnego_server_name", skip_serializing_if = "Option::is_none")]
     pub spnego_server_name: Option<String>,
     /// SPNEGO keytab base64-encoded or path to keytab in the form FILE:path

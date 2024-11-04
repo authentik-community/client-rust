@@ -92,7 +92,7 @@ pub struct KerberosSource {
     /// Get cached source connectivity
     #[serde(rename = "connectivity", deserialize_with = "Option::deserialize")]
     pub connectivity: Option<std::collections::HashMap<String, String>>,
-    /// Force the use of a specific server name for SPNEGO
+    /// Force the use of a specific server name for SPNEGO. Must be in the form HTTP@hostname
     #[serde(rename = "spnego_server_name", skip_serializing_if = "Option::is_none")]
     pub spnego_server_name: Option<String>,
     /// Credential cache to use for SPNEGO in form type:residual

@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **sync_principal** | Option<**String**> | Principal to authenticate to kadmin for sync. | [optional]
 **sync_ccache** | Option<**String**> | Credentials cache to authenticate to kadmin for sync. Must be in the form TYPE:residual | [optional]
 **connectivity** | Option<**std::collections::HashMap<String, String>**> | Get cached source connectivity | [readonly]
-**spnego_server_name** | Option<**String**> | Force the use of a specific server name for SPNEGO | [optional]
+**spnego_server_name** | Option<**String**> | Force the use of a specific server name for SPNEGO. Must be in the form HTTP@hostname | [optional]
 **spnego_ccache** | Option<**String**> | Credential cache to use for SPNEGO in form type:residual | [optional]
 **password_login_update_internal_password** | Option<**bool**> | If enabled, the authentik-stored password will be updated upon login with the Kerberos password backend | [optional]
 
