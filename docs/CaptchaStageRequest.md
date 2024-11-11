@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **private_key** | **String** | Private key, acquired your captcha Provider. | 
 **js_url** | Option<**String**> |  | [optional]
 **api_url** | Option<**String**> |  | [optional]
+**interactive** | Option<**bool**> |  | [optional]
 **score_min_threshold** | Option<**f64**> |  | [optional]
 **score_max_threshold** | Option<**f64**> |  | [optional]
 **error_on_invalid_score** | Option<**bool**> | When enabled and the received captcha score is outside of the given threshold, the stage will show an error message. When not enabled, the flow will continue, but the data from the captcha will be available in the context for policy decisions | [optional]

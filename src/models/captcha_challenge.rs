@@ -28,6 +28,8 @@ pub struct CaptchaChallenge {
     pub site_key: String,
     #[serde(rename = "js_url")]
     pub js_url: String,
+    #[serde(rename = "interactive")]
+    pub interactive: bool,
 }
 
 impl CaptchaChallenge {
@@ -37,6 +39,7 @@ impl CaptchaChallenge {
         pending_user_avatar: String,
         site_key: String,
         js_url: String,
+        interactive: bool,
     ) -> CaptchaChallenge {
         CaptchaChallenge {
             flow_info: None,
@@ -46,6 +49,7 @@ impl CaptchaChallenge {
             pending_user_avatar,
             site_key,
             js_url,
+            interactive,
         }
     }
 }

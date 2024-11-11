@@ -39,6 +39,8 @@ pub struct CaptchaStage {
     pub js_url: Option<String>,
     #[serde(rename = "api_url", skip_serializing_if = "Option::is_none")]
     pub api_url: Option<String>,
+    #[serde(rename = "interactive", skip_serializing_if = "Option::is_none")]
+    pub interactive: Option<bool>,
     #[serde(rename = "score_min_threshold", skip_serializing_if = "Option::is_none")]
     pub score_min_threshold: Option<f64>,
     #[serde(rename = "score_max_threshold", skip_serializing_if = "Option::is_none")]
@@ -70,6 +72,7 @@ impl CaptchaStage {
             public_key,
             js_url: None,
             api_url: None,
+            interactive: None,
             score_min_threshold: None,
             score_max_threshold: None,
             error_on_invalid_score: None,

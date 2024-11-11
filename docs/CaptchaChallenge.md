@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **pending_user_avatar** | **String** |  | 
 **site_key** | **String** |  | 
 **js_url** | **String** |  | 
+**interactive** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
