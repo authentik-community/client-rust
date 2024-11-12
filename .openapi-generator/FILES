@@ -184,6 +184,7 @@ docs/IdentificationChallenge.md
 docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
 docs/IdentificationStageRequest.md
+docs/ImpersonationRequest.md
 docs/InstallId.md
 docs/IntentEnum.md
 docs/InvalidResponseActionEnum.md
@@ -893,6 +894,7 @@ src/models/identification_challenge.rs
 src/models/identification_challenge_response_request.rs
 src/models/identification_stage.rs
 src/models/identification_stage_request.rs
+src/models/impersonation_request.rs
 src/models/install_id.rs
 src/models/intent_enum.rs
 src/models/invalid_response_action_enum.rs

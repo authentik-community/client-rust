@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **footer_links** | Option<[**serde_json::Value**](.md)> | The option configures the footer links on the flow executor pages. | [optional]
 **gdpr_compliance** | Option<**bool**> | When enabled, all the events caused by a user will be deleted upon the user's deletion. | [optional]
 **impersonation** | Option<**bool**> | Globally enable/disable impersonation. | [optional]
+**impersonation_require_reason** | Option<**bool**> | Require administrators to provide a reason for impersonating a user. | [optional]
 **default_token_duration** | Option<**String**> | Default token duration | [optional]
 **default_token_length** | Option<**u32**> | Default token length | [optional]
 

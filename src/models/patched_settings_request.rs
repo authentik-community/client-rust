@@ -43,6 +43,9 @@ pub struct PatchedSettingsRequest {
     /// Globally enable/disable impersonation.
     #[serde(rename = "impersonation", skip_serializing_if = "Option::is_none")]
     pub impersonation: Option<bool>,
+    /// Require administrators to provide a reason for impersonating a user.
+    #[serde(rename = "impersonation_require_reason", skip_serializing_if = "Option::is_none")]
+    pub impersonation_require_reason: Option<bool>,
     /// Default token duration
     #[serde(rename = "default_token_duration", skip_serializing_if = "Option::is_none")]
     pub default_token_duration: Option<String>,
@@ -63,6 +66,7 @@ impl PatchedSettingsRequest {
             footer_links: None,
             gdpr_compliance: None,
             impersonation: None,
+            impersonation_require_reason: None,
             default_token_duration: None,
             default_token_length: None,
         }

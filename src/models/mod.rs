@@ -348,6 +348,8 @@ pub mod identification_stage;
 pub use self::identification_stage::IdentificationStage;
 pub mod identification_stage_request;
 pub use self::identification_stage_request::IdentificationStageRequest;
+pub mod impersonation_request;
+pub use self::impersonation_request::ImpersonationRequest;
 pub mod install_id;
 pub use self::install_id::InstallId;
 pub mod intent_enum;

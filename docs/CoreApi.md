@@ -1582,7 +1582,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_users_impersonate_create
 
-> core_users_impersonate_create(id)
+> core_users_impersonate_create(id, impersonation_request)
 
 
 Impersonate a user
@@ -1593,6 +1593,7 @@ Impersonate a user
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this User. | [required] |
+**impersonation_request** | [**ImpersonationRequest**](ImpersonationRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1604,7 +1605,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

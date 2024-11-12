@@ -2868,6 +2868,7 @@ pub async fn core_users_destroy(
 pub async fn core_users_impersonate_create(
     configuration: &configuration::Configuration,
     id: i32,
+    impersonation_request: models::ImpersonationRequest,
 ) -> Result<(), Error<CoreUsersImpersonateCreateError>> {
     let local_var_configuration = configuration;
 
@@ -2886,6 +2887,7 @@ pub async fn core_users_impersonate_create(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&impersonation_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
