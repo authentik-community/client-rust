@@ -17,12 +17,12 @@ pub struct OAuthDeviceCodeChallengeResponseRequest {
     #[serde(rename = "component", skip_serializing_if = "Option::is_none")]
     pub component: Option<String>,
     #[serde(rename = "code")]
-    pub code: i32,
+    pub code: String,
 }
 
 impl OAuthDeviceCodeChallengeResponseRequest {
     /// Response that includes the user-entered device code
-    pub fn new(code: i32) -> OAuthDeviceCodeChallengeResponseRequest {
+    pub fn new(code: String) -> OAuthDeviceCodeChallengeResponseRequest {
         OAuthDeviceCodeChallengeResponseRequest { component: None, code }
     }
 }
