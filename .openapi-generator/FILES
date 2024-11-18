@@ -643,6 +643,7 @@ docs/TotpDevice.md
 docs/TotpDeviceRequest.md
 docs/TransactionApplicationRequest.md
 docs/TransactionApplicationResponse.md
+docs/TransactionPolicyBindingRequest.md
 docs/TypeCreate.md
 docs/UiThemeEnum.md
 docs/UsedBy.md
@@ -1341,6 +1342,7 @@ src/models/totp_device.rs
 src/models/totp_device_request.rs
 src/models/transaction_application_request.rs
 src/models/transaction_application_response.rs
+src/models/transaction_policy_binding_request.rs
 src/models/type_create.rs
 src/models/ui_theme_enum.rs
 src/models/used_by.rs

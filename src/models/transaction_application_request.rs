@@ -20,6 +20,8 @@ pub struct TransactionApplicationRequest {
     pub provider_model: models::ProviderModelEnum,
     #[serde(rename = "provider")]
     pub provider: models::ModelRequest,
+    #[serde(rename = "policy_bindings", skip_serializing_if = "Option::is_none")]
+    pub policy_bindings: Option<Vec<models::TransactionPolicyBindingRequest>>,
 }
 
 impl TransactionApplicationRequest {
@@ -33,6 +35,7 @@ impl TransactionApplicationRequest {
             app,
             provider_model,
             provider,
+            policy_bindings: None,
         }
     }
 }

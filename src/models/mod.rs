@@ -1240,6 +1240,8 @@ pub mod transaction_application_request;
 pub use self::transaction_application_request::TransactionApplicationRequest;
 pub mod transaction_application_response;
 pub use self::transaction_application_response::TransactionApplicationResponse;
+pub mod transaction_policy_binding_request;
+pub use self::transaction_policy_binding_request::TransactionPolicyBindingRequest;
 pub mod type_create;
 pub use self::type_create::TypeCreate;
 pub mod ui_theme_enum;
