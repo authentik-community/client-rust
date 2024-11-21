@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **basic_auth_user_attribute** | Option<**String**> | User/Group Attribute used for the user part of the HTTP-Basic Header. If not set, the user's Email address is used. | [optional]
 **mode** | Option<[**models::ProxyMode**](ProxyMode.md)> | Enable support for forwardAuth in traefik and nginx auth_request. Exclusive with internal_host. | [optional]
 **intercept_header_auth** | Option<**bool**> | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional]
-**redirect_uris** | **String** |  | [readonly]
+**redirect_uris** | [**Vec<models::RedirectUri>**](RedirectURI.md) |  | [readonly]
 **cookie_domain** | Option<**String**> |  | [optional]
 **jwks_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **access_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]

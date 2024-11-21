@@ -93,7 +93,7 @@ pub struct ProxyProvider {
     #[serde(rename = "intercept_header_auth", skip_serializing_if = "Option::is_none")]
     pub intercept_header_auth: Option<bool>,
     #[serde(rename = "redirect_uris")]
-    pub redirect_uris: String,
+    pub redirect_uris: Vec<models::RedirectUri>,
     #[serde(rename = "cookie_domain", skip_serializing_if = "Option::is_none")]
     pub cookie_domain: Option<String>,
     #[serde(rename = "jwks_sources", skip_serializing_if = "Option::is_none")]
@@ -125,7 +125,7 @@ impl ProxyProvider {
         meta_model_name: String,
         client_id: String,
         external_host: String,
-        redirect_uris: String,
+        redirect_uris: Vec<models::RedirectUri>,
         outpost_set: Vec<String>,
     ) -> ProxyProvider {
         ProxyProvider {
