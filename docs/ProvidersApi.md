@@ -1737,7 +1737,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_oauth2_list
 
-> models::PaginatedOAuth2ProviderList providers_oauth2_list(access_code_validity, access_token_validity, application, authorization_flow, client_id, client_type, include_claims_in_id_token, issuer_mode, name, ordering, page, page_size, property_mappings, redirect_uris, refresh_token_validity, search, signing_key, sub_mode)
+> models::PaginatedOAuth2ProviderList providers_oauth2_list(access_code_validity, access_token_validity, application, authorization_flow, client_id, client_type, include_claims_in_id_token, issuer_mode, name, ordering, page, page_size, property_mappings, refresh_token_validity, search, signing_key, sub_mode)
 
 
 OAuth2Provider Viewset
@@ -1760,7 +1760,6 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
-**redirect_uris** | Option<**String**> |  |  |
 **refresh_token_validity** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **signing_key** | Option<**uuid::Uuid**> |  |  |
@@ -2027,7 +2026,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_proxy_list
 
-> models::PaginatedProxyProviderList providers_proxy_list(application__isnull, authorization_flow__slug__iexact, basic_auth_enabled__iexact, basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact, certificate__name__iexact, cookie_domain__iexact, external_host__iexact, internal_host__iexact, internal_host_ssl_validation__iexact, mode__iexact, name__iexact, ordering, page, page_size, property_mappings__iexact, redirect_uris__iexact, search, skip_path_regex__iexact)
+> models::PaginatedProxyProviderList providers_proxy_list(application__isnull, authorization_flow__slug__iexact, basic_auth_enabled__iexact, basic_auth_password_attribute__iexact, basic_auth_user_attribute__iexact, certificate__kp_uuid__iexact, certificate__name__iexact, cookie_domain__iexact, external_host__iexact, internal_host__iexact, internal_host_ssl_validation__iexact, mode__iexact, name__iexact, ordering, page, page_size, property_mappings__iexact, search, skip_path_regex__iexact)
 
 
 ProxyProvider Viewset
@@ -2054,7 +2053,6 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **property_mappings__iexact** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
-**redirect_uris__iexact** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **skip_path_regex__iexact** | Option<**String**> |  |  |
 

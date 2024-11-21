@@ -3427,7 +3427,6 @@ pub async fn providers_oauth2_list(
     page: Option<i32>,
     page_size: Option<i32>,
     property_mappings: Option<Vec<uuid::Uuid>>,
-    redirect_uris: Option<&str>,
     refresh_token_validity: Option<&str>,
     search: Option<&str>,
     signing_key: Option<&str>,
@@ -3495,9 +3494,6 @@ pub async fn providers_oauth2_list(
                     .to_string(),
             )]),
         };
-    }
-    if let Some(ref local_var_str) = redirect_uris {
-        local_var_req_builder = local_var_req_builder.query(&[("redirect_uris", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = refresh_token_validity {
         local_var_req_builder = local_var_req_builder.query(&[("refresh_token_validity", &local_var_str.to_string())]);
@@ -3884,7 +3880,6 @@ pub async fn providers_proxy_list(
     page: Option<i32>,
     page_size: Option<i32>,
     property_mappings__iexact: Option<Vec<uuid::Uuid>>,
-    redirect_uris__iexact: Option<&str>,
     search: Option<&str>,
     skip_path_regex__iexact: Option<&str>,
 ) -> Result<models::PaginatedProxyProviderList, Error<ProvidersProxyListError>> {
@@ -3968,9 +3963,6 @@ pub async fn providers_proxy_list(
                     .to_string(),
             )]),
         };
-    }
-    if let Some(ref local_var_str) = redirect_uris__iexact {
-        local_var_req_builder = local_var_req_builder.query(&[("redirect_uris__iexact", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = search {
         local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);

@@ -223,6 +223,7 @@ docs/LoginChallengeTypes.md
 docs/LoginMetrics.md
 docs/LoginSource.md
 docs/ManagedApi.md
+docs/MatchingModeEnum.md
 docs/Metadata.md
 docs/MicrosoftEntraProvider.md
 docs/MicrosoftEntraProviderGroup.md
@@ -554,6 +555,8 @@ docs/RadiusProviderPropertyMappingRequest.md
 docs/RadiusProviderRequest.md
 docs/RbacApi.md
 docs/RedirectChallenge.md
+docs/RedirectUri.md
+docs/RedirectUriRequest.md
 docs/Reputation.md
 docs/ReputationPolicy.md
 docs/ReputationPolicyRequest.md
@@ -933,6 +936,7 @@ src/models/log_level_enum.rs
 src/models/login_challenge_types.rs
 src/models/login_metrics.rs
 src/models/login_source.rs
+src/models/matching_mode_enum.rs
 src/models/metadata.rs
 src/models/microsoft_entra_provider.rs
 src/models/microsoft_entra_provider_group.rs
@@ -1258,6 +1262,8 @@ src/models/radius_provider_property_mapping.rs
 src/models/radius_provider_property_mapping_request.rs
 src/models/radius_provider_request.rs
 src/models/redirect_challenge.rs
+src/models/redirect_uri.rs
+src/models/redirect_uri_request.rs
 src/models/reputation.rs
 src/models/reputation_policy.rs
 src/models/reputation_policy_request.rs

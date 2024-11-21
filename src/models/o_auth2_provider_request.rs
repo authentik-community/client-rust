@@ -67,9 +67,8 @@ pub struct OAuth2ProviderRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub encryption_key: Option<Option<uuid::Uuid>>,
-    /// Enter each URI on a new line.
-    #[serde(rename = "redirect_uris", skip_serializing_if = "Option::is_none")]
-    pub redirect_uris: Option<String>,
+    #[serde(rename = "redirect_uris")]
+    pub redirect_uris: Vec<models::RedirectUriRequest>,
     /// Configure what data should be used as unique User Identifier. For most cases, the default should be fine.
     #[serde(rename = "sub_mode", skip_serializing_if = "Option::is_none")]
     pub sub_mode: Option<models::SubModeEnum>,
@@ -82,7 +81,12 @@ pub struct OAuth2ProviderRequest {
 
 impl OAuth2ProviderRequest {
     /// OAuth2Provider Serializer
-    pub fn new(name: String, authorization_flow: uuid::Uuid, invalidation_flow: uuid::Uuid) -> OAuth2ProviderRequest {
+    pub fn new(
+        name: String,
+        authorization_flow: uuid::Uuid,
+        invalidation_flow: uuid::Uuid,
+        redirect_uris: Vec<models::RedirectUriRequest>,
+    ) -> OAuth2ProviderRequest {
         OAuth2ProviderRequest {
             name,
             authentication_flow: None,
@@ -98,7 +102,7 @@ impl OAuth2ProviderRequest {
             include_claims_in_id_token: None,
             signing_key: None,
             encryption_key: None,
-            redirect_uris: None,
+            redirect_uris,
             sub_mode: None,
             issuer_mode: None,
             jwks_sources: None,

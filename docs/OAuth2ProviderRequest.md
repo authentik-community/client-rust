@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **include_claims_in_id_token** | Option<**bool**> | Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint. | [optional]
 **signing_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to sign the tokens. | [optional]
 **encryption_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional]
-**redirect_uris** | Option<**String**> | Enter each URI on a new line. | [optional]
+**redirect_uris** | [**Vec<models::RedirectUriRequest>**](RedirectURIRequest.md) |  | 
 **sub_mode** | Option<[**models::SubModeEnum**](SubModeEnum.md)> | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional]
 **issuer_mode** | Option<[**models::IssuerModeEnum**](IssuerModeEnum.md)> | Configure how the issuer field of the ID Token should be filled. | [optional]
 **jwks_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
