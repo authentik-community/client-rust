@@ -30,7 +30,8 @@ Name | Type | Description | Notes
 **redirect_uris** | [**Vec<models::RedirectUri>**](RedirectURI.md) |  | 
 **sub_mode** | Option<[**models::SubModeEnum**](SubModeEnum.md)> | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional]
 **issuer_mode** | Option<[**models::IssuerModeEnum**](IssuerModeEnum.md)> | Configure how the issuer field of the ID Token should be filled. | [optional]
-**jwks_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**jwt_federation_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**jwt_federation_providers** | Option<**Vec<i32>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

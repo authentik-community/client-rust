@@ -66,8 +66,10 @@ pub struct ProxyProviderRequest {
     pub intercept_header_auth: Option<bool>,
     #[serde(rename = "cookie_domain", skip_serializing_if = "Option::is_none")]
     pub cookie_domain: Option<String>,
-    #[serde(rename = "jwks_sources", skip_serializing_if = "Option::is_none")]
-    pub jwks_sources: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "jwt_federation_sources", skip_serializing_if = "Option::is_none")]
+    pub jwt_federation_sources: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "jwt_federation_providers", skip_serializing_if = "Option::is_none")]
+    pub jwt_federation_providers: Option<Vec<i32>>,
     /// Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).
     #[serde(rename = "access_token_validity", skip_serializing_if = "Option::is_none")]
     pub access_token_validity: Option<String>,
@@ -101,7 +103,8 @@ impl ProxyProviderRequest {
             mode: None,
             intercept_header_auth: None,
             cookie_domain: None,
-            jwks_sources: None,
+            jwt_federation_sources: None,
+            jwt_federation_providers: None,
             access_token_validity: None,
             refresh_token_validity: None,
         }

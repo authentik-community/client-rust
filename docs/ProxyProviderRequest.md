@@ -20,7 +20,8 @@ Name | Type | Description | Notes
 **mode** | Option<[**models::ProxyMode**](ProxyMode.md)> | Enable support for forwardAuth in traefik and nginx auth_request. Exclusive with internal_host. | [optional]
 **intercept_header_auth** | Option<**bool**> | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional]
 **cookie_domain** | Option<**String**> |  | [optional]
-**jwks_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**jwt_federation_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**jwt_federation_providers** | Option<**Vec<i32>**> |  | [optional]
 **access_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **refresh_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 

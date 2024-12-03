@@ -75,8 +75,10 @@ pub struct PatchedOAuth2ProviderRequest {
     /// Configure how the issuer field of the ID Token should be filled.
     #[serde(rename = "issuer_mode", skip_serializing_if = "Option::is_none")]
     pub issuer_mode: Option<models::IssuerModeEnum>,
-    #[serde(rename = "jwks_sources", skip_serializing_if = "Option::is_none")]
-    pub jwks_sources: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "jwt_federation_sources", skip_serializing_if = "Option::is_none")]
+    pub jwt_federation_sources: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "jwt_federation_providers", skip_serializing_if = "Option::is_none")]
+    pub jwt_federation_providers: Option<Vec<i32>>,
 }
 
 impl PatchedOAuth2ProviderRequest {
@@ -100,7 +102,8 @@ impl PatchedOAuth2ProviderRequest {
             redirect_uris: None,
             sub_mode: None,
             issuer_mode: None,
-            jwks_sources: None,
+            jwt_federation_sources: None,
+            jwt_federation_providers: None,
         }
     }
 }
