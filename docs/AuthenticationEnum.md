@@ -8,6 +8,7 @@
 | RequireAuthenticated | require_authenticated |
 | RequireUnauthenticated | require_unauthenticated |
 | RequireSuperuser | require_superuser |
+| RequireRedirect | require_redirect |
 | RequireOutpost | require_outpost |
 
 

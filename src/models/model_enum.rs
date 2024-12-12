@@ -152,6 +152,8 @@ pub enum ModelEnum {
     StagesPromptPeriodPrompt,
     #[serde(rename = "authentik_stages_prompt.promptstage")]
     StagesPromptPeriodPromptstage,
+    #[serde(rename = "authentik_stages_redirect.redirectstage")]
+    StagesRedirectPeriodRedirectstage,
     #[serde(rename = "authentik_stages_user_delete.userdeletestage")]
     StagesUserDeletePeriodUserdeletestage,
     #[serde(rename = "authentik_stages_user_login.userloginstage")]
@@ -336,6 +338,7 @@ impl std::fmt::Display for ModelEnum {
             Self::StagesPasswordPeriodPasswordstage => write!(f, "authentik_stages_password.passwordstage"),
             Self::StagesPromptPeriodPrompt => write!(f, "authentik_stages_prompt.prompt"),
             Self::StagesPromptPeriodPromptstage => write!(f, "authentik_stages_prompt.promptstage"),
+            Self::StagesRedirectPeriodRedirectstage => write!(f, "authentik_stages_redirect.redirectstage"),
             Self::StagesUserDeletePeriodUserdeletestage => write!(f, "authentik_stages_user_delete.userdeletestage"),
             Self::StagesUserLoginPeriodUserloginstage => write!(f, "authentik_stages_user_login.userloginstage"),
             Self::StagesUserLogoutPeriodUserlogoutstage => write!(f, "authentik_stages_user_logout.userlogoutstage"),

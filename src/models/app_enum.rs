@@ -102,6 +102,8 @@ pub enum AppEnum {
     StagesPeriodPassword,
     #[serde(rename = "authentik.stages.prompt")]
     StagesPeriodPrompt,
+    #[serde(rename = "authentik.stages.redirect")]
+    StagesPeriodRedirect,
     #[serde(rename = "authentik.stages.user_delete")]
     StagesPeriodUserDelete,
     #[serde(rename = "authentik.stages.user_login")]
@@ -181,6 +183,7 @@ impl std::fmt::Display for AppEnum {
             Self::StagesPeriodInvitation => write!(f, "authentik.stages.invitation"),
             Self::StagesPeriodPassword => write!(f, "authentik.stages.password"),
             Self::StagesPeriodPrompt => write!(f, "authentik.stages.prompt"),
+            Self::StagesPeriodRedirect => write!(f, "authentik.stages.redirect"),
             Self::StagesPeriodUserDelete => write!(f, "authentik.stages.user_delete"),
             Self::StagesPeriodUserLogin => write!(f, "authentik.stages.user_login"),
             Self::StagesPeriodUserLogout => write!(f, "authentik.stages.user_logout"),

@@ -52,6 +52,8 @@ pub enum FlowChallengeResponseRequest {
     AkSourcePlex(models::PlexAuthenticationChallengeResponseRequest),
     #[serde(rename = "ak-stage-prompt")]
     AkStagePrompt(models::PromptChallengeResponseRequest),
+    #[serde(rename = "xak-flow-redirect")]
+    XakFlowRedirect(models::RedirectChallengeResponseRequest),
     #[serde(rename = "ak-stage-user-login")]
     AkStageUserLogin(models::UserLoginChallengeResponseRequest),
 }

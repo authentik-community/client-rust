@@ -73,6 +73,7 @@
 | StagesPasswordPeriodPasswordstage | authentik_stages_password.passwordstage |
 | StagesPromptPeriodPrompt | authentik_stages_prompt.prompt |
 | StagesPromptPeriodPromptstage | authentik_stages_prompt.promptstage |
+| StagesRedirectPeriodRedirectstage | authentik_stages_redirect.redirectstage |
 | StagesUserDeletePeriodUserdeletestage | authentik_stages_user_delete.userdeletestage |
 | StagesUserLoginPeriodUserloginstage | authentik_stages_user_login.userloginstage |
 | StagesUserLogoutPeriodUserlogoutstage | authentik_stages_user_logout.userlogoutstage |

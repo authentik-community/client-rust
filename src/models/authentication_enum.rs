@@ -22,6 +22,8 @@ pub enum AuthenticationEnum {
     RequireUnauthenticated,
     #[serde(rename = "require_superuser")]
     RequireSuperuser,
+    #[serde(rename = "require_redirect")]
+    RequireRedirect,
     #[serde(rename = "require_outpost")]
     RequireOutpost,
 }
@@ -33,6 +35,7 @@ impl std::fmt::Display for AuthenticationEnum {
             Self::RequireAuthenticated => write!(f, "require_authenticated"),
             Self::RequireUnauthenticated => write!(f, "require_unauthenticated"),
             Self::RequireSuperuser => write!(f, "require_superuser"),
+            Self::RequireRedirect => write!(f, "require_redirect"),
             Self::RequireOutpost => write!(f, "require_outpost"),
         }
     }

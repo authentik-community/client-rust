@@ -48,6 +48,7 @@
 | StagesPeriodInvitation | authentik.stages.invitation |
 | StagesPeriodPassword | authentik.stages.password |
 | StagesPeriodPrompt | authentik.stages.prompt |
+| StagesPeriodRedirect | authentik.stages.redirect |
 | StagesPeriodUserDelete | authentik.stages.user_delete |
 | StagesPeriodUserLogin | authentik.stages.user_login |
 | StagesPeriodUserLogout | authentik.stages.user_logout |

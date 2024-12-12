@@ -143,6 +143,13 @@ Method | HTTP request | Description
 [**stages_prompt_stages_retrieve**](StagesApi.md#stages_prompt_stages_retrieve) | **GET** /stages/prompt/stages/{stage_uuid}/ | 
 [**stages_prompt_stages_update**](StagesApi.md#stages_prompt_stages_update) | **PUT** /stages/prompt/stages/{stage_uuid}/ | 
 [**stages_prompt_stages_used_by_list**](StagesApi.md#stages_prompt_stages_used_by_list) | **GET** /stages/prompt/stages/{stage_uuid}/used_by/ | 
+[**stages_redirect_create**](StagesApi.md#stages_redirect_create) | **POST** /stages/redirect/ | 
+[**stages_redirect_destroy**](StagesApi.md#stages_redirect_destroy) | **DELETE** /stages/redirect/{stage_uuid}/ | 
+[**stages_redirect_list**](StagesApi.md#stages_redirect_list) | **GET** /stages/redirect/ | 
+[**stages_redirect_partial_update**](StagesApi.md#stages_redirect_partial_update) | **PATCH** /stages/redirect/{stage_uuid}/ | 
+[**stages_redirect_retrieve**](StagesApi.md#stages_redirect_retrieve) | **GET** /stages/redirect/{stage_uuid}/ | 
+[**stages_redirect_update**](StagesApi.md#stages_redirect_update) | **PUT** /stages/redirect/{stage_uuid}/ | 
+[**stages_redirect_used_by_list**](StagesApi.md#stages_redirect_used_by_list) | **GET** /stages/redirect/{stage_uuid}/used_by/ | 
 [**stages_source_create**](StagesApi.md#stages_source_create) | **POST** /stages/source/ | 
 [**stages_source_destroy**](StagesApi.md#stages_source_destroy) | **DELETE** /stages/source/{stage_uuid}/ | 
 [**stages_source_list**](StagesApi.md#stages_source_list) | **GET** /stages/source/ | 
@@ -4521,6 +4528,222 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **stage_uuid** | **uuid::Uuid** | A UUID string identifying this Prompt Stage. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_create
+
+> models::RedirectStage stages_redirect_create(redirect_stage_request)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**redirect_stage_request** | [**RedirectStageRequest**](RedirectStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::RedirectStage**](RedirectStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_destroy
+
+> stages_redirect_destroy(stage_uuid)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Redirect Stage. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_list
+
+> models::PaginatedRedirectStageList stages_redirect_list(name, ordering, page, page_size, search)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedRedirectStageList**](PaginatedRedirectStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_partial_update
+
+> models::RedirectStage stages_redirect_partial_update(stage_uuid, patched_redirect_stage_request)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Redirect Stage. | [required] |
+**patched_redirect_stage_request** | Option<[**PatchedRedirectStageRequest**](PatchedRedirectStageRequest.md)> |  |  |
+
+### Return type
+
+[**models::RedirectStage**](RedirectStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_retrieve
+
+> models::RedirectStage stages_redirect_retrieve(stage_uuid)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Redirect Stage. | [required] |
+
+### Return type
+
+[**models::RedirectStage**](RedirectStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_update
+
+> models::RedirectStage stages_redirect_update(stage_uuid, redirect_stage_request)
+
+
+RedirectStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Redirect Stage. | [required] |
+**redirect_stage_request** | [**RedirectStageRequest**](RedirectStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::RedirectStage**](RedirectStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_redirect_used_by_list
+
+> Vec<models::UsedBy> stages_redirect_used_by_list(stage_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Redirect Stage. | [required] |
 
 ### Return type
 
