@@ -2823,6 +2823,7 @@ pub async fn sources_kerberos_destroy(
 pub async fn sources_kerberos_list(
     configuration: &configuration::Configuration,
     enabled: Option<bool>,
+    kadmin_type: Option<&str>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -2845,6 +2846,9 @@ pub async fn sources_kerberos_list(
 
     if let Some(ref local_var_str) = enabled {
         local_var_req_builder = local_var_req_builder.query(&[("enabled", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = kadmin_type {
+        local_var_req_builder = local_var_req_builder.query(&[("kadmin_type", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = name {
         local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);

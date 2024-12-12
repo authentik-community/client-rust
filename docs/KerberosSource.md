@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **group_matching_mode** | Option<[**models::GroupMatchingModeEnum**](GroupMatchingModeEnum.md)> | How the source determines if an existing group should be used or a new group created. | [optional]
 **realm** | **String** | Kerberos realm | 
 **krb5_conf** | Option<**String**> | Custom krb5.conf to use. Uses the system one by default | [optional]
+**kadmin_type** | Option<[**models::KadminTypeEnum**](KadminTypeEnum.md)> | KAdmin server type | [optional]
 **sync_users** | Option<**bool**> | Sync users from Kerberos into authentik | [optional]
 **sync_users_password** | Option<**bool**> | When a user changes their password, sync it back to Kerberos | [optional]
 **sync_principal** | Option<**String**> | Principal to authenticate to kadmin for sync. | [optional]

@@ -1140,6 +1140,7 @@ Class | Method | HTTP request | Description
  - [InvitationStage](docs/InvitationStage.md)
  - [InvitationStageRequest](docs/InvitationStageRequest.md)
  - [IssuerModeEnum](docs/IssuerModeEnum.md)
+ - [KadminTypeEnum](docs/KadminTypeEnum.md)
  - [KerberosSource](docs/KerberosSource.md)
  - [KerberosSourcePropertyMapping](docs/KerberosSourcePropertyMapping.md)
  - [KerberosSourcePropertyMappingRequest](docs/KerberosSourcePropertyMappingRequest.md)

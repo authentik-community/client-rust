@@ -58,6 +58,9 @@ pub struct KerberosSourceRequest {
     /// Custom krb5.conf to use. Uses the system one by default
     #[serde(rename = "krb5_conf", skip_serializing_if = "Option::is_none")]
     pub krb5_conf: Option<String>,
+    /// KAdmin server type
+    #[serde(rename = "kadmin_type", skip_serializing_if = "Option::is_none")]
+    pub kadmin_type: Option<models::KadminTypeEnum>,
     /// Sync users from Kerberos into authentik
     #[serde(rename = "sync_users", skip_serializing_if = "Option::is_none")]
     pub sync_users: Option<bool>,
@@ -110,6 +113,7 @@ impl KerberosSourceRequest {
             group_matching_mode: None,
             realm,
             krb5_conf: None,
+            kadmin_type: None,
             sync_users: None,
             sync_users_password: None,
             sync_principal: None,

@@ -366,6 +366,8 @@ pub mod invitation_stage_request;
 pub use self::invitation_stage_request::InvitationStageRequest;
 pub mod issuer_mode_enum;
 pub use self::issuer_mode_enum::IssuerModeEnum;
+pub mod kadmin_type_enum;
+pub use self::kadmin_type_enum::KadminTypeEnum;
 pub mod kerberos_source;
 pub use self::kerberos_source::KerberosSource;
 pub mod kerberos_source_property_mapping;

@@ -1237,7 +1237,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_kerberos_list
 
-> models::PaginatedKerberosSourceList sources_kerberos_list(enabled, name, ordering, page, page_size, password_login_update_internal_password, realm, search, slug, spnego_server_name, sync_principal, sync_users, sync_users_password)
+> models::PaginatedKerberosSourceList sources_kerberos_list(enabled, kadmin_type, name, ordering, page, page_size, password_login_update_internal_password, realm, search, slug, spnego_server_name, sync_principal, sync_users, sync_users_password)
 
 
 Kerberos Source Viewset
@@ -1248,6 +1248,7 @@ Kerberos Source Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **enabled** | Option<**bool**> |  |  |
+**kadmin_type** | Option<**String**> | KAdmin server type   |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
