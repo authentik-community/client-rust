@@ -172,6 +172,8 @@ pub enum ModelEnum {
     CorePeriodUser,
     #[serde(rename = "authentik_core.application")]
     CorePeriodApplication,
+    #[serde(rename = "authentik_core.applicationentitlement")]
+    CorePeriodApplicationentitlement,
     #[serde(rename = "authentik_core.token")]
     CorePeriodToken,
     #[serde(rename = "authentik_enterprise.license")]
@@ -348,6 +350,7 @@ impl std::fmt::Display for ModelEnum {
             Self::CorePeriodGroup => write!(f, "authentik_core.group"),
             Self::CorePeriodUser => write!(f, "authentik_core.user"),
             Self::CorePeriodApplication => write!(f, "authentik_core.application"),
+            Self::CorePeriodApplicationentitlement => write!(f, "authentik_core.applicationentitlement"),
             Self::CorePeriodToken => write!(f, "authentik_core.token"),
             Self::EnterprisePeriodLicense => write!(f, "authentik_enterprise.license"),
             Self::ProvidersGoogleWorkspacePeriodGoogleworkspaceprovider => {

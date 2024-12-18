@@ -83,6 +83,7 @@
 | CorePeriodGroup | authentik_core.group |
 | CorePeriodUser | authentik_core.user |
 | CorePeriodApplication | authentik_core.application |
+| CorePeriodApplicationentitlement | authentik_core.applicationentitlement |
 | CorePeriodToken | authentik_core.token |
 | EnterprisePeriodLicense | authentik_enterprise.license |
 | ProvidersGoogleWorkspacePeriodGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |

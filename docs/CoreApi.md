@@ -4,6 +4,13 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**core_application_entitlements_create**](CoreApi.md#core_application_entitlements_create) | **POST** /core/application_entitlements/ | 
+[**core_application_entitlements_destroy**](CoreApi.md#core_application_entitlements_destroy) | **DELETE** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_list**](CoreApi.md#core_application_entitlements_list) | **GET** /core/application_entitlements/ | 
+[**core_application_entitlements_partial_update**](CoreApi.md#core_application_entitlements_partial_update) | **PATCH** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_retrieve**](CoreApi.md#core_application_entitlements_retrieve) | **GET** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_update**](CoreApi.md#core_application_entitlements_update) | **PUT** /core/application_entitlements/{pbm_uuid}/ | 
+[**core_application_entitlements_used_by_list**](CoreApi.md#core_application_entitlements_used_by_list) | **GET** /core/application_entitlements/{pbm_uuid}/used_by/ | 
 [**core_applications_check_access_retrieve**](CoreApi.md#core_applications_check_access_retrieve) | **GET** /core/applications/{slug}/check_access/ | 
 [**core_applications_create**](CoreApi.md#core_applications_create) | **POST** /core/applications/ | 
 [**core_applications_destroy**](CoreApi.md#core_applications_destroy) | **DELETE** /core/applications/{slug}/ | 
@@ -67,6 +74,224 @@ Method | HTTP request | Description
 [**core_users_update**](CoreApi.md#core_users_update) | **PUT** /core/users/{id}/ | 
 [**core_users_used_by_list**](CoreApi.md#core_users_used_by_list) | **GET** /core/users/{id}/used_by/ | 
 
+
+
+## core_application_entitlements_create
+
+> models::ApplicationEntitlement core_application_entitlements_create(application_entitlement_request)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**application_entitlement_request** | [**ApplicationEntitlementRequest**](ApplicationEntitlementRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_destroy
+
+> core_application_entitlements_destroy(pbm_uuid)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pbm_uuid** | **uuid::Uuid** | A UUID string identifying this Application Entitlement. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_list
+
+> models::PaginatedApplicationEntitlementList core_application_entitlements_list(app, name, ordering, page, page_size, pbm_uuid, search)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**app** | Option<**uuid::Uuid**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedApplicationEntitlementList**](PaginatedApplicationEntitlementList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_partial_update
+
+> models::ApplicationEntitlement core_application_entitlements_partial_update(pbm_uuid, patched_application_entitlement_request)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pbm_uuid** | **uuid::Uuid** | A UUID string identifying this Application Entitlement. | [required] |
+**patched_application_entitlement_request** | Option<[**PatchedApplicationEntitlementRequest**](PatchedApplicationEntitlementRequest.md)> |  |  |
+
+### Return type
+
+[**models::ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_retrieve
+
+> models::ApplicationEntitlement core_application_entitlements_retrieve(pbm_uuid)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pbm_uuid** | **uuid::Uuid** | A UUID string identifying this Application Entitlement. | [required] |
+
+### Return type
+
+[**models::ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_update
+
+> models::ApplicationEntitlement core_application_entitlements_update(pbm_uuid, application_entitlement_request)
+
+
+ApplicationEntitlement Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pbm_uuid** | **uuid::Uuid** | A UUID string identifying this Application Entitlement. | [required] |
+**application_entitlement_request** | [**ApplicationEntitlementRequest**](ApplicationEntitlementRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ApplicationEntitlement**](ApplicationEntitlement.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_application_entitlements_used_by_list
+
+> Vec<models::UsedBy> core_application_entitlements_used_by_list(pbm_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pbm_uuid** | **uuid::Uuid** | A UUID string identifying this Application Entitlement. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## core_applications_check_access_retrieve

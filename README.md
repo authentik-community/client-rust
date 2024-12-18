@@ -114,6 +114,13 @@ Class | Method | HTTP request | Description
 *AuthenticatorsApi* | [**authenticators_webauthn_retrieve**](docs/AuthenticatorsApi.md#authenticators_webauthn_retrieve) | **GET** /authenticators/webauthn/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_webauthn_update**](docs/AuthenticatorsApi.md#authenticators_webauthn_update) | **PUT** /authenticators/webauthn/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_webauthn_used_by_list**](docs/AuthenticatorsApi.md#authenticators_webauthn_used_by_list) | **GET** /authenticators/webauthn/{id}/used_by/ | 
+*CoreApi* | [**core_application_entitlements_create**](docs/CoreApi.md#core_application_entitlements_create) | **POST** /core/application_entitlements/ | 
+*CoreApi* | [**core_application_entitlements_destroy**](docs/CoreApi.md#core_application_entitlements_destroy) | **DELETE** /core/application_entitlements/{pbm_uuid}/ | 
+*CoreApi* | [**core_application_entitlements_list**](docs/CoreApi.md#core_application_entitlements_list) | **GET** /core/application_entitlements/ | 
+*CoreApi* | [**core_application_entitlements_partial_update**](docs/CoreApi.md#core_application_entitlements_partial_update) | **PATCH** /core/application_entitlements/{pbm_uuid}/ | 
+*CoreApi* | [**core_application_entitlements_retrieve**](docs/CoreApi.md#core_application_entitlements_retrieve) | **GET** /core/application_entitlements/{pbm_uuid}/ | 
+*CoreApi* | [**core_application_entitlements_update**](docs/CoreApi.md#core_application_entitlements_update) | **PUT** /core/application_entitlements/{pbm_uuid}/ | 
+*CoreApi* | [**core_application_entitlements_used_by_list**](docs/CoreApi.md#core_application_entitlements_used_by_list) | **GET** /core/application_entitlements/{pbm_uuid}/used_by/ | 
 *CoreApi* | [**core_applications_check_access_retrieve**](docs/CoreApi.md#core_applications_check_access_retrieve) | **GET** /core/applications/{slug}/check_access/ | 
 *CoreApi* | [**core_applications_create**](docs/CoreApi.md#core_applications_create) | **POST** /core/applications/ | 
 *CoreApi* | [**core_applications_destroy**](docs/CoreApi.md#core_applications_destroy) | **DELETE** /core/applications/{slug}/ | 
@@ -970,6 +977,8 @@ Class | Method | HTTP request | Description
  - [AppleChallengeResponseRequest](docs/AppleChallengeResponseRequest.md)
  - [AppleLoginChallenge](docs/AppleLoginChallenge.md)
  - [Application](docs/Application.md)
+ - [ApplicationEntitlement](docs/ApplicationEntitlement.md)
+ - [ApplicationEntitlementRequest](docs/ApplicationEntitlementRequest.md)
  - [ApplicationRequest](docs/ApplicationRequest.md)
  - [AuthModeEnum](docs/AuthModeEnum.md)
  - [AuthTypeEnum](docs/AuthTypeEnum.md)
@@ -1224,6 +1233,7 @@ Class | Method | HTTP request | Description
  - [OutpostHealth](docs/OutpostHealth.md)
  - [OutpostRequest](docs/OutpostRequest.md)
  - [OutpostTypeEnum](docs/OutpostTypeEnum.md)
+ - [PaginatedApplicationEntitlementList](docs/PaginatedApplicationEntitlementList.md)
  - [PaginatedApplicationList](docs/PaginatedApplicationList.md)
  - [PaginatedAuthenticatedSessionList](docs/PaginatedAuthenticatedSessionList.md)
  - [PaginatedAuthenticatorDuoStageList](docs/PaginatedAuthenticatorDuoStageList.md)
@@ -1360,6 +1370,7 @@ Class | Method | HTTP request | Description
  - [PasswordPolicyRequest](docs/PasswordPolicyRequest.md)
  - [PasswordStage](docs/PasswordStage.md)
  - [PasswordStageRequest](docs/PasswordStageRequest.md)
+ - [PatchedApplicationEntitlementRequest](docs/PatchedApplicationEntitlementRequest.md)
  - [PatchedApplicationRequest](docs/PatchedApplicationRequest.md)
  - [PatchedAuthenticatorDuoStageRequest](docs/PatchedAuthenticatorDuoStageRequest.md)
  - [PatchedAuthenticatorEndpointGdtcStageRequest](docs/PatchedAuthenticatorEndpointGdtcStageRequest.md)
