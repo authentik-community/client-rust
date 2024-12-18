@@ -14,6 +14,10 @@ use serde::{Deserialize, Serialize};
 /// UserOAuthSourceConnectionRequest : OAuth Source Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserOAuthSourceConnectionRequest {
+    #[serde(rename = "user")]
+    pub user: i32,
+    #[serde(rename = "source")]
+    pub source: uuid::Uuid,
     #[serde(rename = "identifier")]
     pub identifier: String,
     #[serde(
@@ -27,8 +31,10 @@ pub struct UserOAuthSourceConnectionRequest {
 
 impl UserOAuthSourceConnectionRequest {
     /// OAuth Source Serializer
-    pub fn new(identifier: String) -> UserOAuthSourceConnectionRequest {
+    pub fn new(user: i32, source: uuid::Uuid, identifier: String) -> UserOAuthSourceConnectionRequest {
         UserOAuthSourceConnectionRequest {
+            user,
+            source,
             identifier,
             access_token: None,
         }

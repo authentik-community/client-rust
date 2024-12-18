@@ -448,7 +448,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_kerberos_partial_update
 
-> models::GroupKerberosSourceConnection sources_group_connections_kerberos_partial_update(id)
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_partial_update(id, patched_group_kerberos_source_connection_request)
 
 
 Group-source connection Viewset
@@ -459,6 +459,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+**patched_group_kerberos_source_connection_request** | Option<[**PatchedGroupKerberosSourceConnectionRequest**](PatchedGroupKerberosSourceConnectionRequest.md)> |  |  |
 
 ### Return type
 
@@ -470,7 +471,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -508,7 +509,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_kerberos_update
 
-> models::GroupKerberosSourceConnection sources_group_connections_kerberos_update(id)
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_update(id, group_kerberos_source_connection_request)
 
 
 Group-source connection Viewset
@@ -519,6 +520,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group Kerberos Source Connection. | [required] |
+**group_kerberos_source_connection_request** | [**GroupKerberosSourceConnectionRequest**](GroupKerberosSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -530,7 +532,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -568,14 +570,17 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_oauth_create
 
-> models::GroupOAuthSourceConnection sources_group_connections_oauth_create()
+> models::GroupOAuthSourceConnection sources_group_connections_oauth_create(group_o_auth_source_connection_request)
 
 
 Group-source connection Viewset
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group_o_auth_source_connection_request** | [**GroupOAuthSourceConnectionRequest**](GroupOAuthSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -587,7 +592,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -660,7 +665,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_oauth_partial_update
 
-> models::GroupOAuthSourceConnection sources_group_connections_oauth_partial_update(id)
+> models::GroupOAuthSourceConnection sources_group_connections_oauth_partial_update(id, patched_group_o_auth_source_connection_request)
 
 
 Group-source connection Viewset
@@ -671,6 +676,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group OAuth Source Connection. | [required] |
+**patched_group_o_auth_source_connection_request** | Option<[**PatchedGroupOAuthSourceConnectionRequest**](PatchedGroupOAuthSourceConnectionRequest.md)> |  |  |
 
 ### Return type
 
@@ -682,7 +688,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -720,7 +726,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_oauth_update
 
-> models::GroupOAuthSourceConnection sources_group_connections_oauth_update(id)
+> models::GroupOAuthSourceConnection sources_group_connections_oauth_update(id, group_o_auth_source_connection_request)
 
 
 Group-source connection Viewset
@@ -731,6 +737,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group OAuth Source Connection. | [required] |
+**group_o_auth_source_connection_request** | [**GroupOAuthSourceConnectionRequest**](GroupOAuthSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -742,7 +749,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -780,14 +787,17 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_plex_create
 
-> models::GroupPlexSourceConnection sources_group_connections_plex_create()
+> models::GroupPlexSourceConnection sources_group_connections_plex_create(group_plex_source_connection_request)
 
 
 Group-source connection Viewset
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group_plex_source_connection_request** | [**GroupPlexSourceConnectionRequest**](GroupPlexSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -799,7 +809,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -872,7 +882,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_plex_partial_update
 
-> models::GroupPlexSourceConnection sources_group_connections_plex_partial_update(id)
+> models::GroupPlexSourceConnection sources_group_connections_plex_partial_update(id, patched_group_plex_source_connection_request)
 
 
 Group-source connection Viewset
@@ -883,6 +893,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group Plex Source Connection. | [required] |
+**patched_group_plex_source_connection_request** | Option<[**PatchedGroupPlexSourceConnectionRequest**](PatchedGroupPlexSourceConnectionRequest.md)> |  |  |
 
 ### Return type
 
@@ -894,7 +905,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -932,7 +943,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_plex_update
 
-> models::GroupPlexSourceConnection sources_group_connections_plex_update(id)
+> models::GroupPlexSourceConnection sources_group_connections_plex_update(id, group_plex_source_connection_request)
 
 
 Group-source connection Viewset
@@ -943,6 +954,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group Plex Source Connection. | [required] |
+**group_plex_source_connection_request** | [**GroupPlexSourceConnectionRequest**](GroupPlexSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -954,7 +966,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1057,7 +1069,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_saml_partial_update
 
-> models::GroupSamlSourceConnection sources_group_connections_saml_partial_update(id)
+> models::GroupSamlSourceConnection sources_group_connections_saml_partial_update(id, patched_group_saml_source_connection_request)
 
 
 Group-source connection Viewset
@@ -1068,6 +1080,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group SAML Source Connection. | [required] |
+**patched_group_saml_source_connection_request** | Option<[**PatchedGroupSamlSourceConnectionRequest**](PatchedGroupSamlSourceConnectionRequest.md)> |  |  |
 
 ### Return type
 
@@ -1079,7 +1092,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1117,7 +1130,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_group_connections_saml_update
 
-> models::GroupSamlSourceConnection sources_group_connections_saml_update(id)
+> models::GroupSamlSourceConnection sources_group_connections_saml_update(id, group_saml_source_connection_request)
 
 
 Group-source connection Viewset
@@ -1128,6 +1141,7 @@ Group-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group SAML Source Connection. | [required] |
+**group_saml_source_connection_request** | [**GroupSamlSourceConnectionRequest**](GroupSamlSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1139,7 +1153,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3261,7 +3275,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_user_connections_all_partial_update
 
-> models::UserSourceConnection sources_user_connections_all_partial_update(id)
+> models::UserSourceConnection sources_user_connections_all_partial_update(id, patched_user_source_connection_request)
 
 
 User-source connection Viewset
@@ -3272,6 +3286,7 @@ User-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this user source connection. | [required] |
+**patched_user_source_connection_request** | Option<[**PatchedUserSourceConnectionRequest**](PatchedUserSourceConnectionRequest.md)> |  |  |
 
 ### Return type
 
@@ -3283,7 +3298,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3321,7 +3336,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_user_connections_all_update
 
-> models::UserSourceConnection sources_user_connections_all_update(id)
+> models::UserSourceConnection sources_user_connections_all_update(id, user_source_connection_request)
 
 
 User-source connection Viewset
@@ -3332,6 +3347,7 @@ User-source connection Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this user source connection. | [required] |
+**user_source_connection_request** | [**UserSourceConnectionRequest**](UserSourceConnectionRequest.md) |  | [required] |
 
 ### Return type
 
@@ -3343,7 +3359,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

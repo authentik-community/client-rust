@@ -19,7 +19,9 @@ pub struct UserPlexSourceConnection {
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "source")]
-    pub source: models::Source,
+    pub source: uuid::Uuid,
+    #[serde(rename = "source_obj")]
+    pub source_obj: models::Source,
     #[serde(rename = "created")]
     pub created: String,
     #[serde(rename = "identifier")]
@@ -31,7 +33,8 @@ impl UserPlexSourceConnection {
     pub fn new(
         pk: i32,
         user: i32,
-        source: models::Source,
+        source: uuid::Uuid,
+        source_obj: models::Source,
         created: String,
         identifier: String,
     ) -> UserPlexSourceConnection {
@@ -39,6 +42,7 @@ impl UserPlexSourceConnection {
             pk,
             user,
             source,
+            source_obj,
             created,
             identifier,
         }

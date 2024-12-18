@@ -11,24 +11,21 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserKerberosSourceConnectionRequest : Kerberos Source Serializer
+/// PatchedUserSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PatchedUserKerberosSourceConnectionRequest {
+pub struct PatchedUserSourceConnectionRequest {
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
     pub user: Option<i32>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
     pub source: Option<uuid::Uuid>,
-    #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
-    pub identifier: Option<String>,
 }
 
-impl PatchedUserKerberosSourceConnectionRequest {
-    /// Kerberos Source Serializer
-    pub fn new() -> PatchedUserKerberosSourceConnectionRequest {
-        PatchedUserKerberosSourceConnectionRequest {
+impl PatchedUserSourceConnectionRequest {
+    /// User source connection
+    pub fn new() -> PatchedUserSourceConnectionRequest {
+        PatchedUserSourceConnectionRequest {
             user: None,
             source: None,
-            identifier: None,
         }
     }
 }

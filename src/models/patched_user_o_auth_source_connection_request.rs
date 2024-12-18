@@ -14,6 +14,10 @@ use serde::{Deserialize, Serialize};
 /// PatchedUserOAuthSourceConnectionRequest : OAuth Source Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedUserOAuthSourceConnectionRequest {
+    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
+    pub user: Option<i32>,
+    #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
+    pub source: Option<uuid::Uuid>,
     #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
     #[serde(
@@ -29,6 +33,8 @@ impl PatchedUserOAuthSourceConnectionRequest {
     /// OAuth Source Serializer
     pub fn new() -> PatchedUserOAuthSourceConnectionRequest {
         PatchedUserOAuthSourceConnectionRequest {
+            user: None,
+            source: None,
             identifier: None,
             access_token: None,
         }

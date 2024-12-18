@@ -11,22 +11,22 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserKerberosSourceConnectionRequest : Kerberos Source Serializer
+/// PatchedGroupPlexSourceConnectionRequest : Plex Group-Source connection Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PatchedUserKerberosSourceConnectionRequest {
-    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
-    pub user: Option<i32>,
+pub struct PatchedGroupPlexSourceConnectionRequest {
+    #[serde(rename = "group", skip_serializing_if = "Option::is_none")]
+    pub group: Option<uuid::Uuid>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
     pub source: Option<uuid::Uuid>,
     #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
 }
 
-impl PatchedUserKerberosSourceConnectionRequest {
-    /// Kerberos Source Serializer
-    pub fn new() -> PatchedUserKerberosSourceConnectionRequest {
-        PatchedUserKerberosSourceConnectionRequest {
-            user: None,
+impl PatchedGroupPlexSourceConnectionRequest {
+    /// Plex Group-Source connection Serializer
+    pub fn new() -> PatchedGroupPlexSourceConnectionRequest {
+        PatchedGroupPlexSourceConnectionRequest {
+            group: None,
             source: None,
             identifier: None,
         }

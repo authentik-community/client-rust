@@ -11,22 +11,22 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserKerberosSourceConnectionRequest : Kerberos Source Serializer
+/// GroupKerberosSourceConnectionRequest : OAuth Group-Source connection Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct UserKerberosSourceConnectionRequest {
-    #[serde(rename = "user")]
-    pub user: i32,
+pub struct GroupKerberosSourceConnectionRequest {
+    #[serde(rename = "group")]
+    pub group: uuid::Uuid,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
     #[serde(rename = "identifier")]
     pub identifier: String,
 }
 
-impl UserKerberosSourceConnectionRequest {
-    /// Kerberos Source Serializer
-    pub fn new(user: i32, source: uuid::Uuid, identifier: String) -> UserKerberosSourceConnectionRequest {
-        UserKerberosSourceConnectionRequest {
-            user,
+impl GroupKerberosSourceConnectionRequest {
+    /// OAuth Group-Source connection Serializer
+    pub fn new(group: uuid::Uuid, source: uuid::Uuid, identifier: String) -> GroupKerberosSourceConnectionRequest {
+        GroupKerberosSourceConnectionRequest {
+            group,
             source,
             identifier,
         }

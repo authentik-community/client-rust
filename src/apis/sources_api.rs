@@ -1663,6 +1663,7 @@ pub async fn sources_group_connections_kerberos_list(
 pub async fn sources_group_connections_kerberos_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
+    patched_group_kerberos_source_connection_request: Option<models::PatchedGroupKerberosSourceConnectionRequest>,
 ) -> Result<models::GroupKerberosSourceConnection, Error<SourcesGroupConnectionsKerberosPartialUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -1681,6 +1682,7 @@ pub async fn sources_group_connections_kerberos_partial_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&patched_group_kerberos_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1749,6 +1751,7 @@ pub async fn sources_group_connections_kerberos_retrieve(
 pub async fn sources_group_connections_kerberos_update(
     configuration: &configuration::Configuration,
     id: i32,
+    group_kerberos_source_connection_request: models::GroupKerberosSourceConnectionRequest,
 ) -> Result<models::GroupKerberosSourceConnection, Error<SourcesGroupConnectionsKerberosUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -1767,6 +1770,7 @@ pub async fn sources_group_connections_kerberos_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_kerberos_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1834,6 +1838,7 @@ pub async fn sources_group_connections_kerberos_used_by_list(
 /// Group-source connection Viewset
 pub async fn sources_group_connections_oauth_create(
     configuration: &configuration::Configuration,
+    group_o_auth_source_connection_request: models::GroupOAuthSourceConnectionRequest,
 ) -> Result<models::GroupOAuthSourceConnection, Error<SourcesGroupConnectionsOauthCreateError>> {
     let local_var_configuration = configuration;
 
@@ -1848,6 +1853,7 @@ pub async fn sources_group_connections_oauth_create(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_o_auth_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1978,6 +1984,7 @@ pub async fn sources_group_connections_oauth_list(
 pub async fn sources_group_connections_oauth_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
+    patched_group_o_auth_source_connection_request: Option<models::PatchedGroupOAuthSourceConnectionRequest>,
 ) -> Result<models::GroupOAuthSourceConnection, Error<SourcesGroupConnectionsOauthPartialUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -1996,6 +2003,7 @@ pub async fn sources_group_connections_oauth_partial_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&patched_group_o_auth_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2064,6 +2072,7 @@ pub async fn sources_group_connections_oauth_retrieve(
 pub async fn sources_group_connections_oauth_update(
     configuration: &configuration::Configuration,
     id: i32,
+    group_o_auth_source_connection_request: models::GroupOAuthSourceConnectionRequest,
 ) -> Result<models::GroupOAuthSourceConnection, Error<SourcesGroupConnectionsOauthUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -2082,6 +2091,7 @@ pub async fn sources_group_connections_oauth_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_o_auth_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2149,6 +2159,7 @@ pub async fn sources_group_connections_oauth_used_by_list(
 /// Group-source connection Viewset
 pub async fn sources_group_connections_plex_create(
     configuration: &configuration::Configuration,
+    group_plex_source_connection_request: models::GroupPlexSourceConnectionRequest,
 ) -> Result<models::GroupPlexSourceConnection, Error<SourcesGroupConnectionsPlexCreateError>> {
     let local_var_configuration = configuration;
 
@@ -2163,6 +2174,7 @@ pub async fn sources_group_connections_plex_create(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_plex_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2293,6 +2305,7 @@ pub async fn sources_group_connections_plex_list(
 pub async fn sources_group_connections_plex_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
+    patched_group_plex_source_connection_request: Option<models::PatchedGroupPlexSourceConnectionRequest>,
 ) -> Result<models::GroupPlexSourceConnection, Error<SourcesGroupConnectionsPlexPartialUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -2311,6 +2324,7 @@ pub async fn sources_group_connections_plex_partial_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&patched_group_plex_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2379,6 +2393,7 @@ pub async fn sources_group_connections_plex_retrieve(
 pub async fn sources_group_connections_plex_update(
     configuration: &configuration::Configuration,
     id: i32,
+    group_plex_source_connection_request: models::GroupPlexSourceConnectionRequest,
 ) -> Result<models::GroupPlexSourceConnection, Error<SourcesGroupConnectionsPlexUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -2397,6 +2412,7 @@ pub async fn sources_group_connections_plex_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_plex_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2570,6 +2586,7 @@ pub async fn sources_group_connections_saml_list(
 pub async fn sources_group_connections_saml_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
+    patched_group_saml_source_connection_request: Option<models::PatchedGroupSamlSourceConnectionRequest>,
 ) -> Result<models::GroupSamlSourceConnection, Error<SourcesGroupConnectionsSamlPartialUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -2588,6 +2605,7 @@ pub async fn sources_group_connections_saml_partial_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&patched_group_saml_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -2656,6 +2674,7 @@ pub async fn sources_group_connections_saml_retrieve(
 pub async fn sources_group_connections_saml_update(
     configuration: &configuration::Configuration,
     id: i32,
+    group_saml_source_connection_request: models::GroupSamlSourceConnectionRequest,
 ) -> Result<models::GroupSamlSourceConnection, Error<SourcesGroupConnectionsSamlUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -2674,6 +2693,7 @@ pub async fn sources_group_connections_saml_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&group_saml_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -5981,6 +6001,7 @@ pub async fn sources_user_connections_all_list(
 pub async fn sources_user_connections_all_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
+    patched_user_source_connection_request: Option<models::PatchedUserSourceConnectionRequest>,
 ) -> Result<models::UserSourceConnection, Error<SourcesUserConnectionsAllPartialUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -5999,6 +6020,7 @@ pub async fn sources_user_connections_all_partial_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&patched_user_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -6067,6 +6089,7 @@ pub async fn sources_user_connections_all_retrieve(
 pub async fn sources_user_connections_all_update(
     configuration: &configuration::Configuration,
     id: i32,
+    user_source_connection_request: models::UserSourceConnectionRequest,
 ) -> Result<models::UserSourceConnection, Error<SourcesUserConnectionsAllUpdateError>> {
     let local_var_configuration = configuration;
 
@@ -6085,6 +6108,7 @@ pub async fn sources_user_connections_all_update(
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&user_source_connection_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;

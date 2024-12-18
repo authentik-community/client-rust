@@ -19,7 +19,9 @@ pub struct GroupOAuthSourceConnection {
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "source")]
-    pub source: models::Source,
+    pub source: uuid::Uuid,
+    #[serde(rename = "source_obj")]
+    pub source_obj: models::Source,
     #[serde(rename = "identifier")]
     pub identifier: String,
     #[serde(rename = "created")]
@@ -31,7 +33,8 @@ impl GroupOAuthSourceConnection {
     pub fn new(
         pk: i32,
         group: uuid::Uuid,
-        source: models::Source,
+        source: uuid::Uuid,
+        source_obj: models::Source,
         identifier: String,
         created: String,
     ) -> GroupOAuthSourceConnection {
@@ -39,6 +42,7 @@ impl GroupOAuthSourceConnection {
             pk,
             group,
             source,
+            source_obj,
             identifier,
             created,
         }

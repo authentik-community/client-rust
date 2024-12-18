@@ -14,6 +14,10 @@ use serde::{Deserialize, Serialize};
 /// UserPlexSourceConnectionRequest : Plex Source connection Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserPlexSourceConnectionRequest {
+    #[serde(rename = "user")]
+    pub user: i32,
+    #[serde(rename = "source")]
+    pub source: uuid::Uuid,
     #[serde(rename = "identifier")]
     pub identifier: String,
     #[serde(rename = "plex_token")]
@@ -22,7 +26,17 @@ pub struct UserPlexSourceConnectionRequest {
 
 impl UserPlexSourceConnectionRequest {
     /// Plex Source connection Serializer
-    pub fn new(identifier: String, plex_token: String) -> UserPlexSourceConnectionRequest {
-        UserPlexSourceConnectionRequest { identifier, plex_token }
+    pub fn new(
+        user: i32,
+        source: uuid::Uuid,
+        identifier: String,
+        plex_token: String,
+    ) -> UserPlexSourceConnectionRequest {
+        UserPlexSourceConnectionRequest {
+            user,
+            source,
+            identifier,
+            plex_token,
+        }
     }
 }
