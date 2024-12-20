@@ -27,7 +27,7 @@ pub struct FlowStageBinding {
     /// Evaluate policies during the Flow planning process.
     #[serde(rename = "evaluate_on_plan", skip_serializing_if = "Option::is_none")]
     pub evaluate_on_plan: Option<bool>,
-    /// Evaluate policies when the Stage is present to the user.
+    /// Evaluate policies when the Stage is presented to the user.
     #[serde(rename = "re_evaluate_policies", skip_serializing_if = "Option::is_none")]
     pub re_evaluate_policies: Option<bool>,
     #[serde(rename = "order")]
