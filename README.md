@@ -42,7 +42,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**admin_version_history_list**](docs/AdminApi.md#admin_version_history_list) | **GET** /admin/version/history/ | 
 *AdminApi* | [**admin_version_history_retrieve**](docs/AdminApi.md#admin_version_history_retrieve) | **GET** /admin/version/history/{id}/ | 
 *AdminApi* | [**admin_version_retrieve**](docs/AdminApi.md#admin_version_retrieve) | **GET** /admin/version/ | 
-*AdminApi* | [**admin_workers_retrieve**](docs/AdminApi.md#admin_workers_retrieve) | **GET** /admin/workers/ | 
+*AdminApi* | [**admin_workers_list**](docs/AdminApi.md#admin_workers_list) | **GET** /admin/workers/ | 
 *AuthenticatorsApi* | [**authenticators_admin_all_list**](docs/AuthenticatorsApi.md#authenticators_admin_all_list) | **GET** /authenticators/admin/all/ | 
 *AuthenticatorsApi* | [**authenticators_admin_duo_create**](docs/AuthenticatorsApi.md#authenticators_admin_duo_create) | **POST** /authenticators/admin/duo/ | 
 *AuthenticatorsApi* | [**authenticators_admin_duo_destroy**](docs/AuthenticatorsApi.md#authenticators_admin_duo_destroy) | **DELETE** /authenticators/admin/duo/{id}/ | 
@@ -1667,7 +1667,7 @@ Class | Method | HTTP request | Description
  - [WebAuthnDeviceRequest](docs/WebAuthnDeviceRequest.md)
  - [WebAuthnDeviceType](docs/WebAuthnDeviceType.md)
  - [WebAuthnDeviceTypeRequest](docs/WebAuthnDeviceTypeRequest.md)
- - [Workers](docs/Workers.md)
+ - [Worker](docs/Worker.md)
 
 
 To get access to the crate's generated documentation, use:

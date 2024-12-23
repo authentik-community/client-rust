@@ -719,7 +719,7 @@ docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
 docs/WebAuthnDeviceTypeRequest.md
-docs/Workers.md
+docs/Worker.md
 git_push.sh
 src/apis/admin_api.rs
 src/apis/authenticators_api.rs
@@ -1442,4 +1442,4 @@ src/models/web_authn_device.rs
 src/models/web_authn_device_request.rs
 src/models/web_authn_device_type.rs
 src/models/web_authn_device_type_request.rs
-src/models/workers.rs
+src/models/worker.rs

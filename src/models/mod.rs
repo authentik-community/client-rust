@@ -1392,5 +1392,5 @@ pub mod web_authn_device_type;
 pub use self::web_authn_device_type::WebAuthnDeviceType;
 pub mod web_authn_device_type_request;
 pub use self::web_authn_device_type_request::WebAuthnDeviceTypeRequest;
-pub mod workers;
-pub use self::workers::Workers;
+pub mod worker;
+pub use self::worker::Worker;

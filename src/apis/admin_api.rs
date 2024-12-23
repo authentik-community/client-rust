@@ -112,10 +112,10 @@ pub enum AdminVersionRetrieveError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`admin_workers_retrieve`]
+/// struct for typed errors of method [`admin_workers_list`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum AdminWorkersRetrieveError {
+pub enum AdminWorkersListError {
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -554,9 +554,9 @@ pub async fn admin_version_retrieve(
 }
 
 /// Get currently connected worker count.
-pub async fn admin_workers_retrieve(
+pub async fn admin_workers_list(
     configuration: &configuration::Configuration,
-) -> Result<models::Workers, Error<AdminWorkersRetrieveError>> {
+) -> Result<Vec<models::Worker>, Error<AdminWorkersListError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -580,7 +580,7 @@ pub async fn admin_workers_retrieve(
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<AdminWorkersRetrieveError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<AdminWorkersListError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
             content: local_var_content,
