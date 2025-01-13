@@ -21,11 +21,18 @@ pub struct SmsDevice {
     pub pk: i32,
     #[serde(rename = "phone_number")]
     pub phone_number: String,
+    #[serde(rename = "user")]
+    pub user: models::GroupMember,
 }
 
 impl SmsDevice {
     /// Serializer for sms authenticator devices
-    pub fn new(name: String, pk: i32, phone_number: String) -> SmsDevice {
-        SmsDevice { name, pk, phone_number }
+    pub fn new(name: String, pk: i32, phone_number: String, user: models::GroupMember) -> SmsDevice {
+        SmsDevice {
+            name,
+            pk,
+            phone_number,
+            user,
+        }
     }
 }

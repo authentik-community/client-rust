@@ -19,11 +19,13 @@ pub struct DuoDevice {
     /// The human-readable name of this device.
     #[serde(rename = "name")]
     pub name: String,
+    #[serde(rename = "user")]
+    pub user: models::GroupMember,
 }
 
 impl DuoDevice {
     /// Serializer for Duo authenticator devices
-    pub fn new(pk: i32, name: String) -> DuoDevice {
-        DuoDevice { pk, name }
+    pub fn new(pk: i32, name: String, user: models::GroupMember) -> DuoDevice {
+        DuoDevice { pk, name, user }
     }
 }

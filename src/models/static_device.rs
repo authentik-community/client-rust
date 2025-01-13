@@ -21,11 +21,23 @@ pub struct StaticDevice {
     pub token_set: Vec<models::StaticDeviceToken>,
     #[serde(rename = "pk")]
     pub pk: i32,
+    #[serde(rename = "user")]
+    pub user: models::GroupMember,
 }
 
 impl StaticDevice {
     /// Serializer for static authenticator devices
-    pub fn new(name: String, token_set: Vec<models::StaticDeviceToken>, pk: i32) -> StaticDevice {
-        StaticDevice { name, token_set, pk }
+    pub fn new(
+        name: String,
+        token_set: Vec<models::StaticDeviceToken>,
+        pk: i32,
+        user: models::GroupMember,
+    ) -> StaticDevice {
+        StaticDevice {
+            name,
+            token_set,
+            pk,
+            user,
+        }
     }
 }
