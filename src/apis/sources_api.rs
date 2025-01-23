@@ -2849,6 +2849,7 @@ pub async fn sources_kerberos_list(
     page: Option<i32>,
     page_size: Option<i32>,
     password_login_update_internal_password: Option<bool>,
+    pbm_uuid: Option<&str>,
     realm: Option<&str>,
     search: Option<&str>,
     slug: Option<&str>,
@@ -2885,6 +2886,9 @@ pub async fn sources_kerberos_list(
     if let Some(ref local_var_str) = password_login_update_internal_password {
         local_var_req_builder =
             local_var_req_builder.query(&[("password_login_update_internal_password", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = realm {
         local_var_req_builder = local_var_req_builder.query(&[("realm", &local_var_str.to_string())]);
@@ -3289,6 +3293,7 @@ pub async fn sources_ldap_list(
     page: Option<i32>,
     page_size: Option<i32>,
     password_login_update_internal_password: Option<bool>,
+    pbm_uuid: Option<&str>,
     peer_certificate: Option<&str>,
     search: Option<&str>,
     server_uri: Option<&str>,
@@ -3370,6 +3375,9 @@ pub async fn sources_ldap_list(
     if let Some(ref local_var_str) = password_login_update_internal_password {
         local_var_req_builder =
             local_var_req_builder.query(&[("password_login_update_internal_password", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = peer_certificate {
         local_var_req_builder = local_var_req_builder.query(&[("peer_certificate", &local_var_str.to_string())]);
@@ -3761,6 +3769,7 @@ pub async fn sources_oauth_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
     policy_engine_mode: Option<&str>,
     profile_url: Option<&str>,
     provider_type: Option<&str>,
@@ -3814,6 +3823,9 @@ pub async fn sources_oauth_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = policy_engine_mode {
         local_var_req_builder = local_var_req_builder.query(&[("policy_engine_mode", &local_var_str.to_string())]);
@@ -4169,6 +4181,7 @@ pub async fn sources_plex_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
     policy_engine_mode: Option<&str>,
     search: Option<&str>,
     slug: Option<&str>,
@@ -4210,6 +4223,9 @@ pub async fn sources_plex_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = policy_engine_mode {
         local_var_req_builder = local_var_req_builder.query(&[("policy_engine_mode", &local_var_str.to_string())]);
@@ -4608,6 +4624,7 @@ pub async fn sources_saml_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
     policy_engine_mode: Option<&str>,
     pre_authentication_flow: Option<&str>,
     search: Option<&str>,
@@ -4665,6 +4682,9 @@ pub async fn sources_saml_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = policy_engine_mode {
         local_var_req_builder = local_var_req_builder.query(&[("policy_engine_mode", &local_var_str.to_string())]);
@@ -5347,6 +5367,7 @@ pub async fn sources_scim_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
     search: Option<&str>,
     slug: Option<&str>,
 ) -> Result<models::PaginatedScimSourceList, Error<SourcesScimListError>> {
@@ -5368,6 +5389,9 @@ pub async fn sources_scim_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = search {
         local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);

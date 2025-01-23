@@ -1251,7 +1251,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_kerberos_list
 
-> models::PaginatedKerberosSourceList sources_kerberos_list(enabled, kadmin_type, name, ordering, page, page_size, password_login_update_internal_password, realm, search, slug, spnego_server_name, sync_principal, sync_users, sync_users_password)
+> models::PaginatedKerberosSourceList sources_kerberos_list(enabled, kadmin_type, name, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, realm, search, slug, spnego_server_name, sync_principal, sync_users, sync_users_password)
 
 
 Kerberos Source Viewset
@@ -1268,6 +1268,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **password_login_update_internal_password** | Option<**bool**> |  |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **realm** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **slug** | Option<**String**> |  |  |
@@ -1536,7 +1537,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_ldap_list
 
-> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, enabled, group_membership_field, group_object_filter, group_property_mappings, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_object_filter, user_property_mappings)
+> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, enabled, group_membership_field, group_object_filter, group_property_mappings, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_object_filter, user_property_mappings)
 
 
 LDAP Source Viewset
@@ -1561,6 +1562,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **password_login_update_internal_password** | Option<**bool**> |  |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **peer_certificate** | Option<**uuid::Uuid**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **server_uri** | Option<**String**> |  |  |
@@ -1804,7 +1806,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_oauth_list
 
-> models::PaginatedOAuthSourceList sources_oauth_list(access_token_url, additional_scopes, authentication_flow, authorization_url, consumer_key, enabled, enrollment_flow, group_matching_mode, has_jwks, name, ordering, page, page_size, policy_engine_mode, profile_url, provider_type, request_token_url, search, slug, user_matching_mode)
+> models::PaginatedOAuthSourceList sources_oauth_list(access_token_url, additional_scopes, authentication_flow, authorization_url, consumer_key, enabled, enrollment_flow, group_matching_mode, has_jwks, name, ordering, page, page_size, pbm_uuid, policy_engine_mode, profile_url, provider_type, request_token_url, search, slug, user_matching_mode)
 
 
 Source Viewset
@@ -1827,6 +1829,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **policy_engine_mode** | Option<**String**> |  |  |
 **profile_url** | Option<**String**> |  |  |
 **provider_type** | Option<**String**> |  |  |
@@ -2065,7 +2068,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_plex_list
 
-> models::PaginatedPlexSourceList sources_plex_list(allow_friends, authentication_flow, client_id, enabled, enrollment_flow, group_matching_mode, name, ordering, page, page_size, policy_engine_mode, search, slug, user_matching_mode)
+> models::PaginatedPlexSourceList sources_plex_list(allow_friends, authentication_flow, client_id, enabled, enrollment_flow, group_matching_mode, name, ordering, page, page_size, pbm_uuid, policy_engine_mode, search, slug, user_matching_mode)
 
 
 Plex source Viewset
@@ -2085,6 +2088,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **policy_engine_mode** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **slug** | Option<**String**> |  |  |
@@ -2352,7 +2356,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_saml_list
 
-> models::PaginatedSamlSourceList sources_saml_list(allow_idp_initiated, authentication_flow, binding_type, digest_algorithm, enabled, enrollment_flow, issuer, managed, name, name_id_policy, ordering, page, page_size, policy_engine_mode, pre_authentication_flow, search, signature_algorithm, signing_kp, slo_url, slug, sso_url, temporary_user_delete_after, user_matching_mode, verification_kp)
+> models::PaginatedSamlSourceList sources_saml_list(allow_idp_initiated, authentication_flow, binding_type, digest_algorithm, enabled, enrollment_flow, issuer, managed, name, name_id_policy, ordering, page, page_size, pbm_uuid, policy_engine_mode, pre_authentication_flow, search, signature_algorithm, signing_kp, slo_url, slug, sso_url, temporary_user_delete_after, user_matching_mode, verification_kp)
 
 
 SAMLSource Viewset
@@ -2375,6 +2379,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **policy_engine_mode** | Option<**String**> |  |  |
 **pre_authentication_flow** | Option<**uuid::Uuid**> |  |  |
 **search** | Option<**String**> | A search term. |  |
@@ -2835,7 +2840,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_scim_list
 
-> models::PaginatedScimSourceList sources_scim_list(name, ordering, page, page_size, search, slug)
+> models::PaginatedScimSourceList sources_scim_list(name, ordering, page, page_size, pbm_uuid, search, slug)
 
 
 SCIMSource Viewset
@@ -2849,6 +2854,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **slug** | Option<**String**> |  |  |
 
