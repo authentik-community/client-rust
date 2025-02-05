@@ -32,6 +32,8 @@ pub enum ProviderModelEnum {
     SamlPeriodSamlprovider,
     #[serde(rename = "authentik_providers_scim.scimprovider")]
     ScimPeriodScimprovider,
+    #[serde(rename = "authentik_providers_ssf.ssfprovider")]
+    SsfPeriodSsfprovider,
 }
 
 impl std::fmt::Display for ProviderModelEnum {
@@ -50,6 +52,7 @@ impl std::fmt::Display for ProviderModelEnum {
             Self::RadiusPeriodRadiusprovider => write!(f, "authentik_providers_radius.radiusprovider"),
             Self::SamlPeriodSamlprovider => write!(f, "authentik_providers_saml.samlprovider"),
             Self::ScimPeriodScimprovider => write!(f, "authentik_providers_scim.scimprovider"),
+            Self::SsfPeriodSsfprovider => write!(f, "authentik_providers_ssf.ssfprovider"),
         }
     }
 }

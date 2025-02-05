@@ -91,6 +91,7 @@ docs/CoreApi.md
 docs/CountryCodeEnum.md
 docs/CryptoApi.md
 docs/CurrentBrand.md
+docs/DeliveryMethodEnum.md
 docs/DeniedActionEnum.md
 docs/DenyStage.md
 docs/DenyStageRequest.md
@@ -135,6 +136,7 @@ docs/EventMatcherPolicyRequest.md
 docs/EventRequest.md
 docs/EventTopPerUser.md
 docs/EventsApi.md
+docs/EventsRequestedEnum.md
 docs/ExpiringBaseGrantModel.md
 docs/ExpressionPolicy.md
 docs/ExpressionPolicyRequest.md
@@ -382,6 +384,8 @@ docs/PaginatedServiceConnectionList.md
 docs/PaginatedSmsDeviceList.md
 docs/PaginatedSourceList.md
 docs/PaginatedSourceStageList.md
+docs/PaginatedSsfProviderList.md
+docs/PaginatedSsfStreamList.md
 docs/PaginatedStageList.md
 docs/PaginatedStaticDeviceList.md
 docs/PaginatedSystemTaskList.md
@@ -502,6 +506,7 @@ docs/PatchedScopeMappingRequest.md
 docs/PatchedSettingsRequest.md
 docs/PatchedSmsDeviceRequest.md
 docs/PatchedSourceStageRequest.md
+docs/PatchedSsfProviderRequest.md
 docs/PatchedStaticDeviceRequest.md
 docs/PatchedTenantRequest.md
 docs/PatchedTokenRequest.md
@@ -634,6 +639,10 @@ docs/SourceStageRequest.md
 docs/SourceType.md
 docs/SourcesApi.md
 docs/SpBindingEnum.md
+docs/SsfApi.md
+docs/SsfProvider.md
+docs/SsfProviderRequest.md
+docs/SsfStream.md
 docs/Stage.md
 docs/StagePrompt.md
 docs/StageRequest.md
@@ -741,6 +750,7 @@ src/apis/rbac_api.rs
 src/apis/root_api.rs
 src/apis/schema_api.rs
 src/apis/sources_api.rs
+src/apis/ssf_api.rs
 src/apis/stages_api.rs
 src/apis/tenants_api.rs
 src/lib.rs
@@ -829,6 +839,7 @@ src/models/contextual_flow_info_layout_enum.rs
 src/models/coordinate.rs
 src/models/country_code_enum.rs
 src/models/current_brand.rs
+src/models/delivery_method_enum.rs
 src/models/denied_action_enum.rs
 src/models/deny_stage.rs
 src/models/deny_stage_request.rs
@@ -871,6 +882,7 @@ src/models/event_matcher_policy.rs
 src/models/event_matcher_policy_request.rs
 src/models/event_request.rs
 src/models/event_top_per_user.rs
+src/models/events_requested_enum.rs
 src/models/expiring_base_grant_model.rs
 src/models/expression_policy.rs
 src/models/expression_policy_request.rs
@@ -1115,6 +1127,8 @@ src/models/paginated_service_connection_list.rs
 src/models/paginated_sms_device_list.rs
 src/models/paginated_source_list.rs
 src/models/paginated_source_stage_list.rs
+src/models/paginated_ssf_provider_list.rs
+src/models/paginated_ssf_stream_list.rs
 src/models/paginated_stage_list.rs
 src/models/paginated_static_device_list.rs
 src/models/paginated_system_task_list.rs
@@ -1235,6 +1249,7 @@ src/models/patched_scope_mapping_request.rs
 src/models/patched_settings_request.rs
 src/models/patched_sms_device_request.rs
 src/models/patched_source_stage_request.rs
+src/models/patched_ssf_provider_request.rs
 src/models/patched_static_device_request.rs
 src/models/patched_tenant_request.rs
 src/models/patched_token_request.rs
@@ -1359,6 +1374,9 @@ src/models/source_stage.rs
 src/models/source_stage_request.rs
 src/models/source_type.rs
 src/models/sp_binding_enum.rs
+src/models/ssf_provider.rs
+src/models/ssf_provider_request.rs
+src/models/ssf_stream.rs
 src/models/stage.rs
 src/models/stage_prompt.rs
 src/models/stage_request.rs

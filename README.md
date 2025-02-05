@@ -600,6 +600,13 @@ Class | Method | HTTP request | Description
 *ProvidersApi* | [**providers_scim_users_list**](docs/ProvidersApi.md#providers_scim_users_list) | **GET** /providers/scim_users/ | 
 *ProvidersApi* | [**providers_scim_users_retrieve**](docs/ProvidersApi.md#providers_scim_users_retrieve) | **GET** /providers/scim_users/{id}/ | 
 *ProvidersApi* | [**providers_scim_users_used_by_list**](docs/ProvidersApi.md#providers_scim_users_used_by_list) | **GET** /providers/scim_users/{id}/used_by/ | 
+*ProvidersApi* | [**providers_ssf_create**](docs/ProvidersApi.md#providers_ssf_create) | **POST** /providers/ssf/ | 
+*ProvidersApi* | [**providers_ssf_destroy**](docs/ProvidersApi.md#providers_ssf_destroy) | **DELETE** /providers/ssf/{id}/ | 
+*ProvidersApi* | [**providers_ssf_list**](docs/ProvidersApi.md#providers_ssf_list) | **GET** /providers/ssf/ | 
+*ProvidersApi* | [**providers_ssf_partial_update**](docs/ProvidersApi.md#providers_ssf_partial_update) | **PATCH** /providers/ssf/{id}/ | 
+*ProvidersApi* | [**providers_ssf_retrieve**](docs/ProvidersApi.md#providers_ssf_retrieve) | **GET** /providers/ssf/{id}/ | 
+*ProvidersApi* | [**providers_ssf_update**](docs/ProvidersApi.md#providers_ssf_update) | **PUT** /providers/ssf/{id}/ | 
+*ProvidersApi* | [**providers_ssf_used_by_list**](docs/ProvidersApi.md#providers_ssf_used_by_list) | **GET** /providers/ssf/{id}/used_by/ | 
 *RacApi* | [**rac_connection_tokens_destroy**](docs/RacApi.md#rac_connection_tokens_destroy) | **DELETE** /rac/connection_tokens/{connection_token_uuid}/ | 
 *RacApi* | [**rac_connection_tokens_list**](docs/RacApi.md#rac_connection_tokens_list) | **GET** /rac/connection_tokens/ | 
 *RacApi* | [**rac_connection_tokens_partial_update**](docs/RacApi.md#rac_connection_tokens_partial_update) | **PATCH** /rac/connection_tokens/{connection_token_uuid}/ | 
@@ -771,6 +778,8 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_user_connections_saml_retrieve**](docs/SourcesApi.md#sources_user_connections_saml_retrieve) | **GET** /sources/user_connections/saml/{id}/ | 
 *SourcesApi* | [**sources_user_connections_saml_update**](docs/SourcesApi.md#sources_user_connections_saml_update) | **PUT** /sources/user_connections/saml/{id}/ | 
 *SourcesApi* | [**sources_user_connections_saml_used_by_list**](docs/SourcesApi.md#sources_user_connections_saml_used_by_list) | **GET** /sources/user_connections/saml/{id}/used_by/ | 
+*SsfApi* | [**ssf_streams_list**](docs/SsfApi.md#ssf_streams_list) | **GET** /ssf/streams/ | 
+*SsfApi* | [**ssf_streams_retrieve**](docs/SsfApi.md#ssf_streams_retrieve) | **GET** /ssf/streams/{uuid}/ | 
 *StagesApi* | [**stages_all_destroy**](docs/StagesApi.md#stages_all_destroy) | **DELETE** /stages/all/{stage_uuid}/ | 
 *StagesApi* | [**stages_all_list**](docs/StagesApi.md#stages_all_list) | **GET** /stages/all/ | 
 *StagesApi* | [**stages_all_retrieve**](docs/StagesApi.md#stages_all_retrieve) | **GET** /stages/all/{stage_uuid}/ | 
@@ -1055,6 +1064,7 @@ Class | Method | HTTP request | Description
  - [Coordinate](docs/Coordinate.md)
  - [CountryCodeEnum](docs/CountryCodeEnum.md)
  - [CurrentBrand](docs/CurrentBrand.md)
+ - [DeliveryMethodEnum](docs/DeliveryMethodEnum.md)
  - [DeniedActionEnum](docs/DeniedActionEnum.md)
  - [DenyStage](docs/DenyStage.md)
  - [DenyStageRequest](docs/DenyStageRequest.md)
@@ -1097,6 +1107,7 @@ Class | Method | HTTP request | Description
  - [EventMatcherPolicyRequest](docs/EventMatcherPolicyRequest.md)
  - [EventRequest](docs/EventRequest.md)
  - [EventTopPerUser](docs/EventTopPerUser.md)
+ - [EventsRequestedEnum](docs/EventsRequestedEnum.md)
  - [ExpiringBaseGrantModel](docs/ExpiringBaseGrantModel.md)
  - [ExpressionPolicy](docs/ExpressionPolicy.md)
  - [ExpressionPolicyRequest](docs/ExpressionPolicyRequest.md)
@@ -1340,6 +1351,8 @@ Class | Method | HTTP request | Description
  - [PaginatedSmsDeviceList](docs/PaginatedSmsDeviceList.md)
  - [PaginatedSourceList](docs/PaginatedSourceList.md)
  - [PaginatedSourceStageList](docs/PaginatedSourceStageList.md)
+ - [PaginatedSsfProviderList](docs/PaginatedSsfProviderList.md)
+ - [PaginatedSsfStreamList](docs/PaginatedSsfStreamList.md)
  - [PaginatedStageList](docs/PaginatedStageList.md)
  - [PaginatedStaticDeviceList](docs/PaginatedStaticDeviceList.md)
  - [PaginatedSystemTaskList](docs/PaginatedSystemTaskList.md)
@@ -1460,6 +1473,7 @@ Class | Method | HTTP request | Description
  - [PatchedSettingsRequest](docs/PatchedSettingsRequest.md)
  - [PatchedSmsDeviceRequest](docs/PatchedSmsDeviceRequest.md)
  - [PatchedSourceStageRequest](docs/PatchedSourceStageRequest.md)
+ - [PatchedSsfProviderRequest](docs/PatchedSsfProviderRequest.md)
  - [PatchedStaticDeviceRequest](docs/PatchedStaticDeviceRequest.md)
  - [PatchedTenantRequest](docs/PatchedTenantRequest.md)
  - [PatchedTokenRequest](docs/PatchedTokenRequest.md)
@@ -1584,6 +1598,9 @@ Class | Method | HTTP request | Description
  - [SourceStageRequest](docs/SourceStageRequest.md)
  - [SourceType](docs/SourceType.md)
  - [SpBindingEnum](docs/SpBindingEnum.md)
+ - [SsfProvider](docs/SsfProvider.md)
+ - [SsfProviderRequest](docs/SsfProviderRequest.md)
+ - [SsfStream](docs/SsfStream.md)
  - [Stage](docs/Stage.md)
  - [StagePrompt](docs/StagePrompt.md)
  - [StageRequest](docs/StageRequest.md)

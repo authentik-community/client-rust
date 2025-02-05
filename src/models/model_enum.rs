@@ -192,6 +192,8 @@ pub enum ModelEnum {
     ProvidersRacPeriodEndpoint,
     #[serde(rename = "authentik_providers_rac.racpropertymapping")]
     ProvidersRacPeriodRacpropertymapping,
+    #[serde(rename = "authentik_providers_ssf.ssfprovider")]
+    ProvidersSsfPeriodSsfprovider,
     #[serde(rename = "authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage")]
     StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage,
     #[serde(rename = "authentik_stages_source.sourcestage")]
@@ -368,6 +370,7 @@ impl std::fmt::Display for ModelEnum {
             Self::ProvidersRacPeriodRacprovider => write!(f, "authentik_providers_rac.racprovider"),
             Self::ProvidersRacPeriodEndpoint => write!(f, "authentik_providers_rac.endpoint"),
             Self::ProvidersRacPeriodRacpropertymapping => write!(f, "authentik_providers_rac.racpropertymapping"),
+            Self::ProvidersSsfPeriodSsfprovider => write!(f, "authentik_providers_ssf.ssfprovider"),
             Self::StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage => write!(
                 f,
                 "authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage"

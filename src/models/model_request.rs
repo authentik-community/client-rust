@@ -32,6 +32,8 @@ pub enum ModelRequest {
     AuthentikProvidersSamlPeriodSamlprovider(models::SamlProviderRequest),
     #[serde(rename = "authentik_providers_scim.scimprovider")]
     AuthentikProvidersScimPeriodScimprovider(models::ScimProviderRequest),
+    #[serde(rename = "authentik_providers_ssf.ssfprovider")]
+    AuthentikProvidersSsfPeriodSsfprovider(models::SsfProviderRequest),
 }
 
 impl Default for ModelRequest {

@@ -128,6 +128,8 @@ pub enum AppEnum {
     EnterprisePeriodProvidersPeriodMicrosoftEntra,
     #[serde(rename = "authentik.enterprise.providers.rac")]
     EnterprisePeriodProvidersPeriodRac,
+    #[serde(rename = "authentik.enterprise.providers.ssf")]
+    EnterprisePeriodProvidersPeriodSsf,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
     EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc,
     #[serde(rename = "authentik.enterprise.stages.source")]
@@ -200,6 +202,7 @@ impl std::fmt::Display for AppEnum {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
             Self::EnterprisePeriodProvidersPeriodRac => write!(f, "authentik.enterprise.providers.rac"),
+            Self::EnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
             Self::EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")
             }
