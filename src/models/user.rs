@@ -52,6 +52,8 @@ pub struct User {
     pub r#type: Option<models::UserTypeEnum>,
     #[serde(rename = "uuid")]
     pub uuid: uuid::Uuid,
+    #[serde(rename = "password_change_date")]
+    pub password_change_date: String,
 }
 
 impl User {
@@ -65,6 +67,7 @@ impl User {
         avatar: String,
         uid: String,
         uuid: uuid::Uuid,
+        password_change_date: String,
     ) -> User {
         User {
             pk,
@@ -82,6 +85,7 @@ impl User {
             path: None,
             r#type: None,
             uuid,
+            password_change_date,
         }
     }
 }
