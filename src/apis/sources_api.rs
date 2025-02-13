@@ -1242,6 +1242,7 @@ pub async fn sources_all_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
     search: Option<&str>,
     slug: Option<&str>,
 ) -> Result<models::PaginatedSourceList, Error<SourcesAllListError>> {
@@ -1266,6 +1267,9 @@ pub async fn sources_all_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = pbm_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("pbm_uuid", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = search {
         local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);

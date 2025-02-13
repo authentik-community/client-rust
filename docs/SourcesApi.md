@@ -170,7 +170,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_all_list
 
-> models::PaginatedSourceList sources_all_list(managed, name, ordering, page, page_size, search, slug)
+> models::PaginatedSourceList sources_all_list(managed, name, ordering, page, page_size, pbm_uuid, search, slug)
 
 
 Source Viewset
@@ -185,6 +185,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **slug** | Option<**String**> |  |  |
 
