@@ -34,6 +34,7 @@
 | SourcesPeriodScim | authentik.sources.scim |
 | StagesPeriodAuthenticator | authentik.stages.authenticator |
 | StagesPeriodAuthenticatorDuo | authentik.stages.authenticator_duo |
+| StagesPeriodAuthenticatorEmail | authentik.stages.authenticator_email |
 | StagesPeriodAuthenticatorSms | authentik.stages.authenticator_sms |
 | StagesPeriodAuthenticatorStatic | authentik.stages.authenticator_static |
 | StagesPeriodAuthenticatorTotp | authentik.stages.authenticator_totp |

@@ -52,6 +52,8 @@
 | SourcesScimPeriodScimsourcepropertymapping | authentik_sources_scim.scimsourcepropertymapping |
 | StagesAuthenticatorDuoPeriodAuthenticatorduostage | authentik_stages_authenticator_duo.authenticatorduostage |
 | StagesAuthenticatorDuoPeriodDuodevice | authentik_stages_authenticator_duo.duodevice |
+| StagesAuthenticatorEmailPeriodAuthenticatoremailstage | authentik_stages_authenticator_email.authenticatoremailstage |
+| StagesAuthenticatorEmailPeriodEmaildevice | authentik_stages_authenticator_email.emaildevice |
 | StagesAuthenticatorSmsPeriodAuthenticatorsmsstage | authentik_stages_authenticator_sms.authenticatorsmsstage |
 | StagesAuthenticatorSmsPeriodSmsdevice | authentik_stages_authenticator_sms.smsdevice |
 | StagesAuthenticatorStaticPeriodAuthenticatorstaticstage | authentik_stages_authenticator_static.authenticatorstaticstage |

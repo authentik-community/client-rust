@@ -50,6 +50,12 @@ Class | Method | HTTP request | Description
 *AuthenticatorsApi* | [**authenticators_admin_duo_partial_update**](docs/AuthenticatorsApi.md#authenticators_admin_duo_partial_update) | **PATCH** /authenticators/admin/duo/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_admin_duo_retrieve**](docs/AuthenticatorsApi.md#authenticators_admin_duo_retrieve) | **GET** /authenticators/admin/duo/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_admin_duo_update**](docs/AuthenticatorsApi.md#authenticators_admin_duo_update) | **PUT** /authenticators/admin/duo/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_create**](docs/AuthenticatorsApi.md#authenticators_admin_email_create) | **POST** /authenticators/admin/email/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_destroy**](docs/AuthenticatorsApi.md#authenticators_admin_email_destroy) | **DELETE** /authenticators/admin/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_list**](docs/AuthenticatorsApi.md#authenticators_admin_email_list) | **GET** /authenticators/admin/email/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_partial_update**](docs/AuthenticatorsApi.md#authenticators_admin_email_partial_update) | **PATCH** /authenticators/admin/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_retrieve**](docs/AuthenticatorsApi.md#authenticators_admin_email_retrieve) | **GET** /authenticators/admin/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_admin_email_update**](docs/AuthenticatorsApi.md#authenticators_admin_email_update) | **PUT** /authenticators/admin/email/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_admin_endpoint_create**](docs/AuthenticatorsApi.md#authenticators_admin_endpoint_create) | **POST** /authenticators/admin/endpoint/ | 
 *AuthenticatorsApi* | [**authenticators_admin_endpoint_destroy**](docs/AuthenticatorsApi.md#authenticators_admin_endpoint_destroy) | **DELETE** /authenticators/admin/endpoint/{uuid}/ | 
 *AuthenticatorsApi* | [**authenticators_admin_endpoint_list**](docs/AuthenticatorsApi.md#authenticators_admin_endpoint_list) | **GET** /authenticators/admin/endpoint/ | 
@@ -87,6 +93,12 @@ Class | Method | HTTP request | Description
 *AuthenticatorsApi* | [**authenticators_duo_retrieve**](docs/AuthenticatorsApi.md#authenticators_duo_retrieve) | **GET** /authenticators/duo/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_duo_update**](docs/AuthenticatorsApi.md#authenticators_duo_update) | **PUT** /authenticators/duo/{id}/ | 
 *AuthenticatorsApi* | [**authenticators_duo_used_by_list**](docs/AuthenticatorsApi.md#authenticators_duo_used_by_list) | **GET** /authenticators/duo/{id}/used_by/ | 
+*AuthenticatorsApi* | [**authenticators_email_destroy**](docs/AuthenticatorsApi.md#authenticators_email_destroy) | **DELETE** /authenticators/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_email_list**](docs/AuthenticatorsApi.md#authenticators_email_list) | **GET** /authenticators/email/ | 
+*AuthenticatorsApi* | [**authenticators_email_partial_update**](docs/AuthenticatorsApi.md#authenticators_email_partial_update) | **PATCH** /authenticators/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_email_retrieve**](docs/AuthenticatorsApi.md#authenticators_email_retrieve) | **GET** /authenticators/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_email_update**](docs/AuthenticatorsApi.md#authenticators_email_update) | **PUT** /authenticators/email/{id}/ | 
+*AuthenticatorsApi* | [**authenticators_email_used_by_list**](docs/AuthenticatorsApi.md#authenticators_email_used_by_list) | **GET** /authenticators/email/{id}/used_by/ | 
 *AuthenticatorsApi* | [**authenticators_endpoint_list**](docs/AuthenticatorsApi.md#authenticators_endpoint_list) | **GET** /authenticators/endpoint/ | 
 *AuthenticatorsApi* | [**authenticators_endpoint_retrieve**](docs/AuthenticatorsApi.md#authenticators_endpoint_retrieve) | **GET** /authenticators/endpoint/{uuid}/ | 
 *AuthenticatorsApi* | [**authenticators_endpoint_used_by_list**](docs/AuthenticatorsApi.md#authenticators_endpoint_used_by_list) | **GET** /authenticators/endpoint/{uuid}/used_by/ | 
@@ -796,6 +808,13 @@ Class | Method | HTTP request | Description
 *StagesApi* | [**stages_authenticator_duo_retrieve**](docs/StagesApi.md#stages_authenticator_duo_retrieve) | **GET** /stages/authenticator/duo/{stage_uuid}/ | 
 *StagesApi* | [**stages_authenticator_duo_update**](docs/StagesApi.md#stages_authenticator_duo_update) | **PUT** /stages/authenticator/duo/{stage_uuid}/ | 
 *StagesApi* | [**stages_authenticator_duo_used_by_list**](docs/StagesApi.md#stages_authenticator_duo_used_by_list) | **GET** /stages/authenticator/duo/{stage_uuid}/used_by/ | 
+*StagesApi* | [**stages_authenticator_email_create**](docs/StagesApi.md#stages_authenticator_email_create) | **POST** /stages/authenticator/email/ | 
+*StagesApi* | [**stages_authenticator_email_destroy**](docs/StagesApi.md#stages_authenticator_email_destroy) | **DELETE** /stages/authenticator/email/{stage_uuid}/ | 
+*StagesApi* | [**stages_authenticator_email_list**](docs/StagesApi.md#stages_authenticator_email_list) | **GET** /stages/authenticator/email/ | 
+*StagesApi* | [**stages_authenticator_email_partial_update**](docs/StagesApi.md#stages_authenticator_email_partial_update) | **PATCH** /stages/authenticator/email/{stage_uuid}/ | 
+*StagesApi* | [**stages_authenticator_email_retrieve**](docs/StagesApi.md#stages_authenticator_email_retrieve) | **GET** /stages/authenticator/email/{stage_uuid}/ | 
+*StagesApi* | [**stages_authenticator_email_update**](docs/StagesApi.md#stages_authenticator_email_update) | **PUT** /stages/authenticator/email/{stage_uuid}/ | 
+*StagesApi* | [**stages_authenticator_email_used_by_list**](docs/StagesApi.md#stages_authenticator_email_used_by_list) | **GET** /stages/authenticator/email/{stage_uuid}/used_by/ | 
 *StagesApi* | [**stages_authenticator_endpoint_gdtc_create**](docs/StagesApi.md#stages_authenticator_endpoint_gdtc_create) | **POST** /stages/authenticator/endpoint_gdtc/ | 
 *StagesApi* | [**stages_authenticator_endpoint_gdtc_destroy**](docs/StagesApi.md#stages_authenticator_endpoint_gdtc_destroy) | **DELETE** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
 *StagesApi* | [**stages_authenticator_endpoint_gdtc_list**](docs/StagesApi.md#stages_authenticator_endpoint_gdtc_list) | **GET** /stages/authenticator/endpoint_gdtc/ | 
@@ -1006,6 +1025,10 @@ Class | Method | HTTP request | Description
  - [AuthenticatorDuoStageDeviceImportResponse](docs/AuthenticatorDuoStageDeviceImportResponse.md)
  - [AuthenticatorDuoStageManualDeviceImportRequest](docs/AuthenticatorDuoStageManualDeviceImportRequest.md)
  - [AuthenticatorDuoStageRequest](docs/AuthenticatorDuoStageRequest.md)
+ - [AuthenticatorEmailChallenge](docs/AuthenticatorEmailChallenge.md)
+ - [AuthenticatorEmailChallengeResponseRequest](docs/AuthenticatorEmailChallengeResponseRequest.md)
+ - [AuthenticatorEmailStage](docs/AuthenticatorEmailStage.md)
+ - [AuthenticatorEmailStageRequest](docs/AuthenticatorEmailStageRequest.md)
  - [AuthenticatorEndpointGdtcStage](docs/AuthenticatorEndpointGdtcStage.md)
  - [AuthenticatorEndpointGdtcStageRequest](docs/AuthenticatorEndpointGdtcStageRequest.md)
  - [AuthenticatorSmsChallenge](docs/AuthenticatorSmsChallenge.md)
@@ -1093,6 +1116,8 @@ Class | Method | HTTP request | Description
  - [DuoResponseEnum](docs/DuoResponseEnum.md)
  - [EmailChallenge](docs/EmailChallenge.md)
  - [EmailChallengeResponseRequest](docs/EmailChallengeResponseRequest.md)
+ - [EmailDevice](docs/EmailDevice.md)
+ - [EmailDeviceRequest](docs/EmailDeviceRequest.md)
  - [EmailStage](docs/EmailStage.md)
  - [EmailStageRequest](docs/EmailStageRequest.md)
  - [Endpoint](docs/Endpoint.md)
@@ -1248,6 +1273,7 @@ Class | Method | HTTP request | Description
  - [PaginatedApplicationList](docs/PaginatedApplicationList.md)
  - [PaginatedAuthenticatedSessionList](docs/PaginatedAuthenticatedSessionList.md)
  - [PaginatedAuthenticatorDuoStageList](docs/PaginatedAuthenticatorDuoStageList.md)
+ - [PaginatedAuthenticatorEmailStageList](docs/PaginatedAuthenticatorEmailStageList.md)
  - [PaginatedAuthenticatorEndpointGdtcStageList](docs/PaginatedAuthenticatorEndpointGdtcStageList.md)
  - [PaginatedAuthenticatorSmsStageList](docs/PaginatedAuthenticatorSmsStageList.md)
  - [PaginatedAuthenticatorStaticStageList](docs/PaginatedAuthenticatorStaticStageList.md)
@@ -1266,6 +1292,7 @@ Class | Method | HTTP request | Description
  - [PaginatedDummyPolicyList](docs/PaginatedDummyPolicyList.md)
  - [PaginatedDummyStageList](docs/PaginatedDummyStageList.md)
  - [PaginatedDuoDeviceList](docs/PaginatedDuoDeviceList.md)
+ - [PaginatedEmailDeviceList](docs/PaginatedEmailDeviceList.md)
  - [PaginatedEmailStageList](docs/PaginatedEmailStageList.md)
  - [PaginatedEndpointDeviceList](docs/PaginatedEndpointDeviceList.md)
  - [PaginatedEndpointList](docs/PaginatedEndpointList.md)
@@ -1386,6 +1413,7 @@ Class | Method | HTTP request | Description
  - [PatchedApplicationEntitlementRequest](docs/PatchedApplicationEntitlementRequest.md)
  - [PatchedApplicationRequest](docs/PatchedApplicationRequest.md)
  - [PatchedAuthenticatorDuoStageRequest](docs/PatchedAuthenticatorDuoStageRequest.md)
+ - [PatchedAuthenticatorEmailStageRequest](docs/PatchedAuthenticatorEmailStageRequest.md)
  - [PatchedAuthenticatorEndpointGdtcStageRequest](docs/PatchedAuthenticatorEndpointGdtcStageRequest.md)
  - [PatchedAuthenticatorSmsStageRequest](docs/PatchedAuthenticatorSmsStageRequest.md)
  - [PatchedAuthenticatorStaticStageRequest](docs/PatchedAuthenticatorStaticStageRequest.md)
@@ -1404,6 +1432,7 @@ Class | Method | HTTP request | Description
  - [PatchedDummyPolicyRequest](docs/PatchedDummyPolicyRequest.md)
  - [PatchedDummyStageRequest](docs/PatchedDummyStageRequest.md)
  - [PatchedDuoDeviceRequest](docs/PatchedDuoDeviceRequest.md)
+ - [PatchedEmailDeviceRequest](docs/PatchedEmailDeviceRequest.md)
  - [PatchedEmailStageRequest](docs/PatchedEmailStageRequest.md)
  - [PatchedEndpointDeviceRequest](docs/PatchedEndpointDeviceRequest.md)
  - [PatchedEndpointRequest](docs/PatchedEndpointRequest.md)

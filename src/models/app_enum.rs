@@ -74,6 +74,8 @@ pub enum AppEnum {
     StagesPeriodAuthenticator,
     #[serde(rename = "authentik.stages.authenticator_duo")]
     StagesPeriodAuthenticatorDuo,
+    #[serde(rename = "authentik.stages.authenticator_email")]
+    StagesPeriodAuthenticatorEmail,
     #[serde(rename = "authentik.stages.authenticator_sms")]
     StagesPeriodAuthenticatorSms,
     #[serde(rename = "authentik.stages.authenticator_static")]
@@ -171,6 +173,7 @@ impl std::fmt::Display for AppEnum {
             Self::SourcesPeriodScim => write!(f, "authentik.sources.scim"),
             Self::StagesPeriodAuthenticator => write!(f, "authentik.stages.authenticator"),
             Self::StagesPeriodAuthenticatorDuo => write!(f, "authentik.stages.authenticator_duo"),
+            Self::StagesPeriodAuthenticatorEmail => write!(f, "authentik.stages.authenticator_email"),
             Self::StagesPeriodAuthenticatorSms => write!(f, "authentik.stages.authenticator_sms"),
             Self::StagesPeriodAuthenticatorStatic => write!(f, "authentik.stages.authenticator_static"),
             Self::StagesPeriodAuthenticatorTotp => write!(f, "authentik.stages.authenticator_totp"),

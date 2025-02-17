@@ -24,6 +24,8 @@ pub enum DeviceClassesEnum {
     Duo,
     #[serde(rename = "sms")]
     Sms,
+    #[serde(rename = "email")]
+    Email,
 }
 
 impl std::fmt::Display for DeviceClassesEnum {
@@ -34,6 +36,7 @@ impl std::fmt::Display for DeviceClassesEnum {
             Self::Webauthn => write!(f, "webauthn"),
             Self::Duo => write!(f, "duo"),
             Self::Sms => write!(f, "sms"),
+            Self::Email => write!(f, "email"),
         }
     }
 }

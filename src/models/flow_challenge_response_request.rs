@@ -18,6 +18,8 @@ pub enum FlowChallengeResponseRequest {
     AkSourceOauthApple(models::AppleChallengeResponseRequest),
     #[serde(rename = "ak-stage-authenticator-duo")]
     AkStageAuthenticatorDuo(models::AuthenticatorDuoChallengeResponseRequest),
+    #[serde(rename = "ak-stage-authenticator-email")]
+    AkStageAuthenticatorEmail(models::AuthenticatorEmailChallengeResponseRequest),
     #[serde(rename = "ak-stage-authenticator-sms")]
     AkStageAuthenticatorSms(models::AuthenticatorSmsChallengeResponseRequest),
     #[serde(rename = "ak-stage-authenticator-static")]

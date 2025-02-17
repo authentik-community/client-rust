@@ -20,6 +20,8 @@ pub enum ChallengeTypes {
     AkSourceOauthApple(models::AppleLoginChallenge),
     #[serde(rename = "ak-stage-authenticator-duo")]
     AkStageAuthenticatorDuo(models::AuthenticatorDuoChallenge),
+    #[serde(rename = "ak-stage-authenticator-email")]
+    AkStageAuthenticatorEmail(models::AuthenticatorEmailChallenge),
     #[serde(rename = "ak-stage-authenticator-sms")]
     AkStageAuthenticatorSms(models::AuthenticatorSmsChallenge),
     #[serde(rename = "ak-stage-authenticator-static")]

@@ -30,6 +30,10 @@ docs/AuthenticatorDuoStage.md
 docs/AuthenticatorDuoStageDeviceImportResponse.md
 docs/AuthenticatorDuoStageManualDeviceImportRequest.md
 docs/AuthenticatorDuoStageRequest.md
+docs/AuthenticatorEmailChallenge.md
+docs/AuthenticatorEmailChallengeResponseRequest.md
+docs/AuthenticatorEmailStage.md
+docs/AuthenticatorEmailStageRequest.md
 docs/AuthenticatorEndpointGdtcStage.md
 docs/AuthenticatorEndpointGdtcStageRequest.md
 docs/AuthenticatorSmsChallenge.md
@@ -120,6 +124,8 @@ docs/DuoDeviceRequest.md
 docs/DuoResponseEnum.md
 docs/EmailChallenge.md
 docs/EmailChallengeResponseRequest.md
+docs/EmailDevice.md
+docs/EmailDeviceRequest.md
 docs/EmailStage.md
 docs/EmailStageRequest.md
 docs/Endpoint.md
@@ -281,6 +287,7 @@ docs/PaginatedApplicationEntitlementList.md
 docs/PaginatedApplicationList.md
 docs/PaginatedAuthenticatedSessionList.md
 docs/PaginatedAuthenticatorDuoStageList.md
+docs/PaginatedAuthenticatorEmailStageList.md
 docs/PaginatedAuthenticatorEndpointGdtcStageList.md
 docs/PaginatedAuthenticatorSmsStageList.md
 docs/PaginatedAuthenticatorStaticStageList.md
@@ -299,6 +306,7 @@ docs/PaginatedDomainList.md
 docs/PaginatedDummyPolicyList.md
 docs/PaginatedDummyStageList.md
 docs/PaginatedDuoDeviceList.md
+docs/PaginatedEmailDeviceList.md
 docs/PaginatedEmailStageList.md
 docs/PaginatedEndpointDeviceList.md
 docs/PaginatedEndpointList.md
@@ -419,6 +427,7 @@ docs/PasswordStageRequest.md
 docs/PatchedApplicationEntitlementRequest.md
 docs/PatchedApplicationRequest.md
 docs/PatchedAuthenticatorDuoStageRequest.md
+docs/PatchedAuthenticatorEmailStageRequest.md
 docs/PatchedAuthenticatorEndpointGdtcStageRequest.md
 docs/PatchedAuthenticatorSmsStageRequest.md
 docs/PatchedAuthenticatorStaticStageRequest.md
@@ -437,6 +446,7 @@ docs/PatchedDomainRequest.md
 docs/PatchedDummyPolicyRequest.md
 docs/PatchedDummyStageRequest.md
 docs/PatchedDuoDeviceRequest.md
+docs/PatchedEmailDeviceRequest.md
 docs/PatchedEmailStageRequest.md
 docs/PatchedEndpointDeviceRequest.md
 docs/PatchedEndpointRequest.md
@@ -781,6 +791,10 @@ src/models/authenticator_duo_stage.rs
 src/models/authenticator_duo_stage_device_import_response.rs
 src/models/authenticator_duo_stage_manual_device_import_request.rs
 src/models/authenticator_duo_stage_request.rs
+src/models/authenticator_email_challenge.rs
+src/models/authenticator_email_challenge_response_request.rs
+src/models/authenticator_email_stage.rs
+src/models/authenticator_email_stage_request.rs
 src/models/authenticator_endpoint_gdtc_stage.rs
 src/models/authenticator_endpoint_gdtc_stage_request.rs
 src/models/authenticator_sms_challenge.rs
@@ -868,6 +882,8 @@ src/models/duo_device_request.rs
 src/models/duo_response_enum.rs
 src/models/email_challenge.rs
 src/models/email_challenge_response_request.rs
+src/models/email_device.rs
+src/models/email_device_request.rs
 src/models/email_stage.rs
 src/models/email_stage_request.rs
 src/models/endpoint.rs
@@ -1024,6 +1040,7 @@ src/models/paginated_application_entitlement_list.rs
 src/models/paginated_application_list.rs
 src/models/paginated_authenticated_session_list.rs
 src/models/paginated_authenticator_duo_stage_list.rs
+src/models/paginated_authenticator_email_stage_list.rs
 src/models/paginated_authenticator_endpoint_gdtc_stage_list.rs
 src/models/paginated_authenticator_sms_stage_list.rs
 src/models/paginated_authenticator_static_stage_list.rs
@@ -1042,6 +1059,7 @@ src/models/paginated_domain_list.rs
 src/models/paginated_dummy_policy_list.rs
 src/models/paginated_dummy_stage_list.rs
 src/models/paginated_duo_device_list.rs
+src/models/paginated_email_device_list.rs
 src/models/paginated_email_stage_list.rs
 src/models/paginated_endpoint_device_list.rs
 src/models/paginated_endpoint_list.rs
@@ -1162,6 +1180,7 @@ src/models/password_stage_request.rs
 src/models/patched_application_entitlement_request.rs
 src/models/patched_application_request.rs
 src/models/patched_authenticator_duo_stage_request.rs
+src/models/patched_authenticator_email_stage_request.rs
 src/models/patched_authenticator_endpoint_gdtc_stage_request.rs
 src/models/patched_authenticator_sms_stage_request.rs
 src/models/patched_authenticator_static_stage_request.rs
@@ -1180,6 +1199,7 @@ src/models/patched_domain_request.rs
 src/models/patched_dummy_policy_request.rs
 src/models/patched_dummy_stage_request.rs
 src/models/patched_duo_device_request.rs
+src/models/patched_email_device_request.rs
 src/models/patched_email_stage_request.rs
 src/models/patched_endpoint_device_request.rs
 src/models/patched_endpoint_request.rs

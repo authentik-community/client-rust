@@ -20,6 +20,13 @@ Method | HTTP request | Description
 [**stages_authenticator_duo_retrieve**](StagesApi.md#stages_authenticator_duo_retrieve) | **GET** /stages/authenticator/duo/{stage_uuid}/ | 
 [**stages_authenticator_duo_update**](StagesApi.md#stages_authenticator_duo_update) | **PUT** /stages/authenticator/duo/{stage_uuid}/ | 
 [**stages_authenticator_duo_used_by_list**](StagesApi.md#stages_authenticator_duo_used_by_list) | **GET** /stages/authenticator/duo/{stage_uuid}/used_by/ | 
+[**stages_authenticator_email_create**](StagesApi.md#stages_authenticator_email_create) | **POST** /stages/authenticator/email/ | 
+[**stages_authenticator_email_destroy**](StagesApi.md#stages_authenticator_email_destroy) | **DELETE** /stages/authenticator/email/{stage_uuid}/ | 
+[**stages_authenticator_email_list**](StagesApi.md#stages_authenticator_email_list) | **GET** /stages/authenticator/email/ | 
+[**stages_authenticator_email_partial_update**](StagesApi.md#stages_authenticator_email_partial_update) | **PATCH** /stages/authenticator/email/{stage_uuid}/ | 
+[**stages_authenticator_email_retrieve**](StagesApi.md#stages_authenticator_email_retrieve) | **GET** /stages/authenticator/email/{stage_uuid}/ | 
+[**stages_authenticator_email_update**](StagesApi.md#stages_authenticator_email_update) | **PUT** /stages/authenticator/email/{stage_uuid}/ | 
+[**stages_authenticator_email_used_by_list**](StagesApi.md#stages_authenticator_email_used_by_list) | **GET** /stages/authenticator/email/{stage_uuid}/used_by/ | 
 [**stages_authenticator_endpoint_gdtc_create**](StagesApi.md#stages_authenticator_endpoint_gdtc_create) | **POST** /stages/authenticator/endpoint_gdtc/ | 
 [**stages_authenticator_endpoint_gdtc_destroy**](StagesApi.md#stages_authenticator_endpoint_gdtc_destroy) | **DELETE** /stages/authenticator/endpoint_gdtc/{stage_uuid}/ | 
 [**stages_authenticator_endpoint_gdtc_list**](StagesApi.md#stages_authenticator_endpoint_gdtc_list) | **GET** /stages/authenticator/endpoint_gdtc/ | 
@@ -659,6 +666,237 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **stage_uuid** | **uuid::Uuid** | A UUID string identifying this Duo Authenticator Setup Stage. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_create
+
+> models::AuthenticatorEmailStage stages_authenticator_email_create(authenticator_email_stage_request)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**authenticator_email_stage_request** | [**AuthenticatorEmailStageRequest**](AuthenticatorEmailStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::AuthenticatorEmailStage**](AuthenticatorEmailStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_destroy
+
+> stages_authenticator_email_destroy(stage_uuid)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Email Authenticator Setup Stage. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_list
+
+> models::PaginatedAuthenticatorEmailStageList stages_authenticator_email_list(configure_flow, friendly_name, from_address, host, name, ordering, page, page_size, password, port, search, stage_uuid, subject, template, timeout, token_expiry, use_global_settings, use_ssl, use_tls, username)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**configure_flow** | Option<**uuid::Uuid**> |  |  |
+**friendly_name** | Option<**String**> |  |  |
+**from_address** | Option<**String**> |  |  |
+**host** | Option<**String**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**password** | Option<**String**> |  |  |
+**port** | Option<**i32**> |  |  |
+**search** | Option<**String**> | A search term. |  |
+**stage_uuid** | Option<**uuid::Uuid**> |  |  |
+**subject** | Option<**String**> |  |  |
+**template** | Option<**String**> |  |  |
+**timeout** | Option<**i32**> |  |  |
+**token_expiry** | Option<**String**> |  |  |
+**use_global_settings** | Option<**bool**> |  |  |
+**use_ssl** | Option<**bool**> |  |  |
+**use_tls** | Option<**bool**> |  |  |
+**username** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedAuthenticatorEmailStageList**](PaginatedAuthenticatorEmailStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_partial_update
+
+> models::AuthenticatorEmailStage stages_authenticator_email_partial_update(stage_uuid, patched_authenticator_email_stage_request)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Email Authenticator Setup Stage. | [required] |
+**patched_authenticator_email_stage_request** | Option<[**PatchedAuthenticatorEmailStageRequest**](PatchedAuthenticatorEmailStageRequest.md)> |  |  |
+
+### Return type
+
+[**models::AuthenticatorEmailStage**](AuthenticatorEmailStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_retrieve
+
+> models::AuthenticatorEmailStage stages_authenticator_email_retrieve(stage_uuid)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Email Authenticator Setup Stage. | [required] |
+
+### Return type
+
+[**models::AuthenticatorEmailStage**](AuthenticatorEmailStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_update
+
+> models::AuthenticatorEmailStage stages_authenticator_email_update(stage_uuid, authenticator_email_stage_request)
+
+
+AuthenticatorEmailStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Email Authenticator Setup Stage. | [required] |
+**authenticator_email_stage_request** | [**AuthenticatorEmailStageRequest**](AuthenticatorEmailStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::AuthenticatorEmailStage**](AuthenticatorEmailStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_authenticator_email_used_by_list
+
+> Vec<models::UsedBy> stages_authenticator_email_used_by_list(stage_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Email Authenticator Setup Stage. | [required] |
 
 ### Return type
 

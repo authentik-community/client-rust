@@ -110,6 +110,10 @@ pub enum ModelEnum {
     StagesAuthenticatorDuoPeriodAuthenticatorduostage,
     #[serde(rename = "authentik_stages_authenticator_duo.duodevice")]
     StagesAuthenticatorDuoPeriodDuodevice,
+    #[serde(rename = "authentik_stages_authenticator_email.authenticatoremailstage")]
+    StagesAuthenticatorEmailPeriodAuthenticatoremailstage,
+    #[serde(rename = "authentik_stages_authenticator_email.emaildevice")]
+    StagesAuthenticatorEmailPeriodEmaildevice,
     #[serde(rename = "authentik_stages_authenticator_sms.authenticatorsmsstage")]
     StagesAuthenticatorSmsPeriodAuthenticatorsmsstage,
     #[serde(rename = "authentik_stages_authenticator_sms.smsdevice")]
@@ -303,6 +307,12 @@ impl std::fmt::Display for ModelEnum {
                 write!(f, "authentik_stages_authenticator_duo.authenticatorduostage")
             }
             Self::StagesAuthenticatorDuoPeriodDuodevice => write!(f, "authentik_stages_authenticator_duo.duodevice"),
+            Self::StagesAuthenticatorEmailPeriodAuthenticatoremailstage => {
+                write!(f, "authentik_stages_authenticator_email.authenticatoremailstage")
+            }
+            Self::StagesAuthenticatorEmailPeriodEmaildevice => {
+                write!(f, "authentik_stages_authenticator_email.emaildevice")
+            }
             Self::StagesAuthenticatorSmsPeriodAuthenticatorsmsstage => {
                 write!(f, "authentik_stages_authenticator_sms.authenticatorsmsstage")
             }

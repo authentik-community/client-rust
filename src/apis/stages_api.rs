@@ -157,6 +157,69 @@ pub enum StagesAuthenticatorDuoUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`stages_authenticator_email_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`stages_authenticator_email_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesAuthenticatorEmailUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`stages_authenticator_endpoint_gdtc_create`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -2349,6 +2412,382 @@ pub async fn stages_authenticator_duo_used_by_list(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<StagesAuthenticatorDuoUsedByListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_create(
+    configuration: &configuration::Configuration,
+    authenticator_email_stage_request: models::AuthenticatorEmailStageRequest,
+) -> Result<models::AuthenticatorEmailStage, Error<StagesAuthenticatorEmailCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/stages/authenticator/email/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&authenticator_email_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailCreateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_destroy(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<(), Error<StagesAuthenticatorEmailDestroyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/email/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailDestroyError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_list(
+    configuration: &configuration::Configuration,
+    configure_flow: Option<&str>,
+    friendly_name: Option<&str>,
+    from_address: Option<&str>,
+    host: Option<&str>,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    password: Option<&str>,
+    port: Option<i32>,
+    search: Option<&str>,
+    stage_uuid: Option<&str>,
+    subject: Option<&str>,
+    template: Option<&str>,
+    timeout: Option<i32>,
+    token_expiry: Option<&str>,
+    use_global_settings: Option<bool>,
+    use_ssl: Option<bool>,
+    use_tls: Option<bool>,
+    username: Option<&str>,
+) -> Result<models::PaginatedAuthenticatorEmailStageList, Error<StagesAuthenticatorEmailListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/stages/authenticator/email/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = configure_flow {
+        local_var_req_builder = local_var_req_builder.query(&[("configure_flow", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = friendly_name {
+        local_var_req_builder = local_var_req_builder.query(&[("friendly_name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = from_address {
+        local_var_req_builder = local_var_req_builder.query(&[("from_address", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = host {
+        local_var_req_builder = local_var_req_builder.query(&[("host", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = name {
+        local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = ordering {
+        local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = password {
+        local_var_req_builder = local_var_req_builder.query(&[("password", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = port {
+        local_var_req_builder = local_var_req_builder.query(&[("port", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = search {
+        local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = stage_uuid {
+        local_var_req_builder = local_var_req_builder.query(&[("stage_uuid", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = subject {
+        local_var_req_builder = local_var_req_builder.query(&[("subject", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = template {
+        local_var_req_builder = local_var_req_builder.query(&[("template", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = timeout {
+        local_var_req_builder = local_var_req_builder.query(&[("timeout", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = token_expiry {
+        local_var_req_builder = local_var_req_builder.query(&[("token_expiry", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = use_global_settings {
+        local_var_req_builder = local_var_req_builder.query(&[("use_global_settings", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = use_ssl {
+        local_var_req_builder = local_var_req_builder.query(&[("use_ssl", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = use_tls {
+        local_var_req_builder = local_var_req_builder.query(&[("use_tls", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = username {
+        local_var_req_builder = local_var_req_builder.query(&[("username", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailListError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_partial_update(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+    patched_authenticator_email_stage_request: Option<models::PatchedAuthenticatorEmailStageRequest>,
+) -> Result<models::AuthenticatorEmailStage, Error<StagesAuthenticatorEmailPartialUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/email/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&patched_authenticator_email_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailPartialUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_retrieve(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<models::AuthenticatorEmailStage, Error<StagesAuthenticatorEmailRetrieveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/email/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailRetrieveError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// AuthenticatorEmailStage Viewset
+pub async fn stages_authenticator_email_update(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+    authenticator_email_stage_request: models::AuthenticatorEmailStageRequest,
+) -> Result<models::AuthenticatorEmailStage, Error<StagesAuthenticatorEmailUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/email/{stage_uuid}/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&authenticator_email_stage_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn stages_authenticator_email_used_by_list(
+    configuration: &configuration::Configuration,
+    stage_uuid: &str,
+) -> Result<Vec<models::UsedBy>, Error<StagesAuthenticatorEmailUsedByListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/stages/authenticator/email/{stage_uuid}/used_by/",
+        local_var_configuration.base_path,
+        stage_uuid = crate::apis::urlencode(stage_uuid)
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<StagesAuthenticatorEmailUsedByListError> =
             serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
