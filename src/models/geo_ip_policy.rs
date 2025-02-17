@@ -42,6 +42,18 @@ pub struct GeoIpPolicy {
     pub countries: Vec<models::CountryCodeEnum>,
     #[serde(rename = "countries_obj")]
     pub countries_obj: Vec<models::DetailedCountryField>,
+    #[serde(rename = "check_history_distance", skip_serializing_if = "Option::is_none")]
+    pub check_history_distance: Option<bool>,
+    #[serde(rename = "history_max_distance_km", skip_serializing_if = "Option::is_none")]
+    pub history_max_distance_km: Option<u64>,
+    #[serde(rename = "distance_tolerance_km", skip_serializing_if = "Option::is_none")]
+    pub distance_tolerance_km: Option<u32>,
+    #[serde(rename = "history_login_count", skip_serializing_if = "Option::is_none")]
+    pub history_login_count: Option<u32>,
+    #[serde(rename = "check_impossible_travel", skip_serializing_if = "Option::is_none")]
+    pub check_impossible_travel: Option<bool>,
+    #[serde(rename = "impossible_tolerance_km", skip_serializing_if = "Option::is_none")]
+    pub impossible_tolerance_km: Option<u32>,
 }
 
 impl GeoIpPolicy {
@@ -69,6 +81,12 @@ impl GeoIpPolicy {
             asns: None,
             countries,
             countries_obj,
+            check_history_distance: None,
+            history_max_distance_km: None,
+            distance_tolerance_km: None,
+            history_login_count: None,
+            check_impossible_travel: None,
+            impossible_tolerance_km: None,
         }
     }
 }
