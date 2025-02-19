@@ -48,6 +48,8 @@ pub enum AppEnum {
     ProvidersPeriodOauth2,
     #[serde(rename = "authentik.providers.proxy")]
     ProvidersPeriodProxy,
+    #[serde(rename = "authentik.providers.rac")]
+    ProvidersPeriodRac,
     #[serde(rename = "authentik.providers.radius")]
     ProvidersPeriodRadius,
     #[serde(rename = "authentik.providers.saml")]
@@ -128,8 +130,6 @@ pub enum AppEnum {
     EnterprisePeriodProvidersPeriodGoogleWorkspace,
     #[serde(rename = "authentik.enterprise.providers.microsoft_entra")]
     EnterprisePeriodProvidersPeriodMicrosoftEntra,
-    #[serde(rename = "authentik.enterprise.providers.rac")]
-    EnterprisePeriodProvidersPeriodRac,
     #[serde(rename = "authentik.enterprise.providers.ssf")]
     EnterprisePeriodProvidersPeriodSsf,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
@@ -160,6 +160,7 @@ impl std::fmt::Display for AppEnum {
             Self::ProvidersPeriodLdap => write!(f, "authentik.providers.ldap"),
             Self::ProvidersPeriodOauth2 => write!(f, "authentik.providers.oauth2"),
             Self::ProvidersPeriodProxy => write!(f, "authentik.providers.proxy"),
+            Self::ProvidersPeriodRac => write!(f, "authentik.providers.rac"),
             Self::ProvidersPeriodRadius => write!(f, "authentik.providers.radius"),
             Self::ProvidersPeriodSaml => write!(f, "authentik.providers.saml"),
             Self::ProvidersPeriodScim => write!(f, "authentik.providers.scim"),
@@ -204,7 +205,6 @@ impl std::fmt::Display for AppEnum {
             Self::EnterprisePeriodProvidersPeriodMicrosoftEntra => {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
-            Self::EnterprisePeriodProvidersPeriodRac => write!(f, "authentik.enterprise.providers.rac"),
             Self::EnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
             Self::EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")

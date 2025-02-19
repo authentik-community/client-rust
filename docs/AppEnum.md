@@ -21,6 +21,7 @@
 | ProvidersPeriodLdap | authentik.providers.ldap |
 | ProvidersPeriodOauth2 | authentik.providers.oauth2 |
 | ProvidersPeriodProxy | authentik.providers.proxy |
+| ProvidersPeriodRac | authentik.providers.rac |
 | ProvidersPeriodRadius | authentik.providers.radius |
 | ProvidersPeriodSaml | authentik.providers.saml |
 | ProvidersPeriodScim | authentik.providers.scim |
@@ -61,7 +62,6 @@
 | EnterprisePeriodAudit | authentik.enterprise.audit |
 | EnterprisePeriodProvidersPeriodGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | EnterprisePeriodProvidersPeriodMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
-| EnterprisePeriodProvidersPeriodRac | authentik.enterprise.providers.rac |
 | EnterprisePeriodProvidersPeriodSsf | authentik.enterprise.providers.ssf |
 | EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
 | EnterprisePeriodStagesPeriodSource | authentik.enterprise.stages.source |

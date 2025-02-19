@@ -23,6 +23,9 @@
 | ProvidersOauth2PeriodScopemapping | authentik_providers_oauth2.scopemapping |
 | ProvidersOauth2PeriodOauth2provider | authentik_providers_oauth2.oauth2provider |
 | ProvidersProxyPeriodProxyprovider | authentik_providers_proxy.proxyprovider |
+| ProvidersRacPeriodRacprovider | authentik_providers_rac.racprovider |
+| ProvidersRacPeriodEndpoint | authentik_providers_rac.endpoint |
+| ProvidersRacPeriodRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | ProvidersRadiusPeriodRadiusprovider | authentik_providers_radius.radiusprovider |
 | ProvidersRadiusPeriodRadiusproviderpropertymapping | authentik_providers_radius.radiusproviderpropertymapping |
 | ProvidersSamlPeriodSamlprovider | authentik_providers_saml.samlprovider |
@@ -92,9 +95,6 @@
 | ProvidersGoogleWorkspacePeriodGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |
 | ProvidersMicrosoftEntraPeriodMicrosoftentraprovider | authentik_providers_microsoft_entra.microsoftentraprovider |
 | ProvidersMicrosoftEntraPeriodMicrosoftentraprovidermapping | authentik_providers_microsoft_entra.microsoftentraprovidermapping |
-| ProvidersRacPeriodRacprovider | authentik_providers_rac.racprovider |
-| ProvidersRacPeriodEndpoint | authentik_providers_rac.endpoint |
-| ProvidersRacPeriodRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | ProvidersSsfPeriodSsfprovider | authentik_providers_ssf.ssfprovider |
 | StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | StagesSourcePeriodSourcestage | authentik_stages_source.sourcestage |
