@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **filter_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **user_delete_action** | Option<[**models::OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md)> |  | [optional]
 **group_delete_action** | Option<[**models::OutgoingSyncDeleteAction**](OutgoingSyncDeleteAction.md)> |  | [optional]
+**dry_run** | Option<**bool**> | When enabled, provider will not modify or create objects in the remote system. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

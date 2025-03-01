@@ -18,6 +18,8 @@ pub struct SyncObjectRequest {
     pub sync_object_model: models::SyncObjectModelEnum,
     #[serde(rename = "sync_object_id")]
     pub sync_object_id: String,
+    #[serde(rename = "override_dry_run", skip_serializing_if = "Option::is_none")]
+    pub override_dry_run: Option<bool>,
 }
 
 impl SyncObjectRequest {
@@ -26,6 +28,7 @@ impl SyncObjectRequest {
         SyncObjectRequest {
             sync_object_model,
             sync_object_id,
+            override_dry_run: None,
         }
     }
 }

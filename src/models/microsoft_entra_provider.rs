@@ -60,6 +60,9 @@ pub struct MicrosoftEntraProvider {
     pub user_delete_action: Option<models::OutgoingSyncDeleteAction>,
     #[serde(rename = "group_delete_action", skip_serializing_if = "Option::is_none")]
     pub group_delete_action: Option<models::OutgoingSyncDeleteAction>,
+    /// When enabled, provider will not modify or create objects in the remote system.
+    #[serde(rename = "dry_run", skip_serializing_if = "Option::is_none")]
+    pub dry_run: Option<bool>,
 }
 
 impl MicrosoftEntraProvider {
@@ -95,6 +98,7 @@ impl MicrosoftEntraProvider {
             filter_group: None,
             user_delete_action: None,
             group_delete_action: None,
+            dry_run: None,
         }
     }
 }

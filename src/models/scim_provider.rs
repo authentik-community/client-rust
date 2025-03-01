@@ -58,6 +58,9 @@ pub struct ScimProvider {
         skip_serializing_if = "Option::is_none"
     )]
     pub filter_group: Option<Option<uuid::Uuid>>,
+    /// When enabled, provider will not modify or create objects in the remote system.
+    #[serde(rename = "dry_run", skip_serializing_if = "Option::is_none")]
+    pub dry_run: Option<bool>,
 }
 
 impl ScimProvider {
@@ -90,6 +93,7 @@ impl ScimProvider {
             token,
             exclude_users_service_account: None,
             filter_group: None,
+            dry_run: None,
         }
     }
 }

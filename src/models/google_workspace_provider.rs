@@ -62,6 +62,9 @@ pub struct GoogleWorkspaceProvider {
     pub group_delete_action: Option<models::OutgoingSyncDeleteAction>,
     #[serde(rename = "default_group_email_domain")]
     pub default_group_email_domain: String,
+    /// When enabled, provider will not modify or create objects in the remote system.
+    #[serde(rename = "dry_run", skip_serializing_if = "Option::is_none")]
+    pub dry_run: Option<bool>,
 }
 
 impl GoogleWorkspaceProvider {
@@ -98,6 +101,7 @@ impl GoogleWorkspaceProvider {
             user_delete_action: None,
             group_delete_action: None,
             default_group_email_domain,
+            dry_run: None,
         }
     }
 }
