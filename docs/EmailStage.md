@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **use_ssl** | Option<**bool**> |  | [optional]
 **timeout** | Option<**i32**> |  | [optional]
 **from_address** | Option<**String**> |  | [optional]
-**token_expiry** | Option<**i32**> | Time in minutes the token sent is valid. | [optional]
+**token_expiry** | Option<**String**> | Time the token sent is valid (Format: hours=3,minutes=17,seconds=300). | [optional]
 **subject** | Option<**String**> |  | [optional]
 **template** | Option<**String**> |  | [optional]
 **activate_user_on_success** | Option<**bool**> | Activate users upon completion of stage. | [optional]

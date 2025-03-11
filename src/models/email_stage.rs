@@ -49,9 +49,9 @@ pub struct EmailStage {
     pub timeout: Option<i32>,
     #[serde(rename = "from_address", skip_serializing_if = "Option::is_none")]
     pub from_address: Option<String>,
-    /// Time in minutes the token sent is valid.
+    /// Time the token sent is valid (Format: hours=3,minutes=17,seconds=300).
     #[serde(rename = "token_expiry", skip_serializing_if = "Option::is_none")]
-    pub token_expiry: Option<i32>,
+    pub token_expiry: Option<String>,
     #[serde(rename = "subject", skip_serializing_if = "Option::is_none")]
     pub subject: Option<String>,
     #[serde(rename = "template", skip_serializing_if = "Option::is_none")]

@@ -6336,7 +6336,7 @@ pub async fn stages_email_list(
     subject: Option<&str>,
     template: Option<&str>,
     timeout: Option<i32>,
-    token_expiry: Option<i32>,
+    token_expiry: Option<&str>,
     use_global_settings: Option<bool>,
     use_ssl: Option<bool>,
     use_tls: Option<bool>,

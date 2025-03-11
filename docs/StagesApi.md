@@ -3262,7 +3262,7 @@ Name | Type | Description  | Required | Notes
 **subject** | Option<**String**> |  |  |
 **template** | Option<**String**> |  |  |
 **timeout** | Option<**i32**> |  |  |
-**token_expiry** | Option<**i32**> |  |  |
+**token_expiry** | Option<**String**> |  |  |
 **use_global_settings** | Option<**bool**> |  |  |
 **use_ssl** | Option<**bool**> |  |  |
 **use_tls** | Option<**bool**> |  |  |
