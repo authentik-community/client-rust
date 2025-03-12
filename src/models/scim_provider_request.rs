@@ -29,6 +29,9 @@ pub struct ScimProviderRequest {
     /// Authentication token
     #[serde(rename = "token")]
     pub token: String,
+    /// Alter authentik behavior for vendor-specific SCIM implementations.
+    #[serde(rename = "compatibility_mode", skip_serializing_if = "Option::is_none")]
+    pub compatibility_mode: Option<models::CompatibilityModeEnum>,
     #[serde(rename = "exclude_users_service_account", skip_serializing_if = "Option::is_none")]
     pub exclude_users_service_account: Option<bool>,
     #[serde(
@@ -53,6 +56,7 @@ impl ScimProviderRequest {
             url,
             verify_certificates: None,
             token,
+            compatibility_mode: None,
             exclude_users_service_account: None,
             filter_group: None,
             dry_run: None,

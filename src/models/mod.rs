@@ -148,6 +148,8 @@ pub mod challenge_types;
 pub use self::challenge_types::ChallengeTypes;
 pub mod client_type_enum;
 pub use self::client_type_enum::ClientTypeEnum;
+pub mod compatibility_mode_enum;
+pub use self::compatibility_mode_enum::CompatibilityModeEnum;
 pub mod config;
 pub use self::config::Config;
 pub mod connection_token;
