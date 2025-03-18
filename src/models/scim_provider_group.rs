@@ -24,6 +24,8 @@ pub struct ScimProviderGroup {
     pub group_obj: models::UserGroup,
     #[serde(rename = "provider")]
     pub provider: i32,
+    #[serde(rename = "attributes", deserialize_with = "Option::deserialize")]
+    pub attributes: Option<serde_json::Value>,
 }
 
 impl ScimProviderGroup {
@@ -34,6 +36,7 @@ impl ScimProviderGroup {
         group: uuid::Uuid,
         group_obj: models::UserGroup,
         provider: i32,
+        attributes: Option<serde_json::Value>,
     ) -> ScimProviderGroup {
         ScimProviderGroup {
             id,
@@ -41,6 +44,7 @@ impl ScimProviderGroup {
             group,
             group_obj,
             provider,
+            attributes,
         }
     }
 }
