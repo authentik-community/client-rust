@@ -22,6 +22,8 @@ pub struct CurrentBrand {
     pub branding_logo: String,
     #[serde(rename = "branding_favicon")]
     pub branding_favicon: String,
+    #[serde(rename = "branding_custom_css")]
+    pub branding_custom_css: String,
     #[serde(rename = "ui_footer_links")]
     pub ui_footer_links: Vec<models::FooterLink>,
     #[serde(rename = "ui_theme")]
@@ -49,6 +51,7 @@ impl CurrentBrand {
         branding_title: String,
         branding_logo: String,
         branding_favicon: String,
+        branding_custom_css: String,
         ui_footer_links: Vec<models::FooterLink>,
         ui_theme: models::UiThemeEnum,
         default_locale: String,
@@ -58,6 +61,7 @@ impl CurrentBrand {
             branding_title,
             branding_logo,
             branding_favicon,
+            branding_custom_css,
             ui_footer_links,
             ui_theme,
             flow_authentication: None,

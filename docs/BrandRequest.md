@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **branding_title** | Option<**String**> |  | [optional]
 **branding_logo** | Option<**String**> |  | [optional]
 **branding_favicon** | Option<**String**> |  | [optional]
+**branding_custom_css** | Option<**String**> |  | [optional]
 **flow_authentication** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **flow_invalidation** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **flow_recovery** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]

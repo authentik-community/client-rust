@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **branding_title** | **String** |  | 
 **branding_logo** | **String** |  | 
 **branding_favicon** | **String** |  | 
+**branding_custom_css** | **String** |  | 
 **ui_footer_links** | [**Vec<models::FooterLink>**](FooterLink.md) |  | [readonly]
 **ui_theme** | [**models::UiThemeEnum**](UiThemeEnum.md) |  | [readonly][default to Automatic]
 **flow_authentication** | Option<**String**> |  | [optional]
