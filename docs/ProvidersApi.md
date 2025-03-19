@@ -2732,7 +2732,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_list
 
-> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authorization_flow, backchannel_application, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
+> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
 
 
 SAMLProvider Viewset
@@ -2747,6 +2747,7 @@ Name | Type | Description  | Required | Notes
 **assertion_valid_not_on_or_after** | Option<**String**> |  |  |
 **audience** | Option<**String**> |  |  |
 **authentication_flow** | Option<**uuid::Uuid**> |  |  |
+**authn_context_class_ref_mapping** | Option<**uuid::Uuid**> |  |  |
 **authorization_flow** | Option<**uuid::Uuid**> |  |  |
 **backchannel_application** | Option<**uuid::Uuid**> |  |  |
 **default_relay_state** | Option<**String**> |  |  |

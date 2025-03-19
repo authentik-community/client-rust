@@ -83,6 +83,14 @@ pub struct SamlProvider {
         skip_serializing_if = "Option::is_none"
     )]
     pub name_id_mapping: Option<Option<uuid::Uuid>>,
+    /// Configure how the AuthnContextClassRef value will be created. When left empty, the AuthnContextClassRef will be set based on which authentication methods the user used to authenticate.
+    #[serde(
+        rename = "authn_context_class_ref_mapping",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub authn_context_class_ref_mapping: Option<Option<uuid::Uuid>>,
     #[serde(rename = "digest_algorithm", skip_serializing_if = "Option::is_none")]
     pub digest_algorithm: Option<models::DigestAlgorithmEnum>,
     #[serde(rename = "signature_algorithm", skip_serializing_if = "Option::is_none")]
@@ -186,6 +194,7 @@ impl SamlProvider {
             assertion_valid_not_on_or_after: None,
             session_valid_not_on_or_after: None,
             name_id_mapping: None,
+            authn_context_class_ref_mapping: None,
             digest_algorithm: None,
             signature_algorithm: None,
             signing_kp: None,

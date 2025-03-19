@@ -4957,6 +4957,7 @@ pub async fn providers_saml_list(
     assertion_valid_not_on_or_after: Option<&str>,
     audience: Option<&str>,
     authentication_flow: Option<&str>,
+    authn_context_class_ref_mapping: Option<&str>,
     authorization_flow: Option<&str>,
     backchannel_application: Option<&str>,
     default_relay_state: Option<&str>,
@@ -5003,6 +5004,10 @@ pub async fn providers_saml_list(
     }
     if let Some(ref local_var_str) = authentication_flow {
         local_var_req_builder = local_var_req_builder.query(&[("authentication_flow", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = authn_context_class_ref_mapping {
+        local_var_req_builder =
+            local_var_req_builder.query(&[("authn_context_class_ref_mapping", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = authorization_flow {
         local_var_req_builder = local_var_req_builder.query(&[("authorization_flow", &local_var_str.to_string())]);

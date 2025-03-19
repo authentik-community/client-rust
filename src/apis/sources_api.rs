@@ -1192,7 +1192,7 @@ pub enum SourcesUserConnectionsSamlUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
-/// Source Viewset
+/// Prevent deletion of built-in sources
 pub async fn sources_all_destroy(
     configuration: &configuration::Configuration,
     slug: &str,

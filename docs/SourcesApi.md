@@ -143,7 +143,7 @@ Method | HTTP request | Description
 > sources_all_destroy(slug)
 
 
-Source Viewset
+Prevent deletion of built-in sources
 
 ### Parameters
 
