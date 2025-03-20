@@ -1809,6 +1809,7 @@ pub async fn core_brands_destroy(
 pub async fn core_brands_list(
     configuration: &configuration::Configuration,
     brand_uuid: Option<&str>,
+    branding_default_flow_background: Option<&str>,
     branding_favicon: Option<&str>,
     branding_logo: Option<&str>,
     branding_title: Option<&str>,
@@ -1835,6 +1836,10 @@ pub async fn core_brands_list(
 
     if let Some(ref local_var_str) = brand_uuid {
         local_var_req_builder = local_var_req_builder.query(&[("brand_uuid", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = branding_default_flow_background {
+        local_var_req_builder =
+            local_var_req_builder.query(&[("branding_default_flow_background", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = branding_favicon {
         local_var_req_builder = local_var_req_builder.query(&[("branding_favicon", &local_var_str.to_string())]);

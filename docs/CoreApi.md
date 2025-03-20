@@ -857,7 +857,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_brands_list
 
-> models::PaginatedBrandList core_brands_list(brand_uuid, branding_favicon, branding_logo, branding_title, default, domain, flow_authentication, flow_device_code, flow_invalidation, flow_recovery, flow_unenrollment, flow_user_settings, ordering, page, page_size, search, web_certificate)
+> models::PaginatedBrandList core_brands_list(brand_uuid, branding_default_flow_background, branding_favicon, branding_logo, branding_title, default, domain, flow_authentication, flow_device_code, flow_invalidation, flow_recovery, flow_unenrollment, flow_user_settings, ordering, page, page_size, search, web_certificate)
 
 
 Brand Viewset
@@ -868,6 +868,7 @@ Brand Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **brand_uuid** | Option<**uuid::Uuid**> |  |  |
+**branding_default_flow_background** | Option<**String**> |  |  |
 **branding_favicon** | Option<**String**> |  |  |
 **branding_logo** | Option<**String**> |  |  |
 **branding_title** | Option<**String**> |  |  |

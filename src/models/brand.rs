@@ -29,6 +29,8 @@ pub struct Brand {
     pub branding_favicon: Option<String>,
     #[serde(rename = "branding_custom_css", skip_serializing_if = "Option::is_none")]
     pub branding_custom_css: Option<String>,
+    #[serde(rename = "branding_default_flow_background", skip_serializing_if = "Option::is_none")]
+    pub branding_default_flow_background: Option<String>,
     #[serde(
         rename = "flow_authentication",
         default,
@@ -107,6 +109,7 @@ impl Brand {
             branding_logo: None,
             branding_favicon: None,
             branding_custom_css: None,
+            branding_default_flow_background: None,
             flow_authentication: None,
             flow_invalidation: None,
             flow_recovery: None,
