@@ -25,13 +25,22 @@ pub struct NotificationTransport {
     pub mode_verbose: String,
     #[serde(rename = "webhook_url", skip_serializing_if = "Option::is_none")]
     pub webhook_url: Option<String>,
+    /// Customize the body of the request. Mapping should return data that is JSON-serializable.
     #[serde(
-        rename = "webhook_mapping",
+        rename = "webhook_mapping_body",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
-    pub webhook_mapping: Option<Option<uuid::Uuid>>,
+    pub webhook_mapping_body: Option<Option<uuid::Uuid>>,
+    /// Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs
+    #[serde(
+        rename = "webhook_mapping_headers",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub webhook_mapping_headers: Option<Option<uuid::Uuid>>,
     /// Only send notification once, for example when sending a webhook into a chat channel.
     #[serde(rename = "send_once", skip_serializing_if = "Option::is_none")]
     pub send_once: Option<bool>,
@@ -46,7 +55,8 @@ impl NotificationTransport {
             mode: None,
             mode_verbose,
             webhook_url: None,
-            webhook_mapping: None,
+            webhook_mapping_body: None,
+            webhook_mapping_headers: None,
             send_once: None,
         }
     }
