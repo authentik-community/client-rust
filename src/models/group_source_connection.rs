@@ -26,6 +26,8 @@ pub struct GroupSourceConnection {
     pub identifier: String,
     #[serde(rename = "created")]
     pub created: String,
+    #[serde(rename = "last_updated")]
+    pub last_updated: String,
 }
 
 impl GroupSourceConnection {
@@ -37,6 +39,7 @@ impl GroupSourceConnection {
         source_obj: models::Source,
         identifier: String,
         created: String,
+        last_updated: String,
     ) -> GroupSourceConnection {
         GroupSourceConnection {
             pk,
@@ -45,6 +48,7 @@ impl GroupSourceConnection {
             source_obj,
             identifier,
             created,
+            last_updated,
         }
     }
 }

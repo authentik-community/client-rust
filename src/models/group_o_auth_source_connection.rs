@@ -26,6 +26,8 @@ pub struct GroupOAuthSourceConnection {
     pub identifier: String,
     #[serde(rename = "created")]
     pub created: String,
+    #[serde(rename = "last_updated")]
+    pub last_updated: String,
 }
 
 impl GroupOAuthSourceConnection {
@@ -37,6 +39,7 @@ impl GroupOAuthSourceConnection {
         source_obj: models::Source,
         identifier: String,
         created: String,
+        last_updated: String,
     ) -> GroupOAuthSourceConnection {
         GroupOAuthSourceConnection {
             pk,
@@ -45,6 +48,7 @@ impl GroupOAuthSourceConnection {
             source_obj,
             identifier,
             created,
+            last_updated,
         }
     }
 }

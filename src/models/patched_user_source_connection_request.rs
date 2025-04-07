@@ -18,6 +18,8 @@ pub struct PatchedUserSourceConnectionRequest {
     pub user: Option<i32>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
     pub source: Option<uuid::Uuid>,
+    #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
+    pub identifier: Option<String>,
 }
 
 impl PatchedUserSourceConnectionRequest {
@@ -26,6 +28,7 @@ impl PatchedUserSourceConnectionRequest {
         PatchedUserSourceConnectionRequest {
             user: None,
             source: None,
+            identifier: None,
         }
     }
 }

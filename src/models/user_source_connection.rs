@@ -22,8 +22,12 @@ pub struct UserSourceConnection {
     pub source: uuid::Uuid,
     #[serde(rename = "source_obj")]
     pub source_obj: models::Source,
+    #[serde(rename = "identifier")]
+    pub identifier: String,
     #[serde(rename = "created")]
     pub created: String,
+    #[serde(rename = "last_updated")]
+    pub last_updated: String,
 }
 
 impl UserSourceConnection {
@@ -33,14 +37,18 @@ impl UserSourceConnection {
         user: i32,
         source: uuid::Uuid,
         source_obj: models::Source,
+        identifier: String,
         created: String,
+        last_updated: String,
     ) -> UserSourceConnection {
         UserSourceConnection {
             pk,
             user,
             source,
             source_obj,
+            identifier,
             created,
+            last_updated,
         }
     }
 }

@@ -18,11 +18,17 @@ pub struct UserSourceConnectionRequest {
     pub user: i32,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
+    #[serde(rename = "identifier")]
+    pub identifier: String,
 }
 
 impl UserSourceConnectionRequest {
     /// User source connection
-    pub fn new(user: i32, source: uuid::Uuid) -> UserSourceConnectionRequest {
-        UserSourceConnectionRequest { user, source }
+    pub fn new(user: i32, source: uuid::Uuid, identifier: String) -> UserSourceConnectionRequest {
+        UserSourceConnectionRequest {
+            user,
+            source,
+            identifier,
+        }
     }
 }
