@@ -667,6 +667,13 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_all_types_list**](docs/SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 *SourcesApi* | [**sources_all_used_by_list**](docs/SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 *SourcesApi* | [**sources_all_user_settings_list**](docs/SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
+*SourcesApi* | [**sources_group_connections_all_destroy**](docs/SourcesApi.md#sources_group_connections_all_destroy) | **DELETE** /sources/group_connections/all/{id}/ | 
+*SourcesApi* | [**sources_group_connections_all_list**](docs/SourcesApi.md#sources_group_connections_all_list) | **GET** /sources/group_connections/all/ | 
+*SourcesApi* | [**sources_group_connections_all_partial_update**](docs/SourcesApi.md#sources_group_connections_all_partial_update) | **PATCH** /sources/group_connections/all/{id}/ | 
+*SourcesApi* | [**sources_group_connections_all_retrieve**](docs/SourcesApi.md#sources_group_connections_all_retrieve) | **GET** /sources/group_connections/all/{id}/ | 
+*SourcesApi* | [**sources_group_connections_all_update**](docs/SourcesApi.md#sources_group_connections_all_update) | **PUT** /sources/group_connections/all/{id}/ | 
+*SourcesApi* | [**sources_group_connections_all_used_by_list**](docs/SourcesApi.md#sources_group_connections_all_used_by_list) | **GET** /sources/group_connections/all/{id}/used_by/ | 
+*SourcesApi* | [**sources_group_connections_kerberos_create**](docs/SourcesApi.md#sources_group_connections_kerberos_create) | **POST** /sources/group_connections/kerberos/ | 
 *SourcesApi* | [**sources_group_connections_kerberos_destroy**](docs/SourcesApi.md#sources_group_connections_kerberos_destroy) | **DELETE** /sources/group_connections/kerberos/{id}/ | 
 *SourcesApi* | [**sources_group_connections_kerberos_list**](docs/SourcesApi.md#sources_group_connections_kerberos_list) | **GET** /sources/group_connections/kerberos/ | 
 *SourcesApi* | [**sources_group_connections_kerberos_partial_update**](docs/SourcesApi.md#sources_group_connections_kerberos_partial_update) | **PATCH** /sources/group_connections/kerberos/{id}/ | 
@@ -687,6 +694,7 @@ Class | Method | HTTP request | Description
 *SourcesApi* | [**sources_group_connections_plex_retrieve**](docs/SourcesApi.md#sources_group_connections_plex_retrieve) | **GET** /sources/group_connections/plex/{id}/ | 
 *SourcesApi* | [**sources_group_connections_plex_update**](docs/SourcesApi.md#sources_group_connections_plex_update) | **PUT** /sources/group_connections/plex/{id}/ | 
 *SourcesApi* | [**sources_group_connections_plex_used_by_list**](docs/SourcesApi.md#sources_group_connections_plex_used_by_list) | **GET** /sources/group_connections/plex/{id}/used_by/ | 
+*SourcesApi* | [**sources_group_connections_saml_create**](docs/SourcesApi.md#sources_group_connections_saml_create) | **POST** /sources/group_connections/saml/ | 
 *SourcesApi* | [**sources_group_connections_saml_destroy**](docs/SourcesApi.md#sources_group_connections_saml_destroy) | **DELETE** /sources/group_connections/saml/{id}/ | 
 *SourcesApi* | [**sources_group_connections_saml_list**](docs/SourcesApi.md#sources_group_connections_saml_list) | **GET** /sources/group_connections/saml/ | 
 *SourcesApi* | [**sources_group_connections_saml_partial_update**](docs/SourcesApi.md#sources_group_connections_saml_partial_update) | **PATCH** /sources/group_connections/saml/{id}/ | 
@@ -1184,6 +1192,8 @@ Class | Method | HTTP request | Description
  - [GroupRequest](docs/GroupRequest.md)
  - [GroupSamlSourceConnection](docs/GroupSamlSourceConnection.md)
  - [GroupSamlSourceConnectionRequest](docs/GroupSamlSourceConnectionRequest.md)
+ - [GroupSourceConnection](docs/GroupSourceConnection.md)
+ - [GroupSourceConnectionRequest](docs/GroupSourceConnectionRequest.md)
  - [IdentificationChallenge](docs/IdentificationChallenge.md)
  - [IdentificationChallengeResponseRequest](docs/IdentificationChallengeResponseRequest.md)
  - [IdentificationStage](docs/IdentificationStage.md)
@@ -1315,6 +1325,7 @@ Class | Method | HTTP request | Description
  - [PaginatedGroupOAuthSourceConnectionList](docs/PaginatedGroupOAuthSourceConnectionList.md)
  - [PaginatedGroupPlexSourceConnectionList](docs/PaginatedGroupPlexSourceConnectionList.md)
  - [PaginatedGroupSamlSourceConnectionList](docs/PaginatedGroupSamlSourceConnectionList.md)
+ - [PaginatedGroupSourceConnectionList](docs/PaginatedGroupSourceConnectionList.md)
  - [PaginatedIdentificationStageList](docs/PaginatedIdentificationStageList.md)
  - [PaginatedInvitationList](docs/PaginatedInvitationList.md)
  - [PaginatedInvitationStageList](docs/PaginatedInvitationStageList.md)
@@ -1452,6 +1463,7 @@ Class | Method | HTTP request | Description
  - [PatchedGroupPlexSourceConnectionRequest](docs/PatchedGroupPlexSourceConnectionRequest.md)
  - [PatchedGroupRequest](docs/PatchedGroupRequest.md)
  - [PatchedGroupSamlSourceConnectionRequest](docs/PatchedGroupSamlSourceConnectionRequest.md)
+ - [PatchedGroupSourceConnectionRequest](docs/PatchedGroupSourceConnectionRequest.md)
  - [PatchedIdentificationStageRequest](docs/PatchedIdentificationStageRequest.md)
  - [PatchedInvitationRequest](docs/PatchedInvitationRequest.md)
  - [PatchedInvitationStageRequest](docs/PatchedInvitationStageRequest.md)

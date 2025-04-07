@@ -11,22 +11,22 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserSamlSourceConnectionRequest : User source connection
+/// PatchedGroupSourceConnectionRequest : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PatchedUserSamlSourceConnectionRequest {
-    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
-    pub user: Option<i32>,
+pub struct PatchedGroupSourceConnectionRequest {
+    #[serde(rename = "group", skip_serializing_if = "Option::is_none")]
+    pub group: Option<uuid::Uuid>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
     pub source: Option<uuid::Uuid>,
     #[serde(rename = "identifier", skip_serializing_if = "Option::is_none")]
     pub identifier: Option<String>,
 }
 
-impl PatchedUserSamlSourceConnectionRequest {
-    /// User source connection
-    pub fn new() -> PatchedUserSamlSourceConnectionRequest {
-        PatchedUserSamlSourceConnectionRequest {
-            user: None,
+impl PatchedGroupSourceConnectionRequest {
+    /// Group Source Connection
+    pub fn new() -> PatchedGroupSourceConnectionRequest {
+        PatchedGroupSourceConnectionRequest {
+            group: None,
             source: None,
             identifier: None,
         }

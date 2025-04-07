@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserKerberosSourceConnectionRequest : Kerberos Source Serializer
+/// PatchedUserKerberosSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedUserKerberosSourceConnectionRequest {
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
@@ -23,7 +23,7 @@ pub struct PatchedUserKerberosSourceConnectionRequest {
 }
 
 impl PatchedUserKerberosSourceConnectionRequest {
-    /// Kerberos Source Serializer
+    /// User source connection
     pub fn new() -> PatchedUserKerberosSourceConnectionRequest {
         PatchedUserKerberosSourceConnectionRequest {
             user: None,

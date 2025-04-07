@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserPlexSourceConnectionRequest : Plex Source connection Serializer
+/// UserPlexSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserPlexSourceConnectionRequest {
     #[serde(rename = "user")]
@@ -25,7 +25,7 @@ pub struct UserPlexSourceConnectionRequest {
 }
 
 impl UserPlexSourceConnectionRequest {
-    /// Plex Source connection Serializer
+    /// User source connection
     pub fn new(
         user: i32,
         source: uuid::Uuid,

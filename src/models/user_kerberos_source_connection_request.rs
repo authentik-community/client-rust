@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserKerberosSourceConnectionRequest : Kerberos Source Serializer
+/// UserKerberosSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserKerberosSourceConnectionRequest {
     #[serde(rename = "user")]
@@ -23,7 +23,7 @@ pub struct UserKerberosSourceConnectionRequest {
 }
 
 impl UserKerberosSourceConnectionRequest {
-    /// Kerberos Source Serializer
+    /// User source connection
     pub fn new(user: i32, source: uuid::Uuid, identifier: String) -> UserKerberosSourceConnectionRequest {
         UserKerberosSourceConnectionRequest {
             user,

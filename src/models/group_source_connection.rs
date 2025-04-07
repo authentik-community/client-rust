@@ -11,24 +11,40 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GroupKerberosSourceConnectionRequest : Group Source Connection
+/// GroupSourceConnection : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct GroupKerberosSourceConnectionRequest {
+pub struct GroupSourceConnection {
+    #[serde(rename = "pk")]
+    pub pk: i32,
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
+    #[serde(rename = "source_obj")]
+    pub source_obj: models::Source,
     #[serde(rename = "identifier")]
     pub identifier: String,
+    #[serde(rename = "created")]
+    pub created: String,
 }
 
-impl GroupKerberosSourceConnectionRequest {
+impl GroupSourceConnection {
     /// Group Source Connection
-    pub fn new(group: uuid::Uuid, source: uuid::Uuid, identifier: String) -> GroupKerberosSourceConnectionRequest {
-        GroupKerberosSourceConnectionRequest {
+    pub fn new(
+        pk: i32,
+        group: uuid::Uuid,
+        source: uuid::Uuid,
+        source_obj: models::Source,
+        identifier: String,
+        created: String,
+    ) -> GroupSourceConnection {
+        GroupSourceConnection {
+            pk,
             group,
             source,
+            source_obj,
             identifier,
+            created,
         }
     }
 }

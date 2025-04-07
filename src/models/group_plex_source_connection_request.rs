@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GroupPlexSourceConnectionRequest : Plex Group-Source connection Serializer
+/// GroupPlexSourceConnectionRequest : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupPlexSourceConnectionRequest {
     #[serde(rename = "group")]
@@ -23,7 +23,7 @@ pub struct GroupPlexSourceConnectionRequest {
 }
 
 impl GroupPlexSourceConnectionRequest {
-    /// Plex Group-Source connection Serializer
+    /// Group Source Connection
     pub fn new(group: uuid::Uuid, source: uuid::Uuid, identifier: String) -> GroupPlexSourceConnectionRequest {
         GroupPlexSourceConnectionRequest {
             group,

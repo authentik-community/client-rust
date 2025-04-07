@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GroupSamlSourceConnection : OAuth Group-Source connection Serializer
+/// GroupSamlSourceConnection : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GroupSamlSourceConnection {
     #[serde(rename = "pk")]
@@ -29,7 +29,7 @@ pub struct GroupSamlSourceConnection {
 }
 
 impl GroupSamlSourceConnection {
-    /// OAuth Group-Source connection Serializer
+    /// Group Source Connection
     pub fn new(
         pk: i32,
         group: uuid::Uuid,

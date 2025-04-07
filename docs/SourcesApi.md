@@ -12,6 +12,13 @@ Method | HTTP request | Description
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
+[**sources_group_connections_all_destroy**](SourcesApi.md#sources_group_connections_all_destroy) | **DELETE** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_list**](SourcesApi.md#sources_group_connections_all_list) | **GET** /sources/group_connections/all/ | 
+[**sources_group_connections_all_partial_update**](SourcesApi.md#sources_group_connections_all_partial_update) | **PATCH** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_retrieve**](SourcesApi.md#sources_group_connections_all_retrieve) | **GET** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_update**](SourcesApi.md#sources_group_connections_all_update) | **PUT** /sources/group_connections/all/{id}/ | 
+[**sources_group_connections_all_used_by_list**](SourcesApi.md#sources_group_connections_all_used_by_list) | **GET** /sources/group_connections/all/{id}/used_by/ | 
+[**sources_group_connections_kerberos_create**](SourcesApi.md#sources_group_connections_kerberos_create) | **POST** /sources/group_connections/kerberos/ | 
 [**sources_group_connections_kerberos_destroy**](SourcesApi.md#sources_group_connections_kerberos_destroy) | **DELETE** /sources/group_connections/kerberos/{id}/ | 
 [**sources_group_connections_kerberos_list**](SourcesApi.md#sources_group_connections_kerberos_list) | **GET** /sources/group_connections/kerberos/ | 
 [**sources_group_connections_kerberos_partial_update**](SourcesApi.md#sources_group_connections_kerberos_partial_update) | **PATCH** /sources/group_connections/kerberos/{id}/ | 
@@ -32,6 +39,7 @@ Method | HTTP request | Description
 [**sources_group_connections_plex_retrieve**](SourcesApi.md#sources_group_connections_plex_retrieve) | **GET** /sources/group_connections/plex/{id}/ | 
 [**sources_group_connections_plex_update**](SourcesApi.md#sources_group_connections_plex_update) | **PUT** /sources/group_connections/plex/{id}/ | 
 [**sources_group_connections_plex_used_by_list**](SourcesApi.md#sources_group_connections_plex_used_by_list) | **GET** /sources/group_connections/plex/{id}/used_by/ | 
+[**sources_group_connections_saml_create**](SourcesApi.md#sources_group_connections_saml_create) | **POST** /sources/group_connections/saml/ | 
 [**sources_group_connections_saml_destroy**](SourcesApi.md#sources_group_connections_saml_destroy) | **DELETE** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_list**](SourcesApi.md#sources_group_connections_saml_list) | **GET** /sources/group_connections/saml/ | 
 [**sources_group_connections_saml_partial_update**](SourcesApi.md#sources_group_connections_saml_partial_update) | **PATCH** /sources/group_connections/saml/{id}/ | 
@@ -377,6 +385,223 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_destroy
+
+> sources_group_connections_all_destroy(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this group source connection. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_list
+
+> models::PaginatedGroupSourceConnectionList sources_group_connections_all_list(group, ordering, page, page_size, search, source__slug)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group** | Option<**uuid::Uuid**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**source__slug** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedGroupSourceConnectionList**](PaginatedGroupSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_partial_update
+
+> models::GroupSourceConnection sources_group_connections_all_partial_update(id, patched_group_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this group source connection. | [required] |
+**patched_group_source_connection_request** | Option<[**PatchedGroupSourceConnectionRequest**](PatchedGroupSourceConnectionRequest.md)> |  |  |
+
+### Return type
+
+[**models::GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_retrieve
+
+> models::GroupSourceConnection sources_group_connections_all_retrieve(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this group source connection. | [required] |
+
+### Return type
+
+[**models::GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_update
+
+> models::GroupSourceConnection sources_group_connections_all_update(id, group_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this group source connection. | [required] |
+**group_source_connection_request** | [**GroupSourceConnectionRequest**](GroupSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GroupSourceConnection**](GroupSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_all_used_by_list
+
+> Vec<models::UsedBy> sources_group_connections_all_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this group source connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_kerberos_create
+
+> models::GroupKerberosSourceConnection sources_group_connections_kerberos_create(group_kerberos_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group_kerberos_source_connection_request** | [**GroupKerberosSourceConnectionRequest**](GroupKerberosSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GroupKerberosSourceConnection**](GroupKerberosSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -998,6 +1223,36 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_saml_create
+
+> models::GroupSamlSourceConnection sources_group_connections_saml_create(group_saml_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group_saml_source_connection_request** | [**GroupSamlSourceConnectionRequest**](GroupSamlSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GroupSamlSourceConnection**](GroupSAMLSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3407,7 +3662,7 @@ Name | Type | Description  | Required | Notes
 > models::UserKerberosSourceConnection sources_user_connections_kerberos_create(user_kerberos_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3437,7 +3692,7 @@ Name | Type | Description  | Required | Notes
 > sources_user_connections_kerberos_destroy(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3464,10 +3719,10 @@ Name | Type | Description  | Required | Notes
 
 ## sources_user_connections_kerberos_list
 
-> models::PaginatedUserKerberosSourceConnectionList sources_user_connections_kerberos_list(ordering, page, page_size, search, source__slug)
+> models::PaginatedUserKerberosSourceConnectionList sources_user_connections_kerberos_list(ordering, page, page_size, search, source__slug, user)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3479,6 +3734,7 @@ Name | Type | Description  | Required | Notes
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **search** | Option<**String**> | A search term. |  |
 **source__slug** | Option<**String**> |  |  |
+**user** | Option<**i32**> |  |  |
 
 ### Return type
 
@@ -3501,7 +3757,7 @@ Name | Type | Description  | Required | Notes
 > models::UserKerberosSourceConnection sources_user_connections_kerberos_partial_update(id, patched_user_kerberos_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3532,7 +3788,7 @@ Name | Type | Description  | Required | Notes
 > models::UserKerberosSourceConnection sources_user_connections_kerberos_retrieve(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3562,7 +3818,7 @@ Name | Type | Description  | Required | Notes
 > models::UserKerberosSourceConnection sources_user_connections_kerberos_update(id, user_kerberos_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3623,7 +3879,7 @@ Name | Type | Description  | Required | Notes
 > models::UserOAuthSourceConnection sources_user_connections_oauth_create(user_o_auth_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3653,7 +3909,7 @@ Name | Type | Description  | Required | Notes
 > sources_user_connections_oauth_destroy(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3683,7 +3939,7 @@ Name | Type | Description  | Required | Notes
 > models::PaginatedUserOAuthSourceConnectionList sources_user_connections_oauth_list(ordering, page, page_size, search, source__slug, user)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3718,7 +3974,7 @@ Name | Type | Description  | Required | Notes
 > models::UserOAuthSourceConnection sources_user_connections_oauth_partial_update(id, patched_user_o_auth_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3749,7 +4005,7 @@ Name | Type | Description  | Required | Notes
 > models::UserOAuthSourceConnection sources_user_connections_oauth_retrieve(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3779,7 +4035,7 @@ Name | Type | Description  | Required | Notes
 > models::UserOAuthSourceConnection sources_user_connections_oauth_update(id, user_o_auth_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -3840,7 +4096,7 @@ Name | Type | Description  | Required | Notes
 > models::UserPlexSourceConnection sources_user_connections_plex_create(user_plex_source_connection_request)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -3870,7 +4126,7 @@ Name | Type | Description  | Required | Notes
 > sources_user_connections_plex_destroy(id)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -3900,7 +4156,7 @@ Name | Type | Description  | Required | Notes
 > models::PaginatedUserPlexSourceConnectionList sources_user_connections_plex_list(ordering, page, page_size, search, source__slug, user)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -3935,7 +4191,7 @@ Name | Type | Description  | Required | Notes
 > models::UserPlexSourceConnection sources_user_connections_plex_partial_update(id, patched_user_plex_source_connection_request)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -3966,7 +4222,7 @@ Name | Type | Description  | Required | Notes
 > models::UserPlexSourceConnection sources_user_connections_plex_retrieve(id)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -3996,7 +4252,7 @@ Name | Type | Description  | Required | Notes
 > models::UserPlexSourceConnection sources_user_connections_plex_update(id, user_plex_source_connection_request)
 
 
-Plex Source connection Serializer
+User-source connection Viewset
 
 ### Parameters
 
@@ -4057,7 +4313,7 @@ Name | Type | Description  | Required | Notes
 > models::UserSamlSourceConnection sources_user_connections_saml_create(user_saml_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -4087,7 +4343,7 @@ Name | Type | Description  | Required | Notes
 > sources_user_connections_saml_destroy(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -4117,7 +4373,7 @@ Name | Type | Description  | Required | Notes
 > models::PaginatedUserSamlSourceConnectionList sources_user_connections_saml_list(ordering, page, page_size, search, source__slug, user)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -4152,7 +4408,7 @@ Name | Type | Description  | Required | Notes
 > models::UserSamlSourceConnection sources_user_connections_saml_partial_update(id, patched_user_saml_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -4183,7 +4439,7 @@ Name | Type | Description  | Required | Notes
 > models::UserSamlSourceConnection sources_user_connections_saml_retrieve(id)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 
@@ -4213,7 +4469,7 @@ Name | Type | Description  | Required | Notes
 > models::UserSamlSourceConnection sources_user_connections_saml_update(id, user_saml_source_connection_request)
 
 
-Source Viewset
+User-source connection Viewset
 
 ### Parameters
 

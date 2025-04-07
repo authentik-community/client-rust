@@ -85,6 +85,69 @@ pub enum SourcesAllUserSettingsListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`sources_group_connections_all_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_all_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_all_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_all_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_all_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_all_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsAllUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_kerberos_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsKerberosCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`sources_group_connections_kerberos_destroy`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -260,6 +323,15 @@ pub enum SourcesGroupConnectionsPlexUpdateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum SourcesGroupConnectionsPlexUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_saml_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsSamlCreateError {
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -1556,6 +1628,330 @@ pub async fn sources_all_user_settings_list(
 }
 
 /// Group-source connection Viewset
+pub async fn sources_group_connections_all_destroy(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<(), Error<SourcesGroupConnectionsAllDestroyError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/all/{id}/",
+        local_var_configuration.base_path,
+        id = id
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::DELETE, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        Ok(())
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllDestroyError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_all_list(
+    configuration: &configuration::Configuration,
+    group: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+    source__slug: Option<&str>,
+) -> Result<models::PaginatedGroupSourceConnectionList, Error<SourcesGroupConnectionsAllListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/sources/group_connections/all/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = group {
+        local_var_req_builder = local_var_req_builder.query(&[("group", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = ordering {
+        local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page {
+        local_var_req_builder = local_var_req_builder.query(&[("page", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = page_size {
+        local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = search {
+        local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = source__slug {
+        local_var_req_builder = local_var_req_builder.query(&[("source__slug", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_all_partial_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    patched_group_source_connection_request: Option<models::PatchedGroupSourceConnectionRequest>,
+) -> Result<models::GroupSourceConnection, Error<SourcesGroupConnectionsAllPartialUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/all/{id}/",
+        local_var_configuration.base_path,
+        id = id
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PATCH, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&patched_group_source_connection_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllPartialUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_all_retrieve(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<models::GroupSourceConnection, Error<SourcesGroupConnectionsAllRetrieveError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/all/{id}/",
+        local_var_configuration.base_path,
+        id = id
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllRetrieveError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_all_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    group_source_connection_request: models::GroupSourceConnectionRequest,
+) -> Result<models::GroupSourceConnection, Error<SourcesGroupConnectionsAllUpdateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/all/{id}/",
+        local_var_configuration.base_path,
+        id = id
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::PUT, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&group_source_connection_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllUpdateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn sources_group_connections_all_used_by_list(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<Vec<models::UsedBy>, Error<SourcesGroupConnectionsAllUsedByListError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/all/{id}/used_by/",
+        local_var_configuration.base_path,
+        id = id
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsAllUsedByListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_kerberos_create(
+    configuration: &configuration::Configuration,
+    group_kerberos_source_connection_request: models::GroupKerberosSourceConnectionRequest,
+) -> Result<models::GroupKerberosSourceConnection, Error<SourcesGroupConnectionsKerberosCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!(
+        "{}/sources/group_connections/kerberos/",
+        local_var_configuration.base_path
+    );
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&group_kerberos_source_connection_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsKerberosCreateError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
 pub async fn sources_group_connections_kerberos_destroy(
     configuration: &configuration::Configuration,
     id: i32,
@@ -2471,6 +2867,46 @@ pub async fn sources_group_connections_plex_used_by_list(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<SourcesGroupConnectionsPlexUsedByListError> =
+            serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent {
+            status: local_var_status,
+            content: local_var_content,
+            entity: local_var_entity,
+        };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_saml_create(
+    configuration: &configuration::Configuration,
+    group_saml_source_connection_request: models::GroupSamlSourceConnectionRequest,
+) -> Result<models::GroupSamlSourceConnection, Error<SourcesGroupConnectionsSamlCreateError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/sources/group_connections/saml/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
+        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
+    };
+    local_var_req_builder = local_var_req_builder.json(&group_saml_source_connection_request);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SourcesGroupConnectionsSamlCreateError> =
             serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
@@ -6201,7 +6637,7 @@ pub async fn sources_user_connections_all_used_by_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_create(
     configuration: &configuration::Configuration,
     user_kerberos_source_connection_request: models::UserKerberosSourceConnectionRequest,
@@ -6244,7 +6680,7 @@ pub async fn sources_user_connections_kerberos_create(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_destroy(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6287,7 +6723,7 @@ pub async fn sources_user_connections_kerberos_destroy(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_list(
     configuration: &configuration::Configuration,
     ordering: Option<&str>,
@@ -6295,6 +6731,7 @@ pub async fn sources_user_connections_kerberos_list(
     page_size: Option<i32>,
     search: Option<&str>,
     source__slug: Option<&str>,
+    user: Option<i32>,
 ) -> Result<models::PaginatedUserKerberosSourceConnectionList, Error<SourcesUserConnectionsKerberosListError>> {
     let local_var_configuration = configuration;
 
@@ -6320,6 +6757,9 @@ pub async fn sources_user_connections_kerberos_list(
     }
     if let Some(ref local_var_str) = source__slug {
         local_var_req_builder = local_var_req_builder.query(&[("source__slug", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = user {
+        local_var_req_builder = local_var_req_builder.query(&[("user", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -6348,7 +6788,7 @@ pub async fn sources_user_connections_kerberos_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6393,7 +6833,7 @@ pub async fn sources_user_connections_kerberos_partial_update(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_retrieve(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6436,7 +6876,7 @@ pub async fn sources_user_connections_kerberos_retrieve(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_kerberos_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6524,7 +6964,7 @@ pub async fn sources_user_connections_kerberos_used_by_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_create(
     configuration: &configuration::Configuration,
     user_o_auth_source_connection_request: models::UserOAuthSourceConnectionRequest,
@@ -6564,7 +7004,7 @@ pub async fn sources_user_connections_oauth_create(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_destroy(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6607,7 +7047,7 @@ pub async fn sources_user_connections_oauth_destroy(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_list(
     configuration: &configuration::Configuration,
     ordering: Option<&str>,
@@ -6669,7 +7109,7 @@ pub async fn sources_user_connections_oauth_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6714,7 +7154,7 @@ pub async fn sources_user_connections_oauth_partial_update(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_retrieve(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6757,7 +7197,7 @@ pub async fn sources_user_connections_oauth_retrieve(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_oauth_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6845,7 +7285,7 @@ pub async fn sources_user_connections_oauth_used_by_list(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_create(
     configuration: &configuration::Configuration,
     user_plex_source_connection_request: models::UserPlexSourceConnectionRequest,
@@ -6885,7 +7325,7 @@ pub async fn sources_user_connections_plex_create(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_destroy(
     configuration: &configuration::Configuration,
     id: i32,
@@ -6928,7 +7368,7 @@ pub async fn sources_user_connections_plex_destroy(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_list(
     configuration: &configuration::Configuration,
     ordering: Option<&str>,
@@ -6990,7 +7430,7 @@ pub async fn sources_user_connections_plex_list(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7035,7 +7475,7 @@ pub async fn sources_user_connections_plex_partial_update(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_retrieve(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7078,7 +7518,7 @@ pub async fn sources_user_connections_plex_retrieve(
     }
 }
 
-/// Plex Source connection Serializer
+/// User-source connection Viewset
 pub async fn sources_user_connections_plex_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7166,7 +7606,7 @@ pub async fn sources_user_connections_plex_used_by_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_create(
     configuration: &configuration::Configuration,
     user_saml_source_connection_request: models::UserSamlSourceConnectionRequest,
@@ -7206,7 +7646,7 @@ pub async fn sources_user_connections_saml_create(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_destroy(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7249,7 +7689,7 @@ pub async fn sources_user_connections_saml_destroy(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_list(
     configuration: &configuration::Configuration,
     ordering: Option<&str>,
@@ -7311,7 +7751,7 @@ pub async fn sources_user_connections_saml_list(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_partial_update(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7356,7 +7796,7 @@ pub async fn sources_user_connections_saml_partial_update(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_retrieve(
     configuration: &configuration::Configuration,
     id: i32,
@@ -7399,7 +7839,7 @@ pub async fn sources_user_connections_saml_retrieve(
     }
 }
 
-/// Source Viewset
+/// User-source connection Viewset
 pub async fn sources_user_connections_saml_update(
     configuration: &configuration::Configuration,
     id: i32,

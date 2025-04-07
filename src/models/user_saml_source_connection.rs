@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserSamlSourceConnection : SAML Source Serializer
+/// UserSamlSourceConnection : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserSamlSourceConnection {
     #[serde(rename = "pk")]
@@ -29,7 +29,7 @@ pub struct UserSamlSourceConnection {
 }
 
 impl UserSamlSourceConnection {
-    /// SAML Source Serializer
+    /// User source connection
     pub fn new(
         pk: i32,
         user: i32,

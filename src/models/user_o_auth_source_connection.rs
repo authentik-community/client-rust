@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserOAuthSourceConnection : OAuth Source Serializer
+/// UserOAuthSourceConnection : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserOAuthSourceConnection {
     #[serde(rename = "pk")]
@@ -29,7 +29,7 @@ pub struct UserOAuthSourceConnection {
 }
 
 impl UserOAuthSourceConnection {
-    /// OAuth Source Serializer
+    /// User source connection
     pub fn new(
         pk: i32,
         user: i32,

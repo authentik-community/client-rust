@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserPlexSourceConnectionRequest : Plex Source connection Serializer
+/// PatchedUserPlexSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedUserPlexSourceConnectionRequest {
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
@@ -25,7 +25,7 @@ pub struct PatchedUserPlexSourceConnectionRequest {
 }
 
 impl PatchedUserPlexSourceConnectionRequest {
-    /// Plex Source connection Serializer
+    /// User source connection
     pub fn new() -> PatchedUserPlexSourceConnectionRequest {
         PatchedUserPlexSourceConnectionRequest {
             user: None,

@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedUserOAuthSourceConnectionRequest : OAuth Source Serializer
+/// PatchedUserOAuthSourceConnectionRequest : User source connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedUserOAuthSourceConnectionRequest {
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
@@ -30,7 +30,7 @@ pub struct PatchedUserOAuthSourceConnectionRequest {
 }
 
 impl PatchedUserOAuthSourceConnectionRequest {
-    /// OAuth Source Serializer
+    /// User source connection
     pub fn new() -> PatchedUserOAuthSourceConnectionRequest {
         PatchedUserOAuthSourceConnectionRequest {
             user: None,

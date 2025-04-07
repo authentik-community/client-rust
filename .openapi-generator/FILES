@@ -195,6 +195,8 @@ docs/GroupPlexSourceConnectionRequest.md
 docs/GroupRequest.md
 docs/GroupSamlSourceConnection.md
 docs/GroupSamlSourceConnectionRequest.md
+docs/GroupSourceConnection.md
+docs/GroupSourceConnectionRequest.md
 docs/IdentificationChallenge.md
 docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
@@ -329,6 +331,7 @@ docs/PaginatedGroupList.md
 docs/PaginatedGroupOAuthSourceConnectionList.md
 docs/PaginatedGroupPlexSourceConnectionList.md
 docs/PaginatedGroupSamlSourceConnectionList.md
+docs/PaginatedGroupSourceConnectionList.md
 docs/PaginatedIdentificationStageList.md
 docs/PaginatedInvitationList.md
 docs/PaginatedInvitationStageList.md
@@ -466,6 +469,7 @@ docs/PatchedGroupOAuthSourceConnectionRequest.md
 docs/PatchedGroupPlexSourceConnectionRequest.md
 docs/PatchedGroupRequest.md
 docs/PatchedGroupSamlSourceConnectionRequest.md
+docs/PatchedGroupSourceConnectionRequest.md
 docs/PatchedIdentificationStageRequest.md
 docs/PatchedInvitationRequest.md
 docs/PatchedInvitationStageRequest.md
@@ -951,6 +955,8 @@ src/models/group_plex_source_connection_request.rs
 src/models/group_request.rs
 src/models/group_saml_source_connection.rs
 src/models/group_saml_source_connection_request.rs
+src/models/group_source_connection.rs
+src/models/group_source_connection_request.rs
 src/models/identification_challenge.rs
 src/models/identification_challenge_response_request.rs
 src/models/identification_stage.rs
@@ -1083,6 +1089,7 @@ src/models/paginated_group_list.rs
 src/models/paginated_group_o_auth_source_connection_list.rs
 src/models/paginated_group_plex_source_connection_list.rs
 src/models/paginated_group_saml_source_connection_list.rs
+src/models/paginated_group_source_connection_list.rs
 src/models/paginated_identification_stage_list.rs
 src/models/paginated_invitation_list.rs
 src/models/paginated_invitation_stage_list.rs
@@ -1220,6 +1227,7 @@ src/models/patched_group_o_auth_source_connection_request.rs
 src/models/patched_group_plex_source_connection_request.rs
 src/models/patched_group_request.rs
 src/models/patched_group_saml_source_connection_request.rs
+src/models/patched_group_source_connection_request.rs
 src/models/patched_identification_stage_request.rs
 src/models/patched_invitation_request.rs
 src/models/patched_invitation_stage_request.rs

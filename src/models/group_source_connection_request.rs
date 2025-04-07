@@ -11,9 +11,9 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GroupKerberosSourceConnectionRequest : Group Source Connection
+/// GroupSourceConnectionRequest : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct GroupKerberosSourceConnectionRequest {
+pub struct GroupSourceConnectionRequest {
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "source")]
@@ -22,10 +22,10 @@ pub struct GroupKerberosSourceConnectionRequest {
     pub identifier: String,
 }
 
-impl GroupKerberosSourceConnectionRequest {
+impl GroupSourceConnectionRequest {
     /// Group Source Connection
-    pub fn new(group: uuid::Uuid, source: uuid::Uuid, identifier: String) -> GroupKerberosSourceConnectionRequest {
-        GroupKerberosSourceConnectionRequest {
+    pub fn new(group: uuid::Uuid, source: uuid::Uuid, identifier: String) -> GroupSourceConnectionRequest {
+        GroupSourceConnectionRequest {
             group,
             source,
             identifier,

@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// PatchedGroupOAuthSourceConnectionRequest : OAuth Group-Source connection Serializer
+/// PatchedGroupOAuthSourceConnectionRequest : Group Source Connection
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedGroupOAuthSourceConnectionRequest {
     #[serde(rename = "group", skip_serializing_if = "Option::is_none")]
@@ -23,7 +23,7 @@ pub struct PatchedGroupOAuthSourceConnectionRequest {
 }
 
 impl PatchedGroupOAuthSourceConnectionRequest {
-    /// OAuth Group-Source connection Serializer
+    /// Group Source Connection
     pub fn new() -> PatchedGroupOAuthSourceConnectionRequest {
         PatchedGroupOAuthSourceConnectionRequest {
             group: None,
