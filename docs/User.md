@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **String** | User's display name. | 
 **is_active** | Option<**bool**> | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional]
 **last_login** | Option<**String**> |  | [optional]
+**date_joined** | **String** |  | [readonly]
 **is_superuser** | **bool** |  | [readonly]
 **groups** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **groups_obj** | Option<[**Vec<models::UserGroup>**](UserGroup.md)> |  | [readonly]

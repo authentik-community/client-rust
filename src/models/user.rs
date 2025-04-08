@@ -31,6 +31,8 @@ pub struct User {
         skip_serializing_if = "Option::is_none"
     )]
     pub last_login: Option<Option<String>>,
+    #[serde(rename = "date_joined")]
+    pub date_joined: String,
     #[serde(rename = "is_superuser")]
     pub is_superuser: bool,
     #[serde(rename = "groups", skip_serializing_if = "Option::is_none")]
@@ -62,6 +64,7 @@ impl User {
         pk: i32,
         username: String,
         name: String,
+        date_joined: String,
         is_superuser: bool,
         groups_obj: Option<Vec<models::UserGroup>>,
         avatar: String,
@@ -75,6 +78,7 @@ impl User {
             name,
             is_active: None,
             last_login: None,
+            date_joined,
             is_superuser,
             groups: None,
             groups_obj,
