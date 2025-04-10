@@ -135,6 +135,9 @@ pub struct LdapSource {
     /// Get cached source connectivity
     #[serde(rename = "connectivity", deserialize_with = "Option::deserialize")]
     pub connectivity: Option<std::collections::HashMap<String, std::collections::HashMap<String, String>>>,
+    /// Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory
+    #[serde(rename = "lookup_groups_from_user", skip_serializing_if = "Option::is_none")]
+    pub lookup_groups_from_user: Option<bool>,
 }
 
 impl LdapSource {
@@ -190,6 +193,7 @@ impl LdapSource {
             sync_groups: None,
             sync_parent_group: None,
             connectivity,
+            lookup_groups_from_user: None,
         }
     }
 }

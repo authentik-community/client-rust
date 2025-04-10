@@ -115,6 +115,9 @@ pub struct LdapSourceRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub sync_parent_group: Option<Option<uuid::Uuid>>,
+    /// Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory
+    #[serde(rename = "lookup_groups_from_user", skip_serializing_if = "Option::is_none")]
+    pub lookup_groups_from_user: Option<bool>,
 }
 
 impl LdapSourceRequest {
@@ -150,6 +153,7 @@ impl LdapSourceRequest {
             sync_users_password: None,
             sync_groups: None,
             sync_parent_group: None,
+            lookup_groups_from_user: None,
         }
     }
 }

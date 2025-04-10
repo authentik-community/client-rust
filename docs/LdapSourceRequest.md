@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **sync_users_password** | Option<**bool**> | When a user changes their password, sync it back to LDAP. This can only be enabled on a single LDAP source. | [optional]
 **sync_groups** | Option<**bool**> |  | [optional]
 **sync_parent_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**lookup_groups_from_user** | Option<**bool**> | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

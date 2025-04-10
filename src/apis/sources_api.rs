@@ -3727,6 +3727,7 @@ pub async fn sources_ldap_list(
     group_membership_field: Option<&str>,
     group_object_filter: Option<&str>,
     group_property_mappings: Option<Vec<uuid::Uuid>>,
+    lookup_groups_from_user: Option<bool>,
     name: Option<&str>,
     object_uniqueness_field: Option<&str>,
     ordering: Option<&str>,
@@ -3796,6 +3797,9 @@ pub async fn sources_ldap_list(
                     .to_string(),
             )]),
         };
+    }
+    if let Some(ref local_var_str) = lookup_groups_from_user {
+        local_var_req_builder = local_var_req_builder.query(&[("lookup_groups_from_user", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = name {
         local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);

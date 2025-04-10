@@ -1793,7 +1793,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_ldap_list
 
-> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, enabled, group_membership_field, group_object_filter, group_property_mappings, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_object_filter, user_property_mappings)
+> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, enabled, group_membership_field, group_object_filter, group_property_mappings, lookup_groups_from_user, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_object_filter, user_property_mappings)
 
 
 LDAP Source Viewset
@@ -1812,6 +1812,7 @@ Name | Type | Description  | Required | Notes
 **group_membership_field** | Option<**String**> |  |  |
 **group_object_filter** | Option<**String**> |  |  |
 **group_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**lookup_groups_from_user** | Option<**bool**> |  |  |
 **name** | Option<**String**> |  |  |
 **object_uniqueness_field** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
