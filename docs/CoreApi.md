@@ -654,7 +654,7 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
+**uuid** | **uuid::Uuid** |  | [required] |
 
 ### Return type
 
@@ -674,7 +674,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_authenticated_sessions_list
 
-> models::PaginatedAuthenticatedSessionList core_authenticated_sessions_list(last_ip, last_user_agent, ordering, page, page_size, search, user__username)
+> models::PaginatedAuthenticatedSessionList core_authenticated_sessions_list(ordering, page, page_size, search, session__last_ip, session__last_user_agent, user__username)
 
 
 AuthenticatedSession Viewset
@@ -684,12 +684,12 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**last_ip** | Option<**String**> |  |  |
-**last_user_agent** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **search** | Option<**String**> | A search term. |  |
+**session__last_ip** | Option<**String**> |  |  |
+**session__last_user_agent** | Option<**String**> |  |  |
 **user__username** | Option<**String**> |  |  |
 
 ### Return type
@@ -720,7 +720,7 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
+**uuid** | **uuid::Uuid** |  | [required] |
 
 ### Return type
 
@@ -750,7 +750,7 @@ Get a list of all objects that use this object
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
+**uuid** | **uuid::Uuid** |  | [required] |
 
 ### Return type
 

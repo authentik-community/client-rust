@@ -1538,12 +1538,12 @@ pub async fn core_authenticated_sessions_destroy(
 /// AuthenticatedSession Viewset
 pub async fn core_authenticated_sessions_list(
     configuration: &configuration::Configuration,
-    last_ip: Option<&str>,
-    last_user_agent: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
     search: Option<&str>,
+    session__last_ip: Option<&str>,
+    session__last_user_agent: Option<&str>,
     user__username: Option<&str>,
 ) -> Result<models::PaginatedAuthenticatedSessionList, Error<CoreAuthenticatedSessionsListError>> {
     let local_var_configuration = configuration;
@@ -1553,12 +1553,6 @@ pub async fn core_authenticated_sessions_list(
     let local_var_uri_str = format!("{}/core/authenticated_sessions/", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = last_ip {
-        local_var_req_builder = local_var_req_builder.query(&[("last_ip", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = last_user_agent {
-        local_var_req_builder = local_var_req_builder.query(&[("last_user_agent", &local_var_str.to_string())]);
-    }
     if let Some(ref local_var_str) = ordering {
         local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);
     }
@@ -1570,6 +1564,13 @@ pub async fn core_authenticated_sessions_list(
     }
     if let Some(ref local_var_str) = search {
         local_var_req_builder = local_var_req_builder.query(&[("search", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = session__last_ip {
+        local_var_req_builder = local_var_req_builder.query(&[("session__last_ip", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = session__last_user_agent {
+        local_var_req_builder =
+            local_var_req_builder.query(&[("session__last_user_agent", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = user__username {
         local_var_req_builder = local_var_req_builder.query(&[("user__username", &local_var_str.to_string())]);

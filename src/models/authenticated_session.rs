@@ -29,17 +29,12 @@ pub struct AuthenticatedSession {
     pub user: i32,
     #[serde(rename = "last_ip")]
     pub last_ip: String,
-    #[serde(rename = "last_user_agent", skip_serializing_if = "Option::is_none")]
-    pub last_user_agent: Option<String>,
+    #[serde(rename = "last_user_agent")]
+    pub last_user_agent: String,
     #[serde(rename = "last_used")]
     pub last_used: String,
-    #[serde(
-        rename = "expires",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub expires: Option<Option<String>>,
+    #[serde(rename = "expires")]
+    pub expires: String,
 }
 
 impl AuthenticatedSession {
@@ -51,7 +46,9 @@ impl AuthenticatedSession {
         asn: Option<models::AuthenticatedSessionAsn>,
         user: i32,
         last_ip: String,
+        last_user_agent: String,
         last_used: String,
+        expires: String,
     ) -> AuthenticatedSession {
         AuthenticatedSession {
             uuid: None,
@@ -61,9 +58,9 @@ impl AuthenticatedSession {
             asn,
             user,
             last_ip,
-            last_user_agent: None,
+            last_user_agent,
             last_used,
-            expires: None,
+            expires,
         }
     }
 }

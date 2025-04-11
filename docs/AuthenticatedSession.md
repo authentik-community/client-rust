@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **geo_ip** | Option<[**models::AuthenticatedSessionGeoIp**](AuthenticatedSession_geo_ip.md)> |  | 
 **asn** | Option<[**models::AuthenticatedSessionAsn**](AuthenticatedSession_asn.md)> |  | 
 **user** | **i32** |  | 
-**last_ip** | **String** |  | 
-**last_user_agent** | Option<**String**> |  | [optional]
+**last_ip** | **String** |  | [readonly]
+**last_user_agent** | **String** |  | [readonly]
 **last_used** | **String** |  | [readonly]
-**expires** | Option<**String**> |  | [optional]
+**expires** | **String** |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
