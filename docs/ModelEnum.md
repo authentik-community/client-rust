@@ -39,6 +39,8 @@
 | SourcesKerberosPeriodGroupkerberossourceconnection | authentik_sources_kerberos.groupkerberossourceconnection |
 | SourcesLdapPeriodLdapsource | authentik_sources_ldap.ldapsource |
 | SourcesLdapPeriodLdapsourcepropertymapping | authentik_sources_ldap.ldapsourcepropertymapping |
+| SourcesLdapPeriodUserldapsourceconnection | authentik_sources_ldap.userldapsourceconnection |
+| SourcesLdapPeriodGroupldapsourceconnection | authentik_sources_ldap.groupldapsourceconnection |
 | SourcesOauthPeriodOauthsource | authentik_sources_oauth.oauthsource |
 | SourcesOauthPeriodOauthsourcepropertymapping | authentik_sources_oauth.oauthsourcepropertymapping |
 | SourcesOauthPeriodUseroauthsourceconnection | authentik_sources_oauth.useroauthsourceconnection |

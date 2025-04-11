@@ -84,6 +84,10 @@ pub enum ModelEnum {
     SourcesLdapPeriodLdapsource,
     #[serde(rename = "authentik_sources_ldap.ldapsourcepropertymapping")]
     SourcesLdapPeriodLdapsourcepropertymapping,
+    #[serde(rename = "authentik_sources_ldap.userldapsourceconnection")]
+    SourcesLdapPeriodUserldapsourceconnection,
+    #[serde(rename = "authentik_sources_ldap.groupldapsourceconnection")]
+    SourcesLdapPeriodGroupldapsourceconnection,
     #[serde(rename = "authentik_sources_oauth.oauthsource")]
     SourcesOauthPeriodOauthsource,
     #[serde(rename = "authentik_sources_oauth.oauthsourcepropertymapping")]
@@ -271,6 +275,12 @@ impl std::fmt::Display for ModelEnum {
             Self::SourcesLdapPeriodLdapsource => write!(f, "authentik_sources_ldap.ldapsource"),
             Self::SourcesLdapPeriodLdapsourcepropertymapping => {
                 write!(f, "authentik_sources_ldap.ldapsourcepropertymapping")
+            }
+            Self::SourcesLdapPeriodUserldapsourceconnection => {
+                write!(f, "authentik_sources_ldap.userldapsourceconnection")
+            }
+            Self::SourcesLdapPeriodGroupldapsourceconnection => {
+                write!(f, "authentik_sources_ldap.groupldapsourceconnection")
             }
             Self::SourcesOauthPeriodOauthsource => write!(f, "authentik_sources_oauth.oauthsource"),
             Self::SourcesOauthPeriodOauthsourcepropertymapping => {
