@@ -29,6 +29,12 @@ pub struct Settings {
     /// Events will be deleted after this duration.(Format: weeks=3;days=2;hours=3,seconds=2).
     #[serde(rename = "event_retention", skip_serializing_if = "Option::is_none")]
     pub event_retention: Option<String>,
+    /// Reputation cannot decrease lower than this value. Zero or negative.
+    #[serde(rename = "reputation_lower_limit", skip_serializing_if = "Option::is_none")]
+    pub reputation_lower_limit: Option<i32>,
+    /// Reputation cannot increase higher than this value. Zero or positive.
+    #[serde(rename = "reputation_upper_limit", skip_serializing_if = "Option::is_none")]
+    pub reputation_upper_limit: Option<u32>,
     /// The option configures the footer links on the flow executor pages.
     #[serde(
         rename = "footer_links",
@@ -63,6 +69,8 @@ impl Settings {
             default_user_change_email: None,
             default_user_change_username: None,
             event_retention: None,
+            reputation_lower_limit: None,
+            reputation_upper_limit: None,
             footer_links: None,
             gdpr_compliance: None,
             impersonation: None,
