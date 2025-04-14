@@ -204,6 +204,9 @@ docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
 docs/IdentificationStageRequest.md
 docs/ImpersonationRequest.md
+docs/InitialPermissions.md
+docs/InitialPermissionsModeEnum.md
+docs/InitialPermissionsRequest.md
 docs/InstallId.md
 docs/IntentEnum.md
 docs/InvalidResponseActionEnum.md
@@ -336,6 +339,7 @@ docs/PaginatedGroupPlexSourceConnectionList.md
 docs/PaginatedGroupSamlSourceConnectionList.md
 docs/PaginatedGroupSourceConnectionList.md
 docs/PaginatedIdentificationStageList.md
+docs/PaginatedInitialPermissionsList.md
 docs/PaginatedInvitationList.md
 docs/PaginatedInvitationStageList.md
 docs/PaginatedKerberosSourceList.md
@@ -476,6 +480,7 @@ docs/PatchedGroupRequest.md
 docs/PatchedGroupSamlSourceConnectionRequest.md
 docs/PatchedGroupSourceConnectionRequest.md
 docs/PatchedIdentificationStageRequest.md
+docs/PatchedInitialPermissionsRequest.md
 docs/PatchedInvitationRequest.md
 docs/PatchedInvitationStageRequest.md
 docs/PatchedKerberosSourcePropertyMappingRequest.md
@@ -546,6 +551,7 @@ docs/PatchedWebAuthnDeviceRequest.md
 docs/Permission.md
 docs/PermissionAssignRequest.md
 docs/PermissionAssignResult.md
+docs/PermissionRequest.md
 docs/PlexAuthenticationChallenge.md
 docs/PlexAuthenticationChallengeResponseRequest.md
 docs/PlexSource.md
@@ -972,6 +978,9 @@ src/models/identification_challenge_response_request.rs
 src/models/identification_stage.rs
 src/models/identification_stage_request.rs
 src/models/impersonation_request.rs
+src/models/initial_permissions.rs
+src/models/initial_permissions_mode_enum.rs
+src/models/initial_permissions_request.rs
 src/models/install_id.rs
 src/models/intent_enum.rs
 src/models/invalid_response_action_enum.rs
@@ -1102,6 +1111,7 @@ src/models/paginated_group_plex_source_connection_list.rs
 src/models/paginated_group_saml_source_connection_list.rs
 src/models/paginated_group_source_connection_list.rs
 src/models/paginated_identification_stage_list.rs
+src/models/paginated_initial_permissions_list.rs
 src/models/paginated_invitation_list.rs
 src/models/paginated_invitation_stage_list.rs
 src/models/paginated_kerberos_source_list.rs
@@ -1242,6 +1252,7 @@ src/models/patched_group_request.rs
 src/models/patched_group_saml_source_connection_request.rs
 src/models/patched_group_source_connection_request.rs
 src/models/patched_identification_stage_request.rs
+src/models/patched_initial_permissions_request.rs
 src/models/patched_invitation_request.rs
 src/models/patched_invitation_stage_request.rs
 src/models/patched_kerberos_source_property_mapping_request.rs
@@ -1312,6 +1323,7 @@ src/models/patched_web_authn_device_request.rs
 src/models/permission.rs
 src/models/permission_assign_request.rs
 src/models/permission_assign_result.rs
+src/models/permission_request.rs
 src/models/plex_authentication_challenge.rs
 src/models/plex_authentication_challenge_response_request.rs
 src/models/plex_source.rs

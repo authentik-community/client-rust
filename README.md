@@ -632,6 +632,13 @@ Class | Method | HTTP request | Description
 *RacApi* | [**rac_endpoints_retrieve**](docs/RacApi.md#rac_endpoints_retrieve) | **GET** /rac/endpoints/{pbm_uuid}/ | 
 *RacApi* | [**rac_endpoints_update**](docs/RacApi.md#rac_endpoints_update) | **PUT** /rac/endpoints/{pbm_uuid}/ | 
 *RacApi* | [**rac_endpoints_used_by_list**](docs/RacApi.md#rac_endpoints_used_by_list) | **GET** /rac/endpoints/{pbm_uuid}/used_by/ | 
+*RbacApi* | [**rbac_initial_permissions_create**](docs/RbacApi.md#rbac_initial_permissions_create) | **POST** /rbac/initial_permissions/ | 
+*RbacApi* | [**rbac_initial_permissions_destroy**](docs/RbacApi.md#rbac_initial_permissions_destroy) | **DELETE** /rbac/initial_permissions/{id}/ | 
+*RbacApi* | [**rbac_initial_permissions_list**](docs/RbacApi.md#rbac_initial_permissions_list) | **GET** /rbac/initial_permissions/ | 
+*RbacApi* | [**rbac_initial_permissions_partial_update**](docs/RbacApi.md#rbac_initial_permissions_partial_update) | **PATCH** /rbac/initial_permissions/{id}/ | 
+*RbacApi* | [**rbac_initial_permissions_retrieve**](docs/RbacApi.md#rbac_initial_permissions_retrieve) | **GET** /rbac/initial_permissions/{id}/ | 
+*RbacApi* | [**rbac_initial_permissions_update**](docs/RbacApi.md#rbac_initial_permissions_update) | **PUT** /rbac/initial_permissions/{id}/ | 
+*RbacApi* | [**rbac_initial_permissions_used_by_list**](docs/RbacApi.md#rbac_initial_permissions_used_by_list) | **GET** /rbac/initial_permissions/{id}/used_by/ | 
 *RbacApi* | [**rbac_permissions_assigned_by_roles_assign**](docs/RbacApi.md#rbac_permissions_assigned_by_roles_assign) | **POST** /rbac/permissions/assigned_by_roles/{uuid}/assign/ | 
 *RbacApi* | [**rbac_permissions_assigned_by_roles_list**](docs/RbacApi.md#rbac_permissions_assigned_by_roles_list) | **GET** /rbac/permissions/assigned_by_roles/ | 
 *RbacApi* | [**rbac_permissions_assigned_by_roles_unassign_partial_update**](docs/RbacApi.md#rbac_permissions_assigned_by_roles_unassign_partial_update) | **PATCH** /rbac/permissions/assigned_by_roles/{uuid}/unassign/ | 
@@ -1215,6 +1222,9 @@ Class | Method | HTTP request | Description
  - [IdentificationStage](docs/IdentificationStage.md)
  - [IdentificationStageRequest](docs/IdentificationStageRequest.md)
  - [ImpersonationRequest](docs/ImpersonationRequest.md)
+ - [InitialPermissions](docs/InitialPermissions.md)
+ - [InitialPermissionsModeEnum](docs/InitialPermissionsModeEnum.md)
+ - [InitialPermissionsRequest](docs/InitialPermissionsRequest.md)
  - [InstallId](docs/InstallId.md)
  - [IntentEnum](docs/IntentEnum.md)
  - [InvalidResponseActionEnum](docs/InvalidResponseActionEnum.md)
@@ -1344,6 +1354,7 @@ Class | Method | HTTP request | Description
  - [PaginatedGroupSamlSourceConnectionList](docs/PaginatedGroupSamlSourceConnectionList.md)
  - [PaginatedGroupSourceConnectionList](docs/PaginatedGroupSourceConnectionList.md)
  - [PaginatedIdentificationStageList](docs/PaginatedIdentificationStageList.md)
+ - [PaginatedInitialPermissionsList](docs/PaginatedInitialPermissionsList.md)
  - [PaginatedInvitationList](docs/PaginatedInvitationList.md)
  - [PaginatedInvitationStageList](docs/PaginatedInvitationStageList.md)
  - [PaginatedKerberosSourceList](docs/PaginatedKerberosSourceList.md)
@@ -1484,6 +1495,7 @@ Class | Method | HTTP request | Description
  - [PatchedGroupSamlSourceConnectionRequest](docs/PatchedGroupSamlSourceConnectionRequest.md)
  - [PatchedGroupSourceConnectionRequest](docs/PatchedGroupSourceConnectionRequest.md)
  - [PatchedIdentificationStageRequest](docs/PatchedIdentificationStageRequest.md)
+ - [PatchedInitialPermissionsRequest](docs/PatchedInitialPermissionsRequest.md)
  - [PatchedInvitationRequest](docs/PatchedInvitationRequest.md)
  - [PatchedInvitationStageRequest](docs/PatchedInvitationStageRequest.md)
  - [PatchedKerberosSourcePropertyMappingRequest](docs/PatchedKerberosSourcePropertyMappingRequest.md)
@@ -1554,6 +1566,7 @@ Class | Method | HTTP request | Description
  - [Permission](docs/Permission.md)
  - [PermissionAssignRequest](docs/PermissionAssignRequest.md)
  - [PermissionAssignResult](docs/PermissionAssignResult.md)
+ - [PermissionRequest](docs/PermissionRequest.md)
  - [PlexAuthenticationChallenge](docs/PlexAuthenticationChallenge.md)
  - [PlexAuthenticationChallengeResponseRequest](docs/PlexAuthenticationChallengeResponseRequest.md)
  - [PlexSource](docs/PlexSource.md)

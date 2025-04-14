@@ -33,6 +33,7 @@
 | ProvidersScimPeriodScimprovider | authentik_providers_scim.scimprovider |
 | ProvidersScimPeriodScimmapping | authentik_providers_scim.scimmapping |
 | RbacPeriodRole | authentik_rbac.role |
+| RbacPeriodInitialpermissions | authentik_rbac.initialpermissions |
 | SourcesKerberosPeriodKerberossource | authentik_sources_kerberos.kerberossource |
 | SourcesKerberosPeriodKerberossourcepropertymapping | authentik_sources_kerberos.kerberossourcepropertymapping |
 | SourcesKerberosPeriodUserkerberossourceconnection | authentik_sources_kerberos.userkerberossourceconnection |

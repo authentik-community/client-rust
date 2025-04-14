@@ -72,6 +72,8 @@ pub enum ModelEnum {
     ProvidersScimPeriodScimmapping,
     #[serde(rename = "authentik_rbac.role")]
     RbacPeriodRole,
+    #[serde(rename = "authentik_rbac.initialpermissions")]
+    RbacPeriodInitialpermissions,
     #[serde(rename = "authentik_sources_kerberos.kerberossource")]
     SourcesKerberosPeriodKerberossource,
     #[serde(rename = "authentik_sources_kerberos.kerberossourcepropertymapping")]
@@ -262,6 +264,7 @@ impl std::fmt::Display for ModelEnum {
             Self::ProvidersScimPeriodScimprovider => write!(f, "authentik_providers_scim.scimprovider"),
             Self::ProvidersScimPeriodScimmapping => write!(f, "authentik_providers_scim.scimmapping"),
             Self::RbacPeriodRole => write!(f, "authentik_rbac.role"),
+            Self::RbacPeriodInitialpermissions => write!(f, "authentik_rbac.initialpermissions"),
             Self::SourcesKerberosPeriodKerberossource => write!(f, "authentik_sources_kerberos.kerberossource"),
             Self::SourcesKerberosPeriodKerberossourcepropertymapping => {
                 write!(f, "authentik_sources_kerberos.kerberossourcepropertymapping")
