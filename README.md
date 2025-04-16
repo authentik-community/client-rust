@@ -1080,6 +1080,7 @@ Class | Method | HTTP request | Description
  - [AuthenticatorWebAuthnChallengeResponseRequest](docs/AuthenticatorWebAuthnChallengeResponseRequest.md)
  - [AuthenticatorWebAuthnStage](docs/AuthenticatorWebAuthnStage.md)
  - [AuthenticatorWebAuthnStageRequest](docs/AuthenticatorWebAuthnStageRequest.md)
+ - [AuthorizationCodeAuthMethodEnum](docs/AuthorizationCodeAuthMethodEnum.md)
  - [AutoSubmitChallengeResponseRequest](docs/AutoSubmitChallengeResponseRequest.md)
  - [AutosubmitChallenge](docs/AutosubmitChallenge.md)
  - [BackendsEnum](docs/BackendsEnum.md)

@@ -104,6 +104,8 @@ pub mod authenticator_web_authn_stage;
 pub use self::authenticator_web_authn_stage::AuthenticatorWebAuthnStage;
 pub mod authenticator_web_authn_stage_request;
 pub use self::authenticator_web_authn_stage_request::AuthenticatorWebAuthnStageRequest;
+pub mod authorization_code_auth_method_enum;
+pub use self::authorization_code_auth_method_enum::AuthorizationCodeAuthMethodEnum;
 pub mod auto_submit_challenge_response_request;
 pub use self::auto_submit_challenge_response_request::AutoSubmitChallengeResponseRequest;
 pub mod autosubmit_challenge;

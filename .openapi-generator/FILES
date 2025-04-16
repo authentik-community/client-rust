@@ -57,6 +57,7 @@ docs/AuthenticatorWebAuthnChallengeResponseRequest.md
 docs/AuthenticatorWebAuthnStage.md
 docs/AuthenticatorWebAuthnStageRequest.md
 docs/AuthenticatorsApi.md
+docs/AuthorizationCodeAuthMethodEnum.md
 docs/AutoSubmitChallengeResponseRequest.md
 docs/AutosubmitChallenge.md
 docs/BackendsEnum.md
@@ -836,6 +837,7 @@ src/models/authenticator_web_authn_challenge.rs
 src/models/authenticator_web_authn_challenge_response_request.rs
 src/models/authenticator_web_authn_stage.rs
 src/models/authenticator_web_authn_stage_request.rs
+src/models/authorization_code_auth_method_enum.rs
 src/models/auto_submit_challenge_response_request.rs
 src/models/autosubmit_challenge.rs
 src/models/backends_enum.rs

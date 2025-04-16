@@ -125,6 +125,9 @@ pub struct OAuthSource {
         skip_serializing_if = "Option::is_none"
     )]
     pub oidc_jwks: Option<Option<serde_json::Value>>,
+    /// How to perform authentication during an authorization_code token request flow
+    #[serde(rename = "authorization_code_auth_method", skip_serializing_if = "Option::is_none")]
+    pub authorization_code_auth_method: Option<models::AuthorizationCodeAuthMethodEnum>,
 }
 
 impl OAuthSource {
@@ -175,6 +178,7 @@ impl OAuthSource {
             oidc_well_known_url: None,
             oidc_jwks_url: None,
             oidc_jwks: None,
+            authorization_code_auth_method: None,
         }
     }
 }
