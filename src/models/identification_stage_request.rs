@@ -75,6 +75,9 @@ pub struct IdentificationStageRequest {
     /// When enabled, the stage will succeed and continue even when incorrect user info is entered.
     #[serde(rename = "pretend_user_exists", skip_serializing_if = "Option::is_none")]
     pub pretend_user_exists: Option<bool>,
+    /// Show the user the 'Remember me on this device' toggle, allowing repeat users to skip straight to entering their password.
+    #[serde(rename = "enable_remember_me", skip_serializing_if = "Option::is_none")]
+    pub enable_remember_me: Option<bool>,
 }
 
 impl IdentificationStageRequest {
@@ -94,6 +97,7 @@ impl IdentificationStageRequest {
             sources: None,
             show_source_labels: None,
             pretend_user_exists: None,
+            enable_remember_me: None,
         }
     }
 }

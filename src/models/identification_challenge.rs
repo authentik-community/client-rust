@@ -49,6 +49,8 @@ pub struct IdentificationChallenge {
     pub sources: Option<Vec<models::LoginSource>>,
     #[serde(rename = "show_source_labels")]
     pub show_source_labels: bool,
+    #[serde(rename = "enable_remember_me", skip_serializing_if = "Option::is_none")]
+    pub enable_remember_me: Option<bool>,
 }
 
 impl IdentificationChallenge {
@@ -76,6 +78,7 @@ impl IdentificationChallenge {
             primary_action,
             sources: None,
             show_source_labels,
+            enable_remember_me: None,
         }
     }
 }
