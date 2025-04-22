@@ -60,6 +60,7 @@
 | Core | authentik.core |
 | Enterprise | authentik.enterprise |
 | EnterprisePeriodAudit | authentik.enterprise.audit |
+| EnterprisePeriodPoliciesPeriodUniquePassword | authentik.enterprise.policies.unique_password |
 | EnterprisePeriodProvidersPeriodGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | EnterprisePeriodProvidersPeriodMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
 | EnterprisePeriodProvidersPeriodSsf | authentik.enterprise.providers.ssf |

@@ -94,6 +94,7 @@
 | CorePeriodApplicationentitlement | authentik_core.applicationentitlement |
 | CorePeriodToken | authentik_core.token |
 | EnterprisePeriodLicense | authentik_enterprise.license |
+| PoliciesUniquePasswordPeriodUniquepasswordpolicy | authentik_policies_unique_password.uniquepasswordpolicy |
 | ProvidersGoogleWorkspacePeriodGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |
 | ProvidersGoogleWorkspacePeriodGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |
 | ProvidersMicrosoftEntraPeriodMicrosoftentraprovider | authentik_providers_microsoft_entra.microsoftentraprovider |

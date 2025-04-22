@@ -194,6 +194,8 @@ pub enum ModelEnum {
     CorePeriodToken,
     #[serde(rename = "authentik_enterprise.license")]
     EnterprisePeriodLicense,
+    #[serde(rename = "authentik_policies_unique_password.uniquepasswordpolicy")]
+    PoliciesUniquePasswordPeriodUniquepasswordpolicy,
     #[serde(rename = "authentik_providers_google_workspace.googleworkspaceprovider")]
     ProvidersGoogleWorkspacePeriodGoogleworkspaceprovider,
     #[serde(rename = "authentik_providers_google_workspace.googleworkspaceprovidermapping")]
@@ -381,6 +383,9 @@ impl std::fmt::Display for ModelEnum {
             Self::CorePeriodApplicationentitlement => write!(f, "authentik_core.applicationentitlement"),
             Self::CorePeriodToken => write!(f, "authentik_core.token"),
             Self::EnterprisePeriodLicense => write!(f, "authentik_enterprise.license"),
+            Self::PoliciesUniquePasswordPeriodUniquepasswordpolicy => {
+                write!(f, "authentik_policies_unique_password.uniquepasswordpolicy")
+            }
             Self::ProvidersGoogleWorkspacePeriodGoogleworkspaceprovider => {
                 write!(f, "authentik_providers_google_workspace.googleworkspaceprovider")
             }

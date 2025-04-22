@@ -126,6 +126,8 @@ pub enum AppEnum {
     Enterprise,
     #[serde(rename = "authentik.enterprise.audit")]
     EnterprisePeriodAudit,
+    #[serde(rename = "authentik.enterprise.policies.unique_password")]
+    EnterprisePeriodPoliciesPeriodUniquePassword,
     #[serde(rename = "authentik.enterprise.providers.google_workspace")]
     EnterprisePeriodProvidersPeriodGoogleWorkspace,
     #[serde(rename = "authentik.enterprise.providers.microsoft_entra")]
@@ -199,6 +201,9 @@ impl std::fmt::Display for AppEnum {
             Self::Core => write!(f, "authentik.core"),
             Self::Enterprise => write!(f, "authentik.enterprise"),
             Self::EnterprisePeriodAudit => write!(f, "authentik.enterprise.audit"),
+            Self::EnterprisePeriodPoliciesPeriodUniquePassword => {
+                write!(f, "authentik.enterprise.policies.unique_password")
+            }
             Self::EnterprisePeriodProvidersPeriodGoogleWorkspace => {
                 write!(f, "authentik.enterprise.providers.google_workspace")
             }

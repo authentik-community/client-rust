@@ -413,6 +413,7 @@ docs/PaginatedTenantList.md
 docs/PaginatedTokenList.md
 docs/PaginatedTokenModelList.md
 docs/PaginatedTotpDeviceList.md
+docs/PaginatedUniquePasswordPolicyList.md
 docs/PaginatedUserAssignedObjectPermissionList.md
 docs/PaginatedUserConsentList.md
 docs/PaginatedUserDeleteStageList.md
@@ -537,6 +538,7 @@ docs/PatchedStaticDeviceRequest.md
 docs/PatchedTenantRequest.md
 docs/PatchedTokenRequest.md
 docs/PatchedTotpDeviceRequest.md
+docs/PatchedUniquePasswordPolicyRequest.md
 docs/PatchedUserDeleteStageRequest.md
 docs/PatchedUserKerberosSourceConnectionRequest.md
 docs/PatchedUserLdapSourceConnectionRequest.md
@@ -706,6 +708,8 @@ docs/TransactionApplicationResponse.md
 docs/TransactionPolicyBindingRequest.md
 docs/TypeCreate.md
 docs/UiThemeEnum.md
+docs/UniquePasswordPolicy.md
+docs/UniquePasswordPolicyRequest.md
 docs/UsedBy.md
 docs/UsedByActionEnum.md
 docs/User.md
@@ -1186,6 +1190,7 @@ src/models/paginated_tenant_list.rs
 src/models/paginated_token_list.rs
 src/models/paginated_token_model_list.rs
 src/models/paginated_totp_device_list.rs
+src/models/paginated_unique_password_policy_list.rs
 src/models/paginated_user_assigned_object_permission_list.rs
 src/models/paginated_user_consent_list.rs
 src/models/paginated_user_delete_stage_list.rs
@@ -1310,6 +1315,7 @@ src/models/patched_static_device_request.rs
 src/models/patched_tenant_request.rs
 src/models/patched_token_request.rs
 src/models/patched_totp_device_request.rs
+src/models/patched_unique_password_policy_request.rs
 src/models/patched_user_delete_stage_request.rs
 src/models/patched_user_kerberos_source_connection_request.rs
 src/models/patched_user_ldap_source_connection_request.rs
@@ -1468,6 +1474,8 @@ src/models/transaction_application_response.rs
 src/models/transaction_policy_binding_request.rs
 src/models/type_create.rs
 src/models/ui_theme_enum.rs
+src/models/unique_password_policy.rs
+src/models/unique_password_policy_request.rs
 src/models/used_by.rs
 src/models/used_by_action_enum.rs
 src/models/user.rs
