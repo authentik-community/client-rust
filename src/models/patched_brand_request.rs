@@ -87,6 +87,9 @@ pub struct PatchedBrandRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub web_certificate: Option<Option<uuid::Uuid>>,
+    /// Certificates used for client authentication.
+    #[serde(rename = "client_certificates", skip_serializing_if = "Option::is_none")]
+    pub client_certificates: Option<Vec<uuid::Uuid>>,
     #[serde(
         rename = "attributes",
         default,
@@ -115,6 +118,7 @@ impl PatchedBrandRequest {
             flow_device_code: None,
             default_application: None,
             web_certificate: None,
+            client_certificates: None,
             attributes: None,
         }
     }

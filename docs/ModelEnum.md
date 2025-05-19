@@ -101,6 +101,7 @@
 | ProvidersMicrosoftEntraPeriodMicrosoftentraprovidermapping | authentik_providers_microsoft_entra.microsoftentraprovidermapping |
 | ProvidersSsfPeriodSsfprovider | authentik_providers_ssf.ssfprovider |
 | StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
+| StagesMtlsPeriodMutualtlsstage | authentik_stages_mtls.mutualtlsstage |
 | StagesSourcePeriodSourcestage | authentik_stages_source.sourcestage |
 | EventsPeriodEvent | authentik_events.event |
 | EventsPeriodNotificationtransport | authentik_events.notificationtransport |

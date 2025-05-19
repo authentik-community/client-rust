@@ -1814,6 +1814,7 @@ pub async fn core_brands_list(
     branding_favicon: Option<&str>,
     branding_logo: Option<&str>,
     branding_title: Option<&str>,
+    client_certificates: Option<Vec<uuid::Uuid>>,
     default: Option<bool>,
     domain: Option<&str>,
     flow_authentication: Option<&str>,
@@ -1850,6 +1851,25 @@ pub async fn core_brands_list(
     }
     if let Some(ref local_var_str) = branding_title {
         local_var_req_builder = local_var_req_builder.query(&[("branding_title", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = client_certificates {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(
+                &local_var_str
+                    .into_iter()
+                    .map(|p| ("client_certificates".to_owned(), p.to_string()))
+                    .collect::<Vec<(std::string::String, std::string::String)>>(),
+            ),
+            _ => local_var_req_builder.query(&[(
+                "client_certificates",
+                &local_var_str
+                    .into_iter()
+                    .map(|p| p.to_string())
+                    .collect::<Vec<String>>()
+                    .join(",")
+                    .to_string(),
+            )]),
+        };
     }
     if let Some(ref local_var_str) = default {
         local_var_req_builder = local_var_req_builder.query(&[("default", &local_var_str.to_string())]);

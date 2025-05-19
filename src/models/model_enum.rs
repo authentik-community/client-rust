@@ -208,6 +208,8 @@ pub enum ModelEnum {
     ProvidersSsfPeriodSsfprovider,
     #[serde(rename = "authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage")]
     StagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage,
+    #[serde(rename = "authentik_stages_mtls.mutualtlsstage")]
+    StagesMtlsPeriodMutualtlsstage,
     #[serde(rename = "authentik_stages_source.sourcestage")]
     StagesSourcePeriodSourcestage,
     #[serde(rename = "authentik_events.event")]
@@ -403,6 +405,7 @@ impl std::fmt::Display for ModelEnum {
                 f,
                 "authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage"
             ),
+            Self::StagesMtlsPeriodMutualtlsstage => write!(f, "authentik_stages_mtls.mutualtlsstage"),
             Self::StagesSourcePeriodSourcestage => write!(f, "authentik_stages_source.sourcestage"),
             Self::EventsPeriodEvent => write!(f, "authentik_events.event"),
             Self::EventsPeriodNotificationtransport => write!(f, "authentik_events.notificationtransport"),
