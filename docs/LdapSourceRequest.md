@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **sync_groups** | Option<**bool**> |  | [optional]
 **sync_parent_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **lookup_groups_from_user** | Option<**bool**> | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional]
+**delete_not_found_objects** | Option<**bool**> | Delete authentik users and groups which were previously supplied by this source, but are now missing from it. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

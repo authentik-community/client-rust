@@ -118,6 +118,9 @@ pub struct LdapSourceRequest {
     /// Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory
     #[serde(rename = "lookup_groups_from_user", skip_serializing_if = "Option::is_none")]
     pub lookup_groups_from_user: Option<bool>,
+    /// Delete authentik users and groups which were previously supplied by this source, but are now missing from it.
+    #[serde(rename = "delete_not_found_objects", skip_serializing_if = "Option::is_none")]
+    pub delete_not_found_objects: Option<bool>,
 }
 
 impl LdapSourceRequest {
@@ -154,6 +157,7 @@ impl LdapSourceRequest {
             sync_groups: None,
             sync_parent_group: None,
             lookup_groups_from_user: None,
+            delete_not_found_objects: None,
         }
     }
 }

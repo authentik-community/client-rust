@@ -4170,6 +4170,7 @@ pub async fn sources_ldap_list(
     base_dn: Option<&str>,
     bind_cn: Option<&str>,
     client_certificate: Option<&str>,
+    delete_not_found_objects: Option<bool>,
     enabled: Option<bool>,
     group_membership_field: Option<&str>,
     group_object_filter: Option<&str>,
@@ -4216,6 +4217,10 @@ pub async fn sources_ldap_list(
     }
     if let Some(ref local_var_str) = client_certificate {
         local_var_req_builder = local_var_req_builder.query(&[("client_certificate", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = delete_not_found_objects {
+        local_var_req_builder =
+            local_var_req_builder.query(&[("delete_not_found_objects", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = enabled {
         local_var_req_builder = local_var_req_builder.query(&[("enabled", &local_var_str.to_string())]);
