@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **user_object_filter** | Option<**String**> | Consider Objects matching this filter to be Users. | [optional]
 **group_object_filter** | Option<**String**> | Consider Objects matching this filter to be Groups. | [optional]
 **group_membership_field** | Option<**String**> | Field which contains members of a group. | [optional]
+**user_membership_attribute** | Option<**String**> | Attribute which matches the value of `group_membership_field`. | [optional]
 **object_uniqueness_field** | Option<**String**> | Field which contains a unique Identifier. | [optional]
 **password_login_update_internal_password** | Option<**bool**> | Update internal authentik password when login succeeds with LDAP | [optional]
 **sync_users** | Option<**bool**> |  | [optional]

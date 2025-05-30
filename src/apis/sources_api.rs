@@ -4193,6 +4193,7 @@ pub async fn sources_ldap_list(
     sync_parent_group: Option<&str>,
     sync_users: Option<bool>,
     sync_users_password: Option<bool>,
+    user_membership_attribute: Option<&str>,
     user_object_filter: Option<&str>,
     user_property_mappings: Option<Vec<uuid::Uuid>>,
 ) -> Result<models::PaginatedLdapSourceList, Error<SourcesLdapListError>> {
@@ -4304,6 +4305,10 @@ pub async fn sources_ldap_list(
     }
     if let Some(ref local_var_str) = sync_users_password {
         local_var_req_builder = local_var_req_builder.query(&[("sync_users_password", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = user_membership_attribute {
+        local_var_req_builder =
+            local_var_req_builder.query(&[("user_membership_attribute", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = user_object_filter {
         local_var_req_builder = local_var_req_builder.query(&[("user_object_filter", &local_var_str.to_string())]);

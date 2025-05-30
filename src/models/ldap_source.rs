@@ -109,6 +109,9 @@ pub struct LdapSource {
     /// Field which contains members of a group.
     #[serde(rename = "group_membership_field", skip_serializing_if = "Option::is_none")]
     pub group_membership_field: Option<String>,
+    /// Attribute which matches the value of `group_membership_field`.
+    #[serde(rename = "user_membership_attribute", skip_serializing_if = "Option::is_none")]
+    pub user_membership_attribute: Option<String>,
     /// Field which contains a unique Identifier.
     #[serde(rename = "object_uniqueness_field", skip_serializing_if = "Option::is_none")]
     pub object_uniqueness_field: Option<String>,
@@ -189,6 +192,7 @@ impl LdapSource {
             user_object_filter: None,
             group_object_filter: None,
             group_membership_field: None,
+            user_membership_attribute: None,
             object_uniqueness_field: None,
             password_login_update_internal_password: None,
             sync_users: None,
