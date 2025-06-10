@@ -32,7 +32,6 @@ All URIs are relative to *http://localhost/api/v3*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AdminApi* | [**admin_apps_list**](docs/AdminApi.md#admin_apps_list) | **GET** /admin/apps/ | 
-*AdminApi* | [**admin_metrics_retrieve**](docs/AdminApi.md#admin_metrics_retrieve) | **GET** /admin/metrics/ | 
 *AdminApi* | [**admin_models_list**](docs/AdminApi.md#admin_models_list) | **GET** /admin/models/ | 
 *AdminApi* | [**admin_settings_partial_update**](docs/AdminApi.md#admin_settings_partial_update) | **PATCH** /admin/settings/ | 
 *AdminApi* | [**admin_settings_retrieve**](docs/AdminApi.md#admin_settings_retrieve) | **GET** /admin/settings/ | 
@@ -137,7 +136,6 @@ Class | Method | HTTP request | Description
 *CoreApi* | [**core_applications_create**](docs/CoreApi.md#core_applications_create) | **POST** /core/applications/ | 
 *CoreApi* | [**core_applications_destroy**](docs/CoreApi.md#core_applications_destroy) | **DELETE** /core/applications/{slug}/ | 
 *CoreApi* | [**core_applications_list**](docs/CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
-*CoreApi* | [**core_applications_metrics_list**](docs/CoreApi.md#core_applications_metrics_list) | **GET** /core/applications/{slug}/metrics/ | 
 *CoreApi* | [**core_applications_partial_update**](docs/CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 *CoreApi* | [**core_applications_retrieve**](docs/CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
 *CoreApi* | [**core_applications_set_icon_create**](docs/CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
@@ -185,7 +183,6 @@ Class | Method | HTTP request | Description
 *CoreApi* | [**core_users_impersonate_end_retrieve**](docs/CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 *CoreApi* | [**core_users_list**](docs/CoreApi.md#core_users_list) | **GET** /core/users/ | 
 *CoreApi* | [**core_users_me_retrieve**](docs/CoreApi.md#core_users_me_retrieve) | **GET** /core/users/me/ | 
-*CoreApi* | [**core_users_metrics_retrieve**](docs/CoreApi.md#core_users_metrics_retrieve) | **GET** /core/users/{id}/metrics/ | 
 *CoreApi* | [**core_users_partial_update**](docs/CoreApi.md#core_users_partial_update) | **PATCH** /core/users/{id}/ | 
 *CoreApi* | [**core_users_paths_retrieve**](docs/CoreApi.md#core_users_paths_retrieve) | **GET** /core/users/paths/ | 
 *CoreApi* | [**core_users_recovery_create**](docs/CoreApi.md#core_users_recovery_create) | **POST** /core/users/{id}/recovery/ | 
@@ -220,7 +217,6 @@ Class | Method | HTTP request | Description
 *EventsApi* | [**events_events_destroy**](docs/EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
 *EventsApi* | [**events_events_list**](docs/EventsApi.md#events_events_list) | **GET** /events/events/ | 
 *EventsApi* | [**events_events_partial_update**](docs/EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
-*EventsApi* | [**events_events_per_month_list**](docs/EventsApi.md#events_events_per_month_list) | **GET** /events/events/per_month/ | 
 *EventsApi* | [**events_events_retrieve**](docs/EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
 *EventsApi* | [**events_events_top_per_user_list**](docs/EventsApi.md#events_events_top_per_user_list) | **GET** /events/events/top_per_user/ | 
 *EventsApi* | [**events_events_update**](docs/EventsApi.md#events_events_update) | **PUT** /events/events/{event_uuid}/ | 
@@ -1130,7 +1126,6 @@ Class | Method | HTTP request | Description
  - [ConsentStageRequest](docs/ConsentStageRequest.md)
  - [ContextualFlowInfo](docs/ContextualFlowInfo.md)
  - [ContextualFlowInfoLayoutEnum](docs/ContextualFlowInfoLayoutEnum.md)
- - [Coordinate](docs/Coordinate.md)
  - [CountryCodeEnum](docs/CountryCodeEnum.md)
  - [CurrentBrand](docs/CurrentBrand.md)
  - [DeliveryMethodEnum](docs/DeliveryMethodEnum.md)
@@ -1178,6 +1173,7 @@ Class | Method | HTTP request | Description
  - [EventMatcherPolicyRequest](docs/EventMatcherPolicyRequest.md)
  - [EventRequest](docs/EventRequest.md)
  - [EventTopPerUser](docs/EventTopPerUser.md)
+ - [EventVolume](docs/EventVolume.md)
  - [EventsRequestedEnum](docs/EventsRequestedEnum.md)
  - [ExpiringBaseGrantModel](docs/ExpiringBaseGrantModel.md)
  - [ExpressionPolicy](docs/ExpressionPolicy.md)
@@ -1277,7 +1273,6 @@ Class | Method | HTTP request | Description
  - [LogEvent](docs/LogEvent.md)
  - [LogLevelEnum](docs/LogLevelEnum.md)
  - [LoginChallengeTypes](docs/LoginChallengeTypes.md)
- - [LoginMetrics](docs/LoginMetrics.md)
  - [LoginSource](docs/LoginSource.md)
  - [MatchingModeEnum](docs/MatchingModeEnum.md)
  - [Metadata](docs/Metadata.md)
@@ -1758,7 +1753,6 @@ Class | Method | HTTP request | Description
  - [UserLogoutStage](docs/UserLogoutStage.md)
  - [UserLogoutStageRequest](docs/UserLogoutStageRequest.md)
  - [UserMatchingModeEnum](docs/UserMatchingModeEnum.md)
- - [UserMetrics](docs/UserMetrics.md)
  - [UserOAuthSourceConnection](docs/UserOAuthSourceConnection.md)
  - [UserOAuthSourceConnectionRequest](docs/UserOAuthSourceConnectionRequest.md)
  - [UserObjectPermission](docs/UserObjectPermission.md)

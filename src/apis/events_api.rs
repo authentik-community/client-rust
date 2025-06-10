@@ -58,15 +58,6 @@ pub enum EventsEventsPartialUpdateError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`events_events_per_month_list`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum EventsEventsPerMonthListError {
-    Status400(models::ValidationError),
-    Status403(models::GenericError),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`events_events_retrieve`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -453,6 +444,7 @@ pub async fn events_events_destroy(
 pub async fn events_events_list(
     configuration: &configuration::Configuration,
     action: Option<&str>,
+    actions: Option<Vec<String>>,
     brand_name: Option<&str>,
     client_ip: Option<&str>,
     context_authorized_app: Option<&str>,
@@ -474,6 +466,25 @@ pub async fn events_events_list(
 
     if let Some(ref local_var_str) = action {
         local_var_req_builder = local_var_req_builder.query(&[("action", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = actions {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(
+                &local_var_str
+                    .into_iter()
+                    .map(|p| ("actions".to_owned(), p.to_string()))
+                    .collect::<Vec<(std::string::String, std::string::String)>>(),
+            ),
+            _ => local_var_req_builder.query(&[(
+                "actions",
+                &local_var_str
+                    .into_iter()
+                    .map(|p| p.to_string())
+                    .collect::<Vec<String>>()
+                    .join(",")
+                    .to_string(),
+            )]),
+        };
     }
     if let Some(ref local_var_str) = brand_name {
         local_var_req_builder = local_var_req_builder.query(&[("brand_name", &local_var_str.to_string())]);
@@ -569,51 +580,6 @@ pub async fn events_events_partial_update(
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<EventsEventsPartialUpdateError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent {
-            status: local_var_status,
-            content: local_var_content,
-            entity: local_var_entity,
-        };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// Get the count of events per month
-pub async fn events_events_per_month_list(
-    configuration: &configuration::Configuration,
-    action: Option<&str>,
-    query: Option<&str>,
-) -> Result<Vec<models::Coordinate>, Error<EventsEventsPerMonthListError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/events/events/per_month/", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = action {
-        local_var_req_builder = local_var_req_builder.query(&[("action", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = query {
-        local_var_req_builder = local_var_req_builder.query(&[("query", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
-        local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
-    };
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<EventsEventsPerMonthListError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
             content: local_var_content,
@@ -758,16 +724,18 @@ pub async fn events_events_update(
 pub async fn events_events_volume_list(
     configuration: &configuration::Configuration,
     action: Option<&str>,
+    actions: Option<Vec<String>>,
     brand_name: Option<&str>,
     client_ip: Option<&str>,
     context_authorized_app: Option<&str>,
     context_model_app: Option<&str>,
     context_model_name: Option<&str>,
     context_model_pk: Option<&str>,
+    history_days: Option<f64>,
     ordering: Option<&str>,
     search: Option<&str>,
     username: Option<&str>,
-) -> Result<Vec<models::Coordinate>, Error<EventsEventsVolumeListError>> {
+) -> Result<Vec<models::EventVolume>, Error<EventsEventsVolumeListError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -777,6 +745,25 @@ pub async fn events_events_volume_list(
 
     if let Some(ref local_var_str) = action {
         local_var_req_builder = local_var_req_builder.query(&[("action", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = actions {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(
+                &local_var_str
+                    .into_iter()
+                    .map(|p| ("actions".to_owned(), p.to_string()))
+                    .collect::<Vec<(std::string::String, std::string::String)>>(),
+            ),
+            _ => local_var_req_builder.query(&[(
+                "actions",
+                &local_var_str
+                    .into_iter()
+                    .map(|p| p.to_string())
+                    .collect::<Vec<String>>()
+                    .join(",")
+                    .to_string(),
+            )]),
+        };
     }
     if let Some(ref local_var_str) = brand_name {
         local_var_req_builder = local_var_req_builder.query(&[("brand_name", &local_var_str.to_string())]);
@@ -795,6 +782,9 @@ pub async fn events_events_volume_list(
     }
     if let Some(ref local_var_str) = context_model_pk {
         local_var_req_builder = local_var_req_builder.query(&[("context_model_pk", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = history_days {
+        local_var_req_builder = local_var_req_builder.query(&[("history_days", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = ordering {
         local_var_req_builder = local_var_req_builder.query(&[("ordering", &local_var_str.to_string())]);

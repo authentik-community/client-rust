@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
-[**events_events_per_month_list**](EventsApi.md#events_events_per_month_list) | **GET** /events/events/per_month/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
 [**events_events_top_per_user_list**](EventsApi.md#events_events_top_per_user_list) | **GET** /events/events/top_per_user/ | 
 [**events_events_update**](EventsApi.md#events_events_update) | **PUT** /events/events/{event_uuid}/ | 
@@ -131,7 +130,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_events_list
 
-> models::PaginatedEventList events_events_list(action, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, page, page_size, search, username)
+> models::PaginatedEventList events_events_list(action, actions, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, page, page_size, search, username)
 
 
 Event Read-Only Viewset
@@ -142,6 +141,7 @@ Event Read-Only Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **action** | Option<**String**> |  |  |
+**actions** | Option<[**Vec<String>**](String.md)> |  |  |
 **brand_name** | Option<**String**> | Brand name |  |
 **client_ip** | Option<**String**> |  |  |
 **context_authorized_app** | Option<**String**> | Context Authorized application |  |
@@ -196,37 +196,6 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## events_events_per_month_list
-
-> Vec<models::Coordinate> events_events_per_month_list(action, query)
-
-
-Get the count of events per month
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**action** | Option<**String**> |  |  |
-**query** | Option<**String**> |  |  |
-
-### Return type
-
-[**Vec<models::Coordinate>**](Coordinate.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -326,7 +295,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_events_volume_list
 
-> Vec<models::Coordinate> events_events_volume_list(action, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, search, username)
+> Vec<models::EventVolume> events_events_volume_list(action, actions, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, history_days, ordering, search, username)
 
 
 Get event volume for specified filters and timeframe
@@ -337,19 +306,21 @@ Get event volume for specified filters and timeframe
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **action** | Option<**String**> |  |  |
+**actions** | Option<[**Vec<String>**](String.md)> |  |  |
 **brand_name** | Option<**String**> | Brand name |  |
 **client_ip** | Option<**String**> |  |  |
 **context_authorized_app** | Option<**String**> | Context Authorized application |  |
 **context_model_app** | Option<**String**> | Context Model App |  |
 **context_model_name** | Option<**String**> | Context Model Name |  |
 **context_model_pk** | Option<**String**> | Context Model Primary Key |  |
+**history_days** | Option<**f64**> |  |  |[default to 7]
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **search** | Option<**String**> | A search term. |  |
 **username** | Option<**String**> | Username |  |
 
 ### Return type
 
-[**Vec<models::Coordinate>**](Coordinate.md)
+[**Vec<models::EventVolume>**](EventVolume.md)
 
 ### Authorization
 

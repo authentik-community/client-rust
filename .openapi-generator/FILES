@@ -93,7 +93,6 @@ docs/ConsentStageModeEnum.md
 docs/ConsentStageRequest.md
 docs/ContextualFlowInfo.md
 docs/ContextualFlowInfoLayoutEnum.md
-docs/Coordinate.md
 docs/CoreApi.md
 docs/CountryCodeEnum.md
 docs/CryptoApi.md
@@ -144,6 +143,7 @@ docs/EventMatcherPolicy.md
 docs/EventMatcherPolicyRequest.md
 docs/EventRequest.md
 docs/EventTopPerUser.md
+docs/EventVolume.md
 docs/EventsApi.md
 docs/EventsRequestedEnum.md
 docs/ExpiringBaseGrantModel.md
@@ -245,7 +245,6 @@ docs/Link.md
 docs/LogEvent.md
 docs/LogLevelEnum.md
 docs/LoginChallengeTypes.md
-docs/LoginMetrics.md
 docs/LoginSource.md
 docs/ManagedApi.md
 docs/MatchingModeEnum.md
@@ -740,7 +739,6 @@ docs/UserLoginStageRequest.md
 docs/UserLogoutStage.md
 docs/UserLogoutStageRequest.md
 docs/UserMatchingModeEnum.md
-docs/UserMetrics.md
 docs/UserOAuthSourceConnection.md
 docs/UserOAuthSourceConnectionRequest.md
 docs/UserObjectPermission.md
@@ -884,7 +882,6 @@ src/models/consent_stage_mode_enum.rs
 src/models/consent_stage_request.rs
 src/models/contextual_flow_info.rs
 src/models/contextual_flow_info_layout_enum.rs
-src/models/coordinate.rs
 src/models/country_code_enum.rs
 src/models/current_brand.rs
 src/models/delivery_method_enum.rs
@@ -932,6 +929,7 @@ src/models/event_matcher_policy.rs
 src/models/event_matcher_policy_request.rs
 src/models/event_request.rs
 src/models/event_top_per_user.rs
+src/models/event_volume.rs
 src/models/events_requested_enum.rs
 src/models/expiring_base_grant_model.rs
 src/models/expression_policy.rs
@@ -1031,7 +1029,6 @@ src/models/link.rs
 src/models/log_event.rs
 src/models/log_level_enum.rs
 src/models/login_challenge_types.rs
-src/models/login_metrics.rs
 src/models/login_source.rs
 src/models/matching_mode_enum.rs
 src/models/metadata.rs
@@ -1513,7 +1510,6 @@ src/models/user_login_stage_request.rs
 src/models/user_logout_stage.rs
 src/models/user_logout_stage_request.rs
 src/models/user_matching_mode_enum.rs
-src/models/user_metrics.rs
 src/models/user_o_auth_source_connection.rs
 src/models/user_o_auth_source_connection_request.rs
 src/models/user_object_permission.rs
