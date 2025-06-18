@@ -17,10 +17,20 @@ pub struct PaginatedPasswordStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::PasswordStage>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedPasswordStageList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::PasswordStage>) -> PaginatedPasswordStageList {
-        PaginatedPasswordStageList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::PasswordStage>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedPasswordStageList {
+        PaginatedPasswordStageList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

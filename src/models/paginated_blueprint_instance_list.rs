@@ -17,13 +17,20 @@ pub struct PaginatedBlueprintInstanceList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::BlueprintInstance>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedBlueprintInstanceList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::BlueprintInstance>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedBlueprintInstanceList {
-        PaginatedBlueprintInstanceList { pagination, results }
+        PaginatedBlueprintInstanceList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

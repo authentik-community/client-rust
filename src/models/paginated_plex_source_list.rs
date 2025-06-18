@@ -17,10 +17,20 @@ pub struct PaginatedPlexSourceList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::PlexSource>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedPlexSourceList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::PlexSource>) -> PaginatedPlexSourceList {
-        PaginatedPlexSourceList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::PlexSource>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedPlexSourceList {
+        PaginatedPlexSourceList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

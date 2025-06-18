@@ -17,13 +17,20 @@ pub struct PaginatedMicrosoftEntraProviderGroupList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::MicrosoftEntraProviderGroup>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedMicrosoftEntraProviderGroupList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::MicrosoftEntraProviderGroup>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedMicrosoftEntraProviderGroupList {
-        PaginatedMicrosoftEntraProviderGroupList { pagination, results }
+        PaginatedMicrosoftEntraProviderGroupList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

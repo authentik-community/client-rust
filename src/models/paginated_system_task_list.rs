@@ -17,10 +17,20 @@ pub struct PaginatedSystemTaskList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::SystemTask>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedSystemTaskList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::SystemTask>) -> PaginatedSystemTaskList {
-        PaginatedSystemTaskList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::SystemTask>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedSystemTaskList {
+        PaginatedSystemTaskList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

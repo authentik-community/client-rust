@@ -17,13 +17,20 @@ pub struct PaginatedExpiringBaseGrantModelList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::ExpiringBaseGrantModel>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedExpiringBaseGrantModelList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::ExpiringBaseGrantModel>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedExpiringBaseGrantModelList {
-        PaginatedExpiringBaseGrantModelList { pagination, results }
+        PaginatedExpiringBaseGrantModelList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

@@ -17,13 +17,20 @@ pub struct PaginatedOAuthSourcePropertyMappingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::OAuthSourcePropertyMapping>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedOAuthSourcePropertyMappingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::OAuthSourcePropertyMapping>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedOAuthSourcePropertyMappingList {
-        PaginatedOAuthSourcePropertyMappingList { pagination, results }
+        PaginatedOAuthSourcePropertyMappingList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

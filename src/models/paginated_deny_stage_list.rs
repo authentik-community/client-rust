@@ -17,10 +17,20 @@ pub struct PaginatedDenyStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::DenyStage>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedDenyStageList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::DenyStage>) -> PaginatedDenyStageList {
-        PaginatedDenyStageList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::DenyStage>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedDenyStageList {
+        PaginatedDenyStageList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

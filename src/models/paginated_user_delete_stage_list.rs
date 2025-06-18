@@ -17,10 +17,20 @@ pub struct PaginatedUserDeleteStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::UserDeleteStage>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedUserDeleteStageList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::UserDeleteStage>) -> PaginatedUserDeleteStageList {
-        PaginatedUserDeleteStageList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::UserDeleteStage>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedUserDeleteStageList {
+        PaginatedUserDeleteStageList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

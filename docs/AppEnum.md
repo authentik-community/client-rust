@@ -64,6 +64,7 @@
 | EnterprisePeriodProvidersPeriodGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | EnterprisePeriodProvidersPeriodMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
 | EnterprisePeriodProvidersPeriodSsf | authentik.enterprise.providers.ssf |
+| EnterprisePeriodSearch | authentik.enterprise.search |
 | EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
 | EnterprisePeriodStagesPeriodMtls | authentik.enterprise.stages.mtls |
 | EnterprisePeriodStagesPeriodSource | authentik.enterprise.stages.source |

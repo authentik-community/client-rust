@@ -134,6 +134,8 @@ pub enum AppEnum {
     EnterprisePeriodProvidersPeriodMicrosoftEntra,
     #[serde(rename = "authentik.enterprise.providers.ssf")]
     EnterprisePeriodProvidersPeriodSsf,
+    #[serde(rename = "authentik.enterprise.search")]
+    EnterprisePeriodSearch,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
     EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc,
     #[serde(rename = "authentik.enterprise.stages.mtls")]
@@ -213,6 +215,7 @@ impl std::fmt::Display for AppEnum {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
             Self::EnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
+            Self::EnterprisePeriodSearch => write!(f, "authentik.enterprise.search"),
             Self::EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")
             }

@@ -17,13 +17,20 @@ pub struct PaginatedEventMatcherPolicyList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::EventMatcherPolicy>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedEventMatcherPolicyList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::EventMatcherPolicy>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedEventMatcherPolicyList {
-        PaginatedEventMatcherPolicyList { pagination, results }
+        PaginatedEventMatcherPolicyList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }
