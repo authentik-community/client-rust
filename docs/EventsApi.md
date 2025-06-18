@@ -614,7 +614,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_rules_list
 
-> models::PaginatedNotificationRuleList events_rules_list(group__name, name, ordering, page, page_size, search, severity)
+> models::PaginatedNotificationRuleList events_rules_list(destination_group__name, name, ordering, page, page_size, search, severity)
 
 
 NotificationRule Viewset
@@ -624,7 +624,7 @@ NotificationRule Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**group__name** | Option<**String**> |  |  |
+**destination_group__name** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |

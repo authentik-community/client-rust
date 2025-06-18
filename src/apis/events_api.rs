@@ -1239,7 +1239,7 @@ pub async fn events_rules_destroy(
 /// NotificationRule Viewset
 pub async fn events_rules_list(
     configuration: &configuration::Configuration,
-    group__name: Option<&str>,
+    destination_group__name: Option<&str>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -1254,8 +1254,8 @@ pub async fn events_rules_list(
     let local_var_uri_str = format!("{}/events/rules/", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = group__name {
-        local_var_req_builder = local_var_req_builder.query(&[("group__name", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = destination_group__name {
+        local_var_req_builder = local_var_req_builder.query(&[("destination_group__name", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = name {
         local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
