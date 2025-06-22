@@ -2152,7 +2152,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_authenticator_webauthn_list
 
-> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
+> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, max_attempts, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
 
 
 AuthenticatorWebAuthnStage Viewset
@@ -2166,6 +2166,7 @@ Name | Type | Description  | Required | Notes
 **configure_flow** | Option<**uuid::Uuid**> |  |  |
 **device_type_restrictions** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **friendly_name** | Option<**String**> |  |  |
+**max_attempts** | Option<**i32**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |

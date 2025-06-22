@@ -4758,6 +4758,7 @@ pub async fn stages_authenticator_webauthn_list(
     configure_flow: Option<&str>,
     device_type_restrictions: Option<Vec<uuid::Uuid>>,
     friendly_name: Option<&str>,
+    max_attempts: Option<i32>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -4802,6 +4803,9 @@ pub async fn stages_authenticator_webauthn_list(
     }
     if let Some(ref local_var_str) = friendly_name {
         local_var_req_builder = local_var_req_builder.query(&[("friendly_name", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = max_attempts {
+        local_var_req_builder = local_var_req_builder.query(&[("max_attempts", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = name {
         local_var_req_builder = local_var_req_builder.query(&[("name", &local_var_str.to_string())]);
