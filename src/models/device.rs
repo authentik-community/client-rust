@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Device : Serializer for Duo authenticator devices
+/// Device : Serializer for authenticator devices
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Device {
     /// Return object's verbose_name
@@ -39,12 +39,15 @@ pub struct Device {
     #[serde(rename = "last_used", deserialize_with = "Option::deserialize")]
     pub last_used: Option<String>,
     /// Get extra description
-    #[serde(rename = "extra_description")]
-    pub extra_description: String,
+    #[serde(rename = "extra_description", deserialize_with = "Option::deserialize")]
+    pub extra_description: Option<String>,
+    /// Get external Device ID
+    #[serde(rename = "external_id", deserialize_with = "Option::deserialize")]
+    pub external_id: Option<String>,
 }
 
 impl Device {
-    /// Serializer for Duo authenticator devices
+    /// Serializer for authenticator devices
     pub fn new(
         verbose_name: String,
         verbose_name_plural: String,
@@ -56,7 +59,8 @@ impl Device {
         created: String,
         last_updated: String,
         last_used: Option<String>,
-        extra_description: String,
+        extra_description: Option<String>,
+        external_id: Option<String>,
     ) -> Device {
         Device {
             verbose_name,
@@ -70,6 +74,7 @@ impl Device {
             last_updated,
             last_used,
             extra_description,
+            external_id,
         }
     }
 }
