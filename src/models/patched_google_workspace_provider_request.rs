@@ -23,13 +23,8 @@ pub struct PatchedGoogleWorkspaceProviderRequest {
     pub property_mappings_group: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "delegated_subject", skip_serializing_if = "Option::is_none")]
     pub delegated_subject: Option<String>,
-    #[serde(
-        rename = "credentials",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub credentials: Option<Option<serde_json::Value>>,
+    #[serde(rename = "credentials", skip_serializing_if = "Option::is_none")]
+    pub credentials: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "scopes", skip_serializing_if = "Option::is_none")]
     pub scopes: Option<String>,
     #[serde(rename = "exclude_users_service_account", skip_serializing_if = "Option::is_none")]

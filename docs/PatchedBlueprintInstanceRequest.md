@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
 **path** | Option<**String**> |  | [optional][default to ]
-**context** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**context** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 **enabled** | Option<**bool**> |  | [optional]
 **content** | Option<**String**> |  | [optional]
 

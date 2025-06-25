@@ -18,13 +18,8 @@ pub struct PatchedBlueprintInstanceRequest {
     pub name: Option<String>,
     #[serde(rename = "path", skip_serializing_if = "Option::is_none")]
     pub path: Option<String>,
-    #[serde(
-        rename = "context",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub context: Option<Option<serde_json::Value>>,
+    #[serde(rename = "context", skip_serializing_if = "Option::is_none")]
+    pub context: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "enabled", skip_serializing_if = "Option::is_none")]
     pub enabled: Option<bool>,
     #[serde(rename = "content", skip_serializing_if = "Option::is_none")]

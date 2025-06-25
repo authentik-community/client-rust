@@ -14,24 +14,14 @@ use serde::{Deserialize, Serialize};
 /// PatchedEventRequest : Event Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct PatchedEventRequest {
-    #[serde(
-        rename = "user",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub user: Option<Option<serde_json::Value>>,
+    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
+    pub user: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "action", skip_serializing_if = "Option::is_none")]
     pub action: Option<models::EventActions>,
     #[serde(rename = "app", skip_serializing_if = "Option::is_none")]
     pub app: Option<String>,
-    #[serde(
-        rename = "context",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub context: Option<Option<serde_json::Value>>,
+    #[serde(rename = "context", skip_serializing_if = "Option::is_none")]
+    pub context: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(
         rename = "client_ip",
         default,
@@ -41,13 +31,8 @@ pub struct PatchedEventRequest {
     pub client_ip: Option<Option<String>>,
     #[serde(rename = "expires", skip_serializing_if = "Option::is_none")]
     pub expires: Option<String>,
-    #[serde(
-        rename = "brand",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub brand: Option<Option<serde_json::Value>>,
+    #[serde(rename = "brand", skip_serializing_if = "Option::is_none")]
+    pub brand: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
 impl PatchedEventRequest {

@@ -20,13 +20,8 @@ pub struct ScimSourceGroupRequest {
     pub group: uuid::Uuid,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
-    #[serde(
-        rename = "attributes",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub attributes: Option<Option<serde_json::Value>>,
+    #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
+    pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
 impl ScimSourceGroupRequest {

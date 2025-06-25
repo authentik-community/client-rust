@@ -29,13 +29,8 @@ pub struct RacProviderRequest {
     pub authorization_flow: uuid::Uuid,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
-    #[serde(
-        rename = "settings",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub settings: Option<Option<serde_json::Value>>,
+    #[serde(rename = "settings", skip_serializing_if = "Option::is_none")]
+    pub settings: Option<std::collections::HashMap<String, serde_json::Value>>,
     /// Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours=-1;minutes=-2;seconds=-3)
     #[serde(rename = "connection_expiry", skip_serializing_if = "Option::is_none")]
     pub connection_expiry: Option<String>,

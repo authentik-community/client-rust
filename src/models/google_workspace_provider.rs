@@ -43,8 +43,8 @@ pub struct GoogleWorkspaceProvider {
     pub meta_model_name: String,
     #[serde(rename = "delegated_subject")]
     pub delegated_subject: String,
-    #[serde(rename = "credentials", deserialize_with = "Option::deserialize")]
-    pub credentials: Option<serde_json::Value>,
+    #[serde(rename = "credentials")]
+    pub credentials: std::collections::HashMap<String, serde_json::Value>,
     #[serde(rename = "scopes", skip_serializing_if = "Option::is_none")]
     pub scopes: Option<String>,
     #[serde(rename = "exclude_users_service_account", skip_serializing_if = "Option::is_none")]
@@ -79,7 +79,7 @@ impl GoogleWorkspaceProvider {
         verbose_name_plural: String,
         meta_model_name: String,
         delegated_subject: String,
-        credentials: Option<serde_json::Value>,
+        credentials: std::collections::HashMap<String, serde_json::Value>,
         default_group_email_domain: String,
     ) -> GoogleWorkspaceProvider {
         GoogleWorkspaceProvider {

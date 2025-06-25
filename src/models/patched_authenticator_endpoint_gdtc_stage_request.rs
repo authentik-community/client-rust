@@ -33,13 +33,8 @@ pub struct PatchedAuthenticatorEndpointGdtcStageRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub friendly_name: Option<Option<String>>,
-    #[serde(
-        rename = "credentials",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub credentials: Option<Option<serde_json::Value>>,
+    #[serde(rename = "credentials", skip_serializing_if = "Option::is_none")]
+    pub credentials: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
 impl PatchedAuthenticatorEndpointGdtcStageRequest {

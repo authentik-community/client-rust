@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **provider_obj** | [**models::RacProvider**](RACProvider.md) |  | [readonly]
 **protocol** | [**models::ProtocolEnum**](ProtocolEnum.md) |  | 
 **host** | **String** |  | 
-**settings** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**settings** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 **property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **auth_mode** | [**models::AuthModeEnum**](AuthModeEnum.md) |  | 
 **launch_url** | Option<**String**> | Build actual launch URL (the provider itself does not have one, just individual endpoints) | [readonly]

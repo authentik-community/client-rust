@@ -24,8 +24,8 @@ pub struct MicrosoftEntraProviderGroup {
     pub group_obj: models::UserGroup,
     #[serde(rename = "provider")]
     pub provider: i32,
-    #[serde(rename = "attributes", deserialize_with = "Option::deserialize")]
-    pub attributes: Option<serde_json::Value>,
+    #[serde(rename = "attributes")]
+    pub attributes: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl MicrosoftEntraProviderGroup {
@@ -36,7 +36,7 @@ impl MicrosoftEntraProviderGroup {
         group: uuid::Uuid,
         group_obj: models::UserGroup,
         provider: i32,
-        attributes: Option<serde_json::Value>,
+        attributes: std::collections::HashMap<String, serde_json::Value>,
     ) -> MicrosoftEntraProviderGroup {
         MicrosoftEntraProviderGroup {
             id,

@@ -20,20 +20,10 @@ pub struct Reputation {
     pub identifier: String,
     #[serde(rename = "ip")]
     pub ip: String,
-    #[serde(
-        rename = "ip_geo_data",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub ip_geo_data: Option<Option<serde_json::Value>>,
-    #[serde(
-        rename = "ip_asn_data",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub ip_asn_data: Option<Option<serde_json::Value>>,
+    #[serde(rename = "ip_geo_data", skip_serializing_if = "Option::is_none")]
+    pub ip_geo_data: Option<std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(rename = "ip_asn_data", skip_serializing_if = "Option::is_none")]
+    pub ip_asn_data: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "score", skip_serializing_if = "Option::is_none")]
     pub score: Option<i64>,
     #[serde(rename = "updated")]

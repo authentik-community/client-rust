@@ -16,24 +16,14 @@ use serde::{Deserialize, Serialize};
 pub struct Event {
     #[serde(rename = "pk")]
     pub pk: uuid::Uuid,
-    #[serde(
-        rename = "user",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub user: Option<Option<serde_json::Value>>,
+    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
+    pub user: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "action")]
     pub action: models::EventActions,
     #[serde(rename = "app")]
     pub app: String,
-    #[serde(
-        rename = "context",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub context: Option<Option<serde_json::Value>>,
+    #[serde(rename = "context", skip_serializing_if = "Option::is_none")]
+    pub context: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(
         rename = "client_ip",
         default,
@@ -45,13 +35,8 @@ pub struct Event {
     pub created: String,
     #[serde(rename = "expires", skip_serializing_if = "Option::is_none")]
     pub expires: Option<String>,
-    #[serde(
-        rename = "brand",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub brand: Option<Option<serde_json::Value>>,
+    #[serde(rename = "brand", skip_serializing_if = "Option::is_none")]
+    pub brand: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
 impl Event {

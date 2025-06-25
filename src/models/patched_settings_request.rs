@@ -35,7 +35,6 @@ pub struct PatchedSettingsRequest {
     /// Reputation cannot increase higher than this value. Zero or positive.
     #[serde(rename = "reputation_upper_limit", skip_serializing_if = "Option::is_none")]
     pub reputation_upper_limit: Option<u32>,
-    /// The option configures the footer links on the flow executor pages.
     #[serde(
         rename = "footer_links",
         default,

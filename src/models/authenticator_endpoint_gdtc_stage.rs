@@ -47,8 +47,8 @@ pub struct AuthenticatorEndpointGdtcStage {
         skip_serializing_if = "Option::is_none"
     )]
     pub friendly_name: Option<Option<String>>,
-    #[serde(rename = "credentials", deserialize_with = "Option::deserialize")]
-    pub credentials: Option<serde_json::Value>,
+    #[serde(rename = "credentials")]
+    pub credentials: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl AuthenticatorEndpointGdtcStage {
@@ -60,7 +60,7 @@ impl AuthenticatorEndpointGdtcStage {
         verbose_name: String,
         verbose_name_plural: String,
         meta_model_name: String,
-        credentials: Option<serde_json::Value>,
+        credentials: std::collections::HashMap<String, serde_json::Value>,
     ) -> AuthenticatorEndpointGdtcStage {
         AuthenticatorEndpointGdtcStage {
             pk,
