@@ -5726,7 +5726,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_user_login_list
 
-> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
+> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_device, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
 
 
 UserLoginStage Viewset
@@ -5742,6 +5742,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
+**remember_device** | Option<**String**> |  |  |
 **remember_me_offset** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **session_duration** | Option<**String**> |  |  |

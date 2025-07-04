@@ -10133,6 +10133,7 @@ pub async fn stages_user_login_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    remember_device: Option<&str>,
     remember_me_offset: Option<&str>,
     search: Option<&str>,
     session_duration: Option<&str>,
@@ -10163,6 +10164,9 @@ pub async fn stages_user_login_list(
     }
     if let Some(ref local_var_str) = page_size {
         local_var_req_builder = local_var_req_builder.query(&[("page_size", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = remember_device {
+        local_var_req_builder = local_var_req_builder.query(&[("remember_device", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = remember_me_offset {
         local_var_req_builder = local_var_req_builder.query(&[("remember_me_offset", &local_var_str.to_string())]);
