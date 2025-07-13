@@ -16,6 +16,8 @@ use serde::{Deserialize, Serialize};
 pub struct ScimSourceUserRequest {
     #[serde(rename = "id")]
     pub id: String,
+    #[serde(rename = "external_id")]
+    pub external_id: String,
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "source")]
@@ -26,9 +28,10 @@ pub struct ScimSourceUserRequest {
 
 impl ScimSourceUserRequest {
     /// SCIMSourceUser Serializer
-    pub fn new(id: String, user: i32, source: uuid::Uuid) -> ScimSourceUserRequest {
+    pub fn new(id: String, external_id: String, user: i32, source: uuid::Uuid) -> ScimSourceUserRequest {
         ScimSourceUserRequest {
             id,
+            external_id,
             user,
             source,
             attributes: None,

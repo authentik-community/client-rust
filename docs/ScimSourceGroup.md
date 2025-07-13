@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
+**external_id** | **String** |  | 
 **group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **group_obj** | [**models::UserGroup**](UserGroup.md) |  | [readonly]
 **source** | [**uuid::Uuid**](uuid::Uuid.md) |  | 

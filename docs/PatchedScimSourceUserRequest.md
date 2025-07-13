@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | Option<**String**> |  | [optional]
+**external_id** | Option<**String**> |  | [optional]
 **user** | Option<**i32**> |  | [optional]
 **source** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]

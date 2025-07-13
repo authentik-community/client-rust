@@ -16,6 +16,8 @@ use serde::{Deserialize, Serialize};
 pub struct ScimSourceGroupRequest {
     #[serde(rename = "id")]
     pub id: String,
+    #[serde(rename = "external_id")]
+    pub external_id: String,
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "source")]
@@ -26,9 +28,10 @@ pub struct ScimSourceGroupRequest {
 
 impl ScimSourceGroupRequest {
     /// SCIMSourceGroup Serializer
-    pub fn new(id: String, group: uuid::Uuid, source: uuid::Uuid) -> ScimSourceGroupRequest {
+    pub fn new(id: String, external_id: String, group: uuid::Uuid, source: uuid::Uuid) -> ScimSourceGroupRequest {
         ScimSourceGroupRequest {
             id,
+            external_id,
             group,
             source,
             attributes: None,

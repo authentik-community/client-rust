@@ -16,6 +16,8 @@ use serde::{Deserialize, Serialize};
 pub struct ScimSourceUser {
     #[serde(rename = "id")]
     pub id: String,
+    #[serde(rename = "external_id")]
+    pub external_id: String,
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "user_obj")]
@@ -28,9 +30,16 @@ pub struct ScimSourceUser {
 
 impl ScimSourceUser {
     /// SCIMSourceUser Serializer
-    pub fn new(id: String, user: i32, user_obj: models::GroupMember, source: uuid::Uuid) -> ScimSourceUser {
+    pub fn new(
+        id: String,
+        external_id: String,
+        user: i32,
+        user_obj: models::GroupMember,
+        source: uuid::Uuid,
+    ) -> ScimSourceUser {
         ScimSourceUser {
             id,
+            external_id,
             user,
             user_obj,
             source,

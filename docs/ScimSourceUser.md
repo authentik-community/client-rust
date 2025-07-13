@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
+**external_id** | **String** |  | 
 **user** | **i32** |  | 
 **user_obj** | [**models::GroupMember**](GroupMember.md) |  | [readonly]
 **source** | [**uuid::Uuid**](uuid::Uuid.md) |  | 

@@ -16,6 +16,8 @@ use serde::{Deserialize, Serialize};
 pub struct PatchedScimSourceUserRequest {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+    #[serde(rename = "external_id", skip_serializing_if = "Option::is_none")]
+    pub external_id: Option<String>,
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
     pub user: Option<i32>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
@@ -29,6 +31,7 @@ impl PatchedScimSourceUserRequest {
     pub fn new() -> PatchedScimSourceUserRequest {
         PatchedScimSourceUserRequest {
             id: None,
+            external_id: None,
             user: None,
             source: None,
             attributes: None,
