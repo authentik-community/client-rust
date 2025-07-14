@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
+**id** | Option<**String**> |  | [optional]
 **external_id** | **String** |  | 
 **group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **group_obj** | [**models::UserGroup**](UserGroup.md) |  | [readonly]

@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 /// ScimSourceUserRequest : SCIMSourceUser Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ScimSourceUserRequest {
-    #[serde(rename = "id")]
-    pub id: String,
+    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
     #[serde(rename = "external_id")]
     pub external_id: String,
     #[serde(rename = "user")]
@@ -28,9 +28,9 @@ pub struct ScimSourceUserRequest {
 
 impl ScimSourceUserRequest {
     /// SCIMSourceUser Serializer
-    pub fn new(id: String, external_id: String, user: i32, source: uuid::Uuid) -> ScimSourceUserRequest {
+    pub fn new(external_id: String, user: i32, source: uuid::Uuid) -> ScimSourceUserRequest {
         ScimSourceUserRequest {
-            id,
+            id: None,
             external_id,
             user,
             source,

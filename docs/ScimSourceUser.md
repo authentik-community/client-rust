@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
+**id** | Option<**String**> |  | [optional]
 **external_id** | **String** |  | 
 **user** | **i32** |  | 
 **user_obj** | [**models::GroupMember**](GroupMember.md) |  | [readonly]
