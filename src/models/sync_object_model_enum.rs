@@ -15,22 +15,22 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum SyncObjectModelEnum {
     #[serde(rename = "authentik.core.models.User")]
-    User,
+    AuthentikPeriodCorePeriodModelsPeriodUser,
     #[serde(rename = "authentik.core.models.Group")]
-    Group,
+    AuthentikPeriodCorePeriodModelsPeriodGroup,
 }
 
 impl std::fmt::Display for SyncObjectModelEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::User => write!(f, "authentik.core.models.User"),
-            Self::Group => write!(f, "authentik.core.models.Group"),
+            Self::AuthentikPeriodCorePeriodModelsPeriodUser => write!(f, "authentik.core.models.User"),
+            Self::AuthentikPeriodCorePeriodModelsPeriodGroup => write!(f, "authentik.core.models.Group"),
         }
     }
 }
 
 impl Default for SyncObjectModelEnum {
     fn default() -> SyncObjectModelEnum {
-        Self::User
+        Self::AuthentikPeriodCorePeriodModelsPeriodUser
     }
 }

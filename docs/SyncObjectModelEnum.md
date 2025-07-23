@@ -4,8 +4,8 @@
 
 | Name | Value |
 |---- | -----|
-| User | authentik.core.models.User |
-| Group | authentik.core.models.Group |
+| AuthentikPeriodCorePeriodModelsPeriodUser | authentik.core.models.User |
+| AuthentikPeriodCorePeriodModelsPeriodGroup | authentik.core.models.Group |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

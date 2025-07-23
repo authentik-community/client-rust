@@ -15,50 +15,54 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum ProviderModelEnum {
     #[serde(rename = "authentik_providers_google_workspace.googleworkspaceprovider")]
-    GoogleWorkspacePeriodGoogleworkspaceprovider,
+    AuthentikProvidersGoogleWorkspacePeriodGoogleworkspaceprovider,
     #[serde(rename = "authentik_providers_ldap.ldapprovider")]
-    LdapPeriodLdapprovider,
+    AuthentikProvidersLdapPeriodLdapprovider,
     #[serde(rename = "authentik_providers_microsoft_entra.microsoftentraprovider")]
-    MicrosoftEntraPeriodMicrosoftentraprovider,
+    AuthentikProvidersMicrosoftEntraPeriodMicrosoftentraprovider,
     #[serde(rename = "authentik_providers_oauth2.oauth2provider")]
-    Oauth2PeriodOauth2provider,
+    AuthentikProvidersOauth2PeriodOauth2provider,
     #[serde(rename = "authentik_providers_proxy.proxyprovider")]
-    ProxyPeriodProxyprovider,
+    AuthentikProvidersProxyPeriodProxyprovider,
     #[serde(rename = "authentik_providers_rac.racprovider")]
-    RacPeriodRacprovider,
+    AuthentikProvidersRacPeriodRacprovider,
     #[serde(rename = "authentik_providers_radius.radiusprovider")]
-    RadiusPeriodRadiusprovider,
+    AuthentikProvidersRadiusPeriodRadiusprovider,
     #[serde(rename = "authentik_providers_saml.samlprovider")]
-    SamlPeriodSamlprovider,
+    AuthentikProvidersSamlPeriodSamlprovider,
     #[serde(rename = "authentik_providers_scim.scimprovider")]
-    ScimPeriodScimprovider,
+    AuthentikProvidersScimPeriodScimprovider,
     #[serde(rename = "authentik_providers_ssf.ssfprovider")]
-    SsfPeriodSsfprovider,
+    AuthentikProvidersSsfPeriodSsfprovider,
 }
 
 impl std::fmt::Display for ProviderModelEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::GoogleWorkspacePeriodGoogleworkspaceprovider => {
+            Self::AuthentikProvidersGoogleWorkspacePeriodGoogleworkspaceprovider => {
                 write!(f, "authentik_providers_google_workspace.googleworkspaceprovider")
             }
-            Self::LdapPeriodLdapprovider => write!(f, "authentik_providers_ldap.ldapprovider"),
-            Self::MicrosoftEntraPeriodMicrosoftentraprovider => {
+            Self::AuthentikProvidersLdapPeriodLdapprovider => write!(f, "authentik_providers_ldap.ldapprovider"),
+            Self::AuthentikProvidersMicrosoftEntraPeriodMicrosoftentraprovider => {
                 write!(f, "authentik_providers_microsoft_entra.microsoftentraprovider")
             }
-            Self::Oauth2PeriodOauth2provider => write!(f, "authentik_providers_oauth2.oauth2provider"),
-            Self::ProxyPeriodProxyprovider => write!(f, "authentik_providers_proxy.proxyprovider"),
-            Self::RacPeriodRacprovider => write!(f, "authentik_providers_rac.racprovider"),
-            Self::RadiusPeriodRadiusprovider => write!(f, "authentik_providers_radius.radiusprovider"),
-            Self::SamlPeriodSamlprovider => write!(f, "authentik_providers_saml.samlprovider"),
-            Self::ScimPeriodScimprovider => write!(f, "authentik_providers_scim.scimprovider"),
-            Self::SsfPeriodSsfprovider => write!(f, "authentik_providers_ssf.ssfprovider"),
+            Self::AuthentikProvidersOauth2PeriodOauth2provider => {
+                write!(f, "authentik_providers_oauth2.oauth2provider")
+            }
+            Self::AuthentikProvidersProxyPeriodProxyprovider => write!(f, "authentik_providers_proxy.proxyprovider"),
+            Self::AuthentikProvidersRacPeriodRacprovider => write!(f, "authentik_providers_rac.racprovider"),
+            Self::AuthentikProvidersRadiusPeriodRadiusprovider => {
+                write!(f, "authentik_providers_radius.radiusprovider")
+            }
+            Self::AuthentikProvidersSamlPeriodSamlprovider => write!(f, "authentik_providers_saml.samlprovider"),
+            Self::AuthentikProvidersScimPeriodScimprovider => write!(f, "authentik_providers_scim.scimprovider"),
+            Self::AuthentikProvidersSsfPeriodSsfprovider => write!(f, "authentik_providers_ssf.ssfprovider"),
         }
     }
 }
 
 impl Default for ProviderModelEnum {
     fn default() -> ProviderModelEnum {
-        Self::GoogleWorkspacePeriodGoogleworkspaceprovider
+        Self::AuthentikProvidersGoogleWorkspacePeriodGoogleworkspaceprovider
     }
 }

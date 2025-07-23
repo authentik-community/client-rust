@@ -15,22 +15,22 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum DeliveryMethodEnum {
     #[serde(rename = "https://schemas.openid.net/secevent/risc/delivery-method/push")]
-    Push,
+    HttpsColonSlashSlashSchemasPeriodOpenidPeriodNetSlashSeceventSlashRiscSlashDeliveryMethodSlashPush,
     #[serde(rename = "https://schemas.openid.net/secevent/risc/delivery-method/poll")]
-    Poll,
+    HttpsColonSlashSlashSchemasPeriodOpenidPeriodNetSlashSeceventSlashRiscSlashDeliveryMethodSlashPoll,
 }
 
 impl std::fmt::Display for DeliveryMethodEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Push => write!(f, "https://schemas.openid.net/secevent/risc/delivery-method/push"),
-            Self::Poll => write!(f, "https://schemas.openid.net/secevent/risc/delivery-method/poll"),
+            Self::HttpsColonSlashSlashSchemasPeriodOpenidPeriodNetSlashSeceventSlashRiscSlashDeliveryMethodSlashPush => write!(f, "https://schemas.openid.net/secevent/risc/delivery-method/push"),
+            Self::HttpsColonSlashSlashSchemasPeriodOpenidPeriodNetSlashSeceventSlashRiscSlashDeliveryMethodSlashPoll => write!(f, "https://schemas.openid.net/secevent/risc/delivery-method/poll"),
         }
     }
 }
 
 impl Default for DeliveryMethodEnum {
     fn default() -> DeliveryMethodEnum {
-        Self::Push
+        Self::HttpsColonSlashSlashSchemasPeriodOpenidPeriodNetSlashSeceventSlashRiscSlashDeliveryMethodSlashPush
     }
 }

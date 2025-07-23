@@ -15,219 +15,223 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum AppEnum {
     #[serde(rename = "authentik.tenants")]
-    Tenants,
+    AuthentikPeriodTenants,
     #[serde(rename = "authentik.admin")]
-    Admin,
+    AuthentikPeriodAdmin,
     #[serde(rename = "authentik.api")]
-    Api,
+    AuthentikPeriodApi,
     #[serde(rename = "authentik.crypto")]
-    Crypto,
+    AuthentikPeriodCrypto,
     #[serde(rename = "authentik.flows")]
-    Flows,
+    AuthentikPeriodFlows,
     #[serde(rename = "authentik.outposts")]
-    Outposts,
+    AuthentikPeriodOutposts,
     #[serde(rename = "authentik.policies.dummy")]
-    PoliciesPeriodDummy,
+    AuthentikPeriodPoliciesPeriodDummy,
     #[serde(rename = "authentik.policies.event_matcher")]
-    PoliciesPeriodEventMatcher,
+    AuthentikPeriodPoliciesPeriodEventMatcher,
     #[serde(rename = "authentik.policies.expiry")]
-    PoliciesPeriodExpiry,
+    AuthentikPeriodPoliciesPeriodExpiry,
     #[serde(rename = "authentik.policies.expression")]
-    PoliciesPeriodExpression,
+    AuthentikPeriodPoliciesPeriodExpression,
     #[serde(rename = "authentik.policies.geoip")]
-    PoliciesPeriodGeoip,
+    AuthentikPeriodPoliciesPeriodGeoip,
     #[serde(rename = "authentik.policies.password")]
-    PoliciesPeriodPassword,
+    AuthentikPeriodPoliciesPeriodPassword,
     #[serde(rename = "authentik.policies.reputation")]
-    PoliciesPeriodReputation,
+    AuthentikPeriodPoliciesPeriodReputation,
     #[serde(rename = "authentik.policies")]
-    Policies,
+    AuthentikPeriodPolicies,
     #[serde(rename = "authentik.providers.ldap")]
-    ProvidersPeriodLdap,
+    AuthentikPeriodProvidersPeriodLdap,
     #[serde(rename = "authentik.providers.oauth2")]
-    ProvidersPeriodOauth2,
+    AuthentikPeriodProvidersPeriodOauth2,
     #[serde(rename = "authentik.providers.proxy")]
-    ProvidersPeriodProxy,
+    AuthentikPeriodProvidersPeriodProxy,
     #[serde(rename = "authentik.providers.rac")]
-    ProvidersPeriodRac,
+    AuthentikPeriodProvidersPeriodRac,
     #[serde(rename = "authentik.providers.radius")]
-    ProvidersPeriodRadius,
+    AuthentikPeriodProvidersPeriodRadius,
     #[serde(rename = "authentik.providers.saml")]
-    ProvidersPeriodSaml,
+    AuthentikPeriodProvidersPeriodSaml,
     #[serde(rename = "authentik.providers.scim")]
-    ProvidersPeriodScim,
+    AuthentikPeriodProvidersPeriodScim,
     #[serde(rename = "authentik.rbac")]
-    Rbac,
+    AuthentikPeriodRbac,
     #[serde(rename = "authentik.recovery")]
-    Recovery,
+    AuthentikPeriodRecovery,
     #[serde(rename = "authentik.sources.kerberos")]
-    SourcesPeriodKerberos,
+    AuthentikPeriodSourcesPeriodKerberos,
     #[serde(rename = "authentik.sources.ldap")]
-    SourcesPeriodLdap,
+    AuthentikPeriodSourcesPeriodLdap,
     #[serde(rename = "authentik.sources.oauth")]
-    SourcesPeriodOauth,
+    AuthentikPeriodSourcesPeriodOauth,
     #[serde(rename = "authentik.sources.plex")]
-    SourcesPeriodPlex,
+    AuthentikPeriodSourcesPeriodPlex,
     #[serde(rename = "authentik.sources.saml")]
-    SourcesPeriodSaml,
+    AuthentikPeriodSourcesPeriodSaml,
     #[serde(rename = "authentik.sources.scim")]
-    SourcesPeriodScim,
+    AuthentikPeriodSourcesPeriodScim,
     #[serde(rename = "authentik.stages.authenticator")]
-    StagesPeriodAuthenticator,
+    AuthentikPeriodStagesPeriodAuthenticator,
     #[serde(rename = "authentik.stages.authenticator_duo")]
-    StagesPeriodAuthenticatorDuo,
+    AuthentikPeriodStagesPeriodAuthenticatorDuo,
     #[serde(rename = "authentik.stages.authenticator_email")]
-    StagesPeriodAuthenticatorEmail,
+    AuthentikPeriodStagesPeriodAuthenticatorEmail,
     #[serde(rename = "authentik.stages.authenticator_sms")]
-    StagesPeriodAuthenticatorSms,
+    AuthentikPeriodStagesPeriodAuthenticatorSms,
     #[serde(rename = "authentik.stages.authenticator_static")]
-    StagesPeriodAuthenticatorStatic,
+    AuthentikPeriodStagesPeriodAuthenticatorStatic,
     #[serde(rename = "authentik.stages.authenticator_totp")]
-    StagesPeriodAuthenticatorTotp,
+    AuthentikPeriodStagesPeriodAuthenticatorTotp,
     #[serde(rename = "authentik.stages.authenticator_validate")]
-    StagesPeriodAuthenticatorValidate,
+    AuthentikPeriodStagesPeriodAuthenticatorValidate,
     #[serde(rename = "authentik.stages.authenticator_webauthn")]
-    StagesPeriodAuthenticatorWebauthn,
+    AuthentikPeriodStagesPeriodAuthenticatorWebauthn,
     #[serde(rename = "authentik.stages.captcha")]
-    StagesPeriodCaptcha,
+    AuthentikPeriodStagesPeriodCaptcha,
     #[serde(rename = "authentik.stages.consent")]
-    StagesPeriodConsent,
+    AuthentikPeriodStagesPeriodConsent,
     #[serde(rename = "authentik.stages.deny")]
-    StagesPeriodDeny,
+    AuthentikPeriodStagesPeriodDeny,
     #[serde(rename = "authentik.stages.dummy")]
-    StagesPeriodDummy,
+    AuthentikPeriodStagesPeriodDummy,
     #[serde(rename = "authentik.stages.email")]
-    StagesPeriodEmail,
+    AuthentikPeriodStagesPeriodEmail,
     #[serde(rename = "authentik.stages.identification")]
-    StagesPeriodIdentification,
+    AuthentikPeriodStagesPeriodIdentification,
     #[serde(rename = "authentik.stages.invitation")]
-    StagesPeriodInvitation,
+    AuthentikPeriodStagesPeriodInvitation,
     #[serde(rename = "authentik.stages.password")]
-    StagesPeriodPassword,
+    AuthentikPeriodStagesPeriodPassword,
     #[serde(rename = "authentik.stages.prompt")]
-    StagesPeriodPrompt,
+    AuthentikPeriodStagesPeriodPrompt,
     #[serde(rename = "authentik.stages.redirect")]
-    StagesPeriodRedirect,
+    AuthentikPeriodStagesPeriodRedirect,
     #[serde(rename = "authentik.stages.user_delete")]
-    StagesPeriodUserDelete,
+    AuthentikPeriodStagesPeriodUserDelete,
     #[serde(rename = "authentik.stages.user_login")]
-    StagesPeriodUserLogin,
+    AuthentikPeriodStagesPeriodUserLogin,
     #[serde(rename = "authentik.stages.user_logout")]
-    StagesPeriodUserLogout,
+    AuthentikPeriodStagesPeriodUserLogout,
     #[serde(rename = "authentik.stages.user_write")]
-    StagesPeriodUserWrite,
+    AuthentikPeriodStagesPeriodUserWrite,
     #[serde(rename = "authentik.brands")]
-    Brands,
+    AuthentikPeriodBrands,
     #[serde(rename = "authentik.blueprints")]
-    Blueprints,
+    AuthentikPeriodBlueprints,
     #[serde(rename = "authentik.core")]
-    Core,
+    AuthentikPeriodCore,
     #[serde(rename = "authentik.enterprise")]
-    Enterprise,
+    AuthentikPeriodEnterprise,
     #[serde(rename = "authentik.enterprise.audit")]
-    EnterprisePeriodAudit,
+    AuthentikPeriodEnterprisePeriodAudit,
     #[serde(rename = "authentik.enterprise.policies.unique_password")]
-    EnterprisePeriodPoliciesPeriodUniquePassword,
+    AuthentikPeriodEnterprisePeriodPoliciesPeriodUniquePassword,
     #[serde(rename = "authentik.enterprise.providers.google_workspace")]
-    EnterprisePeriodProvidersPeriodGoogleWorkspace,
+    AuthentikPeriodEnterprisePeriodProvidersPeriodGoogleWorkspace,
     #[serde(rename = "authentik.enterprise.providers.microsoft_entra")]
-    EnterprisePeriodProvidersPeriodMicrosoftEntra,
+    AuthentikPeriodEnterprisePeriodProvidersPeriodMicrosoftEntra,
     #[serde(rename = "authentik.enterprise.providers.ssf")]
-    EnterprisePeriodProvidersPeriodSsf,
+    AuthentikPeriodEnterprisePeriodProvidersPeriodSsf,
     #[serde(rename = "authentik.enterprise.search")]
-    EnterprisePeriodSearch,
+    AuthentikPeriodEnterprisePeriodSearch,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
-    EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc,
+    AuthentikPeriodEnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc,
     #[serde(rename = "authentik.enterprise.stages.mtls")]
-    EnterprisePeriodStagesPeriodMtls,
+    AuthentikPeriodEnterprisePeriodStagesPeriodMtls,
     #[serde(rename = "authentik.enterprise.stages.source")]
-    EnterprisePeriodStagesPeriodSource,
+    AuthentikPeriodEnterprisePeriodStagesPeriodSource,
     #[serde(rename = "authentik.events")]
-    Events,
+    AuthentikPeriodEvents,
 }
 
 impl std::fmt::Display for AppEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Tenants => write!(f, "authentik.tenants"),
-            Self::Admin => write!(f, "authentik.admin"),
-            Self::Api => write!(f, "authentik.api"),
-            Self::Crypto => write!(f, "authentik.crypto"),
-            Self::Flows => write!(f, "authentik.flows"),
-            Self::Outposts => write!(f, "authentik.outposts"),
-            Self::PoliciesPeriodDummy => write!(f, "authentik.policies.dummy"),
-            Self::PoliciesPeriodEventMatcher => write!(f, "authentik.policies.event_matcher"),
-            Self::PoliciesPeriodExpiry => write!(f, "authentik.policies.expiry"),
-            Self::PoliciesPeriodExpression => write!(f, "authentik.policies.expression"),
-            Self::PoliciesPeriodGeoip => write!(f, "authentik.policies.geoip"),
-            Self::PoliciesPeriodPassword => write!(f, "authentik.policies.password"),
-            Self::PoliciesPeriodReputation => write!(f, "authentik.policies.reputation"),
-            Self::Policies => write!(f, "authentik.policies"),
-            Self::ProvidersPeriodLdap => write!(f, "authentik.providers.ldap"),
-            Self::ProvidersPeriodOauth2 => write!(f, "authentik.providers.oauth2"),
-            Self::ProvidersPeriodProxy => write!(f, "authentik.providers.proxy"),
-            Self::ProvidersPeriodRac => write!(f, "authentik.providers.rac"),
-            Self::ProvidersPeriodRadius => write!(f, "authentik.providers.radius"),
-            Self::ProvidersPeriodSaml => write!(f, "authentik.providers.saml"),
-            Self::ProvidersPeriodScim => write!(f, "authentik.providers.scim"),
-            Self::Rbac => write!(f, "authentik.rbac"),
-            Self::Recovery => write!(f, "authentik.recovery"),
-            Self::SourcesPeriodKerberos => write!(f, "authentik.sources.kerberos"),
-            Self::SourcesPeriodLdap => write!(f, "authentik.sources.ldap"),
-            Self::SourcesPeriodOauth => write!(f, "authentik.sources.oauth"),
-            Self::SourcesPeriodPlex => write!(f, "authentik.sources.plex"),
-            Self::SourcesPeriodSaml => write!(f, "authentik.sources.saml"),
-            Self::SourcesPeriodScim => write!(f, "authentik.sources.scim"),
-            Self::StagesPeriodAuthenticator => write!(f, "authentik.stages.authenticator"),
-            Self::StagesPeriodAuthenticatorDuo => write!(f, "authentik.stages.authenticator_duo"),
-            Self::StagesPeriodAuthenticatorEmail => write!(f, "authentik.stages.authenticator_email"),
-            Self::StagesPeriodAuthenticatorSms => write!(f, "authentik.stages.authenticator_sms"),
-            Self::StagesPeriodAuthenticatorStatic => write!(f, "authentik.stages.authenticator_static"),
-            Self::StagesPeriodAuthenticatorTotp => write!(f, "authentik.stages.authenticator_totp"),
-            Self::StagesPeriodAuthenticatorValidate => write!(f, "authentik.stages.authenticator_validate"),
-            Self::StagesPeriodAuthenticatorWebauthn => write!(f, "authentik.stages.authenticator_webauthn"),
-            Self::StagesPeriodCaptcha => write!(f, "authentik.stages.captcha"),
-            Self::StagesPeriodConsent => write!(f, "authentik.stages.consent"),
-            Self::StagesPeriodDeny => write!(f, "authentik.stages.deny"),
-            Self::StagesPeriodDummy => write!(f, "authentik.stages.dummy"),
-            Self::StagesPeriodEmail => write!(f, "authentik.stages.email"),
-            Self::StagesPeriodIdentification => write!(f, "authentik.stages.identification"),
-            Self::StagesPeriodInvitation => write!(f, "authentik.stages.invitation"),
-            Self::StagesPeriodPassword => write!(f, "authentik.stages.password"),
-            Self::StagesPeriodPrompt => write!(f, "authentik.stages.prompt"),
-            Self::StagesPeriodRedirect => write!(f, "authentik.stages.redirect"),
-            Self::StagesPeriodUserDelete => write!(f, "authentik.stages.user_delete"),
-            Self::StagesPeriodUserLogin => write!(f, "authentik.stages.user_login"),
-            Self::StagesPeriodUserLogout => write!(f, "authentik.stages.user_logout"),
-            Self::StagesPeriodUserWrite => write!(f, "authentik.stages.user_write"),
-            Self::Brands => write!(f, "authentik.brands"),
-            Self::Blueprints => write!(f, "authentik.blueprints"),
-            Self::Core => write!(f, "authentik.core"),
-            Self::Enterprise => write!(f, "authentik.enterprise"),
-            Self::EnterprisePeriodAudit => write!(f, "authentik.enterprise.audit"),
-            Self::EnterprisePeriodPoliciesPeriodUniquePassword => {
+            Self::AuthentikPeriodTenants => write!(f, "authentik.tenants"),
+            Self::AuthentikPeriodAdmin => write!(f, "authentik.admin"),
+            Self::AuthentikPeriodApi => write!(f, "authentik.api"),
+            Self::AuthentikPeriodCrypto => write!(f, "authentik.crypto"),
+            Self::AuthentikPeriodFlows => write!(f, "authentik.flows"),
+            Self::AuthentikPeriodOutposts => write!(f, "authentik.outposts"),
+            Self::AuthentikPeriodPoliciesPeriodDummy => write!(f, "authentik.policies.dummy"),
+            Self::AuthentikPeriodPoliciesPeriodEventMatcher => write!(f, "authentik.policies.event_matcher"),
+            Self::AuthentikPeriodPoliciesPeriodExpiry => write!(f, "authentik.policies.expiry"),
+            Self::AuthentikPeriodPoliciesPeriodExpression => write!(f, "authentik.policies.expression"),
+            Self::AuthentikPeriodPoliciesPeriodGeoip => write!(f, "authentik.policies.geoip"),
+            Self::AuthentikPeriodPoliciesPeriodPassword => write!(f, "authentik.policies.password"),
+            Self::AuthentikPeriodPoliciesPeriodReputation => write!(f, "authentik.policies.reputation"),
+            Self::AuthentikPeriodPolicies => write!(f, "authentik.policies"),
+            Self::AuthentikPeriodProvidersPeriodLdap => write!(f, "authentik.providers.ldap"),
+            Self::AuthentikPeriodProvidersPeriodOauth2 => write!(f, "authentik.providers.oauth2"),
+            Self::AuthentikPeriodProvidersPeriodProxy => write!(f, "authentik.providers.proxy"),
+            Self::AuthentikPeriodProvidersPeriodRac => write!(f, "authentik.providers.rac"),
+            Self::AuthentikPeriodProvidersPeriodRadius => write!(f, "authentik.providers.radius"),
+            Self::AuthentikPeriodProvidersPeriodSaml => write!(f, "authentik.providers.saml"),
+            Self::AuthentikPeriodProvidersPeriodScim => write!(f, "authentik.providers.scim"),
+            Self::AuthentikPeriodRbac => write!(f, "authentik.rbac"),
+            Self::AuthentikPeriodRecovery => write!(f, "authentik.recovery"),
+            Self::AuthentikPeriodSourcesPeriodKerberos => write!(f, "authentik.sources.kerberos"),
+            Self::AuthentikPeriodSourcesPeriodLdap => write!(f, "authentik.sources.ldap"),
+            Self::AuthentikPeriodSourcesPeriodOauth => write!(f, "authentik.sources.oauth"),
+            Self::AuthentikPeriodSourcesPeriodPlex => write!(f, "authentik.sources.plex"),
+            Self::AuthentikPeriodSourcesPeriodSaml => write!(f, "authentik.sources.saml"),
+            Self::AuthentikPeriodSourcesPeriodScim => write!(f, "authentik.sources.scim"),
+            Self::AuthentikPeriodStagesPeriodAuthenticator => write!(f, "authentik.stages.authenticator"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorDuo => write!(f, "authentik.stages.authenticator_duo"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorEmail => write!(f, "authentik.stages.authenticator_email"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorSms => write!(f, "authentik.stages.authenticator_sms"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorStatic => write!(f, "authentik.stages.authenticator_static"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorTotp => write!(f, "authentik.stages.authenticator_totp"),
+            Self::AuthentikPeriodStagesPeriodAuthenticatorValidate => {
+                write!(f, "authentik.stages.authenticator_validate")
+            }
+            Self::AuthentikPeriodStagesPeriodAuthenticatorWebauthn => {
+                write!(f, "authentik.stages.authenticator_webauthn")
+            }
+            Self::AuthentikPeriodStagesPeriodCaptcha => write!(f, "authentik.stages.captcha"),
+            Self::AuthentikPeriodStagesPeriodConsent => write!(f, "authentik.stages.consent"),
+            Self::AuthentikPeriodStagesPeriodDeny => write!(f, "authentik.stages.deny"),
+            Self::AuthentikPeriodStagesPeriodDummy => write!(f, "authentik.stages.dummy"),
+            Self::AuthentikPeriodStagesPeriodEmail => write!(f, "authentik.stages.email"),
+            Self::AuthentikPeriodStagesPeriodIdentification => write!(f, "authentik.stages.identification"),
+            Self::AuthentikPeriodStagesPeriodInvitation => write!(f, "authentik.stages.invitation"),
+            Self::AuthentikPeriodStagesPeriodPassword => write!(f, "authentik.stages.password"),
+            Self::AuthentikPeriodStagesPeriodPrompt => write!(f, "authentik.stages.prompt"),
+            Self::AuthentikPeriodStagesPeriodRedirect => write!(f, "authentik.stages.redirect"),
+            Self::AuthentikPeriodStagesPeriodUserDelete => write!(f, "authentik.stages.user_delete"),
+            Self::AuthentikPeriodStagesPeriodUserLogin => write!(f, "authentik.stages.user_login"),
+            Self::AuthentikPeriodStagesPeriodUserLogout => write!(f, "authentik.stages.user_logout"),
+            Self::AuthentikPeriodStagesPeriodUserWrite => write!(f, "authentik.stages.user_write"),
+            Self::AuthentikPeriodBrands => write!(f, "authentik.brands"),
+            Self::AuthentikPeriodBlueprints => write!(f, "authentik.blueprints"),
+            Self::AuthentikPeriodCore => write!(f, "authentik.core"),
+            Self::AuthentikPeriodEnterprise => write!(f, "authentik.enterprise"),
+            Self::AuthentikPeriodEnterprisePeriodAudit => write!(f, "authentik.enterprise.audit"),
+            Self::AuthentikPeriodEnterprisePeriodPoliciesPeriodUniquePassword => {
                 write!(f, "authentik.enterprise.policies.unique_password")
             }
-            Self::EnterprisePeriodProvidersPeriodGoogleWorkspace => {
+            Self::AuthentikPeriodEnterprisePeriodProvidersPeriodGoogleWorkspace => {
                 write!(f, "authentik.enterprise.providers.google_workspace")
             }
-            Self::EnterprisePeriodProvidersPeriodMicrosoftEntra => {
+            Self::AuthentikPeriodEnterprisePeriodProvidersPeriodMicrosoftEntra => {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
-            Self::EnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
-            Self::EnterprisePeriodSearch => write!(f, "authentik.enterprise.search"),
-            Self::EnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
+            Self::AuthentikPeriodEnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
+            Self::AuthentikPeriodEnterprisePeriodSearch => write!(f, "authentik.enterprise.search"),
+            Self::AuthentikPeriodEnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")
             }
-            Self::EnterprisePeriodStagesPeriodMtls => write!(f, "authentik.enterprise.stages.mtls"),
-            Self::EnterprisePeriodStagesPeriodSource => write!(f, "authentik.enterprise.stages.source"),
-            Self::Events => write!(f, "authentik.events"),
+            Self::AuthentikPeriodEnterprisePeriodStagesPeriodMtls => write!(f, "authentik.enterprise.stages.mtls"),
+            Self::AuthentikPeriodEnterprisePeriodStagesPeriodSource => write!(f, "authentik.enterprise.stages.source"),
+            Self::AuthentikPeriodEvents => write!(f, "authentik.events"),
         }
     }
 }
 
 impl Default for AppEnum {
     fn default() -> AppEnum {
-        Self::Tenants
+        Self::AuthentikPeriodTenants
     }
 }

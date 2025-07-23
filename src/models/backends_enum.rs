@@ -15,22 +15,24 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum BackendsEnum {
     #[serde(rename = "authentik.core.auth.InbuiltBackend")]
-    CorePeriodAuthPeriodInbuiltBackend,
+    AuthentikPeriodCorePeriodAuthPeriodInbuiltBackend,
     #[serde(rename = "authentik.core.auth.TokenBackend")]
-    CorePeriodAuthPeriodTokenBackend,
+    AuthentikPeriodCorePeriodAuthPeriodTokenBackend,
     #[serde(rename = "authentik.sources.ldap.auth.LDAPBackend")]
-    SourcesPeriodLdapPeriodAuthPeriodLdapBackend,
+    AuthentikPeriodSourcesPeriodLdapPeriodAuthPeriodLdapBackend,
     #[serde(rename = "authentik.sources.kerberos.auth.KerberosBackend")]
-    SourcesPeriodKerberosPeriodAuthPeriodKerberosBackend,
+    AuthentikPeriodSourcesPeriodKerberosPeriodAuthPeriodKerberosBackend,
 }
 
 impl std::fmt::Display for BackendsEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::CorePeriodAuthPeriodInbuiltBackend => write!(f, "authentik.core.auth.InbuiltBackend"),
-            Self::CorePeriodAuthPeriodTokenBackend => write!(f, "authentik.core.auth.TokenBackend"),
-            Self::SourcesPeriodLdapPeriodAuthPeriodLdapBackend => write!(f, "authentik.sources.ldap.auth.LDAPBackend"),
-            Self::SourcesPeriodKerberosPeriodAuthPeriodKerberosBackend => {
+            Self::AuthentikPeriodCorePeriodAuthPeriodInbuiltBackend => write!(f, "authentik.core.auth.InbuiltBackend"),
+            Self::AuthentikPeriodCorePeriodAuthPeriodTokenBackend => write!(f, "authentik.core.auth.TokenBackend"),
+            Self::AuthentikPeriodSourcesPeriodLdapPeriodAuthPeriodLdapBackend => {
+                write!(f, "authentik.sources.ldap.auth.LDAPBackend")
+            }
+            Self::AuthentikPeriodSourcesPeriodKerberosPeriodAuthPeriodKerberosBackend => {
                 write!(f, "authentik.sources.kerberos.auth.KerberosBackend")
             }
         }
@@ -39,6 +41,6 @@ impl std::fmt::Display for BackendsEnum {
 
 impl Default for BackendsEnum {
     fn default() -> BackendsEnum {
-        Self::CorePeriodAuthPeriodInbuiltBackend
+        Self::AuthentikPeriodCorePeriodAuthPeriodInbuiltBackend
     }
 }
