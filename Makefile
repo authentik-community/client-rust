@@ -14,14 +14,14 @@ build:
 	docker run --rm \
 		-v "${PWD}:/local" \
 		--user "${UID}:${GID}" \
-		docker.io/openapitools/openapi-diff:2.1.0-beta.11 \
+		docker.io/openapitools/openapi-diff:2.1.2 \
 		--markdown /local/diff.test \
 		/local/schema-old.yml /local/schema.yml || echo > diff.test
 	rm schema-old.yml
 	docker run --rm \
 		-v "${PWD}:/local" \
 		--user "${UID}:${GID}" \
-		docker.io/openapitools/openapi-generator-cli:v7.8.0 \
+		docker.io/openapitools/openapi-generator-cli:v7.14.0 \
 		generate \
 		-i /local/schema.yml \
 		-g rust \
