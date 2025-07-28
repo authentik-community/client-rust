@@ -222,9 +222,9 @@ docs/KerberosSource.md
 docs/KerberosSourcePropertyMapping.md
 docs/KerberosSourcePropertyMappingRequest.md
 docs/KerberosSourceRequest.md
-docs/KerberosSyncStatus.md
 docs/KubernetesServiceConnection.md
 docs/KubernetesServiceConnectionRequest.md
+docs/LastTaskStatusEnum.md
 docs/LdapCheckAccess.md
 docs/LdapDebug.md
 docs/LdapOutpostConfig.md
@@ -395,6 +395,7 @@ docs/PaginatedSamlPropertyMappingList.md
 docs/PaginatedSamlProviderList.md
 docs/PaginatedSamlSourceList.md
 docs/PaginatedSamlSourcePropertyMappingList.md
+docs/PaginatedScheduleList.md
 docs/PaginatedScimMappingList.md
 docs/PaginatedScimProviderGroupList.md
 docs/PaginatedScimProviderList.md
@@ -412,7 +413,7 @@ docs/PaginatedSsfProviderList.md
 docs/PaginatedSsfStreamList.md
 docs/PaginatedStageList.md
 docs/PaginatedStaticDeviceList.md
-docs/PaginatedSystemTaskList.md
+docs/PaginatedTaskList.md
 docs/PaginatedTenantList.md
 docs/PaginatedTokenList.md
 docs/PaginatedTokenModelList.md
@@ -528,6 +529,7 @@ docs/PatchedSamlPropertyMappingRequest.md
 docs/PatchedSamlProviderRequest.md
 docs/PatchedSamlSourcePropertyMappingRequest.md
 docs/PatchedSamlSourceRequest.md
+docs/PatchedScheduleRequest.md
 docs/PatchedScimMappingRequest.md
 docs/PatchedScimProviderRequest.md
 docs/PatchedScimSourceGroupRequest.md
@@ -635,6 +637,8 @@ docs/SamlSource.md
 docs/SamlSourcePropertyMapping.md
 docs/SamlSourcePropertyMappingRequest.md
 docs/SamlSourceRequest.md
+docs/Schedule.md
+docs/ScheduleRequest.md
 docs/SchemaApi.md
 docs/ScimMapping.md
 docs/ScimMappingRequest.md
@@ -682,6 +686,7 @@ docs/Stage.md
 docs/StagePrompt.md
 docs/StageRequest.md
 docs/StagesApi.md
+docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
@@ -693,8 +698,9 @@ docs/SyncObjectResult.md
 docs/SyncStatus.md
 docs/SystemInfo.md
 docs/SystemInfoRuntime.md
-docs/SystemTask.md
-docs/SystemTaskStatusEnum.md
+docs/Task.md
+docs/TaskAggregatedStatusEnum.md
+docs/TasksApi.md
 docs/Tenant.md
 docs/TenantAdminGroupRequestRequest.md
 docs/TenantRecoveryKeyRequestRequest.md
@@ -791,6 +797,7 @@ src/apis/schema_api.rs
 src/apis/sources_api.rs
 src/apis/ssf_api.rs
 src/apis/stages_api.rs
+src/apis/tasks_api.rs
 src/apis/tenants_api.rs
 src/lib.rs
 src/models/access_denied_challenge.rs
@@ -1006,9 +1013,9 @@ src/models/kerberos_source.rs
 src/models/kerberos_source_property_mapping.rs
 src/models/kerberos_source_property_mapping_request.rs
 src/models/kerberos_source_request.rs
-src/models/kerberos_sync_status.rs
 src/models/kubernetes_service_connection.rs
 src/models/kubernetes_service_connection_request.rs
+src/models/last_task_status_enum.rs
 src/models/ldap_check_access.rs
 src/models/ldap_debug.rs
 src/models/ldap_outpost_config.rs
@@ -1177,6 +1184,7 @@ src/models/paginated_saml_property_mapping_list.rs
 src/models/paginated_saml_provider_list.rs
 src/models/paginated_saml_source_list.rs
 src/models/paginated_saml_source_property_mapping_list.rs
+src/models/paginated_schedule_list.rs
 src/models/paginated_scim_mapping_list.rs
 src/models/paginated_scim_provider_group_list.rs
 src/models/paginated_scim_provider_list.rs
@@ -1194,7 +1202,7 @@ src/models/paginated_ssf_provider_list.rs
 src/models/paginated_ssf_stream_list.rs
 src/models/paginated_stage_list.rs
 src/models/paginated_static_device_list.rs
-src/models/paginated_system_task_list.rs
+src/models/paginated_task_list.rs
 src/models/paginated_tenant_list.rs
 src/models/paginated_token_list.rs
 src/models/paginated_token_model_list.rs
@@ -1310,6 +1318,7 @@ src/models/patched_saml_property_mapping_request.rs
 src/models/patched_saml_provider_request.rs
 src/models/patched_saml_source_property_mapping_request.rs
 src/models/patched_saml_source_request.rs
+src/models/patched_schedule_request.rs
 src/models/patched_scim_mapping_request.rs
 src/models/patched_scim_provider_request.rs
 src/models/patched_scim_source_group_request.rs
@@ -1411,6 +1420,8 @@ src/models/saml_source.rs
 src/models/saml_source_property_mapping.rs
 src/models/saml_source_property_mapping_request.rs
 src/models/saml_source_request.rs
+src/models/schedule.rs
+src/models/schedule_request.rs
 src/models/scim_mapping.rs
 src/models/scim_mapping_request.rs
 src/models/scim_provider.rs
@@ -1454,6 +1465,7 @@ src/models/ssf_stream.rs
 src/models/stage.rs
 src/models/stage_prompt.rs
 src/models/stage_request.rs
+src/models/state_enum.rs
 src/models/static_device.rs
 src/models/static_device_request.rs
 src/models/static_device_token.rs
@@ -1465,8 +1477,8 @@ src/models/sync_object_result.rs
 src/models/sync_status.rs
 src/models/system_info.rs
 src/models/system_info_runtime.rs
-src/models/system_task.rs
-src/models/system_task_status_enum.rs
+src/models/task.rs
+src/models/task_aggregated_status_enum.rs
 src/models/tenant.rs
 src/models/tenant_admin_group_request_request.rs
 src/models/tenant_recovery_key_request_request.rs

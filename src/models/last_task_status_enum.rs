@@ -13,30 +13,39 @@ use serde::{Deserialize, Serialize};
 
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum SystemTaskStatusEnum {
-    #[serde(rename = "unknown")]
-    Unknown,
-    #[serde(rename = "successful")]
-    Successful,
+pub enum LastTaskStatusEnum {
+    #[serde(rename = "queued")]
+    Queued,
+    #[serde(rename = "consumed")]
+    Consumed,
+    #[serde(rename = "rejected")]
+    Rejected,
+    #[serde(rename = "done")]
+    Done,
+    #[serde(rename = "info")]
+    Info,
     #[serde(rename = "warning")]
     Warning,
     #[serde(rename = "error")]
     Error,
 }
 
-impl std::fmt::Display for SystemTaskStatusEnum {
+impl std::fmt::Display for LastTaskStatusEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Unknown => write!(f, "unknown"),
-            Self::Successful => write!(f, "successful"),
+            Self::Queued => write!(f, "queued"),
+            Self::Consumed => write!(f, "consumed"),
+            Self::Rejected => write!(f, "rejected"),
+            Self::Done => write!(f, "done"),
+            Self::Info => write!(f, "info"),
             Self::Warning => write!(f, "warning"),
             Self::Error => write!(f, "error"),
         }
     }
 }
 
-impl Default for SystemTaskStatusEnum {
-    fn default() -> SystemTaskStatusEnum {
-        Self::Unknown
+impl Default for LastTaskStatusEnum {
+    fn default() -> LastTaskStatusEnum {
+        Self::Queued
     }
 }

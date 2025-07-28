@@ -161,7 +161,6 @@ pub enum ProvidersGoogleWorkspaceSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersGoogleWorkspaceSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -396,7 +395,6 @@ pub enum ProvidersMicrosoftEntraSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersMicrosoftEntraSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -930,7 +928,6 @@ pub enum ProvidersScimSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersScimSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),

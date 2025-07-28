@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**admin_version_history_list**](AdminApi.md#admin_version_history_list) | **GET** /admin/version/history/ | 
 [**admin_version_history_retrieve**](AdminApi.md#admin_version_history_retrieve) | **GET** /admin/version/history/{id}/ | 
 [**admin_version_retrieve**](AdminApi.md#admin_version_retrieve) | **GET** /admin/version/ | 
-[**admin_workers_list**](AdminApi.md#admin_workers_list) | **GET** /admin/workers/ | 
 
 
 
@@ -290,33 +289,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::Version**](Version.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## admin_workers_list
-
-> Vec<models::Worker> admin_workers_list()
-
-
-Get currently connected worker count.
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Vec<models::Worker>**](Worker.md)
 
 ### Authorization
 

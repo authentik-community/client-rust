@@ -12,22 +12,22 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct PaginatedSystemTaskList {
+pub struct PaginatedTaskList {
     #[serde(rename = "pagination")]
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
-    pub results: Vec<models::SystemTask>,
+    pub results: Vec<models::Task>,
     #[serde(rename = "autocomplete")]
     pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
-impl PaginatedSystemTaskList {
+impl PaginatedTaskList {
     pub fn new(
         pagination: models::Pagination,
-        results: Vec<models::SystemTask>,
+        results: Vec<models::Task>,
         autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedSystemTaskList {
-        PaginatedSystemTaskList {
+    ) -> PaginatedTaskList {
+        PaginatedTaskList {
             pagination,
             results,
             autocomplete,

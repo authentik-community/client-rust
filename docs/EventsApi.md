@@ -27,9 +27,6 @@ Method | HTTP request | Description
 [**events_rules_retrieve**](EventsApi.md#events_rules_retrieve) | **GET** /events/rules/{pbm_uuid}/ | 
 [**events_rules_update**](EventsApi.md#events_rules_update) | **PUT** /events/rules/{pbm_uuid}/ | 
 [**events_rules_used_by_list**](EventsApi.md#events_rules_used_by_list) | **GET** /events/rules/{pbm_uuid}/used_by/ | 
-[**events_system_tasks_list**](EventsApi.md#events_system_tasks_list) | **GET** /events/system_tasks/ | 
-[**events_system_tasks_retrieve**](EventsApi.md#events_system_tasks_retrieve) | **GET** /events/system_tasks/{uuid}/ | 
-[**events_system_tasks_run_create**](EventsApi.md#events_system_tasks_run_create) | **POST** /events/system_tasks/{uuid}/run/ | 
 [**events_transports_create**](EventsApi.md#events_transports_create) | **POST** /events/transports/ | 
 [**events_transports_destroy**](EventsApi.md#events_transports_destroy) | **DELETE** /events/transports/{uuid}/ | 
 [**events_transports_list**](EventsApi.md#events_transports_list) | **GET** /events/transports/ | 
@@ -757,102 +754,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::UsedBy>**](UsedBy.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## events_system_tasks_list
-
-> models::PaginatedSystemTaskList events_system_tasks_list(name, ordering, page, page_size, search, status, uid)
-
-
-Read-only view set that returns all background tasks
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | Option<**String**> |  |  |
-**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
-**page** | Option<**i32**> | A page number within the paginated result set. |  |
-**page_size** | Option<**i32**> | Number of results to return per page. |  |
-**search** | Option<**String**> | A search term. |  |
-**status** | Option<**String**> |  |  |
-**uid** | Option<**String**> |  |  |
-
-### Return type
-
-[**models::PaginatedSystemTaskList**](PaginatedSystemTaskList.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## events_system_tasks_retrieve
-
-> models::SystemTask events_system_tasks_retrieve(uuid)
-
-
-Read-only view set that returns all background tasks
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** | A UUID string identifying this System Task. | [required] |
-
-### Return type
-
-[**models::SystemTask**](SystemTask.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## events_system_tasks_run_create
-
-> events_system_tasks_run_create(uuid)
-
-
-Run task
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** | A UUID string identifying this System Task. | [required] |
-
-### Return type
-
- (empty response body)
 
 ### Authorization
 

@@ -11,18 +11,24 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SyncStatus : Provider sync status
+/// SyncStatus : Provider/source sync status
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncStatus {
     #[serde(rename = "is_running")]
     pub is_running: bool,
-    #[serde(rename = "tasks")]
-    pub tasks: Vec<models::SystemTask>,
+    #[serde(rename = "last_successful_sync", skip_serializing_if = "Option::is_none")]
+    pub last_successful_sync: Option<String>,
+    #[serde(rename = "last_sync_status", skip_serializing_if = "Option::is_none")]
+    pub last_sync_status: Option<models::TaskAggregatedStatusEnum>,
 }
 
 impl SyncStatus {
-    /// Provider sync status
-    pub fn new(is_running: bool, tasks: Vec<models::SystemTask>) -> SyncStatus {
-        SyncStatus { is_running, tasks }
+    /// Provider/source sync status
+    pub fn new(is_running: bool) -> SyncStatus {
+        SyncStatus {
+            is_running,
+            last_successful_sync: None,
+            last_sync_status: None,
+        }
     }
 }
