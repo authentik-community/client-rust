@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum NameIdPolicyEnum {
+pub enum SamlNameIdPolicyEnum {
     #[serde(rename = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress")]
     UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonEmailAddress,
     #[serde(rename = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent")]
@@ -24,9 +24,11 @@ pub enum NameIdPolicyEnum {
     UrnColonOasisColonNamesColonTcColonSamlColon2Period0ColonNameidFormatColonWindowsDomainQualifiedName,
     #[serde(rename = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient")]
     UrnColonOasisColonNamesColonTcColonSamlColon2Period0ColonNameidFormatColonTransient,
+    #[serde(rename = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified")]
+    UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonUnspecified,
 }
 
-impl std::fmt::Display for NameIdPolicyEnum {
+impl std::fmt::Display for SamlNameIdPolicyEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonEmailAddress => write!(f, "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
@@ -34,12 +36,13 @@ impl std::fmt::Display for NameIdPolicyEnum {
             Self::UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonX509SubjectName => write!(f, "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"),
             Self::UrnColonOasisColonNamesColonTcColonSamlColon2Period0ColonNameidFormatColonWindowsDomainQualifiedName => write!(f, "urn:oasis:names:tc:SAML:2.0:nameid-format:WindowsDomainQualifiedName"),
             Self::UrnColonOasisColonNamesColonTcColonSamlColon2Period0ColonNameidFormatColonTransient => write!(f, "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"),
+            Self::UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonUnspecified => write!(f, "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"),
         }
     }
 }
 
-impl Default for NameIdPolicyEnum {
-    fn default() -> NameIdPolicyEnum {
+impl Default for SamlNameIdPolicyEnum {
+    fn default() -> SamlNameIdPolicyEnum {
         Self::UrnColonOasisColonNamesColonTcColonSamlColon1Period1ColonNameidFormatColonEmailAddress
     }
 }

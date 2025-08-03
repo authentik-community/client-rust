@@ -262,7 +262,6 @@ docs/ModelRequest.md
 docs/MutualTlsStage.md
 docs/MutualTlsStageModeEnum.md
 docs/MutualTlsStageRequest.md
-docs/NameIdPolicyEnum.md
 docs/NetworkBindingEnum.md
 docs/NotConfiguredActionEnum.md
 docs/Notification.md
@@ -629,6 +628,7 @@ docs/RoleObjectPermission.md
 docs/RoleRequest.md
 docs/RootApi.md
 docs/SamlMetadata.md
+docs/SamlNameIdPolicyEnum.md
 docs/SamlPropertyMapping.md
 docs/SamlPropertyMappingRequest.md
 docs/SamlProvider.md
@@ -1053,7 +1053,6 @@ src/models/model_request.rs
 src/models/mutual_tls_stage.rs
 src/models/mutual_tls_stage_mode_enum.rs
 src/models/mutual_tls_stage_request.rs
-src/models/name_id_policy_enum.rs
 src/models/network_binding_enum.rs
 src/models/not_configured_action_enum.rs
 src/models/notification.rs
@@ -1412,6 +1411,7 @@ src/models/role_assigned_object_permission.rs
 src/models/role_object_permission.rs
 src/models/role_request.rs
 src/models/saml_metadata.rs
+src/models/saml_name_id_policy_enum.rs
 src/models/saml_property_mapping.rs
 src/models/saml_property_mapping_request.rs
 src/models/saml_provider.rs
