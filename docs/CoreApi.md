@@ -1837,7 +1837,7 @@ This endpoint does not need any parameter.
 
 ## core_users_list
 
-> models::PaginatedUserList core_users_list(attributes, email, groups_by_name, groups_by_pk, include_groups, is_active, is_superuser, name, ordering, page, page_size, path, path_startswith, search, r#type, username, uuid)
+> models::PaginatedUserList core_users_list(attributes, date_joined, date_joined__gt, date_joined__lt, email, groups_by_name, groups_by_pk, include_groups, is_active, is_superuser, last_updated, last_updated__gt, last_updated__lt, name, ordering, page, page_size, path, path_startswith, search, r#type, username, uuid)
 
 
 User Viewset
@@ -1848,12 +1848,18 @@ User Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **attributes** | Option<**String**> | Attributes |  |
+**date_joined** | Option<**String**> |  |  |
+**date_joined__gt** | Option<**String**> |  |  |
+**date_joined__lt** | Option<**String**> |  |  |
 **email** | Option<**String**> |  |  |
 **groups_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
 **groups_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **include_groups** | Option<**bool**> |  |  |[default to true]
 **is_active** | Option<**bool**> |  |  |
 **is_superuser** | Option<**bool**> |  |  |
+**last_updated** | Option<**String**> |  |  |
+**last_updated__gt** | Option<**String**> |  |  |
+**last_updated__lt** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |

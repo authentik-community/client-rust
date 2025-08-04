@@ -3863,12 +3863,18 @@ pub async fn core_users_impersonate_end_retrieve(
 pub async fn core_users_list(
     configuration: &configuration::Configuration,
     attributes: Option<&str>,
+    date_joined: Option<String>,
+    date_joined__gt: Option<String>,
+    date_joined__lt: Option<String>,
     email: Option<&str>,
     groups_by_name: Option<Vec<String>>,
     groups_by_pk: Option<Vec<uuid::Uuid>>,
     include_groups: Option<bool>,
     is_active: Option<bool>,
     is_superuser: Option<bool>,
+    last_updated: Option<String>,
+    last_updated__gt: Option<String>,
+    last_updated__lt: Option<String>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -3882,12 +3888,18 @@ pub async fn core_users_list(
 ) -> Result<models::PaginatedUserList, Error<CoreUsersListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_attributes = attributes;
+    let p_date_joined = date_joined;
+    let p_date_joined__gt = date_joined__gt;
+    let p_date_joined__lt = date_joined__lt;
     let p_email = email;
     let p_groups_by_name = groups_by_name;
     let p_groups_by_pk = groups_by_pk;
     let p_include_groups = include_groups;
     let p_is_active = is_active;
     let p_is_superuser = is_superuser;
+    let p_last_updated = last_updated;
+    let p_last_updated__gt = last_updated__gt;
+    let p_last_updated__lt = last_updated__lt;
     let p_name = name;
     let p_ordering = ordering;
     let p_page = page;
@@ -3904,6 +3916,15 @@ pub async fn core_users_list(
 
     if let Some(ref param_value) = p_attributes {
         req_builder = req_builder.query(&[("attributes", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined {
+        req_builder = req_builder.query(&[("date_joined", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined__gt {
+        req_builder = req_builder.query(&[("date_joined__gt", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined__lt {
+        req_builder = req_builder.query(&[("date_joined__lt", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_email {
         req_builder = req_builder.query(&[("email", &param_value.to_string())]);
@@ -3954,6 +3975,15 @@ pub async fn core_users_list(
     }
     if let Some(ref param_value) = p_is_superuser {
         req_builder = req_builder.query(&[("is_superuser", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated {
+        req_builder = req_builder.query(&[("last_updated", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated__gt {
+        req_builder = req_builder.query(&[("last_updated__gt", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated__lt {
+        req_builder = req_builder.query(&[("last_updated__lt", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_name {
         req_builder = req_builder.query(&[("name", &param_value.to_string())]);
