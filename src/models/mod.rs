@@ -350,6 +350,8 @@ pub mod google_workspace_provider_user_request;
 pub use self::google_workspace_provider_user_request::GoogleWorkspaceProviderUserRequest;
 pub mod group;
 pub use self::group::Group;
+pub mod group_child;
+pub use self::group_child::GroupChild;
 pub mod group_kerberos_source_connection;
 pub use self::group_kerberos_source_connection::GroupKerberosSourceConnection;
 pub mod group_kerberos_source_connection_request;

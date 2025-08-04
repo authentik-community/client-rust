@@ -2488,6 +2488,7 @@ pub async fn core_groups_destroy(
 pub async fn core_groups_list(
     configuration: &configuration::Configuration,
     attributes: Option<&str>,
+    include_children: Option<bool>,
     include_users: Option<bool>,
     is_superuser: Option<bool>,
     members_by_pk: Option<Vec<i32>>,
@@ -2500,6 +2501,7 @@ pub async fn core_groups_list(
 ) -> Result<models::PaginatedGroupList, Error<CoreGroupsListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_attributes = attributes;
+    let p_include_children = include_children;
     let p_include_users = include_users;
     let p_is_superuser = is_superuser;
     let p_members_by_pk = members_by_pk;
@@ -2515,6 +2517,9 @@ pub async fn core_groups_list(
 
     if let Some(ref param_value) = p_attributes {
         req_builder = req_builder.query(&[("attributes", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_include_children {
+        req_builder = req_builder.query(&[("include_children", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_include_users {
         req_builder = req_builder.query(&[("include_users", &param_value.to_string())]);
@@ -2720,10 +2725,12 @@ pub async fn core_groups_remove_user_create(
 pub async fn core_groups_retrieve(
     configuration: &configuration::Configuration,
     group_uuid: &str,
+    include_children: Option<bool>,
     include_users: Option<bool>,
 ) -> Result<models::Group, Error<CoreGroupsRetrieveError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_group_uuid = group_uuid;
+    let p_include_children = include_children;
     let p_include_users = include_users;
 
     let uri_str = format!(
@@ -2733,6 +2740,9 @@ pub async fn core_groups_retrieve(
     );
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
+    if let Some(ref param_value) = p_include_children {
+        req_builder = req_builder.query(&[("include_children", &param_value.to_string())]);
+    }
     if let Some(ref param_value) = p_include_users {
         req_builder = req_builder.query(&[("include_users", &param_value.to_string())]);
     }

@@ -1086,7 +1086,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_list
 
-> models::PaginatedGroupList core_groups_list(attributes, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
+> models::PaginatedGroupList core_groups_list(attributes, include_children, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
 
 
 Group Viewset
@@ -1097,6 +1097,7 @@ Group Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **attributes** | Option<**String**> | Attributes |  |
+**include_children** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 **is_superuser** | Option<**bool**> |  |  |
 **members_by_pk** | Option<[**Vec<i32>**](i32.md)> |  |  |
@@ -1187,7 +1188,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_retrieve
 
-> models::Group core_groups_retrieve(group_uuid, include_users)
+> models::Group core_groups_retrieve(group_uuid, include_children, include_users)
 
 
 Group Viewset
@@ -1198,6 +1199,7 @@ Group Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **group_uuid** | **uuid::Uuid** | A UUID string identifying this Group. | [required] |
+**include_children** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 
 ### Return type

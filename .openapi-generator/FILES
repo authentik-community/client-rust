@@ -185,6 +185,7 @@ docs/GoogleWorkspaceProviderRequest.md
 docs/GoogleWorkspaceProviderUser.md
 docs/GoogleWorkspaceProviderUserRequest.md
 docs/Group.md
+docs/GroupChild.md
 docs/GroupKerberosSourceConnection.md
 docs/GroupKerberosSourceConnectionRequest.md
 docs/GroupLdapSourceConnection.md
@@ -976,6 +977,7 @@ src/models/google_workspace_provider_request.rs
 src/models/google_workspace_provider_user.rs
 src/models/google_workspace_provider_user_request.rs
 src/models/group.rs
+src/models/group_child.rs
 src/models/group_kerberos_source_connection.rs
 src/models/group_kerberos_source_connection_request.rs
 src/models/group_ldap_source_connection.rs

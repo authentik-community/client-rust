@@ -32,6 +32,8 @@ pub struct GroupRequest {
     pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "roles", skip_serializing_if = "Option::is_none")]
     pub roles: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "children", skip_serializing_if = "Option::is_none")]
+    pub children: Option<Vec<uuid::Uuid>>,
 }
 
 impl GroupRequest {
@@ -44,6 +46,7 @@ impl GroupRequest {
             users: None,
             attributes: None,
             roles: None,
+            children: None,
         }
     }
 }
