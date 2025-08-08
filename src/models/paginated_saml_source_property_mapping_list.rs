@@ -17,20 +17,13 @@ pub struct PaginatedSamlSourcePropertyMappingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::SamlSourcePropertyMapping>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedSamlSourcePropertyMappingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::SamlSourcePropertyMapping>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedSamlSourcePropertyMappingList {
-        PaginatedSamlSourcePropertyMappingList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedSamlSourcePropertyMappingList { pagination, results }
     }
 }

@@ -42,10 +42,6 @@ pub struct Group {
     pub roles: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "roles_obj")]
     pub roles_obj: Vec<models::Role>,
-    #[serde(rename = "children", skip_serializing_if = "Option::is_none")]
-    pub children: Option<Vec<uuid::Uuid>>,
-    #[serde(rename = "children_obj", deserialize_with = "Option::deserialize")]
-    pub children_obj: Option<Vec<models::GroupChild>>,
 }
 
 impl Group {
@@ -57,7 +53,6 @@ impl Group {
         parent_name: Option<String>,
         users_obj: Option<Vec<models::GroupMember>>,
         roles_obj: Vec<models::Role>,
-        children_obj: Option<Vec<models::GroupChild>>,
     ) -> Group {
         Group {
             pk,
@@ -71,8 +66,6 @@ impl Group {
             attributes: None,
             roles: None,
             roles_obj,
-            children: None,
-            children_obj,
         }
     }
 }

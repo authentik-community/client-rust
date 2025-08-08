@@ -17,20 +17,13 @@ pub struct PaginatedUserSamlSourceConnectionList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::UserSamlSourceConnection>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedUserSamlSourceConnectionList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::UserSamlSourceConnection>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedUserSamlSourceConnectionList {
-        PaginatedUserSamlSourceConnectionList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedUserSamlSourceConnectionList { pagination, results }
     }
 }

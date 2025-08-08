@@ -17,20 +17,10 @@ pub struct PaginatedDummyPolicyList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::DummyPolicy>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedDummyPolicyList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::DummyPolicy>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedDummyPolicyList {
-        PaginatedDummyPolicyList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::DummyPolicy>) -> PaginatedDummyPolicyList {
+        PaginatedDummyPolicyList { pagination, results }
     }
 }

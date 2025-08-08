@@ -33,8 +33,13 @@ pub struct KubernetesServiceConnection {
     #[serde(rename = "meta_model_name")]
     pub meta_model_name: String,
     /// Paste your kubeconfig here. authentik will automatically use the currently selected context.
-    #[serde(rename = "kubeconfig", skip_serializing_if = "Option::is_none")]
-    pub kubeconfig: Option<std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(
+        rename = "kubeconfig",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub kubeconfig: Option<Option<serde_json::Value>>,
     /// Verify SSL Certificates of the Kubernetes API endpoint
     #[serde(rename = "verify_ssl", skip_serializing_if = "Option::is_none")]
     pub verify_ssl: Option<bool>,

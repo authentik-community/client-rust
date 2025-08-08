@@ -17,20 +17,13 @@ pub struct PaginatedGroupKerberosSourceConnectionList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::GroupKerberosSourceConnection>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedGroupKerberosSourceConnectionList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::GroupKerberosSourceConnection>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedGroupKerberosSourceConnectionList {
-        PaginatedGroupKerberosSourceConnectionList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedGroupKerberosSourceConnectionList { pagination, results }
     }
 }

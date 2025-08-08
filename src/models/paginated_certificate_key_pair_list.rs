@@ -17,20 +17,13 @@ pub struct PaginatedCertificateKeyPairList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::CertificateKeyPair>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedCertificateKeyPairList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::CertificateKeyPair>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedCertificateKeyPairList {
-        PaginatedCertificateKeyPairList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedCertificateKeyPairList { pagination, results }
     }
 }

@@ -17,20 +17,13 @@ pub struct PaginatedAuthenticatorTotpStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::AuthenticatorTotpStage>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedAuthenticatorTotpStageList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::AuthenticatorTotpStage>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedAuthenticatorTotpStageList {
-        PaginatedAuthenticatorTotpStageList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedAuthenticatorTotpStageList { pagination, results }
     }
 }

@@ -17,20 +17,13 @@ pub struct PaginatedKerberosSourcePropertyMappingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::KerberosSourcePropertyMapping>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedKerberosSourcePropertyMappingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::KerberosSourcePropertyMapping>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedKerberosSourcePropertyMappingList {
-        PaginatedKerberosSourcePropertyMappingList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedKerberosSourcePropertyMappingList { pagination, results }
     }
 }

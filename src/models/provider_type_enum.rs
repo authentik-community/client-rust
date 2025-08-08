@@ -18,8 +18,6 @@ pub enum ProviderTypeEnum {
     Apple,
     #[serde(rename = "openidconnect")]
     Openidconnect,
-    #[serde(rename = "entraid")]
-    Entraid,
     #[serde(rename = "azuread")]
     Azuread,
     #[serde(rename = "discord")]
@@ -51,7 +49,6 @@ impl std::fmt::Display for ProviderTypeEnum {
         match self {
             Self::Apple => write!(f, "apple"),
             Self::Openidconnect => write!(f, "openidconnect"),
-            Self::Entraid => write!(f, "entraid"),
             Self::Azuread => write!(f, "azuread"),
             Self::Discord => write!(f, "discord"),
             Self::Facebook => write!(f, "facebook"),

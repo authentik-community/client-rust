@@ -17,20 +17,10 @@ pub struct PaginatedTenantList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::Tenant>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedTenantList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::Tenant>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedTenantList {
-        PaginatedTenantList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::Tenant>) -> PaginatedTenantList {
+        PaginatedTenantList { pagination, results }
     }
 }

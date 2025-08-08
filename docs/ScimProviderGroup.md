@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **group_obj** | [**models::UserGroup**](UserGroup.md) |  | [readonly]
 **provider** | **i32** |  | 
-**attributes** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | [readonly]
+**attributes** | Option<[**serde_json::Value**](.md)> |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

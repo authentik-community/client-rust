@@ -17,20 +17,10 @@ pub struct PaginatedConsentStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::ConsentStage>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedConsentStageList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::ConsentStage>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedConsentStageList {
-        PaginatedConsentStageList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::ConsentStage>) -> PaginatedConsentStageList {
+        PaginatedConsentStageList { pagination, results }
     }
 }

@@ -129,8 +129,6 @@ pub struct SamlProvider {
     /// Default relay_state value for IDP-initiated logins
     #[serde(rename = "default_relay_state", skip_serializing_if = "Option::is_none")]
     pub default_relay_state: Option<String>,
-    #[serde(rename = "default_name_id_policy", skip_serializing_if = "Option::is_none")]
-    pub default_name_id_policy: Option<models::SamlNameIdPolicyEnum>,
     /// Get metadata download URL
     #[serde(rename = "url_download_metadata")]
     pub url_download_metadata: String,
@@ -206,7 +204,6 @@ impl SamlProvider {
             sign_response: None,
             sp_binding: None,
             default_relay_state: None,
-            default_name_id_policy: None,
             url_download_metadata,
             url_sso_post,
             url_sso_redirect,

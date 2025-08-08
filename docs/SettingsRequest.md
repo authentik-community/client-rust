@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **event_retention** | Option<**String**> | Events will be deleted after this duration.(Format: weeks=3;days=2;hours=3,seconds=2). | [optional]
 **reputation_lower_limit** | Option<**i32**> | Reputation cannot decrease lower than this value. Zero or negative. | [optional]
 **reputation_upper_limit** | Option<**u32**> | Reputation cannot increase higher than this value. Zero or positive. | [optional]
-**footer_links** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**footer_links** | Option<[**serde_json::Value**](.md)> | The option configures the footer links on the flow executor pages. | [optional]
 **gdpr_compliance** | Option<**bool**> | When enabled, all the events caused by a user will be deleted upon the user's deletion. | [optional]
 **impersonation** | Option<**bool**> | Globally enable/disable impersonation. | [optional]
 **impersonation_require_reason** | Option<**bool**> | Require administrators to provide a reason for impersonating a user. | [optional]

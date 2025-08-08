@@ -17,20 +17,10 @@ pub struct PaginatedFlowList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::Flow>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedFlowList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::Flow>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedFlowList {
-        PaginatedFlowList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::Flow>) -> PaginatedFlowList {
+        PaginatedFlowList { pagination, results }
     }
 }

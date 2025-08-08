@@ -17,20 +17,10 @@ pub struct PaginatedWebAuthnDeviceList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::WebAuthnDevice>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedWebAuthnDeviceList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::WebAuthnDevice>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedWebAuthnDeviceList {
-        PaginatedWebAuthnDeviceList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::WebAuthnDevice>) -> PaginatedWebAuthnDeviceList {
+        PaginatedWebAuthnDeviceList { pagination, results }
     }
 }

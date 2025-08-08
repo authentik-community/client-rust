@@ -17,20 +17,10 @@ pub struct PaginatedPromptList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::Prompt>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedPromptList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::Prompt>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedPromptList {
-        PaginatedPromptList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::Prompt>) -> PaginatedPromptList {
+        PaginatedPromptList { pagination, results }
     }
 }

@@ -18,16 +18,6 @@ pub enum ModelEnum {
     AuthentikTenantsPeriodDomain,
     #[serde(rename = "authentik_crypto.certificatekeypair")]
     AuthentikCryptoPeriodCertificatekeypair,
-    #[serde(rename = "authentik_events.event")]
-    AuthentikEventsPeriodEvent,
-    #[serde(rename = "authentik_events.notificationtransport")]
-    AuthentikEventsPeriodNotificationtransport,
-    #[serde(rename = "authentik_events.notification")]
-    AuthentikEventsPeriodNotification,
-    #[serde(rename = "authentik_events.notificationrule")]
-    AuthentikEventsPeriodNotificationrule,
-    #[serde(rename = "authentik_events.notificationwebhookmapping")]
-    AuthentikEventsPeriodNotificationwebhookmapping,
     #[serde(rename = "authentik_flows.flow")]
     AuthentikFlowsPeriodFlow,
     #[serde(rename = "authentik_flows.flowstagebinding")]
@@ -188,8 +178,6 @@ pub enum ModelEnum {
     AuthentikStagesUserLogoutPeriodUserlogoutstage,
     #[serde(rename = "authentik_stages_user_write.userwritestage")]
     AuthentikStagesUserWritePeriodUserwritestage,
-    #[serde(rename = "authentik_tasks_schedules.schedule")]
-    AuthentikTasksSchedulesPeriodSchedule,
     #[serde(rename = "authentik_brands.brand")]
     AuthentikBrandsPeriodBrand,
     #[serde(rename = "authentik_blueprints.blueprintinstance")]
@@ -224,6 +212,16 @@ pub enum ModelEnum {
     AuthentikStagesMtlsPeriodMutualtlsstage,
     #[serde(rename = "authentik_stages_source.sourcestage")]
     AuthentikStagesSourcePeriodSourcestage,
+    #[serde(rename = "authentik_events.event")]
+    AuthentikEventsPeriodEvent,
+    #[serde(rename = "authentik_events.notificationtransport")]
+    AuthentikEventsPeriodNotificationtransport,
+    #[serde(rename = "authentik_events.notification")]
+    AuthentikEventsPeriodNotification,
+    #[serde(rename = "authentik_events.notificationrule")]
+    AuthentikEventsPeriodNotificationrule,
+    #[serde(rename = "authentik_events.notificationwebhookmapping")]
+    AuthentikEventsPeriodNotificationwebhookmapping,
 }
 
 impl std::fmt::Display for ModelEnum {
@@ -231,13 +229,6 @@ impl std::fmt::Display for ModelEnum {
         match self {
             Self::AuthentikTenantsPeriodDomain => write!(f, "authentik_tenants.domain"),
             Self::AuthentikCryptoPeriodCertificatekeypair => write!(f, "authentik_crypto.certificatekeypair"),
-            Self::AuthentikEventsPeriodEvent => write!(f, "authentik_events.event"),
-            Self::AuthentikEventsPeriodNotificationtransport => write!(f, "authentik_events.notificationtransport"),
-            Self::AuthentikEventsPeriodNotification => write!(f, "authentik_events.notification"),
-            Self::AuthentikEventsPeriodNotificationrule => write!(f, "authentik_events.notificationrule"),
-            Self::AuthentikEventsPeriodNotificationwebhookmapping => {
-                write!(f, "authentik_events.notificationwebhookmapping")
-            }
             Self::AuthentikFlowsPeriodFlow => write!(f, "authentik_flows.flow"),
             Self::AuthentikFlowsPeriodFlowstagebinding => write!(f, "authentik_flows.flowstagebinding"),
             Self::AuthentikOutpostsPeriodDockerserviceconnection => {
@@ -414,7 +405,6 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikStagesUserWritePeriodUserwritestage => {
                 write!(f, "authentik_stages_user_write.userwritestage")
             }
-            Self::AuthentikTasksSchedulesPeriodSchedule => write!(f, "authentik_tasks_schedules.schedule"),
             Self::AuthentikBrandsPeriodBrand => write!(f, "authentik_brands.brand"),
             Self::AuthentikBlueprintsPeriodBlueprintinstance => write!(f, "authentik_blueprints.blueprintinstance"),
             Self::AuthentikCorePeriodGroup => write!(f, "authentik_core.group"),
@@ -445,6 +435,13 @@ impl std::fmt::Display for ModelEnum {
             ),
             Self::AuthentikStagesMtlsPeriodMutualtlsstage => write!(f, "authentik_stages_mtls.mutualtlsstage"),
             Self::AuthentikStagesSourcePeriodSourcestage => write!(f, "authentik_stages_source.sourcestage"),
+            Self::AuthentikEventsPeriodEvent => write!(f, "authentik_events.event"),
+            Self::AuthentikEventsPeriodNotificationtransport => write!(f, "authentik_events.notificationtransport"),
+            Self::AuthentikEventsPeriodNotification => write!(f, "authentik_events.notification"),
+            Self::AuthentikEventsPeriodNotificationrule => write!(f, "authentik_events.notificationrule"),
+            Self::AuthentikEventsPeriodNotificationwebhookmapping => {
+                write!(f, "authentik_events.notificationwebhookmapping")
+            }
         }
     }
 }

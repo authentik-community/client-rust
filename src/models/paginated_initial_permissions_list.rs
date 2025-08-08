@@ -17,20 +17,13 @@ pub struct PaginatedInitialPermissionsList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::InitialPermissions>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedInitialPermissionsList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::InitialPermissions>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedInitialPermissionsList {
-        PaginatedInitialPermissionsList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedInitialPermissionsList { pagination, results }
     }
 }

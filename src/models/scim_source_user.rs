@@ -14,26 +14,28 @@ use serde::{Deserialize, Serialize};
 /// ScimSourceUser : SCIMSourceUser Serializer
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ScimSourceUser {
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<String>,
-    #[serde(rename = "external_id")]
-    pub external_id: String,
+    #[serde(rename = "id")]
+    pub id: String,
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "user_obj")]
     pub user_obj: models::GroupMember,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
-    #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
-    pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(
+        rename = "attributes",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub attributes: Option<Option<serde_json::Value>>,
 }
 
 impl ScimSourceUser {
     /// SCIMSourceUser Serializer
-    pub fn new(external_id: String, user: i32, user_obj: models::GroupMember, source: uuid::Uuid) -> ScimSourceUser {
+    pub fn new(id: String, user: i32, user_obj: models::GroupMember, source: uuid::Uuid) -> ScimSourceUser {
         ScimSourceUser {
-            id: None,
-            external_id,
+            id,
             user,
             user_obj,
             source,

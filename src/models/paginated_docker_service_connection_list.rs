@@ -17,20 +17,13 @@ pub struct PaginatedDockerServiceConnectionList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::DockerServiceConnection>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedDockerServiceConnectionList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::DockerServiceConnection>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedDockerServiceConnectionList {
-        PaginatedDockerServiceConnectionList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedDockerServiceConnectionList { pagination, results }
     }
 }

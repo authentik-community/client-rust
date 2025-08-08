@@ -17,20 +17,13 @@ pub struct PaginatedUniquePasswordPolicyList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::UniquePasswordPolicy>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedUniquePasswordPolicyList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::UniquePasswordPolicy>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedUniquePasswordPolicyList {
-        PaginatedUniquePasswordPolicyList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedUniquePasswordPolicyList { pagination, results }
     }
 }

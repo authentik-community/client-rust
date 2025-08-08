@@ -17,20 +17,13 @@ pub struct PaginatedNotificationWebhookMappingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::NotificationWebhookMapping>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedNotificationWebhookMappingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::NotificationWebhookMapping>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedNotificationWebhookMappingList {
-        PaginatedNotificationWebhookMappingList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedNotificationWebhookMappingList { pagination, results }
     }
 }

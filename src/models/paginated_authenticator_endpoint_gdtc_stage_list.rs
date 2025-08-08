@@ -17,20 +17,13 @@ pub struct PaginatedAuthenticatorEndpointGdtcStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::AuthenticatorEndpointGdtcStage>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedAuthenticatorEndpointGdtcStageList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::AuthenticatorEndpointGdtcStage>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedAuthenticatorEndpointGdtcStageList {
-        PaginatedAuthenticatorEndpointGdtcStageList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedAuthenticatorEndpointGdtcStageList { pagination, results }
     }
 }

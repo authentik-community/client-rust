@@ -90,8 +90,13 @@ pub struct BrandRequest {
     /// Certificates used for client authentication.
     #[serde(rename = "client_certificates", skip_serializing_if = "Option::is_none")]
     pub client_certificates: Option<Vec<uuid::Uuid>>,
-    #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
-    pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(
+        rename = "attributes",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub attributes: Option<Option<serde_json::Value>>,
 }
 
 impl BrandRequest {

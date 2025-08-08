@@ -2152,7 +2152,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_authenticator_webauthn_list
 
-> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, max_attempts, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
+> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
 
 
 AuthenticatorWebAuthnStage Viewset
@@ -2166,7 +2166,6 @@ Name | Type | Description  | Required | Notes
 **configure_flow** | Option<**uuid::Uuid**> |  |  |
 **device_type_restrictions** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **friendly_name** | Option<**String**> |  |  |
-**max_attempts** | Option<**i32**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
@@ -5726,7 +5725,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_user_login_list
 
-> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_device, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
+> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
 
 
 UserLoginStage Viewset
@@ -5742,7 +5741,6 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
-**remember_device** | Option<**String**> |  |  |
 **remember_me_offset** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **session_duration** | Option<**String**> |  |  |

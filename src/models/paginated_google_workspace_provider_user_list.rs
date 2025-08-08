@@ -17,20 +17,13 @@ pub struct PaginatedGoogleWorkspaceProviderUserList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::GoogleWorkspaceProviderUser>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedGoogleWorkspaceProviderUserList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::GoogleWorkspaceProviderUser>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedGoogleWorkspaceProviderUserList {
-        PaginatedGoogleWorkspaceProviderUserList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedGoogleWorkspaceProviderUserList { pagination, results }
     }
 }

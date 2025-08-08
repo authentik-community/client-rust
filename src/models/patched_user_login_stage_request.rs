@@ -33,9 +33,6 @@ pub struct PatchedUserLoginStageRequest {
     /// Bind sessions created by this stage to the configured GeoIP location
     #[serde(rename = "geoip_binding", skip_serializing_if = "Option::is_none")]
     pub geoip_binding: Option<models::GeoipBindingEnum>,
-    /// When set to a non-zero value, authentik will save a cookie with a longer expiry,to remember the device the user is logging in from. (Format: hours=-1;minutes=-2;seconds=-3)
-    #[serde(rename = "remember_device", skip_serializing_if = "Option::is_none")]
-    pub remember_device: Option<String>,
 }
 
 impl PatchedUserLoginStageRequest {
@@ -49,7 +46,6 @@ impl PatchedUserLoginStageRequest {
             remember_me_offset: None,
             network_binding: None,
             geoip_binding: None,
-            remember_device: None,
         }
     }
 }

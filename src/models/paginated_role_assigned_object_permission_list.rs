@@ -17,20 +17,13 @@ pub struct PaginatedRoleAssignedObjectPermissionList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::RoleAssignedObjectPermission>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedRoleAssignedObjectPermissionList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::RoleAssignedObjectPermission>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedRoleAssignedObjectPermissionList {
-        PaginatedRoleAssignedObjectPermissionList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedRoleAssignedObjectPermissionList { pagination, results }
     }
 }

@@ -56,8 +56,6 @@ pub struct User {
     pub uuid: uuid::Uuid,
     #[serde(rename = "password_change_date")]
     pub password_change_date: String,
-    #[serde(rename = "last_updated")]
-    pub last_updated: String,
 }
 
 impl User {
@@ -73,7 +71,6 @@ impl User {
         uid: String,
         uuid: uuid::Uuid,
         password_change_date: String,
-        last_updated: String,
     ) -> User {
         User {
             pk,
@@ -93,7 +90,6 @@ impl User {
             r#type: None,
             uuid,
             password_change_date,
-            last_updated,
         }
     }
 }

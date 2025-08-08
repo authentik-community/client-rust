@@ -17,20 +17,10 @@ pub struct PaginatedMutualTlsStageList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::MutualTlsStage>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedMutualTlsStageList {
-    pub fn new(
-        pagination: models::Pagination,
-        results: Vec<models::MutualTlsStage>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
-    ) -> PaginatedMutualTlsStageList {
-        PaginatedMutualTlsStageList {
-            pagination,
-            results,
-            autocomplete,
-        }
+    pub fn new(pagination: models::Pagination, results: Vec<models::MutualTlsStage>) -> PaginatedMutualTlsStageList {
+        PaginatedMutualTlsStageList { pagination, results }
     }
 }

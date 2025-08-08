@@ -74,7 +74,7 @@ pub struct SamlSourceRequest {
     pub allow_idp_initiated: Option<bool>,
     /// NameID Policy sent to the IdP. Can be unset, in which case no Policy is sent.
     #[serde(rename = "name_id_policy", skip_serializing_if = "Option::is_none")]
-    pub name_id_policy: Option<models::SamlNameIdPolicyEnum>,
+    pub name_id_policy: Option<models::NameIdPolicyEnum>,
     #[serde(rename = "binding_type", skip_serializing_if = "Option::is_none")]
     pub binding_type: Option<models::BindingTypeEnum>,
     /// When selected, incoming assertion's Signatures will be validated against this certificate. To allow unsigned Requests, leave on default.

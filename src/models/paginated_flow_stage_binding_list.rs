@@ -17,20 +17,13 @@ pub struct PaginatedFlowStageBindingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::FlowStageBinding>,
-    #[serde(rename = "autocomplete")]
-    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedFlowStageBindingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::FlowStageBinding>,
-        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedFlowStageBindingList {
-        PaginatedFlowStageBindingList {
-            pagination,
-            results,
-            autocomplete,
-        }
+        PaginatedFlowStageBindingList { pagination, results }
     }
 }
