@@ -17,10 +17,20 @@ pub struct PaginatedLdapSourceList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::LdapSource>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedLdapSourceList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::LdapSource>) -> PaginatedLdapSourceList {
-        PaginatedLdapSourceList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::LdapSource>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedLdapSourceList {
+        PaginatedLdapSourceList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

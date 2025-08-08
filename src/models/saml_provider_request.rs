@@ -103,6 +103,8 @@ pub struct SamlProviderRequest {
     /// Default relay_state value for IDP-initiated logins
     #[serde(rename = "default_relay_state", skip_serializing_if = "Option::is_none")]
     pub default_relay_state: Option<String>,
+    #[serde(rename = "default_name_id_policy", skip_serializing_if = "Option::is_none")]
+    pub default_name_id_policy: Option<models::SamlNameIdPolicyEnum>,
 }
 
 impl SamlProviderRequest {
@@ -136,6 +138,7 @@ impl SamlProviderRequest {
             sign_response: None,
             sp_binding: None,
             default_relay_state: None,
+            default_name_id_policy: None,
         }
     }
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device_class** | **String** |  | 
+**device_class** | [**models::DeviceClassesEnum**](DeviceClassesEnum.md) |  | 
 **device_uid** | **String** |  | 
 **challenge** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 
 **last_used** | Option<**String**> |  | 

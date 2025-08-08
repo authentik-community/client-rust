@@ -5249,6 +5249,7 @@ pub async fn stages_authenticator_webauthn_list(
     configure_flow: Option<&str>,
     device_type_restrictions: Option<Vec<uuid::Uuid>>,
     friendly_name: Option<&str>,
+    max_attempts: Option<i32>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -5263,6 +5264,7 @@ pub async fn stages_authenticator_webauthn_list(
     let p_configure_flow = configure_flow;
     let p_device_type_restrictions = device_type_restrictions;
     let p_friendly_name = friendly_name;
+    let p_max_attempts = max_attempts;
     let p_name = name;
     let p_ordering = ordering;
     let p_page = page;
@@ -5302,6 +5304,9 @@ pub async fn stages_authenticator_webauthn_list(
     }
     if let Some(ref param_value) = p_friendly_name {
         req_builder = req_builder.query(&[("friendly_name", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_max_attempts {
+        req_builder = req_builder.query(&[("max_attempts", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_name {
         req_builder = req_builder.query(&[("name", &param_value.to_string())]);
@@ -11998,6 +12003,7 @@ pub async fn stages_user_login_list(
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
+    remember_device: Option<&str>,
     remember_me_offset: Option<&str>,
     search: Option<&str>,
     session_duration: Option<&str>,
@@ -12011,6 +12017,7 @@ pub async fn stages_user_login_list(
     let p_ordering = ordering;
     let p_page = page;
     let p_page_size = page_size;
+    let p_remember_device = remember_device;
     let p_remember_me_offset = remember_me_offset;
     let p_search = search;
     let p_session_duration = session_duration;
@@ -12037,6 +12044,9 @@ pub async fn stages_user_login_list(
     }
     if let Some(ref param_value) = p_page_size {
         req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_remember_device {
+        req_builder = req_builder.query(&[("remember_device", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_remember_me_offset {
         req_builder = req_builder.query(&[("remember_me_offset", &param_value.to_string())]);

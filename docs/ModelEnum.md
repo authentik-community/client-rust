@@ -6,6 +6,11 @@
 |---- | -----|
 | AuthentikTenantsPeriodDomain | authentik_tenants.domain |
 | AuthentikCryptoPeriodCertificatekeypair | authentik_crypto.certificatekeypair |
+| AuthentikEventsPeriodEvent | authentik_events.event |
+| AuthentikEventsPeriodNotificationtransport | authentik_events.notificationtransport |
+| AuthentikEventsPeriodNotification | authentik_events.notification |
+| AuthentikEventsPeriodNotificationrule | authentik_events.notificationrule |
+| AuthentikEventsPeriodNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 | AuthentikFlowsPeriodFlow | authentik_flows.flow |
 | AuthentikFlowsPeriodFlowstagebinding | authentik_flows.flowstagebinding |
 | AuthentikOutpostsPeriodDockerserviceconnection | authentik_outposts.dockerserviceconnection |
@@ -86,6 +91,7 @@
 | AuthentikStagesUserLoginPeriodUserloginstage | authentik_stages_user_login.userloginstage |
 | AuthentikStagesUserLogoutPeriodUserlogoutstage | authentik_stages_user_logout.userlogoutstage |
 | AuthentikStagesUserWritePeriodUserwritestage | authentik_stages_user_write.userwritestage |
+| AuthentikTasksSchedulesPeriodSchedule | authentik_tasks_schedules.schedule |
 | AuthentikBrandsPeriodBrand | authentik_brands.brand |
 | AuthentikBlueprintsPeriodBlueprintinstance | authentik_blueprints.blueprintinstance |
 | AuthentikCorePeriodGroup | authentik_core.group |
@@ -103,11 +109,6 @@
 | AuthentikStagesAuthenticatorEndpointGdtcPeriodAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | AuthentikStagesMtlsPeriodMutualtlsstage | authentik_stages_mtls.mutualtlsstage |
 | AuthentikStagesSourcePeriodSourcestage | authentik_stages_source.sourcestage |
-| AuthentikEventsPeriodEvent | authentik_events.event |
-| AuthentikEventsPeriodNotificationtransport | authentik_events.notificationtransport |
-| AuthentikEventsPeriodNotification | authentik_events.notification |
-| AuthentikEventsPeriodNotificationrule | authentik_events.notificationrule |
-| AuthentikEventsPeriodNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

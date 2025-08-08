@@ -24,12 +24,15 @@ pub struct NotificationRuleRequest {
     pub severity: Option<models::SeverityEnum>,
     /// Define which group of users this notification should be sent and shown to. If left empty, Notification won't ben sent.
     #[serde(
-        rename = "group",
+        rename = "destination_group",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
-    pub group: Option<Option<uuid::Uuid>>,
+    pub destination_group: Option<Option<uuid::Uuid>>,
+    /// When enabled, notification will be sent to user the user that triggered the event.When destination_group is configured, notification is sent to both.
+    #[serde(rename = "destination_event_user", skip_serializing_if = "Option::is_none")]
+    pub destination_event_user: Option<bool>,
 }
 
 impl NotificationRuleRequest {
@@ -39,7 +42,8 @@ impl NotificationRuleRequest {
             name,
             transports: None,
             severity: None,
-            group: None,
+            destination_group: None,
+            destination_event_user: None,
         }
     }
 }

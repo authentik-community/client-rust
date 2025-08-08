@@ -17,13 +17,20 @@ pub struct PaginatedRadiusProviderPropertyMappingList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::RadiusProviderPropertyMapping>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedRadiusProviderPropertyMappingList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::RadiusProviderPropertyMapping>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedRadiusProviderPropertyMappingList {
-        PaginatedRadiusProviderPropertyMappingList { pagination, results }
+        PaginatedRadiusProviderPropertyMappingList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

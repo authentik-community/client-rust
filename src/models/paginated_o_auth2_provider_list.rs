@@ -17,10 +17,20 @@ pub struct PaginatedOAuth2ProviderList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::OAuth2Provider>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedOAuth2ProviderList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::OAuth2Provider>) -> PaginatedOAuth2ProviderList {
-        PaginatedOAuth2ProviderList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::OAuth2Provider>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedOAuth2ProviderList {
+        PaginatedOAuth2ProviderList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

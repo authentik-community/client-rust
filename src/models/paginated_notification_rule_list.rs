@@ -17,13 +17,20 @@ pub struct PaginatedNotificationRuleList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::NotificationRule>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedNotificationRuleList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::NotificationRule>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedNotificationRuleList {
-        PaginatedNotificationRuleList { pagination, results }
+        PaginatedNotificationRuleList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

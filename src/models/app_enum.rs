@@ -16,12 +16,16 @@ use serde::{Deserialize, Serialize};
 pub enum AppEnum {
     #[serde(rename = "authentik.tenants")]
     AuthentikPeriodTenants,
+    #[serde(rename = "authentik.tasks")]
+    AuthentikPeriodTasks,
     #[serde(rename = "authentik.admin")]
     AuthentikPeriodAdmin,
     #[serde(rename = "authentik.api")]
     AuthentikPeriodApi,
     #[serde(rename = "authentik.crypto")]
     AuthentikPeriodCrypto,
+    #[serde(rename = "authentik.events")]
+    AuthentikPeriodEvents,
     #[serde(rename = "authentik.flows")]
     AuthentikPeriodFlows,
     #[serde(rename = "authentik.outposts")]
@@ -116,6 +120,8 @@ pub enum AppEnum {
     AuthentikPeriodStagesPeriodUserLogout,
     #[serde(rename = "authentik.stages.user_write")]
     AuthentikPeriodStagesPeriodUserWrite,
+    #[serde(rename = "authentik.tasks.schedules")]
+    AuthentikPeriodTasksPeriodSchedules,
     #[serde(rename = "authentik.brands")]
     AuthentikPeriodBrands,
     #[serde(rename = "authentik.blueprints")]
@@ -134,23 +140,25 @@ pub enum AppEnum {
     AuthentikPeriodEnterprisePeriodProvidersPeriodMicrosoftEntra,
     #[serde(rename = "authentik.enterprise.providers.ssf")]
     AuthentikPeriodEnterprisePeriodProvidersPeriodSsf,
+    #[serde(rename = "authentik.enterprise.search")]
+    AuthentikPeriodEnterprisePeriodSearch,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
     AuthentikPeriodEnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc,
     #[serde(rename = "authentik.enterprise.stages.mtls")]
     AuthentikPeriodEnterprisePeriodStagesPeriodMtls,
     #[serde(rename = "authentik.enterprise.stages.source")]
     AuthentikPeriodEnterprisePeriodStagesPeriodSource,
-    #[serde(rename = "authentik.events")]
-    AuthentikPeriodEvents,
 }
 
 impl std::fmt::Display for AppEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::AuthentikPeriodTenants => write!(f, "authentik.tenants"),
+            Self::AuthentikPeriodTasks => write!(f, "authentik.tasks"),
             Self::AuthentikPeriodAdmin => write!(f, "authentik.admin"),
             Self::AuthentikPeriodApi => write!(f, "authentik.api"),
             Self::AuthentikPeriodCrypto => write!(f, "authentik.crypto"),
+            Self::AuthentikPeriodEvents => write!(f, "authentik.events"),
             Self::AuthentikPeriodFlows => write!(f, "authentik.flows"),
             Self::AuthentikPeriodOutposts => write!(f, "authentik.outposts"),
             Self::AuthentikPeriodPoliciesPeriodDummy => write!(f, "authentik.policies.dummy"),
@@ -202,6 +210,7 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikPeriodStagesPeriodUserLogin => write!(f, "authentik.stages.user_login"),
             Self::AuthentikPeriodStagesPeriodUserLogout => write!(f, "authentik.stages.user_logout"),
             Self::AuthentikPeriodStagesPeriodUserWrite => write!(f, "authentik.stages.user_write"),
+            Self::AuthentikPeriodTasksPeriodSchedules => write!(f, "authentik.tasks.schedules"),
             Self::AuthentikPeriodBrands => write!(f, "authentik.brands"),
             Self::AuthentikPeriodBlueprints => write!(f, "authentik.blueprints"),
             Self::AuthentikPeriodCore => write!(f, "authentik.core"),
@@ -217,12 +226,12 @@ impl std::fmt::Display for AppEnum {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
             Self::AuthentikPeriodEnterprisePeriodProvidersPeriodSsf => write!(f, "authentik.enterprise.providers.ssf"),
+            Self::AuthentikPeriodEnterprisePeriodSearch => write!(f, "authentik.enterprise.search"),
             Self::AuthentikPeriodEnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")
             }
             Self::AuthentikPeriodEnterprisePeriodStagesPeriodMtls => write!(f, "authentik.enterprise.stages.mtls"),
             Self::AuthentikPeriodEnterprisePeriodStagesPeriodSource => write!(f, "authentik.enterprise.stages.source"),
-            Self::AuthentikPeriodEvents => write!(f, "authentik.events"),
         }
     }
 }

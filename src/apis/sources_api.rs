@@ -4325,11 +4325,11 @@ pub async fn sources_kerberos_retrieve(
     }
 }
 
-/// Get source's sync status
+/// Get provider's sync status
 pub async fn sources_kerberos_sync_status_retrieve(
     configuration: &configuration::Configuration,
     slug: &str,
-) -> Result<models::KerberosSyncStatus, Error<SourcesKerberosSyncStatusRetrieveError>> {
+) -> Result<models::SyncStatus, Error<SourcesKerberosSyncStatusRetrieveError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_slug = slug;
 
@@ -4362,8 +4362,16 @@ pub async fn sources_kerberos_sync_status_retrieve(
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::KerberosSyncStatus`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::KerberosSyncStatus`")))),
+            ContentType::Text => {
+                return Err(Error::from(serde_json::Error::custom(
+                    "Received `text/plain` content type response that cannot be converted to `models::SyncStatus`",
+                )))
+            }
+            ContentType::Unsupported(unknown_type) => {
+                return Err(Error::from(serde_json::Error::custom(format!(
+                    "Received `{unknown_type}` content type response that cannot be converted to `models::SyncStatus`"
+                ))))
+            }
         }
     } else {
         let content = resp.text().await?;
@@ -4995,7 +5003,7 @@ pub async fn sources_ldap_retrieve(
     }
 }
 
-/// Get source's sync status
+/// Get provider's sync status
 pub async fn sources_ldap_sync_status_retrieve(
     configuration: &configuration::Configuration,
     slug: &str,

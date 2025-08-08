@@ -17,13 +17,20 @@ pub struct PaginatedApplicationEntitlementList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::ApplicationEntitlement>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedApplicationEntitlementList {
     pub fn new(
         pagination: models::Pagination,
         results: Vec<models::ApplicationEntitlement>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
     ) -> PaginatedApplicationEntitlementList {
-        PaginatedApplicationEntitlementList { pagination, results }
+        PaginatedApplicationEntitlementList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

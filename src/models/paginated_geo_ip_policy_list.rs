@@ -17,10 +17,20 @@ pub struct PaginatedGeoIpPolicyList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::GeoIpPolicy>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedGeoIpPolicyList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::GeoIpPolicy>) -> PaginatedGeoIpPolicyList {
-        PaginatedGeoIpPolicyList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::GeoIpPolicy>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedGeoIpPolicyList {
+        PaginatedGeoIpPolicyList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

@@ -112,15 +112,6 @@ pub enum CoreApplicationsListError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`core_applications_metrics_list`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CoreApplicationsMetricsListError {
-    Status400(models::ValidationError),
-    Status403(models::GenericError),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`core_applications_partial_update`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -544,15 +535,6 @@ pub enum CoreUsersListError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CoreUsersMeRetrieveError {
-    Status400(models::ValidationError),
-    Status403(models::GenericError),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`core_users_metrics_retrieve`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CoreUsersMetricsRetrieveError {
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -1271,57 +1253,6 @@ pub async fn core_applications_list(
     } else {
         let content = resp.text().await?;
         let entity: Option<CoreApplicationsListError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-/// Metrics for application logins
-pub async fn core_applications_metrics_list(
-    configuration: &configuration::Configuration,
-    slug: &str,
-) -> Result<Vec<models::Coordinate>, Error<CoreApplicationsMetricsListError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_slug = slug;
-
-    let uri_str = format!(
-        "{}/core/applications/{slug}/metrics/",
-        configuration.base_path,
-        slug = crate::apis::urlencode(p_slug)
-    );
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::Coordinate&gt;`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::Coordinate&gt;`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<CoreApplicationsMetricsListError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,
@@ -2557,6 +2488,7 @@ pub async fn core_groups_destroy(
 pub async fn core_groups_list(
     configuration: &configuration::Configuration,
     attributes: Option<&str>,
+    include_children: Option<bool>,
     include_users: Option<bool>,
     is_superuser: Option<bool>,
     members_by_pk: Option<Vec<i32>>,
@@ -2569,6 +2501,7 @@ pub async fn core_groups_list(
 ) -> Result<models::PaginatedGroupList, Error<CoreGroupsListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_attributes = attributes;
+    let p_include_children = include_children;
     let p_include_users = include_users;
     let p_is_superuser = is_superuser;
     let p_members_by_pk = members_by_pk;
@@ -2584,6 +2517,9 @@ pub async fn core_groups_list(
 
     if let Some(ref param_value) = p_attributes {
         req_builder = req_builder.query(&[("attributes", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_include_children {
+        req_builder = req_builder.query(&[("include_children", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_include_users {
         req_builder = req_builder.query(&[("include_users", &param_value.to_string())]);
@@ -2789,10 +2725,12 @@ pub async fn core_groups_remove_user_create(
 pub async fn core_groups_retrieve(
     configuration: &configuration::Configuration,
     group_uuid: &str,
+    include_children: Option<bool>,
     include_users: Option<bool>,
 ) -> Result<models::Group, Error<CoreGroupsRetrieveError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_group_uuid = group_uuid;
+    let p_include_children = include_children;
     let p_include_users = include_users;
 
     let uri_str = format!(
@@ -2802,6 +2740,9 @@ pub async fn core_groups_retrieve(
     );
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
+    if let Some(ref param_value) = p_include_children {
+        req_builder = req_builder.query(&[("include_children", &param_value.to_string())]);
+    }
     if let Some(ref param_value) = p_include_users {
         req_builder = req_builder.query(&[("include_users", &param_value.to_string())]);
     }
@@ -3922,12 +3863,18 @@ pub async fn core_users_impersonate_end_retrieve(
 pub async fn core_users_list(
     configuration: &configuration::Configuration,
     attributes: Option<&str>,
+    date_joined: Option<String>,
+    date_joined__gt: Option<String>,
+    date_joined__lt: Option<String>,
     email: Option<&str>,
     groups_by_name: Option<Vec<String>>,
     groups_by_pk: Option<Vec<uuid::Uuid>>,
     include_groups: Option<bool>,
     is_active: Option<bool>,
     is_superuser: Option<bool>,
+    last_updated: Option<String>,
+    last_updated__gt: Option<String>,
+    last_updated__lt: Option<String>,
     name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
@@ -3941,12 +3888,18 @@ pub async fn core_users_list(
 ) -> Result<models::PaginatedUserList, Error<CoreUsersListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_attributes = attributes;
+    let p_date_joined = date_joined;
+    let p_date_joined__gt = date_joined__gt;
+    let p_date_joined__lt = date_joined__lt;
     let p_email = email;
     let p_groups_by_name = groups_by_name;
     let p_groups_by_pk = groups_by_pk;
     let p_include_groups = include_groups;
     let p_is_active = is_active;
     let p_is_superuser = is_superuser;
+    let p_last_updated = last_updated;
+    let p_last_updated__gt = last_updated__gt;
+    let p_last_updated__lt = last_updated__lt;
     let p_name = name;
     let p_ordering = ordering;
     let p_page = page;
@@ -3963,6 +3916,15 @@ pub async fn core_users_list(
 
     if let Some(ref param_value) = p_attributes {
         req_builder = req_builder.query(&[("attributes", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined {
+        req_builder = req_builder.query(&[("date_joined", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined__gt {
+        req_builder = req_builder.query(&[("date_joined__gt", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_date_joined__lt {
+        req_builder = req_builder.query(&[("date_joined__lt", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_email {
         req_builder = req_builder.query(&[("email", &param_value.to_string())]);
@@ -4013,6 +3975,15 @@ pub async fn core_users_list(
     }
     if let Some(ref param_value) = p_is_superuser {
         req_builder = req_builder.query(&[("is_superuser", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated {
+        req_builder = req_builder.query(&[("last_updated", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated__gt {
+        req_builder = req_builder.query(&[("last_updated__gt", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_last_updated__lt {
+        req_builder = req_builder.query(&[("last_updated__lt", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_name {
         req_builder = req_builder.query(&[("name", &param_value.to_string())]);
@@ -4139,61 +4110,6 @@ pub async fn core_users_me_retrieve(
     } else {
         let content = resp.text().await?;
         let entity: Option<CoreUsersMeRetrieveError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent {
-            status,
-            content,
-            entity,
-        }))
-    }
-}
-
-/// User metrics per 1h
-pub async fn core_users_metrics_retrieve(
-    configuration: &configuration::Configuration,
-    id: i32,
-) -> Result<models::UserMetrics, Error<CoreUsersMetricsRetrieveError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_id = id;
-
-    let uri_str = format!("{}/core/users/{id}/metrics/", configuration.base_path, id = p_id);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.bearer_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => {
-                return Err(Error::from(serde_json::Error::custom(
-                    "Received `text/plain` content type response that cannot be converted to `models::UserMetrics`",
-                )))
-            }
-            ContentType::Unsupported(unknown_type) => {
-                return Err(Error::from(serde_json::Error::custom(format!(
-                    "Received `{unknown_type}` content type response that cannot be converted to `models::UserMetrics`"
-                ))))
-            }
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<CoreUsersMetricsRetrieveError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,

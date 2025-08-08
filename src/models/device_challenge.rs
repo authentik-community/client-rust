@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DeviceChallenge {
     #[serde(rename = "device_class")]
-    pub device_class: String,
+    pub device_class: models::DeviceClassesEnum,
     #[serde(rename = "device_uid")]
     pub device_uid: String,
     #[serde(rename = "challenge")]
@@ -27,7 +27,7 @@ pub struct DeviceChallenge {
 impl DeviceChallenge {
     /// Single device challenge
     pub fn new(
-        device_class: String,
+        device_class: models::DeviceClassesEnum,
         device_uid: String,
         challenge: std::collections::HashMap<String, serde_json::Value>,
         last_used: Option<String>,

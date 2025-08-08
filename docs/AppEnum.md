@@ -5,9 +5,11 @@
 | Name | Value |
 |---- | -----|
 | AuthentikPeriodTenants | authentik.tenants |
+| AuthentikPeriodTasks | authentik.tasks |
 | AuthentikPeriodAdmin | authentik.admin |
 | AuthentikPeriodApi | authentik.api |
 | AuthentikPeriodCrypto | authentik.crypto |
+| AuthentikPeriodEvents | authentik.events |
 | AuthentikPeriodFlows | authentik.flows |
 | AuthentikPeriodOutposts | authentik.outposts |
 | AuthentikPeriodPoliciesPeriodDummy | authentik.policies.dummy |
@@ -55,6 +57,7 @@
 | AuthentikPeriodStagesPeriodUserLogin | authentik.stages.user_login |
 | AuthentikPeriodStagesPeriodUserLogout | authentik.stages.user_logout |
 | AuthentikPeriodStagesPeriodUserWrite | authentik.stages.user_write |
+| AuthentikPeriodTasksPeriodSchedules | authentik.tasks.schedules |
 | AuthentikPeriodBrands | authentik.brands |
 | AuthentikPeriodBlueprints | authentik.blueprints |
 | AuthentikPeriodCore | authentik.core |
@@ -64,10 +67,10 @@
 | AuthentikPeriodEnterprisePeriodProvidersPeriodGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | AuthentikPeriodEnterprisePeriodProvidersPeriodMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
 | AuthentikPeriodEnterprisePeriodProvidersPeriodSsf | authentik.enterprise.providers.ssf |
+| AuthentikPeriodEnterprisePeriodSearch | authentik.enterprise.search |
 | AuthentikPeriodEnterprisePeriodStagesPeriodAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
 | AuthentikPeriodEnterprisePeriodStagesPeriodMtls | authentik.enterprise.stages.mtls |
 | AuthentikPeriodEnterprisePeriodStagesPeriodSource | authentik.enterprise.stages.source |
-| AuthentikPeriodEvents | authentik.events |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

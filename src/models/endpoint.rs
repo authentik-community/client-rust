@@ -26,13 +26,8 @@ pub struct Endpoint {
     pub protocol: models::ProtocolEnum,
     #[serde(rename = "host")]
     pub host: String,
-    #[serde(
-        rename = "settings",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub settings: Option<Option<serde_json::Value>>,
+    #[serde(rename = "settings", skip_serializing_if = "Option::is_none")]
+    pub settings: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "auth_mode")]

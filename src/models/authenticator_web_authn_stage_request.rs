@@ -46,6 +46,8 @@ pub struct AuthenticatorWebAuthnStageRequest {
     pub resident_key_requirement: Option<models::ResidentKeyRequirementEnum>,
     #[serde(rename = "device_type_restrictions", skip_serializing_if = "Option::is_none")]
     pub device_type_restrictions: Option<Vec<uuid::Uuid>>,
+    #[serde(rename = "max_attempts", skip_serializing_if = "Option::is_none")]
+    pub max_attempts: Option<u32>,
 }
 
 impl AuthenticatorWebAuthnStageRequest {
@@ -60,6 +62,7 @@ impl AuthenticatorWebAuthnStageRequest {
             authenticator_attachment: None,
             resident_key_requirement: None,
             device_type_restrictions: None,
+            max_attempts: None,
         }
     }
 }

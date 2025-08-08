@@ -59,6 +59,11 @@ pub struct EmailStage {
     /// Activate users upon completion of stage.
     #[serde(rename = "activate_user_on_success", skip_serializing_if = "Option::is_none")]
     pub activate_user_on_success: Option<bool>,
+    #[serde(rename = "recovery_max_attempts", skip_serializing_if = "Option::is_none")]
+    pub recovery_max_attempts: Option<u32>,
+    /// The time window used to count recent account recovery attempts. If the number of attempts exceed recovery_max_attempts within this period, further attempts will be rate-limited. (Format: hours=1;minutes=2;seconds=3).
+    #[serde(rename = "recovery_cache_timeout", skip_serializing_if = "Option::is_none")]
+    pub recovery_cache_timeout: Option<String>,
 }
 
 impl EmailStage {
@@ -91,6 +96,8 @@ impl EmailStage {
             subject: None,
             template: None,
             activate_user_on_success: None,
+            recovery_max_attempts: None,
+            recovery_cache_timeout: None,
         }
     }
 }

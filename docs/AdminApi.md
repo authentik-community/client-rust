@@ -5,7 +5,6 @@ All URIs are relative to *http://localhost/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**admin_apps_list**](AdminApi.md#admin_apps_list) | **GET** /admin/apps/ | 
-[**admin_metrics_retrieve**](AdminApi.md#admin_metrics_retrieve) | **GET** /admin/metrics/ | 
 [**admin_models_list**](AdminApi.md#admin_models_list) | **GET** /admin/models/ | 
 [**admin_settings_partial_update**](AdminApi.md#admin_settings_partial_update) | **PATCH** /admin/settings/ | 
 [**admin_settings_retrieve**](AdminApi.md#admin_settings_retrieve) | **GET** /admin/settings/ | 
@@ -15,7 +14,6 @@ Method | HTTP request | Description
 [**admin_version_history_list**](AdminApi.md#admin_version_history_list) | **GET** /admin/version/history/ | 
 [**admin_version_history_retrieve**](AdminApi.md#admin_version_history_retrieve) | **GET** /admin/version/history/{id}/ | 
 [**admin_version_retrieve**](AdminApi.md#admin_version_retrieve) | **GET** /admin/version/ | 
-[**admin_workers_list**](AdminApi.md#admin_workers_list) | **GET** /admin/workers/ | 
 
 
 
@@ -33,33 +31,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Vec<models::App>**](App.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## admin_metrics_retrieve
-
-> models::LoginMetrics admin_metrics_retrieve()
-
-
-Login Metrics per 1h
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**models::LoginMetrics**](LoginMetrics.md)
 
 ### Authorization
 
@@ -318,33 +289,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::Version**](Version.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## admin_workers_list
-
-> Vec<models::Worker> admin_workers_list()
-
-
-Get currently connected worker count.
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Vec<models::Worker>**](Worker.md)
 
 ### Authorization
 

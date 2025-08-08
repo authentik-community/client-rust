@@ -24,8 +24,8 @@ pub struct ScimProviderUser {
     pub user_obj: models::GroupMember,
     #[serde(rename = "provider")]
     pub provider: i32,
-    #[serde(rename = "attributes", deserialize_with = "Option::deserialize")]
-    pub attributes: Option<serde_json::Value>,
+    #[serde(rename = "attributes")]
+    pub attributes: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl ScimProviderUser {
@@ -36,7 +36,7 @@ impl ScimProviderUser {
         user: i32,
         user_obj: models::GroupMember,
         provider: i32,
-        attributes: Option<serde_json::Value>,
+        attributes: std::collections::HashMap<String, serde_json::Value>,
     ) -> ScimProviderUser {
         ScimProviderUser {
             id,

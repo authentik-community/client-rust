@@ -17,10 +17,20 @@ pub struct PaginatedSsfStreamList {
     pub pagination: models::Pagination,
     #[serde(rename = "results")]
     pub results: Vec<models::SsfStream>,
+    #[serde(rename = "autocomplete")]
+    pub autocomplete: std::collections::HashMap<String, serde_json::Value>,
 }
 
 impl PaginatedSsfStreamList {
-    pub fn new(pagination: models::Pagination, results: Vec<models::SsfStream>) -> PaginatedSsfStreamList {
-        PaginatedSsfStreamList { pagination, results }
+    pub fn new(
+        pagination: models::Pagination,
+        results: Vec<models::SsfStream>,
+        autocomplete: std::collections::HashMap<String, serde_json::Value>,
+    ) -> PaginatedSsfStreamList {
+        PaginatedSsfStreamList {
+            pagination,
+            results,
+            autocomplete,
+        }
     }
 }

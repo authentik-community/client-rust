@@ -161,7 +161,6 @@ pub enum ProvidersGoogleWorkspaceSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersGoogleWorkspaceSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -396,7 +395,6 @@ pub enum ProvidersMicrosoftEntraSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersMicrosoftEntraSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -930,7 +928,6 @@ pub enum ProvidersScimSyncObjectCreateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ProvidersScimSyncStatusRetrieveError {
-    Status404(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -5715,6 +5712,7 @@ pub async fn providers_saml_list(
     authn_context_class_ref_mapping: Option<&str>,
     authorization_flow: Option<&str>,
     backchannel_application: Option<&str>,
+    default_name_id_policy: Option<&str>,
     default_relay_state: Option<&str>,
     digest_algorithm: Option<&str>,
     encryption_kp: Option<&str>,
@@ -5745,6 +5743,7 @@ pub async fn providers_saml_list(
     let p_authn_context_class_ref_mapping = authn_context_class_ref_mapping;
     let p_authorization_flow = authorization_flow;
     let p_backchannel_application = backchannel_application;
+    let p_default_name_id_policy = default_name_id_policy;
     let p_default_relay_state = default_relay_state;
     let p_digest_algorithm = digest_algorithm;
     let p_encryption_kp = encryption_kp;
@@ -5792,6 +5791,9 @@ pub async fn providers_saml_list(
     }
     if let Some(ref param_value) = p_backchannel_application {
         req_builder = req_builder.query(&[("backchannel_application", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_default_name_id_policy {
+        req_builder = req_builder.query(&[("default_name_id_policy", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_default_relay_state {
         req_builder = req_builder.query(&[("default_relay_state", &param_value.to_string())]);

@@ -16,17 +16,14 @@ use serde::{Deserialize, Serialize};
 pub struct PatchedScimSourceUserRequest {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+    #[serde(rename = "external_id", skip_serializing_if = "Option::is_none")]
+    pub external_id: Option<String>,
     #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
     pub user: Option<i32>,
     #[serde(rename = "source", skip_serializing_if = "Option::is_none")]
     pub source: Option<uuid::Uuid>,
-    #[serde(
-        rename = "attributes",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub attributes: Option<Option<serde_json::Value>>,
+    #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
+    pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
 impl PatchedScimSourceUserRequest {
@@ -34,6 +31,7 @@ impl PatchedScimSourceUserRequest {
     pub fn new() -> PatchedScimSourceUserRequest {
         PatchedScimSourceUserRequest {
             id: None,
+            external_id: None,
             user: None,
             source: None,
             attributes: None,

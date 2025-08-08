@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **authenticator_attachment** | Option<[**models::AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md)> |  | [optional]
 **resident_key_requirement** | Option<[**models::ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md)> |  | [optional]
 **device_type_restrictions** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**max_attempts** | Option<**u32**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

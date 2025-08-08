@@ -1843,10 +1843,10 @@ Name | Type | Description  | Required | Notes
 
 ## sources_kerberos_sync_status_retrieve
 
-> models::KerberosSyncStatus sources_kerberos_sync_status_retrieve(slug)
+> models::SyncStatus sources_kerberos_sync_status_retrieve(slug)
 
 
-Get source's sync status
+Get provider's sync status
 
 ### Parameters
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::KerberosSyncStatus**](KerberosSyncStatus.md)
+[**models::SyncStatus**](SyncStatus.md)
 
 ### Authorization
 
@@ -2148,7 +2148,7 @@ Name | Type | Description  | Required | Notes
 > models::SyncStatus sources_ldap_sync_status_retrieve(slug)
 
 
-Get source's sync status
+Get provider's sync status
 
 ### Parameters
 
