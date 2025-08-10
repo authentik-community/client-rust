@@ -140,7 +140,7 @@ Settings view
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**settings_request** | Option<[**SettingsRequest**](SettingsRequest.md)> |  |  |
+**settings_request** | [**SettingsRequest**](SettingsRequest.md) |  | [required] |
 
 ### Return type
 

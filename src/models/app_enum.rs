@@ -22,8 +22,12 @@ pub enum AppEnum {
     AuthentikPeriodAdmin,
     #[serde(rename = "authentik.api")]
     AuthentikPeriodApi,
+    #[serde(rename = "authentik.core")]
+    AuthentikPeriodCore,
     #[serde(rename = "authentik.crypto")]
     AuthentikPeriodCrypto,
+    #[serde(rename = "authentik.enterprise")]
+    AuthentikPeriodEnterprise,
     #[serde(rename = "authentik.events")]
     AuthentikPeriodEvents,
     #[serde(rename = "authentik.flows")]
@@ -126,10 +130,6 @@ pub enum AppEnum {
     AuthentikPeriodBrands,
     #[serde(rename = "authentik.blueprints")]
     AuthentikPeriodBlueprints,
-    #[serde(rename = "authentik.core")]
-    AuthentikPeriodCore,
-    #[serde(rename = "authentik.enterprise")]
-    AuthentikPeriodEnterprise,
     #[serde(rename = "authentik.enterprise.audit")]
     AuthentikPeriodEnterprisePeriodAudit,
     #[serde(rename = "authentik.enterprise.policies.unique_password")]
@@ -157,7 +157,9 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikPeriodTasks => write!(f, "authentik.tasks"),
             Self::AuthentikPeriodAdmin => write!(f, "authentik.admin"),
             Self::AuthentikPeriodApi => write!(f, "authentik.api"),
+            Self::AuthentikPeriodCore => write!(f, "authentik.core"),
             Self::AuthentikPeriodCrypto => write!(f, "authentik.crypto"),
+            Self::AuthentikPeriodEnterprise => write!(f, "authentik.enterprise"),
             Self::AuthentikPeriodEvents => write!(f, "authentik.events"),
             Self::AuthentikPeriodFlows => write!(f, "authentik.flows"),
             Self::AuthentikPeriodOutposts => write!(f, "authentik.outposts"),
@@ -213,8 +215,6 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikPeriodTasksPeriodSchedules => write!(f, "authentik.tasks.schedules"),
             Self::AuthentikPeriodBrands => write!(f, "authentik.brands"),
             Self::AuthentikPeriodBlueprints => write!(f, "authentik.blueprints"),
-            Self::AuthentikPeriodCore => write!(f, "authentik.core"),
-            Self::AuthentikPeriodEnterprise => write!(f, "authentik.enterprise"),
             Self::AuthentikPeriodEnterprisePeriodAudit => write!(f, "authentik.enterprise.audit"),
             Self::AuthentikPeriodEnterprisePeriodPoliciesPeriodUniquePassword => {
                 write!(f, "authentik.enterprise.policies.unique_password")

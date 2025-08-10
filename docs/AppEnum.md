@@ -8,7 +8,9 @@
 | AuthentikPeriodTasks | authentik.tasks |
 | AuthentikPeriodAdmin | authentik.admin |
 | AuthentikPeriodApi | authentik.api |
+| AuthentikPeriodCore | authentik.core |
 | AuthentikPeriodCrypto | authentik.crypto |
+| AuthentikPeriodEnterprise | authentik.enterprise |
 | AuthentikPeriodEvents | authentik.events |
 | AuthentikPeriodFlows | authentik.flows |
 | AuthentikPeriodOutposts | authentik.outposts |
@@ -60,8 +62,6 @@
 | AuthentikPeriodTasksPeriodSchedules | authentik.tasks.schedules |
 | AuthentikPeriodBrands | authentik.brands |
 | AuthentikPeriodBlueprints | authentik.blueprints |
-| AuthentikPeriodCore | authentik.core |
-| AuthentikPeriodEnterprise | authentik.enterprise |
 | AuthentikPeriodEnterprisePeriodAudit | authentik.enterprise.audit |
 | AuthentikPeriodEnterprisePeriodPoliciesPeriodUniquePassword | authentik.enterprise.policies.unique_password |
 | AuthentikPeriodEnterprisePeriodProvidersPeriodGoogleWorkspace | authentik.enterprise.providers.google_workspace |

@@ -5,7 +5,13 @@
 | Name | Value |
 |---- | -----|
 | AuthentikTenantsPeriodDomain | authentik_tenants.domain |
+| AuthentikCorePeriodGroup | authentik_core.group |
+| AuthentikCorePeriodUser | authentik_core.user |
+| AuthentikCorePeriodApplication | authentik_core.application |
+| AuthentikCorePeriodApplicationentitlement | authentik_core.applicationentitlement |
+| AuthentikCorePeriodToken | authentik_core.token |
 | AuthentikCryptoPeriodCertificatekeypair | authentik_crypto.certificatekeypair |
+| AuthentikEnterprisePeriodLicense | authentik_enterprise.license |
 | AuthentikEventsPeriodEvent | authentik_events.event |
 | AuthentikEventsPeriodNotificationtransport | authentik_events.notificationtransport |
 | AuthentikEventsPeriodNotification | authentik_events.notification |
@@ -94,12 +100,6 @@
 | AuthentikTasksSchedulesPeriodSchedule | authentik_tasks_schedules.schedule |
 | AuthentikBrandsPeriodBrand | authentik_brands.brand |
 | AuthentikBlueprintsPeriodBlueprintinstance | authentik_blueprints.blueprintinstance |
-| AuthentikCorePeriodGroup | authentik_core.group |
-| AuthentikCorePeriodUser | authentik_core.user |
-| AuthentikCorePeriodApplication | authentik_core.application |
-| AuthentikCorePeriodApplicationentitlement | authentik_core.applicationentitlement |
-| AuthentikCorePeriodToken | authentik_core.token |
-| AuthentikEnterprisePeriodLicense | authentik_enterprise.license |
 | AuthentikPoliciesUniquePasswordPeriodUniquepasswordpolicy | authentik_policies_unique_password.uniquepasswordpolicy |
 | AuthentikProvidersGoogleWorkspacePeriodGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |
 | AuthentikProvidersGoogleWorkspacePeriodGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |

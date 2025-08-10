@@ -42,6 +42,8 @@ pub struct CurrentBrand {
     pub flow_device_code: Option<String>,
     #[serde(rename = "default_locale")]
     pub default_locale: String,
+    #[serde(rename = "flags")]
+    pub flags: models::CurrentBrandFlags,
 }
 
 impl CurrentBrand {
@@ -55,6 +57,7 @@ impl CurrentBrand {
         ui_footer_links: Vec<models::FooterLink>,
         ui_theme: models::UiThemeEnum,
         default_locale: String,
+        flags: models::CurrentBrandFlags,
     ) -> CurrentBrand {
         CurrentBrand {
             matched_domain,
@@ -71,6 +74,7 @@ impl CurrentBrand {
             flow_user_settings: None,
             flow_device_code: None,
             default_locale,
+            flags,
         }
     }
 }

@@ -57,6 +57,8 @@ pub struct PatchedSettingsRequest {
     /// Default token length
     #[serde(rename = "default_token_length", skip_serializing_if = "Option::is_none")]
     pub default_token_length: Option<u32>,
+    #[serde(rename = "flags", skip_serializing_if = "Option::is_none")]
+    pub flags: Option<models::PatchedSettingsRequestFlags>,
 }
 
 impl PatchedSettingsRequest {
@@ -76,6 +78,7 @@ impl PatchedSettingsRequest {
             impersonation_require_reason: None,
             default_token_duration: None,
             default_token_length: None,
+            flags: None,
         }
     }
 }

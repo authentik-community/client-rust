@@ -311,7 +311,7 @@ pub async fn admin_settings_retrieve(
 /// Settings view
 pub async fn admin_settings_update(
     configuration: &configuration::Configuration,
-    settings_request: Option<models::SettingsRequest>,
+    settings_request: models::SettingsRequest,
 ) -> Result<models::Settings, Error<AdminSettingsUpdateError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_settings_request = settings_request;

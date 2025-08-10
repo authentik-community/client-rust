@@ -16,8 +16,20 @@ use serde::{Deserialize, Serialize};
 pub enum ModelEnum {
     #[serde(rename = "authentik_tenants.domain")]
     AuthentikTenantsPeriodDomain,
+    #[serde(rename = "authentik_core.group")]
+    AuthentikCorePeriodGroup,
+    #[serde(rename = "authentik_core.user")]
+    AuthentikCorePeriodUser,
+    #[serde(rename = "authentik_core.application")]
+    AuthentikCorePeriodApplication,
+    #[serde(rename = "authentik_core.applicationentitlement")]
+    AuthentikCorePeriodApplicationentitlement,
+    #[serde(rename = "authentik_core.token")]
+    AuthentikCorePeriodToken,
     #[serde(rename = "authentik_crypto.certificatekeypair")]
     AuthentikCryptoPeriodCertificatekeypair,
+    #[serde(rename = "authentik_enterprise.license")]
+    AuthentikEnterprisePeriodLicense,
     #[serde(rename = "authentik_events.event")]
     AuthentikEventsPeriodEvent,
     #[serde(rename = "authentik_events.notificationtransport")]
@@ -194,18 +206,6 @@ pub enum ModelEnum {
     AuthentikBrandsPeriodBrand,
     #[serde(rename = "authentik_blueprints.blueprintinstance")]
     AuthentikBlueprintsPeriodBlueprintinstance,
-    #[serde(rename = "authentik_core.group")]
-    AuthentikCorePeriodGroup,
-    #[serde(rename = "authentik_core.user")]
-    AuthentikCorePeriodUser,
-    #[serde(rename = "authentik_core.application")]
-    AuthentikCorePeriodApplication,
-    #[serde(rename = "authentik_core.applicationentitlement")]
-    AuthentikCorePeriodApplicationentitlement,
-    #[serde(rename = "authentik_core.token")]
-    AuthentikCorePeriodToken,
-    #[serde(rename = "authentik_enterprise.license")]
-    AuthentikEnterprisePeriodLicense,
     #[serde(rename = "authentik_policies_unique_password.uniquepasswordpolicy")]
     AuthentikPoliciesUniquePasswordPeriodUniquepasswordpolicy,
     #[serde(rename = "authentik_providers_google_workspace.googleworkspaceprovider")]
@@ -230,7 +230,13 @@ impl std::fmt::Display for ModelEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::AuthentikTenantsPeriodDomain => write!(f, "authentik_tenants.domain"),
+            Self::AuthentikCorePeriodGroup => write!(f, "authentik_core.group"),
+            Self::AuthentikCorePeriodUser => write!(f, "authentik_core.user"),
+            Self::AuthentikCorePeriodApplication => write!(f, "authentik_core.application"),
+            Self::AuthentikCorePeriodApplicationentitlement => write!(f, "authentik_core.applicationentitlement"),
+            Self::AuthentikCorePeriodToken => write!(f, "authentik_core.token"),
             Self::AuthentikCryptoPeriodCertificatekeypair => write!(f, "authentik_crypto.certificatekeypair"),
+            Self::AuthentikEnterprisePeriodLicense => write!(f, "authentik_enterprise.license"),
             Self::AuthentikEventsPeriodEvent => write!(f, "authentik_events.event"),
             Self::AuthentikEventsPeriodNotificationtransport => write!(f, "authentik_events.notificationtransport"),
             Self::AuthentikEventsPeriodNotification => write!(f, "authentik_events.notification"),
@@ -417,12 +423,6 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikTasksSchedulesPeriodSchedule => write!(f, "authentik_tasks_schedules.schedule"),
             Self::AuthentikBrandsPeriodBrand => write!(f, "authentik_brands.brand"),
             Self::AuthentikBlueprintsPeriodBlueprintinstance => write!(f, "authentik_blueprints.blueprintinstance"),
-            Self::AuthentikCorePeriodGroup => write!(f, "authentik_core.group"),
-            Self::AuthentikCorePeriodUser => write!(f, "authentik_core.user"),
-            Self::AuthentikCorePeriodApplication => write!(f, "authentik_core.application"),
-            Self::AuthentikCorePeriodApplicationentitlement => write!(f, "authentik_core.applicationentitlement"),
-            Self::AuthentikCorePeriodToken => write!(f, "authentik_core.token"),
-            Self::AuthentikEnterprisePeriodLicense => write!(f, "authentik_enterprise.license"),
             Self::AuthentikPoliciesUniquePasswordPeriodUniquepasswordpolicy => {
                 write!(f, "authentik_policies_unique_password.uniquepasswordpolicy")
             }
