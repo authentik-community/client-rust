@@ -27,7 +27,7 @@ authentik-client = { path = "./authentik-client" }
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to */api/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
