@@ -1,0 +1,15 @@
+---
+services:
+  diff:
+    image: docker.io/openapitools/openapi-diff:2.1.2
+    restart: never
+    volumes:
+      - ../:/local
+    command: --markdown /local/diff.test /local/schema-old.yml /local/schema.yml
+
+  gen:
+    image: docker.io/openapitools/openapi-generator-cli:v7.15.0
+    restart: never
+    volumes:
+      - ../:/local
+    command: generate -i /local/schema.yml -g rust -o /local -c /local/config.yaml

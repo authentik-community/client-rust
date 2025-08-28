@@ -7,3 +7,9 @@ updates:
       interval: "daily"
     assignees:
       - rissson
+  - package-ecosystem: "docker-compose"
+    directory: "/scripts"
+    schedule:
+      interval: "daily"
+    assignees:
+      - rissson
