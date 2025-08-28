@@ -78,10 +78,10 @@ jobs:
           git add .
           git commit -F "diff.test" || exit 0
           git tag "$tag"
-          cargo publish
-          git push
+          git push origin "$branch"
           git push --tags
           gh release create "$tag" -F diff.test --latest
+          cargo publish
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
