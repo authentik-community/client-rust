@@ -1,6 +1,6 @@
 # \SourcesApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1843,10 +1843,10 @@ Name | Type | Description  | Required | Notes
 
 ## sources_kerberos_sync_status_retrieve
 
-> models::SyncStatus sources_kerberos_sync_status_retrieve(slug)
+> models::KerberosSyncStatus sources_kerberos_sync_status_retrieve(slug)
 
 
-Get provider's sync status
+Get source's sync status
 
 ### Parameters
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SyncStatus**](SyncStatus.md)
+[**models::KerberosSyncStatus**](KerberosSyncStatus.md)
 
 ### Authorization
 
@@ -2024,7 +2024,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_ldap_list
 
-> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, delete_not_found_objects, enabled, group_membership_field, group_object_filter, group_property_mappings, lookup_groups_from_user, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_membership_attribute, user_object_filter, user_property_mappings)
+> models::PaginatedLdapSourceList sources_ldap_list(additional_group_dn, additional_user_dn, base_dn, bind_cn, client_certificate, enabled, group_membership_field, group_object_filter, group_property_mappings, lookup_groups_from_user, name, object_uniqueness_field, ordering, page, page_size, password_login_update_internal_password, pbm_uuid, peer_certificate, search, server_uri, slug, sni, start_tls, sync_groups, sync_parent_group, sync_users, sync_users_password, user_object_filter, user_property_mappings)
 
 
 LDAP Source Viewset
@@ -2039,7 +2039,6 @@ Name | Type | Description  | Required | Notes
 **base_dn** | Option<**String**> |  |  |
 **bind_cn** | Option<**String**> |  |  |
 **client_certificate** | Option<**uuid::Uuid**> |  |  |
-**delete_not_found_objects** | Option<**bool**> |  |  |
 **enabled** | Option<**bool**> |  |  |
 **group_membership_field** | Option<**String**> |  |  |
 **group_object_filter** | Option<**String**> |  |  |
@@ -2062,7 +2061,6 @@ Name | Type | Description  | Required | Notes
 **sync_parent_group** | Option<**uuid::Uuid**> |  |  |
 **sync_users** | Option<**bool**> |  |  |
 **sync_users_password** | Option<**bool**> |  |  |
-**user_membership_attribute** | Option<**String**> |  |  |
 **user_object_filter** | Option<**String**> |  |  |
 **user_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 
@@ -2148,7 +2146,7 @@ Name | Type | Description  | Required | Notes
 > models::SyncStatus sources_ldap_sync_status_retrieve(slug)
 
 
-Get provider's sync status
+Get source's sync status
 
 ### Parameters
 

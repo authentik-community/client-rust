@@ -1,12 +1,11 @@
-# EventVolume
+# PaginatedSystemTaskList
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | [**models::EventActions**](EventActions.md) |  | 
-**time** | **String** |  | 
-**count** | **i32** |  | 
+**pagination** | [**models::Pagination**](Pagination.md) |  | 
+**results** | [**Vec<models::SystemTask>**](SystemTask.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
