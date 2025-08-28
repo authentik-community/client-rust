@@ -1,5 +1,5 @@
 ---
-name: update
+name: Rolling release
 
 on:
   workflow_dispatch:
@@ -13,32 +13,36 @@ jobs:
   schema:
     runs-on: ubuntu-latest
     steps:
-      - id: generate_token
-        uses: tibdex/github-app-token@v2
+      - id: app-token
+        uses: actions/create-github-app-token@v2
         with:
-          app_id: ${{ secrets.GH_APP_ID }}
-          private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      - id: get-user-id
+        name: Get GitHub app user ID
+        run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: "${{ steps.app-token.outputs.token }}"
       - name: Check out code
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ steps.generate_token.outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
       - name: Setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
       - name: Check for updates
-        run: make
+        run: make version=main
       - name: Push
         id: push
         env:
-          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
           RUSTFLAGS: -Awarnings
-        # ID from https://api.github.com/users/authentik-automation[bot]
         run: |
           git restore Cargo.toml
           git diff --exit-code >/dev/null && exit 0 || echo
-          git config --global user.email "135050075+authentik-automation[bot]@users.noreply.github.com"
-          git config --global user.name "authentik-automation[bot]"
+          git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
+          git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
           version=$(cd version && cargo run)
           sed -i -e "s/^version.*/version = \"${version}\"/" Cargo.toml
           git add .
@@ -47,4 +51,4 @@ jobs:
           cargo publish
           git push
           git push --tags
-          gh release create v$version -F diff.test
+          gh release create v$version -F diff.test --prerelease

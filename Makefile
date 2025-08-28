@@ -9,8 +9,11 @@ clean:
 	rm -rf src/ docs/
 
 build:
+ifndef version
+	$(error Usage: make build version=version/20.xx.xx.xx)
+endif
 	mv schema.yml schema-old.yml
-	wget -O schema.yml https://raw.githubusercontent.com/goauthentik/authentik/main/schema.yml
+	wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/$(version)/schema.yml"
 	docker run --rm \
 		-v "${PWD}:/local" \
 		--user "${UID}:${GID}" \
@@ -21,7 +24,7 @@ build:
 	docker run --rm \
 		-v "${PWD}:/local" \
 		--user "${UID}:${GID}" \
-		docker.io/openapitools/openapi-generator-cli:v7.14.0 \
+		docker.io/openapitools/openapi-generator-cli:v7.15.0 \
 		generate \
 		-i /local/schema.yml \
 		-g rust \
