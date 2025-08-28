@@ -24,7 +24,7 @@ jobs:
           tags="$(gh --repo goauthentik/authentik release list --exclude-drafts --json tagName --jq '.[].tagName' |
             tac |
             while read -r tag; do
-              if ! gh release view "$tag" 1>&2 2>/dev/null; then
+              if ! gh release view "$tag" >/dev/null 2>/dev/null; then
                 echo "$tag"
               fi
             done | jq -R -s -c 'split("\n") | map(select(length > 0))')"
