@@ -19,8 +19,8 @@ jobs:
           app-id: "${{ secrets.GH_APP_ID }}"
           private-key: "${{ secrets.GH_APP_PRIVATE_KEY }}"
       - run: |
-          tags="(gh --repo goauthentik/authentik release list --exclude-drafts --json tagName --jq '.[].tagName' |
-            tac |
+          tags="(gh --repo goauthentik/authentik release list --exclude-drafts --json tagName --jq '.[].tagName' | \
+            tac | \
             while read -r tag; do
               if ! gh release view "$tag" 2>&1 2>/dev/null; then
                 echo "$tag"
