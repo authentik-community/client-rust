@@ -30,8 +30,6 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
       - name: Setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
-      - name: Check for updates
-        run: make ref=main
       - name: Publish
         run: |
           wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/main/schema.yml"
