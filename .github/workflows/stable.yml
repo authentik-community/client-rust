@@ -63,7 +63,7 @@ jobs:
           tag="${{ matrix.tag }}"
           version="$(echo -n "$tag" | sed 's/version\///')"
           branch="$(echo -n "$tag" | sed 's/\//-/' | grep -oE "^version-[0-9]{4}\.[0-9]{1,2}")"
-          if ! git ls-remote --heads origin "$branch"; then
+          if ! git ls-remote --heads origin "$branch" | grep -q "$branch"; then
             git checkout -b "$branch"
           else
             git checkout "$branch"
