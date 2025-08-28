@@ -81,7 +81,7 @@ jobs:
           git push origin "$branch"
           git push --tags
           cargo publish
-          gh release create "$tag" -F diff.test --latest
+          gh release create "$tag" -F diff.test --latest --title "$version"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
