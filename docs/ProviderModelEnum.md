@@ -13,7 +13,6 @@
 | AuthentikProvidersRadiusRadiusprovider | authentik_providers_radius.radiusprovider |
 | AuthentikProvidersSamlSamlprovider | authentik_providers_saml.samlprovider |
 | AuthentikProvidersScimScimprovider | authentik_providers_scim.scimprovider |
-| AuthentikProvidersSsfSsfprovider | authentik_providers_ssf.ssfprovider |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

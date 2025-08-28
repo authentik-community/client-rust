@@ -1,6 +1,6 @@
 # \CoreApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**core_applications_create**](CoreApi.md#core_applications_create) | **POST** /core/applications/ | 
 [**core_applications_destroy**](CoreApi.md#core_applications_destroy) | **DELETE** /core/applications/{slug}/ | 
 [**core_applications_list**](CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
+[**core_applications_metrics_list**](CoreApi.md#core_applications_metrics_list) | **GET** /core/applications/{slug}/metrics/ | 
 [**core_applications_partial_update**](CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 [**core_applications_retrieve**](CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
 [**core_applications_set_icon_create**](CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
@@ -62,6 +63,7 @@ Method | HTTP request | Description
 [**core_users_impersonate_end_retrieve**](CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 [**core_users_list**](CoreApi.md#core_users_list) | **GET** /core/users/ | 
 [**core_users_me_retrieve**](CoreApi.md#core_users_me_retrieve) | **GET** /core/users/me/ | 
+[**core_users_metrics_retrieve**](CoreApi.md#core_users_metrics_retrieve) | **GET** /core/users/{id}/metrics/ | 
 [**core_users_partial_update**](CoreApi.md#core_users_partial_update) | **PATCH** /core/users/{id}/ | 
 [**core_users_paths_retrieve**](CoreApi.md#core_users_paths_retrieve) | **GET** /core/users/paths/ | 
 [**core_users_recovery_create**](CoreApi.md#core_users_recovery_create) | **POST** /core/users/{id}/recovery/ | 
@@ -425,6 +427,36 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## core_applications_metrics_list
+
+> Vec<models::Coordinate> core_applications_metrics_list(slug)
+
+
+Metrics for application logins
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+[**Vec<models::Coordinate>**](Coordinate.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## core_applications_partial_update
 
 > models::Application core_applications_partial_update(slug, patched_application_request)
@@ -622,7 +654,7 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** |  | [required] |
+**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
 
 ### Return type
 
@@ -642,7 +674,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_authenticated_sessions_list
 
-> models::PaginatedAuthenticatedSessionList core_authenticated_sessions_list(ordering, page, page_size, search, session__last_ip, session__last_user_agent, user__username)
+> models::PaginatedAuthenticatedSessionList core_authenticated_sessions_list(last_ip, last_user_agent, ordering, page, page_size, search, user__username)
 
 
 AuthenticatedSession Viewset
@@ -652,12 +684,12 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**last_ip** | Option<**String**> |  |  |
+**last_user_agent** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **search** | Option<**String**> | A search term. |  |
-**session__last_ip** | Option<**String**> |  |  |
-**session__last_user_agent** | Option<**String**> |  |  |
 **user__username** | Option<**String**> |  |  |
 
 ### Return type
@@ -688,7 +720,7 @@ AuthenticatedSession Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** |  | [required] |
+**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
 
 ### Return type
 
@@ -718,7 +750,7 @@ Get a list of all objects that use this object
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**uuid** | **uuid::Uuid** |  | [required] |
+**uuid** | **uuid::Uuid** | A UUID string identifying this Authenticated Session. | [required] |
 
 ### Return type
 
@@ -825,7 +857,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_brands_list
 
-> models::PaginatedBrandList core_brands_list(brand_uuid, branding_default_flow_background, branding_favicon, branding_logo, branding_title, client_certificates, default, domain, flow_authentication, flow_device_code, flow_invalidation, flow_recovery, flow_unenrollment, flow_user_settings, ordering, page, page_size, search, web_certificate)
+> models::PaginatedBrandList core_brands_list(brand_uuid, branding_favicon, branding_logo, branding_title, default, domain, flow_authentication, flow_device_code, flow_invalidation, flow_recovery, flow_unenrollment, flow_user_settings, ordering, page, page_size, search, web_certificate)
 
 
 Brand Viewset
@@ -836,11 +868,9 @@ Brand Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **brand_uuid** | Option<**uuid::Uuid**> |  |  |
-**branding_default_flow_background** | Option<**String**> |  |  |
 **branding_favicon** | Option<**String**> |  |  |
 **branding_logo** | Option<**String**> |  |  |
 **branding_title** | Option<**String**> |  |  |
-**client_certificates** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **default** | Option<**bool**> |  |  |
 **domain** | Option<**String**> |  |  |
 **flow_authentication** | Option<**uuid::Uuid**> |  |  |
@@ -1086,7 +1116,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_list
 
-> models::PaginatedGroupList core_groups_list(attributes, include_children, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
+> models::PaginatedGroupList core_groups_list(attributes, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
 
 
 Group Viewset
@@ -1097,7 +1127,6 @@ Group Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **attributes** | Option<**String**> | Attributes |  |
-**include_children** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 **is_superuser** | Option<**bool**> |  |  |
 **members_by_pk** | Option<[**Vec<i32>**](i32.md)> |  |  |
@@ -1188,7 +1217,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_retrieve
 
-> models::Group core_groups_retrieve(group_uuid, include_children, include_users)
+> models::Group core_groups_retrieve(group_uuid, include_users)
 
 
 Group Viewset
@@ -1199,7 +1228,6 @@ Group Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **group_uuid** | **uuid::Uuid** | A UUID string identifying this Group. | [required] |
-**include_children** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 
 ### Return type
@@ -1837,7 +1865,7 @@ This endpoint does not need any parameter.
 
 ## core_users_list
 
-> models::PaginatedUserList core_users_list(attributes, date_joined, date_joined__gt, date_joined__lt, email, groups_by_name, groups_by_pk, include_groups, is_active, is_superuser, last_updated, last_updated__gt, last_updated__lt, name, ordering, page, page_size, path, path_startswith, search, r#type, username, uuid)
+> models::PaginatedUserList core_users_list(attributes, email, groups_by_name, groups_by_pk, include_groups, is_active, is_superuser, name, ordering, page, page_size, path, path_startswith, search, r#type, username, uuid)
 
 
 User Viewset
@@ -1848,18 +1876,12 @@ User Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **attributes** | Option<**String**> | Attributes |  |
-**date_joined** | Option<**String**> |  |  |
-**date_joined__gt** | Option<**String**> |  |  |
-**date_joined__lt** | Option<**String**> |  |  |
 **email** | Option<**String**> |  |  |
 **groups_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
 **groups_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **include_groups** | Option<**bool**> |  |  |[default to true]
 **is_active** | Option<**bool**> |  |  |
 **is_superuser** | Option<**bool**> |  |  |
-**last_updated** | Option<**String**> |  |  |
-**last_updated__gt** | Option<**String**> |  |  |
-**last_updated__lt** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
@@ -1901,6 +1923,36 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::SessionUser**](SessionUser.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## core_users_metrics_retrieve
+
+> models::UserMetrics core_users_metrics_retrieve(id)
+
+
+User metrics per 1h
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User. | [required] |
+
+### Return type
+
+[**models::UserMetrics**](UserMetrics.md)
 
 ### Authorization
 
@@ -1980,7 +2032,7 @@ Name | Type | Description  | Required | Notes
 > models::Link core_users_recovery_create(id)
 
 
-Create a temporary link that a user can use to recover their account
+Create a temporary link that a user can use to recover their accounts
 
 ### Parameters
 
@@ -2010,7 +2062,7 @@ Name | Type | Description  | Required | Notes
 > core_users_recovery_email_create(email_stage, id)
 
 
-Send an email with a temporary link that a user can use to recover their account
+Create a temporary link that a user can use to recover their accounts
 
 ### Parameters
 

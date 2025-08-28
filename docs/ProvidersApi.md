@@ -1,6 +1,6 @@
 # \ProvidersApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -113,13 +113,6 @@ Method | HTTP request | Description
 [**providers_scim_users_list**](ProvidersApi.md#providers_scim_users_list) | **GET** /providers/scim_users/ | 
 [**providers_scim_users_retrieve**](ProvidersApi.md#providers_scim_users_retrieve) | **GET** /providers/scim_users/{id}/ | 
 [**providers_scim_users_used_by_list**](ProvidersApi.md#providers_scim_users_used_by_list) | **GET** /providers/scim_users/{id}/used_by/ | 
-[**providers_ssf_create**](ProvidersApi.md#providers_ssf_create) | **POST** /providers/ssf/ | 
-[**providers_ssf_destroy**](ProvidersApi.md#providers_ssf_destroy) | **DELETE** /providers/ssf/{id}/ | 
-[**providers_ssf_list**](ProvidersApi.md#providers_ssf_list) | **GET** /providers/ssf/ | 
-[**providers_ssf_partial_update**](ProvidersApi.md#providers_ssf_partial_update) | **PATCH** /providers/ssf/{id}/ | 
-[**providers_ssf_retrieve**](ProvidersApi.md#providers_ssf_retrieve) | **GET** /providers/ssf/{id}/ | 
-[**providers_ssf_update**](ProvidersApi.md#providers_ssf_update) | **PUT** /providers/ssf/{id}/ | 
-[**providers_ssf_used_by_list**](ProvidersApi.md#providers_ssf_used_by_list) | **GET** /providers/ssf/{id}/used_by/ | 
 
 
 
@@ -2732,7 +2725,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_list
 
-> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
+> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authorization_flow, backchannel_application, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
 
 
 SAMLProvider Viewset
@@ -2747,10 +2740,8 @@ Name | Type | Description  | Required | Notes
 **assertion_valid_not_on_or_after** | Option<**String**> |  |  |
 **audience** | Option<**String**> |  |  |
 **authentication_flow** | Option<**uuid::Uuid**> |  |  |
-**authn_context_class_ref_mapping** | Option<**uuid::Uuid**> |  |  |
 **authorization_flow** | Option<**uuid::Uuid**> |  |  |
 **backchannel_application** | Option<**uuid::Uuid**> |  |  |
-**default_name_id_policy** | Option<**String**> |  |  |
 **default_relay_state** | Option<**String**> |  |  |
 **digest_algorithm** | Option<**String**> |  |  |
 **encryption_kp** | Option<**uuid::Uuid**> |  |  |
@@ -2815,7 +2806,7 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3548,223 +3539,6 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** | A UUID string identifying this scim provider user. | [required] |
-
-### Return type
-
-[**Vec<models::UsedBy>**](UsedBy.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_create
-
-> models::SsfProvider providers_ssf_create(ssf_provider_request)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**ssf_provider_request** | [**SsfProviderRequest**](SsfProviderRequest.md) |  | [required] |
-
-### Return type
-
-[**models::SsfProvider**](SSFProvider.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_destroy
-
-> providers_ssf_destroy(id)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_list
-
-> models::PaginatedSsfProviderList providers_ssf_list(application__isnull, name__iexact, ordering, page, page_size, search)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**application__isnull** | Option<**bool**> |  |  |
-**name__iexact** | Option<**String**> |  |  |
-**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
-**page** | Option<**i32**> | A page number within the paginated result set. |  |
-**page_size** | Option<**i32**> | Number of results to return per page. |  |
-**search** | Option<**String**> | A search term. |  |
-
-### Return type
-
-[**models::PaginatedSsfProviderList**](PaginatedSSFProviderList.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_partial_update
-
-> models::SsfProvider providers_ssf_partial_update(id, patched_ssf_provider_request)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
-**patched_ssf_provider_request** | Option<[**PatchedSsfProviderRequest**](PatchedSsfProviderRequest.md)> |  |  |
-
-### Return type
-
-[**models::SsfProvider**](SSFProvider.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_retrieve
-
-> models::SsfProvider providers_ssf_retrieve(id)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
-
-### Return type
-
-[**models::SsfProvider**](SSFProvider.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_update
-
-> models::SsfProvider providers_ssf_update(id, ssf_provider_request)
-
-
-SSFProvider Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
-**ssf_provider_request** | [**SsfProviderRequest**](SsfProviderRequest.md) |  | [required] |
-
-### Return type
-
-[**models::SsfProvider**](SSFProvider.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## providers_ssf_used_by_list
-
-> Vec<models::UsedBy> providers_ssf_used_by_list(id)
-
-
-Get a list of all objects that use this object
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
 
 ### Return type
 

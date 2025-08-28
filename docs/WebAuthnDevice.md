@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **created_on** | **String** |  | [readonly]
 **device_type** | Option<[**models::WebAuthnDeviceType**](WebAuthnDeviceType.md)> |  | [readonly]
 **aaguid** | **String** |  | [readonly]
-**user** | [**models::GroupMember**](GroupMember.md) |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

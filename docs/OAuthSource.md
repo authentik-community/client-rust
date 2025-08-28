@@ -33,8 +33,7 @@ Name | Type | Description | Notes
 **r#type** | [**models::SourceType**](SourceType.md) |  | [readonly]
 **oidc_well_known_url** | Option<**String**> |  | [optional]
 **oidc_jwks_url** | Option<**String**> |  | [optional]
-**oidc_jwks** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
-**authorization_code_auth_method** | Option<[**models::AuthorizationCodeAuthMethodEnum**](AuthorizationCodeAuthMethodEnum.md)> | How to perform authentication during an authorization_code token request flow | [optional]
+**oidc_jwks** | Option<[**serde_json::Value**](.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
