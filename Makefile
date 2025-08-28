@@ -8,9 +8,6 @@ all: clean build
 clean:
 	rm -rf src/ docs/
 
-diff:
-	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" diff
-
 build:
 ifndef version
 	$(error Usage: make build version=version/20.xx.xx.xx)
