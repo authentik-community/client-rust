@@ -80,8 +80,8 @@ jobs:
           git tag "$tag"
           git push origin "$branch"
           git push --tags
-          gh release create "$tag" -F diff.test --latest
           cargo publish
+          gh release create "$tag" -F diff.test --latest
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
