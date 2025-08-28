@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  schema:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - id: app-token

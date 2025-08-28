@@ -61,6 +61,8 @@ jobs:
         with:
           fetch-depth: 0
           token: "${{ steps.app-token.outputs.token }}"
+      - name: Setup rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
       - name: Publish
         run: |
           tag="${{ matrix.tag }}"
