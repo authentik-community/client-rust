@@ -1980,7 +1980,7 @@ Name | Type | Description  | Required | Notes
 > models::Link core_users_recovery_create(id)
 
 
-Create a temporary link that a user can use to recover their accounts
+Create a temporary link that a user can use to recover their account
 
 ### Parameters
 
@@ -2010,7 +2010,7 @@ Name | Type | Description  | Required | Notes
 > core_users_recovery_email_create(email_stage, id)
 
 
-Create a temporary link that a user can use to recover their accounts
+Send an email with a temporary link that a user can use to recover their account
 
 ### Parameters
 
