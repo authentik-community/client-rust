@@ -8,28 +8,18 @@ all: clean build
 clean:
 	rm -rf src/ docs/
 
+diff:
+	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" diff
+
 build:
 ifndef version
 	$(error Usage: make build version=version/20.xx.xx.xx)
 endif
 	mv schema.yml schema-old.yml
 	wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/$(version)/schema.yml"
-	docker run --rm \
-		-v "${PWD}:/local" \
-		--user "${UID}:${GID}" \
-		docker.io/openapitools/openapi-diff:2.1.2 \
-		--markdown /local/diff.test \
-		/local/schema-old.yml /local/schema.yml || echo > diff.test
+	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" diff
 	rm schema-old.yml
-	docker run --rm \
-		-v "${PWD}:/local" \
-		--user "${UID}:${GID}" \
-		docker.io/openapitools/openapi-generator-cli:v7.15.0 \
-		generate \
-		-i /local/schema.yml \
-		-g rust \
-		-o /local \
-		-c /local/config.yaml
+	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" gen
 	rm -f .travis.yml git_push.sh
 	cargo fmt
 	mv diff.test /tmp/diff.test
