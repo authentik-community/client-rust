@@ -18,7 +18,9 @@ jobs:
         with:
           app-id: "${{ secrets.GH_APP_ID }}"
           private-key: "${{ secrets.GH_APP_PRIVATE_KEY }}"
-      - run: |
+      - id: tags
+        name: Get list of missing tags
+        run: |
           tags="$(gh --repo goauthentik/authentik release list --exclude-drafts --json tagName --jq '.[].tagName' |
             tac |
             while read -r tag; do
@@ -29,14 +31,17 @@ jobs:
           echo "tags=${tags}" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
+    outputs:
+      tags: "${{ steps.tags.outputs.tags }}"
   release:
     runs-on: ubuntu-latest
-    needs: tags
+    needs:
+      - tags
     strategy:
       fail-fast: false
       max-parallel: 1
       matrix:
-        tag: "${{ fromJson(needs.get-tags.outputs.matrix) }}"
+        tag: "${{ fromJson(needs.tags.outputs.tags) }}"
     steps:
       - id: app-token
         uses: actions/create-github-app-token@v2
