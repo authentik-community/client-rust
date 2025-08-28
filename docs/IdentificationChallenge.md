@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **primary_action** | **String** |  | 
 **sources** | Option<[**Vec<models::LoginSource>**](LoginSource.md)> |  | [optional]
 **show_source_labels** | **bool** |  | 
-**enable_remember_me** | Option<**bool**> |  | [optional][default to true]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

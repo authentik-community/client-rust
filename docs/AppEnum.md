@@ -5,13 +5,9 @@
 | Name | Value |
 |---- | -----|
 | AuthentikTenants | authentik.tenants |
-| AuthentikTasks | authentik.tasks |
 | AuthentikAdmin | authentik.admin |
 | AuthentikApi | authentik.api |
-| AuthentikCore | authentik.core |
 | AuthentikCrypto | authentik.crypto |
-| AuthentikEnterprise | authentik.enterprise |
-| AuthentikEvents | authentik.events |
 | AuthentikFlows | authentik.flows |
 | AuthentikOutposts | authentik.outposts |
 | AuthentikPoliciesDummy | authentik.policies.dummy |
@@ -25,7 +21,6 @@
 | AuthentikProvidersLdap | authentik.providers.ldap |
 | AuthentikProvidersOauth2 | authentik.providers.oauth2 |
 | AuthentikProvidersProxy | authentik.providers.proxy |
-| AuthentikProvidersRac | authentik.providers.rac |
 | AuthentikProvidersRadius | authentik.providers.radius |
 | AuthentikProvidersSaml | authentik.providers.saml |
 | AuthentikProvidersScim | authentik.providers.scim |
@@ -59,18 +54,18 @@
 | AuthentikStagesUserLogin | authentik.stages.user_login |
 | AuthentikStagesUserLogout | authentik.stages.user_logout |
 | AuthentikStagesUserWrite | authentik.stages.user_write |
-| AuthentikTasksSchedules | authentik.tasks.schedules |
 | AuthentikBrands | authentik.brands |
 | AuthentikBlueprints | authentik.blueprints |
+| AuthentikCore | authentik.core |
+| AuthentikEnterprise | authentik.enterprise |
 | AuthentikEnterpriseAudit | authentik.enterprise.audit |
-| AuthentikEnterprisePoliciesUniquePassword | authentik.enterprise.policies.unique_password |
 | AuthentikEnterpriseProvidersGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | AuthentikEnterpriseProvidersMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
+| AuthentikEnterpriseProvidersRac | authentik.enterprise.providers.rac |
 | AuthentikEnterpriseProvidersSsf | authentik.enterprise.providers.ssf |
-| AuthentikEnterpriseSearch | authentik.enterprise.search |
 | AuthentikEnterpriseStagesAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
-| AuthentikEnterpriseStagesMtls | authentik.enterprise.stages.mtls |
 | AuthentikEnterpriseStagesSource | authentik.enterprise.stages.source |
+| AuthentikEvents | authentik.events |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

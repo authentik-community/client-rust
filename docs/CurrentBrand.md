@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **branding_title** | **String** |  | 
 **branding_logo** | **String** |  | 
 **branding_favicon** | **String** |  | 
-**branding_custom_css** | **String** |  | 
 **ui_footer_links** | [**Vec<models::FooterLink>**](FooterLink.md) |  | [readonly]
 **ui_theme** | [**models::UiThemeEnum**](UiThemeEnum.md) |  | [readonly][default to Automatic]
 **flow_authentication** | Option<**String**> |  | [optional]
@@ -18,7 +17,6 @@ Name | Type | Description | Notes
 **flow_user_settings** | Option<**String**> |  | [optional]
 **flow_device_code** | Option<**String**> |  | [optional]
 **default_locale** | **String** |  | [readonly]
-**flags** | [**models::CurrentBrandFlags**](CurrentBrand_flags.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

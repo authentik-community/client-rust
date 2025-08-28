@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
-**settings** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
+**settings** | Option<[**serde_json::Value**](.md)> |  | [optional]
 **outpost_set** | **Vec<String>** |  | [readonly]
 **connection_expiry** | Option<**String**> | Determines how long a session lasts. Default of 0 means that the sessions lasts until the browser is closed. (Format: hours=-1;minutes=-2;seconds=-3) | [optional]
 **delete_token_on_disconnect** | Option<**bool**> | When set to true, connection tokens will be deleted upon disconnect. | [optional]

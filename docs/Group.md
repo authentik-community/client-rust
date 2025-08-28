@@ -15,8 +15,6 @@ Name | Type | Description | Notes
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 **roles** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **roles_obj** | [**Vec<models::Role>**](Role.md) |  | [readonly]
-**children** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**children_obj** | Option<[**Vec<models::GroupChild>**](GroupChild.md)> |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

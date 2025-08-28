@@ -33,7 +33,6 @@ Name | Type | Description | Notes
 **user_object_filter** | Option<**String**> | Consider Objects matching this filter to be Users. | [optional]
 **group_object_filter** | Option<**String**> | Consider Objects matching this filter to be Groups. | [optional]
 **group_membership_field** | Option<**String**> | Field which contains members of a group. | [optional]
-**user_membership_attribute** | Option<**String**> | Attribute which matches the value of `group_membership_field`. | [optional]
 **object_uniqueness_field** | Option<**String**> | Field which contains a unique Identifier. | [optional]
 **password_login_update_internal_password** | Option<**bool**> | Update internal authentik password when login succeeds with LDAP | [optional]
 **sync_users** | Option<**bool**> |  | [optional]
@@ -41,8 +40,6 @@ Name | Type | Description | Notes
 **sync_groups** | Option<**bool**> |  | [optional]
 **sync_parent_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **connectivity** | Option<[**std::collections::HashMap<String, std::collections::HashMap<String, String>>**](std::collections::HashMap.md)> | Get cached source connectivity | [readonly]
-**lookup_groups_from_user** | Option<**bool**> | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional]
-**delete_not_found_objects** | Option<**bool**> | Delete authentik users and groups which were previously supplied by this source, but are now missing from it. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

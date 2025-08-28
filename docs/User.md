@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **String** | User's display name. | 
 **is_active** | Option<**bool**> | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional]
 **last_login** | Option<**String**> |  | [optional]
-**date_joined** | **String** |  | [readonly]
 **is_superuser** | **bool** |  | [readonly]
 **groups** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **groups_obj** | Option<[**Vec<models::UserGroup>**](UserGroup.md)> |  | [readonly]
@@ -21,7 +20,6 @@ Name | Type | Description | Notes
 **r#type** | Option<[**models::UserTypeEnum**](UserTypeEnum.md)> |  | [optional]
 **uuid** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
 **password_change_date** | **String** |  | [readonly]
-**last_updated** | **String** |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

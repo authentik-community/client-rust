@@ -5,18 +5,7 @@
 | Name | Value |
 |---- | -----|
 | AuthentikTenantsDomain | authentik_tenants.domain |
-| AuthentikCoreGroup | authentik_core.group |
-| AuthentikCoreUser | authentik_core.user |
-| AuthentikCoreApplication | authentik_core.application |
-| AuthentikCoreApplicationentitlement | authentik_core.applicationentitlement |
-| AuthentikCoreToken | authentik_core.token |
 | AuthentikCryptoCertificatekeypair | authentik_crypto.certificatekeypair |
-| AuthentikEnterpriseLicense | authentik_enterprise.license |
-| AuthentikEventsEvent | authentik_events.event |
-| AuthentikEventsNotificationtransport | authentik_events.notificationtransport |
-| AuthentikEventsNotification | authentik_events.notification |
-| AuthentikEventsNotificationrule | authentik_events.notificationrule |
-| AuthentikEventsNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 | AuthentikFlowsFlow | authentik_flows.flow |
 | AuthentikFlowsFlowstagebinding | authentik_flows.flowstagebinding |
 | AuthentikOutpostsDockerserviceconnection | authentik_outposts.dockerserviceconnection |
@@ -34,9 +23,6 @@
 | AuthentikProvidersOauth2Scopemapping | authentik_providers_oauth2.scopemapping |
 | AuthentikProvidersOauth2Oauth2provider | authentik_providers_oauth2.oauth2provider |
 | AuthentikProvidersProxyProxyprovider | authentik_providers_proxy.proxyprovider |
-| AuthentikProvidersRacRacprovider | authentik_providers_rac.racprovider |
-| AuthentikProvidersRacEndpoint | authentik_providers_rac.endpoint |
-| AuthentikProvidersRacRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | AuthentikProvidersRadiusRadiusprovider | authentik_providers_radius.radiusprovider |
 | AuthentikProvidersRadiusRadiusproviderpropertymapping | authentik_providers_radius.radiusproviderpropertymapping |
 | AuthentikProvidersSamlSamlprovider | authentik_providers_saml.samlprovider |
@@ -44,15 +30,12 @@
 | AuthentikProvidersScimScimprovider | authentik_providers_scim.scimprovider |
 | AuthentikProvidersScimScimmapping | authentik_providers_scim.scimmapping |
 | AuthentikRbacRole | authentik_rbac.role |
-| AuthentikRbacInitialpermissions | authentik_rbac.initialpermissions |
 | AuthentikSourcesKerberosKerberossource | authentik_sources_kerberos.kerberossource |
 | AuthentikSourcesKerberosKerberossourcepropertymapping | authentik_sources_kerberos.kerberossourcepropertymapping |
 | AuthentikSourcesKerberosUserkerberossourceconnection | authentik_sources_kerberos.userkerberossourceconnection |
 | AuthentikSourcesKerberosGroupkerberossourceconnection | authentik_sources_kerberos.groupkerberossourceconnection |
 | AuthentikSourcesLdapLdapsource | authentik_sources_ldap.ldapsource |
 | AuthentikSourcesLdapLdapsourcepropertymapping | authentik_sources_ldap.ldapsourcepropertymapping |
-| AuthentikSourcesLdapUserldapsourceconnection | authentik_sources_ldap.userldapsourceconnection |
-| AuthentikSourcesLdapGroupldapsourceconnection | authentik_sources_ldap.groupldapsourceconnection |
 | AuthentikSourcesOauthOauthsource | authentik_sources_oauth.oauthsource |
 | AuthentikSourcesOauthOauthsourcepropertymapping | authentik_sources_oauth.oauthsourcepropertymapping |
 | AuthentikSourcesOauthUseroauthsourceconnection | authentik_sources_oauth.useroauthsourceconnection |
@@ -97,18 +80,29 @@
 | AuthentikStagesUserLoginUserloginstage | authentik_stages_user_login.userloginstage |
 | AuthentikStagesUserLogoutUserlogoutstage | authentik_stages_user_logout.userlogoutstage |
 | AuthentikStagesUserWriteUserwritestage | authentik_stages_user_write.userwritestage |
-| AuthentikTasksSchedulesSchedule | authentik_tasks_schedules.schedule |
 | AuthentikBrandsBrand | authentik_brands.brand |
 | AuthentikBlueprintsBlueprintinstance | authentik_blueprints.blueprintinstance |
-| AuthentikPoliciesUniquePasswordUniquepasswordpolicy | authentik_policies_unique_password.uniquepasswordpolicy |
+| AuthentikCoreGroup | authentik_core.group |
+| AuthentikCoreUser | authentik_core.user |
+| AuthentikCoreApplication | authentik_core.application |
+| AuthentikCoreApplicationentitlement | authentik_core.applicationentitlement |
+| AuthentikCoreToken | authentik_core.token |
+| AuthentikEnterpriseLicense | authentik_enterprise.license |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovider | authentik_providers_microsoft_entra.microsoftentraprovider |
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovidermapping | authentik_providers_microsoft_entra.microsoftentraprovidermapping |
+| AuthentikProvidersRacRacprovider | authentik_providers_rac.racprovider |
+| AuthentikProvidersRacEndpoint | authentik_providers_rac.endpoint |
+| AuthentikProvidersRacRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | AuthentikProvidersSsfSsfprovider | authentik_providers_ssf.ssfprovider |
 | AuthentikStagesAuthenticatorEndpointGdtcAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
-| AuthentikStagesMtlsMutualtlsstage | authentik_stages_mtls.mutualtlsstage |
 | AuthentikStagesSourceSourcestage | authentik_stages_source.sourcestage |
+| AuthentikEventsEvent | authentik_events.event |
+| AuthentikEventsNotificationtransport | authentik_events.notificationtransport |
+| AuthentikEventsNotification | authentik_events.notification |
+| AuthentikEventsNotificationrule | authentik_events.notificationrule |
+| AuthentikEventsNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

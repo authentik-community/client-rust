@@ -1,6 +1,6 @@
 # \StagesApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -128,13 +128,6 @@ Method | HTTP request | Description
 [**stages_invitation_stages_retrieve**](StagesApi.md#stages_invitation_stages_retrieve) | **GET** /stages/invitation/stages/{stage_uuid}/ | 
 [**stages_invitation_stages_update**](StagesApi.md#stages_invitation_stages_update) | **PUT** /stages/invitation/stages/{stage_uuid}/ | 
 [**stages_invitation_stages_used_by_list**](StagesApi.md#stages_invitation_stages_used_by_list) | **GET** /stages/invitation/stages/{stage_uuid}/used_by/ | 
-[**stages_mtls_create**](StagesApi.md#stages_mtls_create) | **POST** /stages/mtls/ | 
-[**stages_mtls_destroy**](StagesApi.md#stages_mtls_destroy) | **DELETE** /stages/mtls/{stage_uuid}/ | 
-[**stages_mtls_list**](StagesApi.md#stages_mtls_list) | **GET** /stages/mtls/ | 
-[**stages_mtls_partial_update**](StagesApi.md#stages_mtls_partial_update) | **PATCH** /stages/mtls/{stage_uuid}/ | 
-[**stages_mtls_retrieve**](StagesApi.md#stages_mtls_retrieve) | **GET** /stages/mtls/{stage_uuid}/ | 
-[**stages_mtls_update**](StagesApi.md#stages_mtls_update) | **PUT** /stages/mtls/{stage_uuid}/ | 
-[**stages_mtls_used_by_list**](StagesApi.md#stages_mtls_used_by_list) | **GET** /stages/mtls/{stage_uuid}/used_by/ | 
 [**stages_password_create**](StagesApi.md#stages_password_create) | **POST** /stages/password/ | 
 [**stages_password_destroy**](StagesApi.md#stages_password_destroy) | **DELETE** /stages/password/{stage_uuid}/ | 
 [**stages_password_list**](StagesApi.md#stages_password_list) | **GET** /stages/password/ | 
@@ -2152,7 +2145,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_authenticator_webauthn_list
 
-> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, max_attempts, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
+> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
 
 
 AuthenticatorWebAuthnStage Viewset
@@ -2166,7 +2159,6 @@ Name | Type | Description  | Required | Notes
 **configure_flow** | Option<**uuid::Uuid**> |  |  |
 **device_type_restrictions** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **friendly_name** | Option<**String**> |  |  |
-**max_attempts** | Option<**i32**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
@@ -3270,7 +3262,7 @@ Name | Type | Description  | Required | Notes
 **subject** | Option<**String**> |  |  |
 **template** | Option<**String**> |  |  |
 **timeout** | Option<**i32**> |  |  |
-**token_expiry** | Option<**String**> |  |  |
+**token_expiry** | Option<**i32**> |  |  |
 **use_global_settings** | Option<**bool**> |  |  |
 **use_ssl** | Option<**bool**> |  |  |
 **use_tls** | Option<**bool**> |  |  |
@@ -4086,227 +4078,6 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **stage_uuid** | **uuid::Uuid** | A UUID string identifying this Invitation Stage. | [required] |
-
-### Return type
-
-[**Vec<models::UsedBy>**](UsedBy.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_create
-
-> models::MutualTlsStage stages_mtls_create(mutual_tls_stage_request)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**mutual_tls_stage_request** | [**MutualTlsStageRequest**](MutualTlsStageRequest.md) |  | [required] |
-
-### Return type
-
-[**models::MutualTlsStage**](MutualTLSStage.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_destroy
-
-> stages_mtls_destroy(stage_uuid)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Mutual TLS Stage. | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_list
-
-> models::PaginatedMutualTlsStageList stages_mtls_list(cert_attribute, certificate_authorities, mode, name, ordering, page, page_size, search, stage_uuid, user_attribute)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**cert_attribute** | Option<**String**> |  |  |
-**certificate_authorities** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
-**mode** | Option<**String**> |  |  |
-**name** | Option<**String**> |  |  |
-**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
-**page** | Option<**i32**> | A page number within the paginated result set. |  |
-**page_size** | Option<**i32**> | Number of results to return per page. |  |
-**search** | Option<**String**> | A search term. |  |
-**stage_uuid** | Option<**uuid::Uuid**> |  |  |
-**user_attribute** | Option<**String**> |  |  |
-
-### Return type
-
-[**models::PaginatedMutualTlsStageList**](PaginatedMutualTLSStageList.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_partial_update
-
-> models::MutualTlsStage stages_mtls_partial_update(stage_uuid, patched_mutual_tls_stage_request)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Mutual TLS Stage. | [required] |
-**patched_mutual_tls_stage_request** | Option<[**PatchedMutualTlsStageRequest**](PatchedMutualTlsStageRequest.md)> |  |  |
-
-### Return type
-
-[**models::MutualTlsStage**](MutualTLSStage.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_retrieve
-
-> models::MutualTlsStage stages_mtls_retrieve(stage_uuid)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Mutual TLS Stage. | [required] |
-
-### Return type
-
-[**models::MutualTlsStage**](MutualTLSStage.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_update
-
-> models::MutualTlsStage stages_mtls_update(stage_uuid, mutual_tls_stage_request)
-
-
-MutualTLSStage Viewset
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Mutual TLS Stage. | [required] |
-**mutual_tls_stage_request** | [**MutualTlsStageRequest**](MutualTlsStageRequest.md) |  | [required] |
-
-### Return type
-
-[**models::MutualTlsStage**](MutualTLSStage.md)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stages_mtls_used_by_list
-
-> Vec<models::UsedBy> stages_mtls_used_by_list(stage_uuid)
-
-
-Get a list of all objects that use this object
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Mutual TLS Stage. | [required] |
 
 ### Return type
 
@@ -5726,7 +5497,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_user_login_list
 
-> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_device, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
+> models::PaginatedUserLoginStageList stages_user_login_list(geoip_binding, name, network_binding, ordering, page, page_size, remember_me_offset, search, session_duration, stage_uuid, terminate_other_sessions)
 
 
 UserLoginStage Viewset
@@ -5742,7 +5513,6 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
-**remember_device** | Option<**String**> |  |  |
 **remember_me_offset** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **session_duration** | Option<**String**> |  |  |

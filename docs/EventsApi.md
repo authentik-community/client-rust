@@ -1,6 +1,6 @@
 # \EventsApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
+[**events_events_per_month_list**](EventsApi.md#events_events_per_month_list) | **GET** /events/events/per_month/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
 [**events_events_top_per_user_list**](EventsApi.md#events_events_top_per_user_list) | **GET** /events/events/top_per_user/ | 
 [**events_events_update**](EventsApi.md#events_events_update) | **PUT** /events/events/{event_uuid}/ | 
@@ -27,6 +28,9 @@ Method | HTTP request | Description
 [**events_rules_retrieve**](EventsApi.md#events_rules_retrieve) | **GET** /events/rules/{pbm_uuid}/ | 
 [**events_rules_update**](EventsApi.md#events_rules_update) | **PUT** /events/rules/{pbm_uuid}/ | 
 [**events_rules_used_by_list**](EventsApi.md#events_rules_used_by_list) | **GET** /events/rules/{pbm_uuid}/used_by/ | 
+[**events_system_tasks_list**](EventsApi.md#events_system_tasks_list) | **GET** /events/system_tasks/ | 
+[**events_system_tasks_retrieve**](EventsApi.md#events_system_tasks_retrieve) | **GET** /events/system_tasks/{uuid}/ | 
+[**events_system_tasks_run_create**](EventsApi.md#events_system_tasks_run_create) | **POST** /events/system_tasks/{uuid}/run/ | 
 [**events_transports_create**](EventsApi.md#events_transports_create) | **POST** /events/transports/ | 
 [**events_transports_destroy**](EventsApi.md#events_transports_destroy) | **DELETE** /events/transports/{uuid}/ | 
 [**events_transports_list**](EventsApi.md#events_transports_list) | **GET** /events/transports/ | 
@@ -127,7 +131,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_events_list
 
-> models::PaginatedEventList events_events_list(action, actions, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, page, page_size, search, username)
+> models::PaginatedEventList events_events_list(action, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, page, page_size, search, username)
 
 
 Event Read-Only Viewset
@@ -138,7 +142,6 @@ Event Read-Only Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **action** | Option<**String**> |  |  |
-**actions** | Option<[**Vec<String>**](String.md)> |  |  |
 **brand_name** | Option<**String**> | Brand name |  |
 **client_ip** | Option<**String**> |  |  |
 **context_authorized_app** | Option<**String**> | Context Authorized application |  |
@@ -193,6 +196,37 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## events_events_per_month_list
+
+> Vec<models::Coordinate> events_events_per_month_list(action, query)
+
+
+Get the count of events per month
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**action** | Option<**String**> |  |  |
+**query** | Option<**String**> |  |  |
+
+### Return type
+
+[**Vec<models::Coordinate>**](Coordinate.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -292,7 +326,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_events_volume_list
 
-> Vec<models::EventVolume> events_events_volume_list(action, actions, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, history_days, ordering, search, username)
+> Vec<models::Coordinate> events_events_volume_list(action, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, search, username)
 
 
 Get event volume for specified filters and timeframe
@@ -303,21 +337,19 @@ Get event volume for specified filters and timeframe
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **action** | Option<**String**> |  |  |
-**actions** | Option<[**Vec<String>**](String.md)> |  |  |
 **brand_name** | Option<**String**> | Brand name |  |
 **client_ip** | Option<**String**> |  |  |
 **context_authorized_app** | Option<**String**> | Context Authorized application |  |
 **context_model_app** | Option<**String**> | Context Model App |  |
 **context_model_name** | Option<**String**> | Context Model Name |  |
 **context_model_pk** | Option<**String**> | Context Model Primary Key |  |
-**history_days** | Option<**f64**> |  |  |[default to 7]
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **search** | Option<**String**> | A search term. |  |
 **username** | Option<**String**> | Username |  |
 
 ### Return type
 
-[**Vec<models::EventVolume>**](EventVolume.md)
+[**Vec<models::Coordinate>**](Coordinate.md)
 
 ### Authorization
 
@@ -611,7 +643,7 @@ Name | Type | Description  | Required | Notes
 
 ## events_rules_list
 
-> models::PaginatedNotificationRuleList events_rules_list(destination_group__name, name, ordering, page, page_size, search, severity)
+> models::PaginatedNotificationRuleList events_rules_list(group__name, name, ordering, page, page_size, search, severity)
 
 
 NotificationRule Viewset
@@ -621,7 +653,7 @@ NotificationRule Viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**destination_group__name** | Option<**String**> |  |  |
+**group__name** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
@@ -754,6 +786,102 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## events_system_tasks_list
+
+> models::PaginatedSystemTaskList events_system_tasks_list(name, ordering, page, page_size, search, status, uid)
+
+
+Read-only view set that returns all background tasks
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**status** | Option<**String**> |  |  |
+**uid** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedSystemTaskList**](PaginatedSystemTaskList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## events_system_tasks_retrieve
+
+> models::SystemTask events_system_tasks_retrieve(uuid)
+
+
+Read-only view set that returns all background tasks
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this System Task. | [required] |
+
+### Return type
+
+[**models::SystemTask**](SystemTask.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## events_system_tasks_run_create
+
+> events_system_tasks_run_create(uuid)
+
+
+Run task
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**uuid** | **uuid::Uuid** | A UUID string identifying this System Task. | [required] |
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 
