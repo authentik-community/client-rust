@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
 **delegated_subject** | **String** |  | 
-**credentials** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 
+**credentials** | Option<[**serde_json::Value**](.md)> |  | 
 **scopes** | Option<**String**> |  | [optional]
 **exclude_users_service_account** | Option<**bool**> |  | [optional]
 **filter_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]

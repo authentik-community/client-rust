@@ -5,18 +5,7 @@
 | Name | Value |
 |---- | -----|
 | AuthentikTenantsDomain | authentik_tenants.domain |
-| AuthentikCoreGroup | authentik_core.group |
-| AuthentikCoreUser | authentik_core.user |
-| AuthentikCoreApplication | authentik_core.application |
-| AuthentikCoreApplicationentitlement | authentik_core.applicationentitlement |
-| AuthentikCoreToken | authentik_core.token |
 | AuthentikCryptoCertificatekeypair | authentik_crypto.certificatekeypair |
-| AuthentikEnterpriseLicense | authentik_enterprise.license |
-| AuthentikEventsEvent | authentik_events.event |
-| AuthentikEventsNotificationtransport | authentik_events.notificationtransport |
-| AuthentikEventsNotification | authentik_events.notification |
-| AuthentikEventsNotificationrule | authentik_events.notificationrule |
-| AuthentikEventsNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 | AuthentikFlowsFlow | authentik_flows.flow |
 | AuthentikFlowsFlowstagebinding | authentik_flows.flowstagebinding |
 | AuthentikOutpostsDockerserviceconnection | authentik_outposts.dockerserviceconnection |
@@ -97,9 +86,14 @@
 | AuthentikStagesUserLoginUserloginstage | authentik_stages_user_login.userloginstage |
 | AuthentikStagesUserLogoutUserlogoutstage | authentik_stages_user_logout.userlogoutstage |
 | AuthentikStagesUserWriteUserwritestage | authentik_stages_user_write.userwritestage |
-| AuthentikTasksSchedulesSchedule | authentik_tasks_schedules.schedule |
 | AuthentikBrandsBrand | authentik_brands.brand |
 | AuthentikBlueprintsBlueprintinstance | authentik_blueprints.blueprintinstance |
+| AuthentikCoreGroup | authentik_core.group |
+| AuthentikCoreUser | authentik_core.user |
+| AuthentikCoreApplication | authentik_core.application |
+| AuthentikCoreApplicationentitlement | authentik_core.applicationentitlement |
+| AuthentikCoreToken | authentik_core.token |
+| AuthentikEnterpriseLicense | authentik_enterprise.license |
 | AuthentikPoliciesUniquePasswordUniquepasswordpolicy | authentik_policies_unique_password.uniquepasswordpolicy |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |
@@ -109,6 +103,11 @@
 | AuthentikStagesAuthenticatorEndpointGdtcAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | AuthentikStagesMtlsMutualtlsstage | authentik_stages_mtls.mutualtlsstage |
 | AuthentikStagesSourceSourcestage | authentik_stages_source.sourcestage |
+| AuthentikEventsEvent | authentik_events.event |
+| AuthentikEventsNotificationtransport | authentik_events.notificationtransport |
+| AuthentikEventsNotification | authentik_events.notification |
+| AuthentikEventsNotificationrule | authentik_events.notificationrule |
+| AuthentikEventsNotificationwebhookmapping | authentik_events.notificationwebhookmapping |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

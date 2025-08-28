@@ -93,11 +93,11 @@ docs/ConsentStageModeEnum.md
 docs/ConsentStageRequest.md
 docs/ContextualFlowInfo.md
 docs/ContextualFlowInfoLayoutEnum.md
+docs/Coordinate.md
 docs/CoreApi.md
 docs/CountryCodeEnum.md
 docs/CryptoApi.md
 docs/CurrentBrand.md
-docs/CurrentBrandFlags.md
 docs/DeliveryMethodEnum.md
 docs/DeniedActionEnum.md
 docs/DenyStage.md
@@ -144,7 +144,6 @@ docs/EventMatcherPolicy.md
 docs/EventMatcherPolicyRequest.md
 docs/EventRequest.md
 docs/EventTopPerUser.md
-docs/EventVolume.md
 docs/EventsApi.md
 docs/EventsRequestedEnum.md
 docs/ExpiringBaseGrantModel.md
@@ -186,7 +185,6 @@ docs/GoogleWorkspaceProviderRequest.md
 docs/GoogleWorkspaceProviderUser.md
 docs/GoogleWorkspaceProviderUserRequest.md
 docs/Group.md
-docs/GroupChild.md
 docs/GroupKerberosSourceConnection.md
 docs/GroupKerberosSourceConnectionRequest.md
 docs/GroupLdapSourceConnection.md
@@ -224,9 +222,9 @@ docs/KerberosSource.md
 docs/KerberosSourcePropertyMapping.md
 docs/KerberosSourcePropertyMappingRequest.md
 docs/KerberosSourceRequest.md
+docs/KerberosSyncStatus.md
 docs/KubernetesServiceConnection.md
 docs/KubernetesServiceConnectionRequest.md
-docs/LastTaskStatusEnum.md
 docs/LdapCheckAccess.md
 docs/LdapDebug.md
 docs/LdapOutpostConfig.md
@@ -247,6 +245,7 @@ docs/Link.md
 docs/LogEvent.md
 docs/LogLevelEnum.md
 docs/LoginChallengeTypes.md
+docs/LoginMetrics.md
 docs/LoginSource.md
 docs/ManagedApi.md
 docs/MatchingModeEnum.md
@@ -264,6 +263,7 @@ docs/ModelRequest.md
 docs/MutualTlsStage.md
 docs/MutualTlsStageModeEnum.md
 docs/MutualTlsStageRequest.md
+docs/NameIdPolicyEnum.md
 docs/NetworkBindingEnum.md
 docs/NotConfiguredActionEnum.md
 docs/Notification.md
@@ -396,7 +396,6 @@ docs/PaginatedSamlPropertyMappingList.md
 docs/PaginatedSamlProviderList.md
 docs/PaginatedSamlSourceList.md
 docs/PaginatedSamlSourcePropertyMappingList.md
-docs/PaginatedScheduleList.md
 docs/PaginatedScimMappingList.md
 docs/PaginatedScimProviderGroupList.md
 docs/PaginatedScimProviderList.md
@@ -414,7 +413,7 @@ docs/PaginatedSsfProviderList.md
 docs/PaginatedSsfStreamList.md
 docs/PaginatedStageList.md
 docs/PaginatedStaticDeviceList.md
-docs/PaginatedTaskList.md
+docs/PaginatedSystemTaskList.md
 docs/PaginatedTenantList.md
 docs/PaginatedTokenList.md
 docs/PaginatedTokenModelList.md
@@ -530,7 +529,6 @@ docs/PatchedSamlPropertyMappingRequest.md
 docs/PatchedSamlProviderRequest.md
 docs/PatchedSamlSourcePropertyMappingRequest.md
 docs/PatchedSamlSourceRequest.md
-docs/PatchedScheduleRequest.md
 docs/PatchedScimMappingRequest.md
 docs/PatchedScimProviderRequest.md
 docs/PatchedScimSourceGroupRequest.md
@@ -539,7 +537,6 @@ docs/PatchedScimSourceRequest.md
 docs/PatchedScimSourceUserRequest.md
 docs/PatchedScopeMappingRequest.md
 docs/PatchedSettingsRequest.md
-docs/PatchedSettingsRequestFlags.md
 docs/PatchedSmsDeviceRequest.md
 docs/PatchedSourceStageRequest.md
 docs/PatchedSsfProviderRequest.md
@@ -631,7 +628,6 @@ docs/RoleObjectPermission.md
 docs/RoleRequest.md
 docs/RootApi.md
 docs/SamlMetadata.md
-docs/SamlNameIdPolicyEnum.md
 docs/SamlPropertyMapping.md
 docs/SamlPropertyMappingRequest.md
 docs/SamlProvider.md
@@ -640,8 +636,6 @@ docs/SamlSource.md
 docs/SamlSourcePropertyMapping.md
 docs/SamlSourcePropertyMappingRequest.md
 docs/SamlSourceRequest.md
-docs/Schedule.md
-docs/ScheduleRequest.md
 docs/SchemaApi.md
 docs/ScimMapping.md
 docs/ScimMappingRequest.md
@@ -689,7 +683,6 @@ docs/Stage.md
 docs/StagePrompt.md
 docs/StageRequest.md
 docs/StagesApi.md
-docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
@@ -701,9 +694,8 @@ docs/SyncObjectResult.md
 docs/SyncStatus.md
 docs/SystemInfo.md
 docs/SystemInfoRuntime.md
-docs/Task.md
-docs/TaskAggregatedStatusEnum.md
-docs/TasksApi.md
+docs/SystemTask.md
+docs/SystemTaskStatusEnum.md
 docs/Tenant.md
 docs/TenantAdminGroupRequestRequest.md
 docs/TenantRecoveryKeyRequestRequest.md
@@ -748,6 +740,7 @@ docs/UserLoginStageRequest.md
 docs/UserLogoutStage.md
 docs/UserLogoutStageRequest.md
 docs/UserMatchingModeEnum.md
+docs/UserMetrics.md
 docs/UserOAuthSourceConnection.md
 docs/UserOAuthSourceConnectionRequest.md
 docs/UserObjectPermission.md
@@ -800,7 +793,6 @@ src/apis/schema_api.rs
 src/apis/sources_api.rs
 src/apis/ssf_api.rs
 src/apis/stages_api.rs
-src/apis/tasks_api.rs
 src/apis/tenants_api.rs
 src/lib.rs
 src/models/access_denied_challenge.rs
@@ -892,9 +884,9 @@ src/models/consent_stage_mode_enum.rs
 src/models/consent_stage_request.rs
 src/models/contextual_flow_info.rs
 src/models/contextual_flow_info_layout_enum.rs
+src/models/coordinate.rs
 src/models/country_code_enum.rs
 src/models/current_brand.rs
-src/models/current_brand_flags.rs
 src/models/delivery_method_enum.rs
 src/models/denied_action_enum.rs
 src/models/deny_stage.rs
@@ -940,7 +932,6 @@ src/models/event_matcher_policy.rs
 src/models/event_matcher_policy_request.rs
 src/models/event_request.rs
 src/models/event_top_per_user.rs
-src/models/event_volume.rs
 src/models/events_requested_enum.rs
 src/models/expiring_base_grant_model.rs
 src/models/expression_policy.rs
@@ -980,7 +971,6 @@ src/models/google_workspace_provider_request.rs
 src/models/google_workspace_provider_user.rs
 src/models/google_workspace_provider_user_request.rs
 src/models/group.rs
-src/models/group_child.rs
 src/models/group_kerberos_source_connection.rs
 src/models/group_kerberos_source_connection_request.rs
 src/models/group_ldap_source_connection.rs
@@ -1018,9 +1008,9 @@ src/models/kerberos_source.rs
 src/models/kerberos_source_property_mapping.rs
 src/models/kerberos_source_property_mapping_request.rs
 src/models/kerberos_source_request.rs
+src/models/kerberos_sync_status.rs
 src/models/kubernetes_service_connection.rs
 src/models/kubernetes_service_connection_request.rs
-src/models/last_task_status_enum.rs
 src/models/ldap_check_access.rs
 src/models/ldap_debug.rs
 src/models/ldap_outpost_config.rs
@@ -1041,6 +1031,7 @@ src/models/link.rs
 src/models/log_event.rs
 src/models/log_level_enum.rs
 src/models/login_challenge_types.rs
+src/models/login_metrics.rs
 src/models/login_source.rs
 src/models/matching_mode_enum.rs
 src/models/metadata.rs
@@ -1058,6 +1049,7 @@ src/models/model_request.rs
 src/models/mutual_tls_stage.rs
 src/models/mutual_tls_stage_mode_enum.rs
 src/models/mutual_tls_stage_request.rs
+src/models/name_id_policy_enum.rs
 src/models/network_binding_enum.rs
 src/models/not_configured_action_enum.rs
 src/models/notification.rs
@@ -1188,7 +1180,6 @@ src/models/paginated_saml_property_mapping_list.rs
 src/models/paginated_saml_provider_list.rs
 src/models/paginated_saml_source_list.rs
 src/models/paginated_saml_source_property_mapping_list.rs
-src/models/paginated_schedule_list.rs
 src/models/paginated_scim_mapping_list.rs
 src/models/paginated_scim_provider_group_list.rs
 src/models/paginated_scim_provider_list.rs
@@ -1206,7 +1197,7 @@ src/models/paginated_ssf_provider_list.rs
 src/models/paginated_ssf_stream_list.rs
 src/models/paginated_stage_list.rs
 src/models/paginated_static_device_list.rs
-src/models/paginated_task_list.rs
+src/models/paginated_system_task_list.rs
 src/models/paginated_tenant_list.rs
 src/models/paginated_token_list.rs
 src/models/paginated_token_model_list.rs
@@ -1322,7 +1313,6 @@ src/models/patched_saml_property_mapping_request.rs
 src/models/patched_saml_provider_request.rs
 src/models/patched_saml_source_property_mapping_request.rs
 src/models/patched_saml_source_request.rs
-src/models/patched_schedule_request.rs
 src/models/patched_scim_mapping_request.rs
 src/models/patched_scim_provider_request.rs
 src/models/patched_scim_source_group_request.rs
@@ -1331,7 +1321,6 @@ src/models/patched_scim_source_request.rs
 src/models/patched_scim_source_user_request.rs
 src/models/patched_scope_mapping_request.rs
 src/models/patched_settings_request.rs
-src/models/patched_settings_request_flags.rs
 src/models/patched_sms_device_request.rs
 src/models/patched_source_stage_request.rs
 src/models/patched_ssf_provider_request.rs
@@ -1417,7 +1406,6 @@ src/models/role_assigned_object_permission.rs
 src/models/role_object_permission.rs
 src/models/role_request.rs
 src/models/saml_metadata.rs
-src/models/saml_name_id_policy_enum.rs
 src/models/saml_property_mapping.rs
 src/models/saml_property_mapping_request.rs
 src/models/saml_provider.rs
@@ -1426,8 +1414,6 @@ src/models/saml_source.rs
 src/models/saml_source_property_mapping.rs
 src/models/saml_source_property_mapping_request.rs
 src/models/saml_source_request.rs
-src/models/schedule.rs
-src/models/schedule_request.rs
 src/models/scim_mapping.rs
 src/models/scim_mapping_request.rs
 src/models/scim_provider.rs
@@ -1471,7 +1457,6 @@ src/models/ssf_stream.rs
 src/models/stage.rs
 src/models/stage_prompt.rs
 src/models/stage_request.rs
-src/models/state_enum.rs
 src/models/static_device.rs
 src/models/static_device_request.rs
 src/models/static_device_token.rs
@@ -1483,8 +1468,8 @@ src/models/sync_object_result.rs
 src/models/sync_status.rs
 src/models/system_info.rs
 src/models/system_info_runtime.rs
-src/models/task.rs
-src/models/task_aggregated_status_enum.rs
+src/models/system_task.rs
+src/models/system_task_status_enum.rs
 src/models/tenant.rs
 src/models/tenant_admin_group_request_request.rs
 src/models/tenant_recovery_key_request_request.rs
@@ -1528,6 +1513,7 @@ src/models/user_login_stage_request.rs
 src/models/user_logout_stage.rs
 src/models/user_logout_stage_request.rs
 src/models/user_matching_mode_enum.rs
+src/models/user_metrics.rs
 src/models/user_o_auth_source_connection.rs
 src/models/user_o_auth_source_connection_request.rs
 src/models/user_object_permission.rs

@@ -1,6 +1,6 @@
 # \SourcesApi
 
-All URIs are relative to */api/v3*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1843,10 +1843,10 @@ Name | Type | Description  | Required | Notes
 
 ## sources_kerberos_sync_status_retrieve
 
-> models::SyncStatus sources_kerberos_sync_status_retrieve(slug)
+> models::KerberosSyncStatus sources_kerberos_sync_status_retrieve(slug)
 
 
-Get provider's sync status
+Get source's sync status
 
 ### Parameters
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SyncStatus**](SyncStatus.md)
+[**models::KerberosSyncStatus**](KerberosSyncStatus.md)
 
 ### Authorization
 
@@ -2148,7 +2148,7 @@ Name | Type | Description  | Required | Notes
 > models::SyncStatus sources_ldap_sync_status_retrieve(slug)
 
 
-Get provider's sync status
+Get source's sync status
 
 ### Parameters
 

@@ -6,7 +6,6 @@
 |---- | -----|
 | Apple | apple |
 | Openidconnect | openidconnect |
-| Entraid | entraid |
 | Azuread | azuread |
 | Discord | discord |
 | Facebook | facebook |

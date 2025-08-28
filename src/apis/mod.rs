@@ -136,7 +136,6 @@ pub mod schema_api;
 pub mod sources_api;
 pub mod ssf_api;
 pub mod stages_api;
-pub mod tasks_api;
 pub mod tenants_api;
 
 pub mod configuration;

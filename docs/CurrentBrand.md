@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **flow_user_settings** | Option<**String**> |  | [optional]
 **flow_device_code** | Option<**String**> |  | [optional]
 **default_locale** | **String** |  | [readonly]
-**flags** | [**models::CurrentBrandFlags**](CurrentBrand_flags.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

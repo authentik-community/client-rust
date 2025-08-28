@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **sign_response** | Option<**bool**> |  | [optional]
 **sp_binding** | Option<[**models::SpBindingEnum**](SpBindingEnum.md)> | This determines how authentik sends the response back to the Service Provider. | [optional]
 **default_relay_state** | Option<**String**> | Default relay_state value for IDP-initiated logins | [optional]
-**default_name_id_policy** | Option<[**models::SamlNameIdPolicyEnum**](SAMLNameIDPolicyEnum.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

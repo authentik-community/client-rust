@@ -14,8 +14,7 @@ Name | Type | Description | Notes
 **created** | **String** |  | [readonly]
 **last_updated** | **String** |  | [readonly]
 **last_used** | Option<**String**> |  | [readonly]
-**extra_description** | Option<**String**> | Get extra description | [readonly]
-**external_id** | Option<**String**> | Get external Device ID | [readonly]
+**extra_description** | **String** | Get extra description | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
