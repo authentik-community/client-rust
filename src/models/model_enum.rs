@@ -52,6 +52,12 @@ pub enum ModelEnum {
     AuthentikProvidersOauth2Oauth2provider,
     #[serde(rename = "authentik_providers_proxy.proxyprovider")]
     AuthentikProvidersProxyProxyprovider,
+    #[serde(rename = "authentik_providers_rac.racprovider")]
+    AuthentikProvidersRacRacprovider,
+    #[serde(rename = "authentik_providers_rac.endpoint")]
+    AuthentikProvidersRacEndpoint,
+    #[serde(rename = "authentik_providers_rac.racpropertymapping")]
+    AuthentikProvidersRacRacpropertymapping,
     #[serde(rename = "authentik_providers_radius.radiusprovider")]
     AuthentikProvidersRadiusRadiusprovider,
     #[serde(rename = "authentik_providers_radius.radiusproviderpropertymapping")]
@@ -190,12 +196,6 @@ pub enum ModelEnum {
     AuthentikProvidersMicrosoftEntraMicrosoftentraprovider,
     #[serde(rename = "authentik_providers_microsoft_entra.microsoftentraprovidermapping")]
     AuthentikProvidersMicrosoftEntraMicrosoftentraprovidermapping,
-    #[serde(rename = "authentik_providers_rac.racprovider")]
-    AuthentikProvidersRacRacprovider,
-    #[serde(rename = "authentik_providers_rac.endpoint")]
-    AuthentikProvidersRacEndpoint,
-    #[serde(rename = "authentik_providers_rac.racpropertymapping")]
-    AuthentikProvidersRacRacpropertymapping,
     #[serde(rename = "authentik_providers_ssf.ssfprovider")]
     AuthentikProvidersSsfSsfprovider,
     #[serde(rename = "authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage")]
@@ -246,6 +246,9 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikProvidersOauth2Scopemapping => write!(f, "authentik_providers_oauth2.scopemapping"),
             Self::AuthentikProvidersOauth2Oauth2provider => write!(f, "authentik_providers_oauth2.oauth2provider"),
             Self::AuthentikProvidersProxyProxyprovider => write!(f, "authentik_providers_proxy.proxyprovider"),
+            Self::AuthentikProvidersRacRacprovider => write!(f, "authentik_providers_rac.racprovider"),
+            Self::AuthentikProvidersRacEndpoint => write!(f, "authentik_providers_rac.endpoint"),
+            Self::AuthentikProvidersRacRacpropertymapping => write!(f, "authentik_providers_rac.racpropertymapping"),
             Self::AuthentikProvidersRadiusRadiusprovider => write!(f, "authentik_providers_radius.radiusprovider"),
             Self::AuthentikProvidersRadiusRadiusproviderpropertymapping => {
                 write!(f, "authentik_providers_radius.radiusproviderpropertymapping")
@@ -379,9 +382,6 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikProvidersMicrosoftEntraMicrosoftentraprovidermapping => {
                 write!(f, "authentik_providers_microsoft_entra.microsoftentraprovidermapping")
             }
-            Self::AuthentikProvidersRacRacprovider => write!(f, "authentik_providers_rac.racprovider"),
-            Self::AuthentikProvidersRacEndpoint => write!(f, "authentik_providers_rac.endpoint"),
-            Self::AuthentikProvidersRacRacpropertymapping => write!(f, "authentik_providers_rac.racpropertymapping"),
             Self::AuthentikProvidersSsfSsfprovider => write!(f, "authentik_providers_ssf.ssfprovider"),
             Self::AuthentikStagesAuthenticatorEndpointGdtcAuthenticatorendpointgdtcstage => write!(
                 f,

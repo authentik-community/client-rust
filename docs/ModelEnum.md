@@ -23,6 +23,9 @@
 | AuthentikProvidersOauth2Scopemapping | authentik_providers_oauth2.scopemapping |
 | AuthentikProvidersOauth2Oauth2provider | authentik_providers_oauth2.oauth2provider |
 | AuthentikProvidersProxyProxyprovider | authentik_providers_proxy.proxyprovider |
+| AuthentikProvidersRacRacprovider | authentik_providers_rac.racprovider |
+| AuthentikProvidersRacEndpoint | authentik_providers_rac.endpoint |
+| AuthentikProvidersRacRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | AuthentikProvidersRadiusRadiusprovider | authentik_providers_radius.radiusprovider |
 | AuthentikProvidersRadiusRadiusproviderpropertymapping | authentik_providers_radius.radiusproviderpropertymapping |
 | AuthentikProvidersSamlSamlprovider | authentik_providers_saml.samlprovider |
@@ -92,9 +95,6 @@
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovider | authentik_providers_microsoft_entra.microsoftentraprovider |
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovidermapping | authentik_providers_microsoft_entra.microsoftentraprovidermapping |
-| AuthentikProvidersRacRacprovider | authentik_providers_rac.racprovider |
-| AuthentikProvidersRacEndpoint | authentik_providers_rac.endpoint |
-| AuthentikProvidersRacRacpropertymapping | authentik_providers_rac.racpropertymapping |
 | AuthentikProvidersSsfSsfprovider | authentik_providers_ssf.ssfprovider |
 | AuthentikStagesAuthenticatorEndpointGdtcAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | AuthentikStagesSourceSourcestage | authentik_stages_source.sourcestage |

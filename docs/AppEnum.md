@@ -21,6 +21,7 @@
 | AuthentikProvidersLdap | authentik.providers.ldap |
 | AuthentikProvidersOauth2 | authentik.providers.oauth2 |
 | AuthentikProvidersProxy | authentik.providers.proxy |
+| AuthentikProvidersRac | authentik.providers.rac |
 | AuthentikProvidersRadius | authentik.providers.radius |
 | AuthentikProvidersSaml | authentik.providers.saml |
 | AuthentikProvidersScim | authentik.providers.scim |
@@ -61,7 +62,6 @@
 | AuthentikEnterpriseAudit | authentik.enterprise.audit |
 | AuthentikEnterpriseProvidersGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | AuthentikEnterpriseProvidersMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
-| AuthentikEnterpriseProvidersRac | authentik.enterprise.providers.rac |
 | AuthentikEnterpriseProvidersSsf | authentik.enterprise.providers.ssf |
 | AuthentikEnterpriseStagesAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
 | AuthentikEnterpriseStagesSource | authentik.enterprise.stages.source |

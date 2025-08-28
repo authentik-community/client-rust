@@ -48,6 +48,8 @@ pub enum AppEnum {
     AuthentikProvidersOauth2,
     #[serde(rename = "authentik.providers.proxy")]
     AuthentikProvidersProxy,
+    #[serde(rename = "authentik.providers.rac")]
+    AuthentikProvidersRac,
     #[serde(rename = "authentik.providers.radius")]
     AuthentikProvidersRadius,
     #[serde(rename = "authentik.providers.saml")]
@@ -128,8 +130,6 @@ pub enum AppEnum {
     AuthentikEnterpriseProvidersGoogleWorkspace,
     #[serde(rename = "authentik.enterprise.providers.microsoft_entra")]
     AuthentikEnterpriseProvidersMicrosoftEntra,
-    #[serde(rename = "authentik.enterprise.providers.rac")]
-    AuthentikEnterpriseProvidersRac,
     #[serde(rename = "authentik.enterprise.providers.ssf")]
     AuthentikEnterpriseProvidersSsf,
     #[serde(rename = "authentik.enterprise.stages.authenticator_endpoint_gdtc")]
@@ -160,6 +160,7 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikProvidersLdap => write!(f, "authentik.providers.ldap"),
             Self::AuthentikProvidersOauth2 => write!(f, "authentik.providers.oauth2"),
             Self::AuthentikProvidersProxy => write!(f, "authentik.providers.proxy"),
+            Self::AuthentikProvidersRac => write!(f, "authentik.providers.rac"),
             Self::AuthentikProvidersRadius => write!(f, "authentik.providers.radius"),
             Self::AuthentikProvidersSaml => write!(f, "authentik.providers.saml"),
             Self::AuthentikProvidersScim => write!(f, "authentik.providers.scim"),
@@ -204,7 +205,6 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikEnterpriseProvidersMicrosoftEntra => {
                 write!(f, "authentik.enterprise.providers.microsoft_entra")
             }
-            Self::AuthentikEnterpriseProvidersRac => write!(f, "authentik.enterprise.providers.rac"),
             Self::AuthentikEnterpriseProvidersSsf => write!(f, "authentik.enterprise.providers.ssf"),
             Self::AuthentikEnterpriseStagesAuthenticatorEndpointGdtc => {
                 write!(f, "authentik.enterprise.stages.authenticator_endpoint_gdtc")
