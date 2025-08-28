@@ -81,6 +81,7 @@ jobs:
           git push origin "$branch"
           git push --tags
           cargo publish
+          truncate -s '<125000' diff.test
           gh release create "$tag" -F diff.test --latest --title "$version"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"

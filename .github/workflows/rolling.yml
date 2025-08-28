@@ -48,7 +48,8 @@ jobs:
           git add .
           git commit -F "diff.test" || exit 0
           git tag v$version
-          cargo publish
           git push
           git push --tags
+          cargo publish
+          truncate -s '<125000' diff.test
           gh release create v$version -F diff.test --prerelease
