@@ -1,6 +1,6 @@
 [package]
 name = "authentik-client"
-version = "2024.12.2"
+version = "2024.12.3"
 authors = ["hello@goauthentik.io"]
 description = "Making authentication simple."
 license = "MIT"
