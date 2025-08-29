@@ -33,7 +33,7 @@ jobs:
       - name: Publish
         run: |
           wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/main/schema.yml"
-          version=$(cd version && cargo run)
+          version="$(yq -r '.info.version' schema.yml).$(date +%s)"
           git restore schema.yml
 
           make ref=main "version=$version"
