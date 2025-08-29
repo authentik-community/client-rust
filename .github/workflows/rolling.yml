@@ -44,6 +44,7 @@ jobs:
       - name: Publish
         working-directory: client-rust
         run: |
+          version="$(yq -r '.info.version' ../authentik/schema.yml).$(date +%s)"
           make version="$version"
           [ "$(wc -l < diff.test)" -lt 4 ] && exit 0 || echo
 
