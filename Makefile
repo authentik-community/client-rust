@@ -3,7 +3,7 @@ PWD = $(shell pwd)
 UID = $(shell id -u)
 GID = $(shell id -g)
 
-all: clean update build diff
+all: clean update diff build
 
 clean:
 	rm -rf src/ docs/
@@ -13,7 +13,7 @@ update:
 	cp ../authentik/schema.yml schema.yml
 
 diff:
-	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" diff \
+	docker compose -f scripts/docker-compose.yml run --rm --user "${UID}:${GID}" diff \
 		--markdown \
 		/local/diff.test \
 		/local/schema-old.yml \
@@ -27,7 +27,7 @@ build:
 ifndef version
 	$(error Usage: make build version=20xx.xx.xx)
 endif
-	docker compose -f scripts/docker-compose.yml run --user "${UID}:${GID}" gen \
+	docker compose -f scripts/docker-compose.yml run --rm --user "${UID}:${GID}" gen \
 		generate \
 		-i /local/schema.yml \
 		-g rust \
