@@ -32,15 +32,21 @@ jobs:
                 echo "$tag"
               fi
             done | jq -R -s -c 'split("\n") | map(select(length > 0))')"
-          echo "tags=${tags}" >> "$GITHUB_OUTPUT"
+
+          should_run="$([ "$(echo "$tags" | jq '.|length')" -eq 0 ] && echo false || echo true)"
+
+          echo "tags=$tags" >> "$GITHUB_OUTPUT"
+          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
     outputs:
       tags: "${{ steps.tags.outputs.tags }}"
+      should_run: "${{ steps.tags.outputs.should_run }}"
   release:
     runs-on: ubuntu-latest
     needs:
       - tags
+    if: "${{ needs.tags.outputs.should_run == 'true' }}"
     strategy:
       fail-fast: false
       max-parallel: 1
