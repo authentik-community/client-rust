@@ -42,10 +42,6 @@ jobs:
           sparse-checkout-cone-mode: false
       - name: Publish
         run: |
-          wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/main/schema.yml"
-          version="$(yq -r '.info.version' schema.yml)-$(date +%s)"
-          git restore schema.yml
-
           make version="$version"
           [ "$(wc -l < diff.test)" -lt 4 ] && exit 0 || echo
 
