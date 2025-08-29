@@ -92,13 +92,12 @@ jobs:
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
 
           git add .
-          git commit -F "diff.test" || exit 0
+          git commit -m "Version $version" || exit 0
           git tag "$tag"
           git push origin "$branch"
           git push --tags
           cargo publish
-          truncate -s '<125000' diff.test
-          gh release create "$tag" -F diff.test --latest --title "$version"
+          gh release create "$tag" --latest --title "$version"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
