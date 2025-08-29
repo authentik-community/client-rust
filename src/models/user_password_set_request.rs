@@ -11,6 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+/// UserPasswordSetRequest : Payload to set a users' password directly
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserPasswordSetRequest {
     #[serde(rename = "password")]
@@ -18,6 +19,7 @@ pub struct UserPasswordSetRequest {
 }
 
 impl UserPasswordSetRequest {
+    /// Payload to set a users' password directly
     pub fn new(password: String) -> UserPasswordSetRequest {
         UserPasswordSetRequest { password }
     }
