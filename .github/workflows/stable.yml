@@ -61,6 +61,7 @@ jobs:
         with:
           fetch-depth: 0
           token: "${{ steps.app-token.outputs.token }}"
+          path: client-rust
       - name: Setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
       - name: Fetch schema
@@ -74,6 +75,7 @@ jobs:
             schema.yml
           sparse-checkout-cone-mode: false
       - name: Publish
+        working-directory: client-rust
         run: |
           tag="${{ matrix.tag }}"
           version="$(echo -n "$tag" | sed 's/version\///')"
