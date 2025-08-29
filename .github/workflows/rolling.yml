@@ -27,17 +27,27 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ steps.app-token.outputs.token }}
+          token: "${{ steps.app-token.outputs.token }}"
       - name: Setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Fetch schema
+        uses: actions/checkout@v5
+        with:
+          repository: goauthentik/authentik
+          token: "${{ steps.app-token.outputs.token }}"
+          ref: main
+          path: authentik
+          sparse-checkout: |
+            schema.yml
+          sparse-checkout-cone-mode: false
       - name: Publish
         run: |
           wget -O schema.yml "https://raw.githubusercontent.com/goauthentik/authentik/main/schema.yml"
           version="$(yq -r '.info.version' schema.yml)-$(date +%s)"
           git restore schema.yml
 
-          make ref=main "version=$version"
-          git diff --exit-code >/dev/null && exit 0 || echo
+          make version="$version"
+          [ "$(wc -l < diff.test)" -lt 4 ] && exit 0 || echo
 
           git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
