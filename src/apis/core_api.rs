@@ -509,7 +509,6 @@ pub enum CoreUsersDestroyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CoreUsersImpersonateCreateError {
-    Status401(),
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
