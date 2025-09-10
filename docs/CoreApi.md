@@ -1160,7 +1160,7 @@ Name | Type | Description  | Required | Notes
 > core_groups_remove_user_create(group_uuid, user_account_request)
 
 
-Add user to group
+Remove user from group
 
 ### Parameters
 

@@ -2679,7 +2679,7 @@ pub async fn core_groups_partial_update(
     }
 }
 
-/// Add user to group
+/// Remove user from group
 pub async fn core_groups_remove_user_create(
     configuration: &configuration::Configuration,
     group_uuid: &str,
