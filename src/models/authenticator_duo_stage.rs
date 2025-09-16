@@ -40,13 +40,8 @@ pub struct AuthenticatorDuoStage {
         skip_serializing_if = "Option::is_none"
     )]
     pub configure_flow: Option<Option<uuid::Uuid>>,
-    #[serde(
-        rename = "friendly_name",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub friendly_name: Option<Option<String>>,
+    #[serde(rename = "friendly_name", skip_serializing_if = "Option::is_none")]
+    pub friendly_name: Option<String>,
     #[serde(rename = "client_id")]
     pub client_id: String,
     #[serde(rename = "api_hostname")]

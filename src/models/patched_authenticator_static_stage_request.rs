@@ -26,13 +26,8 @@ pub struct PatchedAuthenticatorStaticStageRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub configure_flow: Option<Option<uuid::Uuid>>,
-    #[serde(
-        rename = "friendly_name",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub friendly_name: Option<Option<String>>,
+    #[serde(rename = "friendly_name", skip_serializing_if = "Option::is_none")]
+    pub friendly_name: Option<String>,
     #[serde(rename = "token_count", skip_serializing_if = "Option::is_none")]
     pub token_count: Option<u32>,
     #[serde(rename = "token_length", skip_serializing_if = "Option::is_none")]

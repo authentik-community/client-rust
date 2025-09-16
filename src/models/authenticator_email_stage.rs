@@ -40,13 +40,8 @@ pub struct AuthenticatorEmailStage {
         skip_serializing_if = "Option::is_none"
     )]
     pub configure_flow: Option<Option<uuid::Uuid>>,
-    #[serde(
-        rename = "friendly_name",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub friendly_name: Option<Option<String>>,
+    #[serde(rename = "friendly_name", skip_serializing_if = "Option::is_none")]
+    pub friendly_name: Option<String>,
     /// When enabled, global Email connection settings will be used and connection settings below will be ignored.
     #[serde(rename = "use_global_settings", skip_serializing_if = "Option::is_none")]
     pub use_global_settings: Option<bool>,
