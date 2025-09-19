@@ -170,8 +170,6 @@ pub enum ModelEnum {
     AuthentikStagesCaptchaCaptchastage,
     #[serde(rename = "authentik_stages_consent.consentstage")]
     AuthentikStagesConsentConsentstage,
-    #[serde(rename = "authentik_stages_consent.userconsent")]
-    AuthentikStagesConsentUserconsent,
     #[serde(rename = "authentik_stages_deny.denystage")]
     AuthentikStagesDenyDenystage,
     #[serde(rename = "authentik_stages_dummy.dummystage")]
@@ -375,7 +373,6 @@ impl std::fmt::Display for ModelEnum {
             }
             Self::AuthentikStagesCaptchaCaptchastage => write!(f, "authentik_stages_captcha.captchastage"),
             Self::AuthentikStagesConsentConsentstage => write!(f, "authentik_stages_consent.consentstage"),
-            Self::AuthentikStagesConsentUserconsent => write!(f, "authentik_stages_consent.userconsent"),
             Self::AuthentikStagesDenyDenystage => write!(f, "authentik_stages_deny.denystage"),
             Self::AuthentikStagesDummyDummystage => write!(f, "authentik_stages_dummy.dummystage"),
             Self::AuthentikStagesEmailEmailstage => write!(f, "authentik_stages_email.emailstage"),

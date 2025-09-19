@@ -82,7 +82,6 @@
 | AuthentikStagesAuthenticatorWebauthnWebauthndevice | authentik_stages_authenticator_webauthn.webauthndevice |
 | AuthentikStagesCaptchaCaptchastage | authentik_stages_captcha.captchastage |
 | AuthentikStagesConsentConsentstage | authentik_stages_consent.consentstage |
-| AuthentikStagesConsentUserconsent | authentik_stages_consent.userconsent |
 | AuthentikStagesDenyDenystage | authentik_stages_deny.denystage |
 | AuthentikStagesDummyDummystage | authentik_stages_dummy.dummystage |
 | AuthentikStagesEmailEmailstage | authentik_stages_email.emailstage |
