@@ -1957,7 +1957,7 @@ Get all user paths
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**search** | Option<**String**> |  |  |
+**search** | Option<**String**> | A search term. |  |
 
 ### Return type
 

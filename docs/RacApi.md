@@ -285,7 +285,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **provider** | Option<**i32**> |  |  |
-**search** | Option<**String**> |  |  |
+**search** | Option<**String**> | A search term. |  |
 **superuser_full_list** | Option<**bool**> |  |  |
 
 ### Return type
