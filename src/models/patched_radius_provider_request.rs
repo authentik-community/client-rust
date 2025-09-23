@@ -41,6 +41,13 @@ pub struct PatchedRadiusProviderRequest {
     /// When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon.
     #[serde(rename = "mfa_support", skip_serializing_if = "Option::is_none")]
     pub mfa_support: Option<bool>,
+    #[serde(
+        rename = "certificate",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub certificate: Option<Option<uuid::Uuid>>,
 }
 
 impl PatchedRadiusProviderRequest {
@@ -55,6 +62,7 @@ impl PatchedRadiusProviderRequest {
             client_networks: None,
             shared_secret: None,
             mfa_support: None,
+            certificate: None,
         }
     }
 }

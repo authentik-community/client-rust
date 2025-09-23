@@ -14,21 +14,27 @@ use serde::{Deserialize, Serialize};
 /// AuthenticatedSessionGeoIp : Get GeoIP Data
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AuthenticatedSessionGeoIp {
-    #[serde(rename = "continent")]
-    pub continent: String,
-    #[serde(rename = "country")]
-    pub country: String,
-    #[serde(rename = "lat")]
-    pub lat: f64,
-    #[serde(rename = "long")]
-    pub long: f64,
+    #[serde(rename = "continent", deserialize_with = "Option::deserialize")]
+    pub continent: Option<String>,
+    #[serde(rename = "country", deserialize_with = "Option::deserialize")]
+    pub country: Option<String>,
+    #[serde(rename = "lat", deserialize_with = "Option::deserialize")]
+    pub lat: Option<f64>,
+    #[serde(rename = "long", deserialize_with = "Option::deserialize")]
+    pub long: Option<f64>,
     #[serde(rename = "city")]
     pub city: String,
 }
 
 impl AuthenticatedSessionGeoIp {
     /// Get GeoIP Data
-    pub fn new(continent: String, country: String, lat: f64, long: f64, city: String) -> AuthenticatedSessionGeoIp {
+    pub fn new(
+        continent: Option<String>,
+        country: Option<String>,
+        lat: Option<f64>,
+        long: Option<f64>,
+        city: String,
+    ) -> AuthenticatedSessionGeoIp {
         AuthenticatedSessionGeoIp {
             continent,
             country,

@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **shared_secret** | Option<**String**> | Shared secret between clients and server to hash packets. | [optional]
 **outpost_set** | **Vec<String>** |  | [readonly]
 **mfa_support** | Option<**bool**> | When enabled, code-based multi-factor authentication can be used by appending a semicolon and the TOTP code to the password. This should only be enabled if all users that will bind to this provider have a TOTP device configured, as otherwise a password may incorrectly be rejected if it contains a semicolon. | [optional]
+**certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

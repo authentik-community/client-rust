@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 /// AuthenticatedSessionAsn : Get ASN Data
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AuthenticatedSessionAsn {
-    #[serde(rename = "asn")]
-    pub asn: i32,
+    #[serde(rename = "asn", deserialize_with = "Option::deserialize")]
+    pub asn: Option<i32>,
     #[serde(rename = "as_org", deserialize_with = "Option::deserialize")]
     pub as_org: Option<String>,
     #[serde(rename = "network", deserialize_with = "Option::deserialize")]
@@ -24,7 +24,7 @@ pub struct AuthenticatedSessionAsn {
 
 impl AuthenticatedSessionAsn {
     /// Get ASN Data
-    pub fn new(asn: i32, as_org: Option<String>, network: Option<String>) -> AuthenticatedSessionAsn {
+    pub fn new(asn: Option<i32>, as_org: Option<String>, network: Option<String>) -> AuthenticatedSessionAsn {
         AuthenticatedSessionAsn { asn, as_org, network }
     }
 }

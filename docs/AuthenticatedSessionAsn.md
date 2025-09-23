@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asn** | **i32** |  | 
+**asn** | Option<**i32**> |  | 
 **as_org** | Option<**String**> |  | 
 **network** | Option<**String**> |  | 
 
