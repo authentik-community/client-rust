@@ -27,7 +27,7 @@ pub struct PatchedEndpointRequest {
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "auth_mode", skip_serializing_if = "Option::is_none")]
-    pub auth_mode: Option<models::AuthModeEnum>,
+    pub auth_mode: Option<models::EndpointAuthModeEnum>,
     #[serde(rename = "maximum_connections", skip_serializing_if = "Option::is_none")]
     pub maximum_connections: Option<i32>,
 }

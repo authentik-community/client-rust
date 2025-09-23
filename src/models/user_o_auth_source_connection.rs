@@ -28,6 +28,8 @@ pub struct UserOAuthSourceConnection {
     pub created: String,
     #[serde(rename = "last_updated")]
     pub last_updated: String,
+    #[serde(rename = "expires", skip_serializing_if = "Option::is_none")]
+    pub expires: Option<String>,
 }
 
 impl UserOAuthSourceConnection {
@@ -49,6 +51,7 @@ impl UserOAuthSourceConnection {
             identifier,
             created,
             last_updated,
+            expires: None,
         }
     }
 }

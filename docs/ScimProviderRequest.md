@@ -9,7 +9,10 @@ Name | Type | Description | Notes
 **property_mappings_group** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> | Property mappings used for group creation/updating. | [optional]
 **url** | **String** | Base URL to SCIM requests, usually ends in /v2 | 
 **verify_certificates** | Option<**bool**> |  | [optional]
-**token** | **String** | Authentication token | 
+**token** | Option<**String**> | Authentication token | [optional]
+**auth_mode** | Option<[**models::ScimAuthenticationModeEnum**](SCIMAuthenticationModeEnum.md)> |  | [optional]
+**auth_oauth** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | OAuth Source used for authentication | [optional]
+**auth_oauth_params** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> | Additional OAuth parameters, such as grant_type | [optional]
 **compatibility_mode** | Option<[**models::CompatibilityModeEnum**](CompatibilityModeEnum.md)> | Alter authentik behavior for vendor-specific SCIM implementations. | [optional]
 **exclude_users_service_account** | Option<**bool**> |  | [optional]
 **filter_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]

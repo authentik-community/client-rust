@@ -27,7 +27,7 @@ pub struct EndpointRequest {
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "auth_mode")]
-    pub auth_mode: models::AuthModeEnum,
+    pub auth_mode: models::EndpointAuthModeEnum,
     #[serde(rename = "maximum_connections", skip_serializing_if = "Option::is_none")]
     pub maximum_connections: Option<i32>,
 }
@@ -39,7 +39,7 @@ impl EndpointRequest {
         provider: i32,
         protocol: models::ProtocolEnum,
         host: String,
-        auth_mode: models::AuthModeEnum,
+        auth_mode: models::EndpointAuthModeEnum,
     ) -> EndpointRequest {
         EndpointRequest {
             name,

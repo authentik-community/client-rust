@@ -29,6 +29,19 @@ pub struct PatchedScimProviderRequest {
     /// Authentication token
     #[serde(rename = "token", skip_serializing_if = "Option::is_none")]
     pub token: Option<String>,
+    #[serde(rename = "auth_mode", skip_serializing_if = "Option::is_none")]
+    pub auth_mode: Option<models::ScimAuthenticationModeEnum>,
+    /// OAuth Source used for authentication
+    #[serde(
+        rename = "auth_oauth",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub auth_oauth: Option<Option<uuid::Uuid>>,
+    /// Additional OAuth parameters, such as grant_type
+    #[serde(rename = "auth_oauth_params", skip_serializing_if = "Option::is_none")]
+    pub auth_oauth_params: Option<std::collections::HashMap<String, serde_json::Value>>,
     /// Alter authentik behavior for vendor-specific SCIM implementations.
     #[serde(rename = "compatibility_mode", skip_serializing_if = "Option::is_none")]
     pub compatibility_mode: Option<models::CompatibilityModeEnum>,
@@ -56,6 +69,9 @@ impl PatchedScimProviderRequest {
             url: None,
             verify_certificates: None,
             token: None,
+            auth_mode: None,
+            auth_oauth: None,
+            auth_oauth_params: None,
             compatibility_mode: None,
             exclude_users_service_account: None,
             filter_group: None,

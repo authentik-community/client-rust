@@ -31,7 +31,7 @@ pub struct Endpoint {
     #[serde(rename = "property_mappings", skip_serializing_if = "Option::is_none")]
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "auth_mode")]
-    pub auth_mode: models::AuthModeEnum,
+    pub auth_mode: models::EndpointAuthModeEnum,
     /// Build actual launch URL (the provider itself does not have one, just individual endpoints)
     #[serde(rename = "launch_url", deserialize_with = "Option::deserialize")]
     pub launch_url: Option<String>,
@@ -48,7 +48,7 @@ impl Endpoint {
         provider_obj: models::RacProvider,
         protocol: models::ProtocolEnum,
         host: String,
-        auth_mode: models::AuthModeEnum,
+        auth_mode: models::EndpointAuthModeEnum,
         launch_url: Option<String>,
     ) -> Endpoint {
         Endpoint {

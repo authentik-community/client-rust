@@ -27,8 +27,21 @@ pub struct ScimProviderRequest {
     #[serde(rename = "verify_certificates", skip_serializing_if = "Option::is_none")]
     pub verify_certificates: Option<bool>,
     /// Authentication token
-    #[serde(rename = "token")]
-    pub token: String,
+    #[serde(rename = "token", skip_serializing_if = "Option::is_none")]
+    pub token: Option<String>,
+    #[serde(rename = "auth_mode", skip_serializing_if = "Option::is_none")]
+    pub auth_mode: Option<models::ScimAuthenticationModeEnum>,
+    /// OAuth Source used for authentication
+    #[serde(
+        rename = "auth_oauth",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub auth_oauth: Option<Option<uuid::Uuid>>,
+    /// Additional OAuth parameters, such as grant_type
+    #[serde(rename = "auth_oauth_params", skip_serializing_if = "Option::is_none")]
+    pub auth_oauth_params: Option<std::collections::HashMap<String, serde_json::Value>>,
     /// Alter authentik behavior for vendor-specific SCIM implementations.
     #[serde(rename = "compatibility_mode", skip_serializing_if = "Option::is_none")]
     pub compatibility_mode: Option<models::CompatibilityModeEnum>,
@@ -48,14 +61,17 @@ pub struct ScimProviderRequest {
 
 impl ScimProviderRequest {
     /// SCIMProvider Serializer
-    pub fn new(name: String, url: String, token: String) -> ScimProviderRequest {
+    pub fn new(name: String, url: String) -> ScimProviderRequest {
         ScimProviderRequest {
             name,
             property_mappings: None,
             property_mappings_group: None,
             url,
             verify_certificates: None,
-            token,
+            token: None,
+            auth_mode: None,
+            auth_oauth: None,
+            auth_oauth_params: None,
             compatibility_mode: None,
             exclude_users_service_account: None,
             filter_group: None,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **host** | **String** |  | 
 **settings** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 **property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**auth_mode** | [**models::AuthModeEnum**](AuthModeEnum.md) |  | 
+**auth_mode** | [**models::EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | 
 **launch_url** | Option<**String**> | Build actual launch URL (the provider itself does not have one, just individual endpoints) | [readonly]
 **maximum_connections** | Option<**i32**> |  | [optional]
 

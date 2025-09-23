@@ -27,6 +27,8 @@ pub struct PatchedUserOAuthSourceConnectionRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub access_token: Option<Option<String>>,
+    #[serde(rename = "expires", skip_serializing_if = "Option::is_none")]
+    pub expires: Option<String>,
 }
 
 impl PatchedUserOAuthSourceConnectionRequest {
@@ -37,6 +39,7 @@ impl PatchedUserOAuthSourceConnectionRequest {
             source: None,
             identifier: None,
             access_token: None,
+            expires: None,
         }
     }
 }

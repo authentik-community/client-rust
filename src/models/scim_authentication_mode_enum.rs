@@ -13,24 +13,24 @@ use serde::{Deserialize, Serialize};
 
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum AuthModeEnum {
-    #[serde(rename = "static")]
-    Static,
-    #[serde(rename = "prompt")]
-    Prompt,
+pub enum ScimAuthenticationModeEnum {
+    #[serde(rename = "token")]
+    Token,
+    #[serde(rename = "oauth")]
+    Oauth,
 }
 
-impl std::fmt::Display for AuthModeEnum {
+impl std::fmt::Display for ScimAuthenticationModeEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Static => write!(f, "static"),
-            Self::Prompt => write!(f, "prompt"),
+            Self::Token => write!(f, "token"),
+            Self::Oauth => write!(f, "oauth"),
         }
     }
 }
 
-impl Default for AuthModeEnum {
-    fn default() -> AuthModeEnum {
-        Self::Static
+impl Default for ScimAuthenticationModeEnum {
+    fn default() -> ScimAuthenticationModeEnum {
+        Self::Token
     }
 }

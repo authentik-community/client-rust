@@ -13,7 +13,6 @@ docs/Application.md
 docs/ApplicationEntitlement.md
 docs/ApplicationEntitlementRequest.md
 docs/ApplicationRequest.md
-docs/AuthModeEnum.md
 docs/AuthTypeEnum.md
 docs/AuthenticatedSession.md
 docs/AuthenticatedSessionAsn.md
@@ -132,6 +131,7 @@ docs/EmailDeviceRequest.md
 docs/EmailStage.md
 docs/EmailStageRequest.md
 docs/Endpoint.md
+docs/EndpointAuthModeEnum.md
 docs/EndpointDevice.md
 docs/EndpointDeviceRequest.md
 docs/EndpointRequest.md
@@ -643,6 +643,7 @@ docs/SamlSourceRequest.md
 docs/Schedule.md
 docs/ScheduleRequest.md
 docs/SchemaApi.md
+docs/ScimAuthenticationModeEnum.md
 docs/ScimMapping.md
 docs/ScimMappingRequest.md
 docs/ScimProvider.md
@@ -813,7 +814,6 @@ src/models/application.rs
 src/models/application_entitlement.rs
 src/models/application_entitlement_request.rs
 src/models/application_request.rs
-src/models/auth_mode_enum.rs
 src/models/auth_type_enum.rs
 src/models/authenticated_session.rs
 src/models/authenticated_session_asn.rs
@@ -929,6 +929,7 @@ src/models/email_device_request.rs
 src/models/email_stage.rs
 src/models/email_stage_request.rs
 src/models/endpoint.rs
+src/models/endpoint_auth_mode_enum.rs
 src/models/endpoint_device.rs
 src/models/endpoint_device_request.rs
 src/models/endpoint_request.rs
@@ -1428,6 +1429,7 @@ src/models/saml_source_property_mapping_request.rs
 src/models/saml_source_request.rs
 src/models/schedule.rs
 src/models/schedule_request.rs
+src/models/scim_authentication_mode_enum.rs
 src/models/scim_mapping.rs
 src/models/scim_mapping_request.rs
 src/models/scim_provider.rs

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **identifier** | **String** |  | 
 **created** | **String** |  | [readonly]
 **last_updated** | **String** |  | [readonly]
+**expires** | Option<**String**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
