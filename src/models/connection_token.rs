@@ -25,7 +25,7 @@ pub struct ConnectionToken {
     #[serde(rename = "endpoint_obj")]
     pub endpoint_obj: models::Endpoint,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl ConnectionToken {
@@ -35,7 +35,7 @@ impl ConnectionToken {
         provider_obj: models::RacProvider,
         endpoint: uuid::Uuid,
         endpoint_obj: models::Endpoint,
-        user: models::GroupMember,
+        user: models::PartialUser,
     ) -> ConnectionToken {
         ConnectionToken {
             pk: None,

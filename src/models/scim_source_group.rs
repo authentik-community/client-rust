@@ -21,7 +21,7 @@ pub struct ScimSourceGroup {
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "group_obj")]
-    pub group_obj: models::UserGroup,
+    pub group_obj: models::PartialGroup,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
     #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
@@ -33,7 +33,7 @@ impl ScimSourceGroup {
     pub fn new(
         external_id: String,
         group: uuid::Uuid,
-        group_obj: models::UserGroup,
+        group_obj: models::PartialGroup,
         source: uuid::Uuid,
     ) -> ScimSourceGroup {
         ScimSourceGroup {

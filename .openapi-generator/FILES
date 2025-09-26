@@ -103,7 +103,6 @@ docs/DenyStage.md
 docs/DenyStageRequest.md
 docs/DetailedCountry.md
 docs/DetailedCountryField.md
-docs/DetailedCountryFieldRequest.md
 docs/Device.md
 docs/DeviceChallenge.md
 docs/DeviceChallengeRequest.md
@@ -192,8 +191,6 @@ docs/GroupKerberosSourceConnectionRequest.md
 docs/GroupLdapSourceConnection.md
 docs/GroupLdapSourceConnectionRequest.md
 docs/GroupMatchingModeEnum.md
-docs/GroupMember.md
-docs/GroupMemberRequest.md
 docs/GroupOAuthSourceConnection.md
 docs/GroupOAuthSourceConnectionRequest.md
 docs/GroupPlexSourceConnection.md
@@ -436,6 +433,8 @@ docs/PaginatedUserWriteStageList.md
 docs/PaginatedWebAuthnDeviceList.md
 docs/PaginatedWebAuthnDeviceTypeList.md
 docs/Pagination.md
+docs/PartialGroup.md
+docs/PartialUser.md
 docs/PasswordChallenge.md
 docs/PasswordChallengeResponseRequest.md
 docs/PasswordExpiryPolicy.md
@@ -694,7 +693,6 @@ docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
-docs/StaticDeviceTokenRequest.md
 docs/SubModeEnum.md
 docs/SyncObjectModelEnum.md
 docs/SyncObjectRequest.md
@@ -736,8 +734,6 @@ docs/UserCreationModeEnum.md
 docs/UserDeleteStage.md
 docs/UserDeleteStageRequest.md
 docs/UserFieldsEnum.md
-docs/UserGroup.md
-docs/UserGroupRequest.md
 docs/UserKerberosSourceConnection.md
 docs/UserKerberosSourceConnectionRequest.md
 docs/UserLdapSourceConnection.md
@@ -776,7 +772,6 @@ docs/VersionHistory.md
 docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
-docs/WebAuthnDeviceTypeRequest.md
 docs/Worker.md
 git_push.sh
 src/apis/admin_api.rs
@@ -901,7 +896,6 @@ src/models/deny_stage.rs
 src/models/deny_stage_request.rs
 src/models/detailed_country.rs
 src/models/detailed_country_field.rs
-src/models/detailed_country_field_request.rs
 src/models/device.rs
 src/models/device_challenge.rs
 src/models/device_challenge_request.rs
@@ -987,8 +981,6 @@ src/models/group_kerberos_source_connection_request.rs
 src/models/group_ldap_source_connection.rs
 src/models/group_ldap_source_connection_request.rs
 src/models/group_matching_mode_enum.rs
-src/models/group_member.rs
-src/models/group_member_request.rs
 src/models/group_o_auth_source_connection.rs
 src/models/group_o_auth_source_connection_request.rs
 src/models/group_plex_source_connection.rs
@@ -1229,6 +1221,8 @@ src/models/paginated_user_write_stage_list.rs
 src/models/paginated_web_authn_device_list.rs
 src/models/paginated_web_authn_device_type_list.rs
 src/models/pagination.rs
+src/models/partial_group.rs
+src/models/partial_user.rs
 src/models/password_challenge.rs
 src/models/password_challenge_response_request.rs
 src/models/password_expiry_policy.rs
@@ -1477,7 +1471,6 @@ src/models/state_enum.rs
 src/models/static_device.rs
 src/models/static_device_request.rs
 src/models/static_device_token.rs
-src/models/static_device_token_request.rs
 src/models/sub_mode_enum.rs
 src/models/sync_object_model_enum.rs
 src/models/sync_object_request.rs
@@ -1517,8 +1510,6 @@ src/models/user_creation_mode_enum.rs
 src/models/user_delete_stage.rs
 src/models/user_delete_stage_request.rs
 src/models/user_fields_enum.rs
-src/models/user_group.rs
-src/models/user_group_request.rs
 src/models/user_kerberos_source_connection.rs
 src/models/user_kerberos_source_connection_request.rs
 src/models/user_ldap_source_connection.rs
@@ -1557,5 +1548,4 @@ src/models/version_history.rs
 src/models/web_authn_device.rs
 src/models/web_authn_device_request.rs
 src/models/web_authn_device_type.rs
-src/models/web_authn_device_type_request.rs
 src/models/worker.rs

@@ -35,7 +35,7 @@ pub struct Group {
     #[serde(rename = "users", skip_serializing_if = "Option::is_none")]
     pub users: Option<Vec<i32>>,
     #[serde(rename = "users_obj", deserialize_with = "Option::deserialize")]
-    pub users_obj: Option<Vec<models::GroupMember>>,
+    pub users_obj: Option<Vec<models::PartialUser>>,
     #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
     pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "roles", skip_serializing_if = "Option::is_none")]
@@ -55,7 +55,7 @@ impl Group {
         num_pk: i32,
         name: String,
         parent_name: Option<String>,
-        users_obj: Option<Vec<models::GroupMember>>,
+        users_obj: Option<Vec<models::PartialUser>>,
         roles_obj: Vec<models::Role>,
         children_obj: Option<Vec<models::GroupChild>>,
     ) -> Group {

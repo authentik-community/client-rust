@@ -40,9 +40,9 @@ pub struct PolicyBinding {
     #[serde(rename = "policy_obj")]
     pub policy_obj: models::Policy,
     #[serde(rename = "group_obj")]
-    pub group_obj: models::Group,
+    pub group_obj: models::PartialGroup,
     #[serde(rename = "user_obj")]
-    pub user_obj: models::User,
+    pub user_obj: models::PartialUser,
     #[serde(rename = "target")]
     pub target: uuid::Uuid,
     /// Negates the outcome of the policy. Messages are unaffected.
@@ -65,8 +65,8 @@ impl PolicyBinding {
     pub fn new(
         pk: uuid::Uuid,
         policy_obj: models::Policy,
-        group_obj: models::Group,
-        user_obj: models::User,
+        group_obj: models::PartialGroup,
+        user_obj: models::PartialUser,
         target: uuid::Uuid,
         order: i32,
     ) -> PolicyBinding {

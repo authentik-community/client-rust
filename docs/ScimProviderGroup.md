@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
 **scim_id** | **String** |  | 
 **group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
-**group_obj** | [**models::UserGroup**](UserGroup.md) |  | [readonly]
+**group_obj** | [**models::PartialGroup**](PartialGroup.md) |  | [readonly]
 **provider** | **i32** |  | 
 **attributes** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | [readonly]
 

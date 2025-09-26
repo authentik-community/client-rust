@@ -20,12 +20,12 @@ pub struct TotpDevice {
     #[serde(rename = "pk")]
     pub pk: i32,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl TotpDevice {
     /// Serializer for totp authenticator devices
-    pub fn new(name: String, pk: i32, user: models::GroupMember) -> TotpDevice {
+    pub fn new(name: String, pk: i32, user: models::PartialUser) -> TotpDevice {
         TotpDevice { name, pk, user }
     }
 }

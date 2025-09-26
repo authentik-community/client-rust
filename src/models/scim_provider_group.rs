@@ -21,7 +21,7 @@ pub struct ScimProviderGroup {
     #[serde(rename = "group")]
     pub group: uuid::Uuid,
     #[serde(rename = "group_obj")]
-    pub group_obj: models::UserGroup,
+    pub group_obj: models::PartialGroup,
     #[serde(rename = "provider")]
     pub provider: i32,
     #[serde(rename = "attributes")]
@@ -34,7 +34,7 @@ impl ScimProviderGroup {
         id: uuid::Uuid,
         scim_id: String,
         group: uuid::Uuid,
-        group_obj: models::UserGroup,
+        group_obj: models::PartialGroup,
         provider: i32,
         attributes: std::collections::HashMap<String, serde_json::Value>,
     ) -> ScimProviderGroup {

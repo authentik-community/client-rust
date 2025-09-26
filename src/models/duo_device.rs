@@ -20,12 +20,12 @@ pub struct DuoDevice {
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl DuoDevice {
     /// Serializer for Duo authenticator devices
-    pub fn new(pk: i32, name: String, user: models::GroupMember) -> DuoDevice {
+    pub fn new(pk: i32, name: String, user: models::PartialUser) -> DuoDevice {
         DuoDevice { pk, name, user }
     }
 }

@@ -22,7 +22,7 @@ pub struct StaticDevice {
     #[serde(rename = "pk")]
     pub pk: i32,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl StaticDevice {
@@ -31,7 +31,7 @@ impl StaticDevice {
         name: String,
         token_set: Vec<models::StaticDeviceToken>,
         pk: i32,
-        user: models::GroupMember,
+        user: models::PartialUser,
     ) -> StaticDevice {
         StaticDevice {
             name,

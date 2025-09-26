@@ -11,9 +11,14 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UserGroupRequest : Simplified Group Serializer for user's groups
+/// PartialGroup : Partial Group Serializer, does not include child relations.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct UserGroupRequest {
+pub struct PartialGroup {
+    #[serde(rename = "pk")]
+    pub pk: uuid::Uuid,
+    /// Get a numerical, int32 ID for the group
+    #[serde(rename = "num_pk")]
+    pub num_pk: i32,
     #[serde(rename = "name")]
     pub name: String,
     /// Users added to this group will be superusers.
@@ -26,17 +31,22 @@ pub struct UserGroupRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub parent: Option<Option<uuid::Uuid>>,
+    #[serde(rename = "parent_name", deserialize_with = "Option::deserialize")]
+    pub parent_name: Option<String>,
     #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
     pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
 }
 
-impl UserGroupRequest {
-    /// Simplified Group Serializer for user's groups
-    pub fn new(name: String) -> UserGroupRequest {
-        UserGroupRequest {
+impl PartialGroup {
+    /// Partial Group Serializer, does not include child relations.
+    pub fn new(pk: uuid::Uuid, num_pk: i32, name: String, parent_name: Option<String>) -> PartialGroup {
+        PartialGroup {
+            pk,
+            num_pk,
             name,
             is_superuser: None,
             parent: None,
+            parent_name,
             attributes: None,
         }
     }

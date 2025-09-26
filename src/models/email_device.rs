@@ -22,12 +22,12 @@ pub struct EmailDevice {
     #[serde(rename = "email")]
     pub email: String,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl EmailDevice {
     /// Serializer for email authenticator devices
-    pub fn new(name: String, pk: i32, email: String, user: models::GroupMember) -> EmailDevice {
+    pub fn new(name: String, pk: i32, email: String, user: models::PartialUser) -> EmailDevice {
         EmailDevice { name, pk, email, user }
     }
 }

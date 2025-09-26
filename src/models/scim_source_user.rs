@@ -21,7 +21,7 @@ pub struct ScimSourceUser {
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "user_obj")]
-    pub user_obj: models::GroupMember,
+    pub user_obj: models::PartialUser,
     #[serde(rename = "source")]
     pub source: uuid::Uuid,
     #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
@@ -30,7 +30,7 @@ pub struct ScimSourceUser {
 
 impl ScimSourceUser {
     /// SCIMSourceUser Serializer
-    pub fn new(external_id: String, user: i32, user_obj: models::GroupMember, source: uuid::Uuid) -> ScimSourceUser {
+    pub fn new(external_id: String, user: i32, user_obj: models::PartialUser, source: uuid::Uuid) -> ScimSourceUser {
         ScimSourceUser {
             id: None,
             external_id,

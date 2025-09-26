@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | Option<**String**> |  | [optional]
 **external_id** | **String** |  | 
 **group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
-**group_obj** | [**models::UserGroup**](UserGroup.md) |  | [readonly]
+**group_obj** | [**models::PartialGroup**](PartialGroup.md) |  | [readonly]
 **source** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 

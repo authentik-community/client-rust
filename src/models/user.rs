@@ -38,7 +38,7 @@ pub struct User {
     #[serde(rename = "groups", skip_serializing_if = "Option::is_none")]
     pub groups: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "groups_obj", deserialize_with = "Option::deserialize")]
-    pub groups_obj: Option<Vec<models::UserGroup>>,
+    pub groups_obj: Option<Vec<models::PartialGroup>>,
     #[serde(rename = "email", skip_serializing_if = "Option::is_none")]
     pub email: Option<String>,
     /// User's avatar, either a http/https URL or a data URI
@@ -68,7 +68,7 @@ impl User {
         name: String,
         date_joined: String,
         is_superuser: bool,
-        groups_obj: Option<Vec<models::UserGroup>>,
+        groups_obj: Option<Vec<models::PartialGroup>>,
         avatar: String,
         uid: String,
         uuid: uuid::Uuid,

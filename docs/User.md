@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **date_joined** | **String** |  | [readonly]
 **is_superuser** | **bool** |  | [readonly]
 **groups** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**groups_obj** | Option<[**Vec<models::UserGroup>**](UserGroup.md)> |  | [readonly]
+**groups_obj** | Option<[**Vec<models::PartialGroup>**](PartialGroup.md)> |  | [readonly]
 **email** | Option<**String**> |  | [optional]
 **avatar** | **String** | User's avatar, either a http/https URL or a data URI | [readonly]
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]

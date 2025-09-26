@@ -11,9 +11,11 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GroupMemberRequest : Stripped down user serializer to show relevant users for groups
+/// PartialUser : Partial User Serializer, does not include child relations.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct GroupMemberRequest {
+pub struct PartialUser {
+    #[serde(rename = "pk")]
+    pub pk: i32,
     /// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
     #[serde(rename = "username")]
     pub username: String,
@@ -34,18 +36,22 @@ pub struct GroupMemberRequest {
     pub email: Option<String>,
     #[serde(rename = "attributes", skip_serializing_if = "Option::is_none")]
     pub attributes: Option<std::collections::HashMap<String, serde_json::Value>>,
+    #[serde(rename = "uid")]
+    pub uid: String,
 }
 
-impl GroupMemberRequest {
-    /// Stripped down user serializer to show relevant users for groups
-    pub fn new(username: String, name: String) -> GroupMemberRequest {
-        GroupMemberRequest {
+impl PartialUser {
+    /// Partial User Serializer, does not include child relations.
+    pub fn new(pk: i32, username: String, name: String, uid: String) -> PartialUser {
+        PartialUser {
+            pk,
             username,
             name,
             is_active: None,
             last_login: None,
             email: None,
             attributes: None,
+            uid,
         }
     }
 }

@@ -28,7 +28,7 @@ pub struct Invitation {
     #[serde(rename = "fixed_data", skip_serializing_if = "Option::is_none")]
     pub fixed_data: Option<std::collections::HashMap<String, serde_json::Value>>,
     #[serde(rename = "created_by")]
-    pub created_by: models::GroupMember,
+    pub created_by: models::PartialUser,
     /// When enabled, the invitation will be deleted after usage.
     #[serde(rename = "single_use", skip_serializing_if = "Option::is_none")]
     pub single_use: Option<bool>,
@@ -46,7 +46,7 @@ pub struct Invitation {
 
 impl Invitation {
     /// Invitation Serializer
-    pub fn new(pk: uuid::Uuid, name: String, created_by: models::GroupMember, flow_obj: models::Flow) -> Invitation {
+    pub fn new(pk: uuid::Uuid, name: String, created_by: models::PartialUser, flow_obj: models::Flow) -> Invitation {
         Invitation {
             pk,
             name,

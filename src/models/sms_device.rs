@@ -22,12 +22,12 @@ pub struct SmsDevice {
     #[serde(rename = "phone_number")]
     pub phone_number: String,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl SmsDevice {
     /// Serializer for sms authenticator devices
-    pub fn new(name: String, pk: i32, phone_number: String, user: models::GroupMember) -> SmsDevice {
+    pub fn new(name: String, pk: i32, phone_number: String, user: models::PartialUser) -> SmsDevice {
         SmsDevice {
             name,
             pk,

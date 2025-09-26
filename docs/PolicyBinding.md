@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **user** | Option<**i32**> |  | [optional]
 **policy_obj** | [**models::Policy**](Policy.md) |  | [readonly]
-**group_obj** | [**models::Group**](Group.md) |  | [readonly]
-**user_obj** | [**models::User**](User.md) |  | [readonly]
+**group_obj** | [**models::PartialGroup**](PartialGroup.md) |  | [readonly]
+**user_obj** | [**models::PartialUser**](PartialUser.md) |  | [readonly]
 **target** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **negate** | Option<**bool**> | Negates the outcome of the policy. Messages are unaffected. | [optional]
 **enabled** | Option<**bool**> |  | [optional]

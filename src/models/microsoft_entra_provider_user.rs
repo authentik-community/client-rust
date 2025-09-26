@@ -21,7 +21,7 @@ pub struct MicrosoftEntraProviderUser {
     #[serde(rename = "user")]
     pub user: i32,
     #[serde(rename = "user_obj")]
-    pub user_obj: models::GroupMember,
+    pub user_obj: models::PartialUser,
     #[serde(rename = "provider")]
     pub provider: i32,
     #[serde(rename = "attributes")]
@@ -34,7 +34,7 @@ impl MicrosoftEntraProviderUser {
         id: uuid::Uuid,
         microsoft_id: String,
         user: i32,
-        user_obj: models::GroupMember,
+        user_obj: models::PartialUser,
         provider: i32,
         attributes: std::collections::HashMap<String, serde_json::Value>,
     ) -> MicrosoftEntraProviderUser {

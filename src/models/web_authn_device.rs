@@ -25,7 +25,7 @@ pub struct WebAuthnDevice {
     #[serde(rename = "aaguid")]
     pub aaguid: String,
     #[serde(rename = "user")]
-    pub user: models::GroupMember,
+    pub user: models::PartialUser,
 }
 
 impl WebAuthnDevice {
@@ -36,7 +36,7 @@ impl WebAuthnDevice {
         created_on: String,
         device_type: Option<models::WebAuthnDeviceType>,
         aaguid: String,
-        user: models::GroupMember,
+        user: models::PartialUser,
     ) -> WebAuthnDevice {
         WebAuthnDevice {
             pk,
