@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **signature_algorithm** | Option<[**models::SignatureAlgorithmEnum**](SignatureAlgorithmEnum.md)> |  | [optional]
 **temporary_user_delete_after** | Option<**String**> | Time offset when temporary users should be deleted. This only applies if your IDP uses the NameID Format 'transient', and the user doesn't log out manually. (Format: hours=1;minutes=2;seconds=3). | [optional]
 **encryption_kp** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | When selected, incoming assertions are encrypted by the IdP using the public key of the encryption keypair. The assertion is decrypted by the SP using the the private key. | [optional]
+**signed_assertion** | Option<**bool**> |  | [optional]
+**signed_response** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

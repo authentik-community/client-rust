@@ -6369,6 +6369,8 @@ pub async fn sources_saml_list(
     pre_authentication_flow: Option<&str>,
     search: Option<&str>,
     signature_algorithm: Option<&str>,
+    signed_assertion: Option<bool>,
+    signed_response: Option<bool>,
     signing_kp: Option<&str>,
     slo_url: Option<&str>,
     slug: Option<&str>,
@@ -6396,6 +6398,8 @@ pub async fn sources_saml_list(
     let p_query_pre_authentication_flow = pre_authentication_flow;
     let p_query_search = search;
     let p_query_signature_algorithm = signature_algorithm;
+    let p_query_signed_assertion = signed_assertion;
+    let p_query_signed_response = signed_response;
     let p_query_signing_kp = signing_kp;
     let p_query_slo_url = slo_url;
     let p_query_slug = slug;
@@ -6460,6 +6464,12 @@ pub async fn sources_saml_list(
     }
     if let Some(ref param_value) = p_query_signature_algorithm {
         req_builder = req_builder.query(&[("signature_algorithm", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_signed_assertion {
+        req_builder = req_builder.query(&[("signed_assertion", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_signed_response {
+        req_builder = req_builder.query(&[("signed_response", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_signing_kp {
         req_builder = req_builder.query(&[("signing_kp", &param_value.to_string())]);

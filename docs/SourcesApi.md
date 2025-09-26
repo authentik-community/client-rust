@@ -2846,7 +2846,7 @@ Name | Type | Description  | Required | Notes
 
 ## sources_saml_list
 
-> models::PaginatedSamlSourceList sources_saml_list(allow_idp_initiated, authentication_flow, binding_type, digest_algorithm, enabled, enrollment_flow, issuer, managed, name, name_id_policy, ordering, page, page_size, pbm_uuid, policy_engine_mode, pre_authentication_flow, search, signature_algorithm, signing_kp, slo_url, slug, sso_url, temporary_user_delete_after, user_matching_mode, verification_kp)
+> models::PaginatedSamlSourceList sources_saml_list(allow_idp_initiated, authentication_flow, binding_type, digest_algorithm, enabled, enrollment_flow, issuer, managed, name, name_id_policy, ordering, page, page_size, pbm_uuid, policy_engine_mode, pre_authentication_flow, search, signature_algorithm, signed_assertion, signed_response, signing_kp, slo_url, slug, sso_url, temporary_user_delete_after, user_matching_mode, verification_kp)
 
 
 SAMLSource Viewset
@@ -2874,6 +2874,8 @@ Name | Type | Description  | Required | Notes
 **pre_authentication_flow** | Option<**uuid::Uuid**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **signature_algorithm** | Option<**String**> |  |  |
+**signed_assertion** | Option<**bool**> |  |  |
+**signed_response** | Option<**bool**> |  |  |
 **signing_kp** | Option<**uuid::Uuid**> |  |  |
 **slo_url** | Option<**String**> |  |  |
 **slug** | Option<**String**> |  |  |

@@ -108,6 +108,10 @@ pub struct SamlSourceRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub encryption_kp: Option<Option<uuid::Uuid>>,
+    #[serde(rename = "signed_assertion", skip_serializing_if = "Option::is_none")]
+    pub signed_assertion: Option<bool>,
+    #[serde(rename = "signed_response", skip_serializing_if = "Option::is_none")]
+    pub signed_response: Option<bool>,
 }
 
 impl SamlSourceRequest {
@@ -138,6 +142,8 @@ impl SamlSourceRequest {
             signature_algorithm: None,
             temporary_user_delete_after: None,
             encryption_kp: None,
+            signed_assertion: None,
+            signed_response: None,
         }
     }
 }
