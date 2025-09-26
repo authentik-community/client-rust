@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **access_code_validity** | Option<**String**> | Access codes not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **access_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **refresh_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
+**refresh_token_threshold** | Option<**String**> | When refreshing a token, if the refresh token is valid for less than this duration, it will be renewed. When set to seconds=0, token will always be renewed. (Format: hours=1;minutes=2;seconds=3). | [optional]
 **include_claims_in_id_token** | Option<**bool**> | Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint. | [optional]
 **signing_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to sign the tokens. | [optional]
 **encryption_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional]

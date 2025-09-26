@@ -74,6 +74,9 @@ pub struct OAuth2Provider {
     /// Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3).
     #[serde(rename = "refresh_token_validity", skip_serializing_if = "Option::is_none")]
     pub refresh_token_validity: Option<String>,
+    /// When refreshing a token, if the refresh token is valid for less than this duration, it will be renewed. When set to seconds=0, token will always be renewed. (Format: hours=1;minutes=2;seconds=3).
+    #[serde(rename = "refresh_token_threshold", skip_serializing_if = "Option::is_none")]
+    pub refresh_token_threshold: Option<String>,
     /// Include User claims from scopes in the id_token, for applications that don't access the userinfo endpoint.
     #[serde(rename = "include_claims_in_id_token", skip_serializing_if = "Option::is_none")]
     pub include_claims_in_id_token: Option<bool>,
@@ -147,6 +150,7 @@ impl OAuth2Provider {
             access_code_validity: None,
             access_token_validity: None,
             refresh_token_validity: None,
+            refresh_token_threshold: None,
             include_claims_in_id_token: None,
             signing_key: None,
             encryption_key: None,
