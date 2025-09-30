@@ -11,6 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+/// UserServiceAccountRequest : Payload to create a service account
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UserServiceAccountRequest {
     #[serde(rename = "name")]
@@ -25,6 +26,7 @@ pub struct UserServiceAccountRequest {
 }
 
 impl UserServiceAccountRequest {
+    /// Payload to create a service account
     pub fn new(name: String) -> UserServiceAccountRequest {
         UserServiceAccountRequest {
             name,
