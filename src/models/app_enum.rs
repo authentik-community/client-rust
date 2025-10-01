@@ -80,6 +80,8 @@ pub enum AppEnum {
     AuthentikSourcesSaml,
     #[serde(rename = "authentik.sources.scim")]
     AuthentikSourcesScim,
+    #[serde(rename = "authentik.sources.telegram")]
+    AuthentikSourcesTelegram,
     #[serde(rename = "authentik.stages.authenticator")]
     AuthentikStagesAuthenticator,
     #[serde(rename = "authentik.stages.authenticator_duo")]
@@ -190,6 +192,7 @@ impl std::fmt::Display for AppEnum {
             Self::AuthentikSourcesPlex => write!(f, "authentik.sources.plex"),
             Self::AuthentikSourcesSaml => write!(f, "authentik.sources.saml"),
             Self::AuthentikSourcesScim => write!(f, "authentik.sources.scim"),
+            Self::AuthentikSourcesTelegram => write!(f, "authentik.sources.telegram"),
             Self::AuthentikStagesAuthenticator => write!(f, "authentik.stages.authenticator"),
             Self::AuthentikStagesAuthenticatorDuo => write!(f, "authentik.stages.authenticator_duo"),
             Self::AuthentikStagesAuthenticatorEmail => write!(f, "authentik.stages.authenticator_email"),

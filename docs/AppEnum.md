@@ -37,6 +37,7 @@
 | AuthentikSourcesPlex | authentik.sources.plex |
 | AuthentikSourcesSaml | authentik.sources.saml |
 | AuthentikSourcesScim | authentik.sources.scim |
+| AuthentikSourcesTelegram | authentik.sources.telegram |
 | AuthentikStagesAuthenticator | authentik.stages.authenticator |
 | AuthentikStagesAuthenticatorDuo | authentik.stages.authenticator_duo |
 | AuthentikStagesAuthenticatorEmail | authentik.stages.authenticator_email |

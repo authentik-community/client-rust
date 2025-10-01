@@ -53,6 +53,13 @@ Method | HTTP request | Description
 [**sources_group_connections_saml_retrieve**](SourcesApi.md#sources_group_connections_saml_retrieve) | **GET** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_update**](SourcesApi.md#sources_group_connections_saml_update) | **PUT** /sources/group_connections/saml/{id}/ | 
 [**sources_group_connections_saml_used_by_list**](SourcesApi.md#sources_group_connections_saml_used_by_list) | **GET** /sources/group_connections/saml/{id}/used_by/ | 
+[**sources_group_connections_telegram_create**](SourcesApi.md#sources_group_connections_telegram_create) | **POST** /sources/group_connections/telegram/ | 
+[**sources_group_connections_telegram_destroy**](SourcesApi.md#sources_group_connections_telegram_destroy) | **DELETE** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_list**](SourcesApi.md#sources_group_connections_telegram_list) | **GET** /sources/group_connections/telegram/ | 
+[**sources_group_connections_telegram_partial_update**](SourcesApi.md#sources_group_connections_telegram_partial_update) | **PATCH** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_retrieve**](SourcesApi.md#sources_group_connections_telegram_retrieve) | **GET** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_update**](SourcesApi.md#sources_group_connections_telegram_update) | **PUT** /sources/group_connections/telegram/{id}/ | 
+[**sources_group_connections_telegram_used_by_list**](SourcesApi.md#sources_group_connections_telegram_used_by_list) | **GET** /sources/group_connections/telegram/{id}/used_by/ | 
 [**sources_kerberos_create**](SourcesApi.md#sources_kerberos_create) | **POST** /sources/kerberos/ | 
 [**sources_kerberos_destroy**](SourcesApi.md#sources_kerberos_destroy) | **DELETE** /sources/kerberos/{slug}/ | 
 [**sources_kerberos_list**](SourcesApi.md#sources_kerberos_list) | **GET** /sources/kerberos/ | 
@@ -116,6 +123,13 @@ Method | HTTP request | Description
 [**sources_scim_users_retrieve**](SourcesApi.md#sources_scim_users_retrieve) | **GET** /sources/scim_users/{id}/ | 
 [**sources_scim_users_update**](SourcesApi.md#sources_scim_users_update) | **PUT** /sources/scim_users/{id}/ | 
 [**sources_scim_users_used_by_list**](SourcesApi.md#sources_scim_users_used_by_list) | **GET** /sources/scim_users/{id}/used_by/ | 
+[**sources_telegram_create**](SourcesApi.md#sources_telegram_create) | **POST** /sources/telegram/ | 
+[**sources_telegram_destroy**](SourcesApi.md#sources_telegram_destroy) | **DELETE** /sources/telegram/{slug}/ | 
+[**sources_telegram_list**](SourcesApi.md#sources_telegram_list) | **GET** /sources/telegram/ | 
+[**sources_telegram_partial_update**](SourcesApi.md#sources_telegram_partial_update) | **PATCH** /sources/telegram/{slug}/ | 
+[**sources_telegram_retrieve**](SourcesApi.md#sources_telegram_retrieve) | **GET** /sources/telegram/{slug}/ | 
+[**sources_telegram_update**](SourcesApi.md#sources_telegram_update) | **PUT** /sources/telegram/{slug}/ | 
+[**sources_telegram_used_by_list**](SourcesApi.md#sources_telegram_used_by_list) | **GET** /sources/telegram/{slug}/used_by/ | 
 [**sources_user_connections_all_destroy**](SourcesApi.md#sources_user_connections_all_destroy) | **DELETE** /sources/user_connections/all/{id}/ | 
 [**sources_user_connections_all_list**](SourcesApi.md#sources_user_connections_all_list) | **GET** /sources/user_connections/all/ | 
 [**sources_user_connections_all_partial_update**](SourcesApi.md#sources_user_connections_all_partial_update) | **PATCH** /sources/user_connections/all/{id}/ | 
@@ -157,6 +171,13 @@ Method | HTTP request | Description
 [**sources_user_connections_saml_retrieve**](SourcesApi.md#sources_user_connections_saml_retrieve) | **GET** /sources/user_connections/saml/{id}/ | 
 [**sources_user_connections_saml_update**](SourcesApi.md#sources_user_connections_saml_update) | **PUT** /sources/user_connections/saml/{id}/ | 
 [**sources_user_connections_saml_used_by_list**](SourcesApi.md#sources_user_connections_saml_used_by_list) | **GET** /sources/user_connections/saml/{id}/used_by/ | 
+[**sources_user_connections_telegram_create**](SourcesApi.md#sources_user_connections_telegram_create) | **POST** /sources/user_connections/telegram/ | 
+[**sources_user_connections_telegram_destroy**](SourcesApi.md#sources_user_connections_telegram_destroy) | **DELETE** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_list**](SourcesApi.md#sources_user_connections_telegram_list) | **GET** /sources/user_connections/telegram/ | 
+[**sources_user_connections_telegram_partial_update**](SourcesApi.md#sources_user_connections_telegram_partial_update) | **PATCH** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_retrieve**](SourcesApi.md#sources_user_connections_telegram_retrieve) | **GET** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_update**](SourcesApi.md#sources_user_connections_telegram_update) | **PUT** /sources/user_connections/telegram/{id}/ | 
+[**sources_user_connections_telegram_used_by_list**](SourcesApi.md#sources_user_connections_telegram_used_by_list) | **GET** /sources/user_connections/telegram/{id}/used_by/ | 
 
 
 
@@ -1659,6 +1680,223 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Group SAML Source Connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_create
+
+> models::GroupTelegramSourceConnection sources_group_connections_telegram_create(group_telegram_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group_telegram_source_connection_request** | [**GroupTelegramSourceConnectionRequest**](GroupTelegramSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_destroy
+
+> sources_group_connections_telegram_destroy(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Telegram Source Connection. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_list
+
+> models::PaginatedGroupTelegramSourceConnectionList sources_group_connections_telegram_list(group, ordering, page, page_size, search, source__slug)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**group** | Option<**uuid::Uuid**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**source__slug** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::PaginatedGroupTelegramSourceConnectionList**](PaginatedGroupTelegramSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_partial_update
+
+> models::GroupTelegramSourceConnection sources_group_connections_telegram_partial_update(id, patched_group_telegram_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Telegram Source Connection. | [required] |
+**patched_group_telegram_source_connection_request** | Option<[**PatchedGroupTelegramSourceConnectionRequest**](PatchedGroupTelegramSourceConnectionRequest.md)> |  |  |
+
+### Return type
+
+[**models::GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_retrieve
+
+> models::GroupTelegramSourceConnection sources_group_connections_telegram_retrieve(id)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Telegram Source Connection. | [required] |
+
+### Return type
+
+[**models::GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_update
+
+> models::GroupTelegramSourceConnection sources_group_connections_telegram_update(id, group_telegram_source_connection_request)
+
+
+Group-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Telegram Source Connection. | [required] |
+**group_telegram_source_connection_request** | [**GroupTelegramSourceConnectionRequest**](GroupTelegramSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GroupTelegramSourceConnection**](GroupTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_group_connections_telegram_used_by_list
+
+> Vec<models::UsedBy> sources_group_connections_telegram_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this Group Telegram Source Connection. | [required] |
 
 ### Return type
 
@@ -3706,6 +3944,232 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## sources_telegram_create
+
+> models::TelegramSource sources_telegram_create(telegram_source_request)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**telegram_source_request** | [**TelegramSourceRequest**](TelegramSourceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_destroy
+
+> sources_telegram_destroy(slug)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_list
+
+> models::PaginatedTelegramSourceList sources_telegram_list(authentication_flow, bot_username, enabled, enrollment_flow, group_matching_mode, name, ordering, page, page_size, pbm_uuid, policy_engine_mode, request_message_access, search, slug, user_matching_mode)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**authentication_flow** | Option<**uuid::Uuid**> |  |  |
+**bot_username** | Option<**String**> |  |  |
+**enabled** | Option<**bool**> |  |  |
+**enrollment_flow** | Option<**uuid::Uuid**> |  |  |
+**group_matching_mode** | Option<**String**> | How the source determines if an existing group should be used or a new group created.   |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**pbm_uuid** | Option<**uuid::Uuid**> |  |  |
+**policy_engine_mode** | Option<**String**> |  |  |
+**request_message_access** | Option<**bool**> |  |  |
+**search** | Option<**String**> | A search term. |  |
+**slug** | Option<**String**> |  |  |
+**user_matching_mode** | Option<**String**> | How the source determines if an existing user should be authenticated or a new user enrolled.   |  |
+
+### Return type
+
+[**models::PaginatedTelegramSourceList**](PaginatedTelegramSourceList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_partial_update
+
+> models::TelegramSource sources_telegram_partial_update(slug, patched_telegram_source_request)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+**patched_telegram_source_request** | Option<[**PatchedTelegramSourceRequest**](PatchedTelegramSourceRequest.md)> |  |  |
+
+### Return type
+
+[**models::TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_retrieve
+
+> models::TelegramSource sources_telegram_retrieve(slug)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+[**models::TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_update
+
+> models::TelegramSource sources_telegram_update(slug, telegram_source_request)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+**telegram_source_request** | [**TelegramSourceRequest**](TelegramSourceRequest.md) |  | [required] |
+
+### Return type
+
+[**models::TelegramSource**](TelegramSource.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_used_by_list
+
+> Vec<models::UsedBy> sources_telegram_used_by_list(slug)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## sources_user_connections_all_destroy
 
 > sources_user_connections_all_destroy(id)
@@ -4961,6 +5425,223 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this User SAML Source Connection. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_create
+
+> models::UserTelegramSourceConnection sources_user_connections_telegram_create(user_telegram_source_connection_request)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**user_telegram_source_connection_request** | [**UserTelegramSourceConnectionRequest**](UserTelegramSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_destroy
+
+> sources_user_connections_telegram_destroy(id)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Telegram Source Connection. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_list
+
+> models::PaginatedUserTelegramSourceConnectionList sources_user_connections_telegram_list(ordering, page, page_size, search, source__slug, user)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+**source__slug** | Option<**String**> |  |  |
+**user** | Option<**i32**> |  |  |
+
+### Return type
+
+[**models::PaginatedUserTelegramSourceConnectionList**](PaginatedUserTelegramSourceConnectionList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_partial_update
+
+> models::UserTelegramSourceConnection sources_user_connections_telegram_partial_update(id, patched_user_telegram_source_connection_request)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Telegram Source Connection. | [required] |
+**patched_user_telegram_source_connection_request** | Option<[**PatchedUserTelegramSourceConnectionRequest**](PatchedUserTelegramSourceConnectionRequest.md)> |  |  |
+
+### Return type
+
+[**models::UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_retrieve
+
+> models::UserTelegramSourceConnection sources_user_connections_telegram_retrieve(id)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Telegram Source Connection. | [required] |
+
+### Return type
+
+[**models::UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_update
+
+> models::UserTelegramSourceConnection sources_user_connections_telegram_update(id, user_telegram_source_connection_request)
+
+
+User-source connection Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Telegram Source Connection. | [required] |
+**user_telegram_source_connection_request** | [**UserTelegramSourceConnectionRequest**](UserTelegramSourceConnectionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_user_connections_telegram_used_by_list
+
+> Vec<models::UsedBy> sources_user_connections_telegram_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this User Telegram Source Connection. | [required] |
 
 ### Return type
 

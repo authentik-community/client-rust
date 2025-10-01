@@ -108,6 +108,13 @@ Method | HTTP request | Description
 [**propertymappings_source_scim_retrieve**](PropertymappingsApi.md#propertymappings_source_scim_retrieve) | **GET** /propertymappings/source/scim/{pm_uuid}/ | 
 [**propertymappings_source_scim_update**](PropertymappingsApi.md#propertymappings_source_scim_update) | **PUT** /propertymappings/source/scim/{pm_uuid}/ | 
 [**propertymappings_source_scim_used_by_list**](PropertymappingsApi.md#propertymappings_source_scim_used_by_list) | **GET** /propertymappings/source/scim/{pm_uuid}/used_by/ | 
+[**propertymappings_source_telegram_create**](PropertymappingsApi.md#propertymappings_source_telegram_create) | **POST** /propertymappings/source/telegram/ | 
+[**propertymappings_source_telegram_destroy**](PropertymappingsApi.md#propertymappings_source_telegram_destroy) | **DELETE** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_list**](PropertymappingsApi.md#propertymappings_source_telegram_list) | **GET** /propertymappings/source/telegram/ | 
+[**propertymappings_source_telegram_partial_update**](PropertymappingsApi.md#propertymappings_source_telegram_partial_update) | **PATCH** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_retrieve**](PropertymappingsApi.md#propertymappings_source_telegram_retrieve) | **GET** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_update**](PropertymappingsApi.md#propertymappings_source_telegram_update) | **PUT** /propertymappings/source/telegram/{pm_uuid}/ | 
+[**propertymappings_source_telegram_used_by_list**](PropertymappingsApi.md#propertymappings_source_telegram_used_by_list) | **GET** /propertymappings/source/telegram/{pm_uuid}/used_by/ | 
 
 
 
@@ -3333,6 +3340,224 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **pm_uuid** | **uuid::Uuid** | A UUID string identifying this SCIM Source Property Mapping. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_create
+
+> models::TelegramSourcePropertyMapping propertymappings_source_telegram_create(telegram_source_property_mapping_request)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**telegram_source_property_mapping_request** | [**TelegramSourcePropertyMappingRequest**](TelegramSourcePropertyMappingRequest.md) |  | [required] |
+
+### Return type
+
+[**models::TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_destroy
+
+> propertymappings_source_telegram_destroy(pm_uuid)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Telegram Source Property Mapping. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_list
+
+> models::PaginatedTelegramSourcePropertyMappingList propertymappings_source_telegram_list(managed, managed__isnull, name, ordering, page, page_size, search)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**managed** | Option<[**Vec<String>**](String.md)> |  |  |
+**managed__isnull** | Option<**bool**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedTelegramSourcePropertyMappingList**](PaginatedTelegramSourcePropertyMappingList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_partial_update
+
+> models::TelegramSourcePropertyMapping propertymappings_source_telegram_partial_update(pm_uuid, patched_telegram_source_property_mapping_request)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Telegram Source Property Mapping. | [required] |
+**patched_telegram_source_property_mapping_request** | Option<[**PatchedTelegramSourcePropertyMappingRequest**](PatchedTelegramSourcePropertyMappingRequest.md)> |  |  |
+
+### Return type
+
+[**models::TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_retrieve
+
+> models::TelegramSourcePropertyMapping propertymappings_source_telegram_retrieve(pm_uuid)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Telegram Source Property Mapping. | [required] |
+
+### Return type
+
+[**models::TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_update
+
+> models::TelegramSourcePropertyMapping propertymappings_source_telegram_update(pm_uuid, telegram_source_property_mapping_request)
+
+
+TelegramSourcePropertyMapping Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Telegram Source Property Mapping. | [required] |
+**telegram_source_property_mapping_request** | [**TelegramSourcePropertyMappingRequest**](TelegramSourcePropertyMappingRequest.md) |  | [required] |
+
+### Return type
+
+[**models::TelegramSourcePropertyMapping**](TelegramSourcePropertyMapping.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## propertymappings_source_telegram_used_by_list
+
+> Vec<models::UsedBy> propertymappings_source_telegram_used_by_list(pm_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**pm_uuid** | **uuid::Uuid** | A UUID string identifying this Telegram Source Property Mapping. | [required] |
 
 ### Return type
 

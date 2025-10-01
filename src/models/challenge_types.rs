@@ -64,6 +64,8 @@ pub enum ChallengeTypes {
     AkStageSessionEnd(models::SessionEndChallenge),
     #[serde(rename = "xak-flow-shell")]
     XakFlowShell(models::ShellChallenge),
+    #[serde(rename = "ak-source-telegram")]
+    AkSourceTelegram(models::TelegramLoginChallenge),
     #[serde(rename = "ak-stage-user-login")]
     AkStageUserLogin(models::UserLoginChallenge),
 }

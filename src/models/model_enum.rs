@@ -140,6 +140,14 @@ pub enum ModelEnum {
     AuthentikSourcesScimScimsource,
     #[serde(rename = "authentik_sources_scim.scimsourcepropertymapping")]
     AuthentikSourcesScimScimsourcepropertymapping,
+    #[serde(rename = "authentik_sources_telegram.telegramsource")]
+    AuthentikSourcesTelegramTelegramsource,
+    #[serde(rename = "authentik_sources_telegram.telegramsourcepropertymapping")]
+    AuthentikSourcesTelegramTelegramsourcepropertymapping,
+    #[serde(rename = "authentik_sources_telegram.usertelegramsourceconnection")]
+    AuthentikSourcesTelegramUsertelegramsourceconnection,
+    #[serde(rename = "authentik_sources_telegram.grouptelegramsourceconnection")]
+    AuthentikSourcesTelegramGrouptelegramsourceconnection,
     #[serde(rename = "authentik_stages_authenticator_duo.authenticatorduostage")]
     AuthentikStagesAuthenticatorDuoAuthenticatorduostage,
     #[serde(rename = "authentik_stages_authenticator_duo.duodevice")]
@@ -335,6 +343,16 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikSourcesScimScimsource => write!(f, "authentik_sources_scim.scimsource"),
             Self::AuthentikSourcesScimScimsourcepropertymapping => {
                 write!(f, "authentik_sources_scim.scimsourcepropertymapping")
+            }
+            Self::AuthentikSourcesTelegramTelegramsource => write!(f, "authentik_sources_telegram.telegramsource"),
+            Self::AuthentikSourcesTelegramTelegramsourcepropertymapping => {
+                write!(f, "authentik_sources_telegram.telegramsourcepropertymapping")
+            }
+            Self::AuthentikSourcesTelegramUsertelegramsourceconnection => {
+                write!(f, "authentik_sources_telegram.usertelegramsourceconnection")
+            }
+            Self::AuthentikSourcesTelegramGrouptelegramsourceconnection => {
+                write!(f, "authentik_sources_telegram.grouptelegramsourceconnection")
             }
             Self::AuthentikStagesAuthenticatorDuoAuthenticatorduostage => {
                 write!(f, "authentik_stages_authenticator_duo.authenticatorduostage")

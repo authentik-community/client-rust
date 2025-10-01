@@ -949,6 +949,69 @@ pub enum PropertymappingsSourceScimUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`propertymappings_source_telegram_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`propertymappings_source_telegram_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PropertymappingsSourceTelegramUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// PropertyMapping Viewset
 pub async fn propertymappings_all_destroy(
     configuration: &configuration::Configuration,
@@ -6864,6 +6927,400 @@ pub async fn propertymappings_source_scim_used_by_list(
     } else {
         let content = resp.text().await?;
         let entity: Option<PropertymappingsSourceScimUsedByListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_create(
+    configuration: &configuration::Configuration,
+    telegram_source_property_mapping_request: models::TelegramSourcePropertyMappingRequest,
+) -> Result<models::TelegramSourcePropertyMapping, Error<PropertymappingsSourceTelegramCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_telegram_source_property_mapping_request = telegram_source_property_mapping_request;
+
+    let uri_str = format!("{}/propertymappings/source/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_telegram_source_property_mapping_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramCreateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_destroy(
+    configuration: &configuration::Configuration,
+    pm_uuid: &str,
+) -> Result<(), Error<PropertymappingsSourceTelegramDestroyError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_pm_uuid = pm_uuid;
+
+    let uri_str = format!(
+        "{}/propertymappings/source/telegram/{pm_uuid}/",
+        configuration.base_path,
+        pm_uuid = crate::apis::urlencode(p_path_pm_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramDestroyError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_list(
+    configuration: &configuration::Configuration,
+    managed: Option<Vec<String>>,
+    managed__isnull: Option<bool>,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+) -> Result<models::PaginatedTelegramSourcePropertyMappingList, Error<PropertymappingsSourceTelegramListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_managed = managed;
+    let p_query_managed__isnull = managed__isnull;
+    let p_query_name = name;
+    let p_query_ordering = ordering;
+    let p_query_page = page;
+    let p_query_page_size = page_size;
+    let p_query_search = search;
+
+    let uri_str = format!("{}/propertymappings/source/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref param_value) = p_query_managed {
+        req_builder = match "multi" {
+            "multi" => req_builder.query(
+                &param_value
+                    .into_iter()
+                    .map(|p| ("managed".to_owned(), p.to_string()))
+                    .collect::<Vec<(std::string::String, std::string::String)>>(),
+            ),
+            _ => req_builder.query(&[(
+                "managed",
+                &param_value
+                    .into_iter()
+                    .map(|p| p.to_string())
+                    .collect::<Vec<String>>()
+                    .join(",")
+                    .to_string(),
+            )]),
+        };
+    }
+    if let Some(ref param_value) = p_query_managed__isnull {
+        req_builder = req_builder.query(&[("managed__isnull", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_name {
+        req_builder = req_builder.query(&[("name", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_ordering {
+        req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page {
+        req_builder = req_builder.query(&[("page", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page_size {
+        req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_search {
+        req_builder = req_builder.query(&[("search", &param_value.to_string())]);
+    }
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PaginatedTelegramSourcePropertyMappingList`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PaginatedTelegramSourcePropertyMappingList`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_partial_update(
+    configuration: &configuration::Configuration,
+    pm_uuid: &str,
+    patched_telegram_source_property_mapping_request: Option<models::PatchedTelegramSourcePropertyMappingRequest>,
+) -> Result<models::TelegramSourcePropertyMapping, Error<PropertymappingsSourceTelegramPartialUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_pm_uuid = pm_uuid;
+    let p_body_patched_telegram_source_property_mapping_request = patched_telegram_source_property_mapping_request;
+
+    let uri_str = format!(
+        "{}/propertymappings/source/telegram/{pm_uuid}/",
+        configuration.base_path,
+        pm_uuid = crate::apis::urlencode(p_path_pm_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_patched_telegram_source_property_mapping_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramPartialUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_retrieve(
+    configuration: &configuration::Configuration,
+    pm_uuid: &str,
+) -> Result<models::TelegramSourcePropertyMapping, Error<PropertymappingsSourceTelegramRetrieveError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_pm_uuid = pm_uuid;
+
+    let uri_str = format!(
+        "{}/propertymappings/source/telegram/{pm_uuid}/",
+        configuration.base_path,
+        pm_uuid = crate::apis::urlencode(p_path_pm_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// TelegramSourcePropertyMapping Viewset
+pub async fn propertymappings_source_telegram_update(
+    configuration: &configuration::Configuration,
+    pm_uuid: &str,
+    telegram_source_property_mapping_request: models::TelegramSourcePropertyMappingRequest,
+) -> Result<models::TelegramSourcePropertyMapping, Error<PropertymappingsSourceTelegramUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_pm_uuid = pm_uuid;
+    let p_body_telegram_source_property_mapping_request = telegram_source_property_mapping_request;
+
+    let uri_str = format!(
+        "{}/propertymappings/source/telegram/{pm_uuid}/",
+        configuration.base_path,
+        pm_uuid = crate::apis::urlencode(p_path_pm_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_telegram_source_property_mapping_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSourcePropertyMapping`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn propertymappings_source_telegram_used_by_list(
+    configuration: &configuration::Configuration,
+    pm_uuid: &str,
+) -> Result<Vec<models::UsedBy>, Error<PropertymappingsSourceTelegramUsedByListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_pm_uuid = pm_uuid;
+
+    let uri_str = format!(
+        "{}/propertymappings/source/telegram/{pm_uuid}/used_by/",
+        configuration.base_path,
+        pm_uuid = crate::apis::urlencode(p_path_pm_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PropertymappingsSourceTelegramUsedByListError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,

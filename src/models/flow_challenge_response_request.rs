@@ -56,6 +56,8 @@ pub enum FlowChallengeResponseRequest {
     AkStagePrompt(models::PromptChallengeResponseRequest),
     #[serde(rename = "xak-flow-redirect")]
     XakFlowRedirect(models::RedirectChallengeResponseRequest),
+    #[serde(rename = "ak-source-telegram")]
+    AkSourceTelegram(models::TelegramChallengeResponseRequest),
     #[serde(rename = "ak-stage-user-login")]
     AkStageUserLogin(models::UserLoginChallengeResponseRequest),
 }

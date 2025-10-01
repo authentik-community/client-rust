@@ -67,6 +67,10 @@
 | AuthentikSourcesSamlGroupsamlsourceconnection | authentik_sources_saml.groupsamlsourceconnection |
 | AuthentikSourcesScimScimsource | authentik_sources_scim.scimsource |
 | AuthentikSourcesScimScimsourcepropertymapping | authentik_sources_scim.scimsourcepropertymapping |
+| AuthentikSourcesTelegramTelegramsource | authentik_sources_telegram.telegramsource |
+| AuthentikSourcesTelegramTelegramsourcepropertymapping | authentik_sources_telegram.telegramsourcepropertymapping |
+| AuthentikSourcesTelegramUsertelegramsourceconnection | authentik_sources_telegram.usertelegramsourceconnection |
+| AuthentikSourcesTelegramGrouptelegramsourceconnection | authentik_sources_telegram.grouptelegramsourceconnection |
 | AuthentikStagesAuthenticatorDuoAuthenticatorduostage | authentik_stages_authenticator_duo.authenticatorduostage |
 | AuthentikStagesAuthenticatorDuoDuodevice | authentik_stages_authenticator_duo.duodevice |
 | AuthentikStagesAuthenticatorEmailAuthenticatoremailstage | authentik_stages_authenticator_email.authenticatoremailstage |

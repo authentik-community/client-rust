@@ -20,6 +20,8 @@ pub enum LoginChallengeTypes {
     AkSourceOauthApple(models::AppleLoginChallenge),
     #[serde(rename = "ak-source-plex")]
     AkSourcePlex(models::PlexAuthenticationChallenge),
+    #[serde(rename = "ak-source-telegram")]
+    AkSourceTelegram(models::TelegramLoginChallenge),
 }
 
 impl Default for LoginChallengeTypes {

@@ -454,6 +454,69 @@ pub enum SourcesGroupConnectionsSamlUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`sources_group_connections_telegram_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_group_connections_telegram_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesGroupConnectionsTelegramUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`sources_kerberos_create`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -1021,6 +1084,69 @@ pub enum SourcesScimUsersUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`sources_telegram_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_telegram_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesTelegramUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`sources_user_connections_all_destroy`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -1385,6 +1511,69 @@ pub enum SourcesUserConnectionsSamlUpdateError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum SourcesUserConnectionsSamlUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`sources_user_connections_telegram_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SourcesUserConnectionsTelegramUsedByListError {
     Status400(models::ValidationError),
     Status403(models::GenericError),
     UnknownValue(serde_json::Value),
@@ -3986,6 +4175,379 @@ pub async fn sources_group_connections_saml_used_by_list(
     } else {
         let content = resp.text().await?;
         let entity: Option<SourcesGroupConnectionsSamlUsedByListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_create(
+    configuration: &configuration::Configuration,
+    group_telegram_source_connection_request: models::GroupTelegramSourceConnectionRequest,
+) -> Result<models::GroupTelegramSourceConnection, Error<SourcesGroupConnectionsTelegramCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_group_telegram_source_connection_request = group_telegram_source_connection_request;
+
+    let uri_str = format!("{}/sources/group_connections/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_group_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GroupTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GroupTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramCreateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_destroy(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<(), Error<SourcesGroupConnectionsTelegramDestroyError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/group_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramDestroyError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_list(
+    configuration: &configuration::Configuration,
+    group: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+    source__slug: Option<&str>,
+) -> Result<models::PaginatedGroupTelegramSourceConnectionList, Error<SourcesGroupConnectionsTelegramListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_group = group;
+    let p_query_ordering = ordering;
+    let p_query_page = page;
+    let p_query_page_size = page_size;
+    let p_query_search = search;
+    let p_query_source__slug = source__slug;
+
+    let uri_str = format!("{}/sources/group_connections/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref param_value) = p_query_group {
+        req_builder = req_builder.query(&[("group", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_ordering {
+        req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page {
+        req_builder = req_builder.query(&[("page", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page_size {
+        req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_search {
+        req_builder = req_builder.query(&[("search", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_source__slug {
+        req_builder = req_builder.query(&[("source__slug", &param_value.to_string())]);
+    }
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PaginatedGroupTelegramSourceConnectionList`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PaginatedGroupTelegramSourceConnectionList`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_partial_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    patched_group_telegram_source_connection_request: Option<models::PatchedGroupTelegramSourceConnectionRequest>,
+) -> Result<models::GroupTelegramSourceConnection, Error<SourcesGroupConnectionsTelegramPartialUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+    let p_body_patched_group_telegram_source_connection_request = patched_group_telegram_source_connection_request;
+
+    let uri_str = format!(
+        "{}/sources/group_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_patched_group_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GroupTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GroupTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramPartialUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_retrieve(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<models::GroupTelegramSourceConnection, Error<SourcesGroupConnectionsTelegramRetrieveError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/group_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GroupTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GroupTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Group-source connection Viewset
+pub async fn sources_group_connections_telegram_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    group_telegram_source_connection_request: models::GroupTelegramSourceConnectionRequest,
+) -> Result<models::GroupTelegramSourceConnection, Error<SourcesGroupConnectionsTelegramUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+    let p_body_group_telegram_source_connection_request = group_telegram_source_connection_request;
+
+    let uri_str = format!(
+        "{}/sources/group_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_group_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GroupTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GroupTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn sources_group_connections_telegram_used_by_list(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<Vec<models::UsedBy>, Error<SourcesGroupConnectionsTelegramUsedByListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/group_connections/telegram/{id}/used_by/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesGroupConnectionsTelegramUsedByListError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,
@@ -8031,6 +8593,448 @@ pub async fn sources_scim_users_used_by_list(
     }
 }
 
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_create(
+    configuration: &configuration::Configuration,
+    telegram_source_request: models::TelegramSourceRequest,
+) -> Result<models::TelegramSource, Error<SourcesTelegramCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_telegram_source_request = telegram_source_request;
+
+    let uri_str = format!("{}/sources/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_telegram_source_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => {
+                return Err(Error::from(serde_json::Error::custom(
+                    "Received `text/plain` content type response that cannot be converted to `models::TelegramSource`",
+                )))
+            }
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!(
+                "Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSource`"
+            )))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramCreateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_destroy(
+    configuration: &configuration::Configuration,
+    slug: &str,
+) -> Result<(), Error<SourcesTelegramDestroyError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_slug = slug;
+
+    let uri_str = format!(
+        "{}/sources/telegram/{slug}/",
+        configuration.base_path,
+        slug = crate::apis::urlencode(p_path_slug)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramDestroyError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_list(
+    configuration: &configuration::Configuration,
+    authentication_flow: Option<&str>,
+    bot_username: Option<&str>,
+    enabled: Option<bool>,
+    enrollment_flow: Option<&str>,
+    group_matching_mode: Option<&str>,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    pbm_uuid: Option<&str>,
+    policy_engine_mode: Option<&str>,
+    request_message_access: Option<bool>,
+    search: Option<&str>,
+    slug: Option<&str>,
+    user_matching_mode: Option<&str>,
+) -> Result<models::PaginatedTelegramSourceList, Error<SourcesTelegramListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_authentication_flow = authentication_flow;
+    let p_query_bot_username = bot_username;
+    let p_query_enabled = enabled;
+    let p_query_enrollment_flow = enrollment_flow;
+    let p_query_group_matching_mode = group_matching_mode;
+    let p_query_name = name;
+    let p_query_ordering = ordering;
+    let p_query_page = page;
+    let p_query_page_size = page_size;
+    let p_query_pbm_uuid = pbm_uuid;
+    let p_query_policy_engine_mode = policy_engine_mode;
+    let p_query_request_message_access = request_message_access;
+    let p_query_search = search;
+    let p_query_slug = slug;
+    let p_query_user_matching_mode = user_matching_mode;
+
+    let uri_str = format!("{}/sources/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref param_value) = p_query_authentication_flow {
+        req_builder = req_builder.query(&[("authentication_flow", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_bot_username {
+        req_builder = req_builder.query(&[("bot_username", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_enabled {
+        req_builder = req_builder.query(&[("enabled", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_enrollment_flow {
+        req_builder = req_builder.query(&[("enrollment_flow", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_group_matching_mode {
+        req_builder = req_builder.query(&[("group_matching_mode", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_name {
+        req_builder = req_builder.query(&[("name", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_ordering {
+        req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page {
+        req_builder = req_builder.query(&[("page", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page_size {
+        req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_pbm_uuid {
+        req_builder = req_builder.query(&[("pbm_uuid", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_policy_engine_mode {
+        req_builder = req_builder.query(&[("policy_engine_mode", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_request_message_access {
+        req_builder = req_builder.query(&[("request_message_access", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_search {
+        req_builder = req_builder.query(&[("search", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_slug {
+        req_builder = req_builder.query(&[("slug", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_user_matching_mode {
+        req_builder = req_builder.query(&[("user_matching_mode", &param_value.to_string())]);
+    }
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PaginatedTelegramSourceList`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PaginatedTelegramSourceList`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_partial_update(
+    configuration: &configuration::Configuration,
+    slug: &str,
+    patched_telegram_source_request: Option<models::PatchedTelegramSourceRequest>,
+) -> Result<models::TelegramSource, Error<SourcesTelegramPartialUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_slug = slug;
+    let p_body_patched_telegram_source_request = patched_telegram_source_request;
+
+    let uri_str = format!(
+        "{}/sources/telegram/{slug}/",
+        configuration.base_path,
+        slug = crate::apis::urlencode(p_path_slug)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_patched_telegram_source_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => {
+                return Err(Error::from(serde_json::Error::custom(
+                    "Received `text/plain` content type response that cannot be converted to `models::TelegramSource`",
+                )))
+            }
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!(
+                "Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSource`"
+            )))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramPartialUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_retrieve(
+    configuration: &configuration::Configuration,
+    slug: &str,
+) -> Result<models::TelegramSource, Error<SourcesTelegramRetrieveError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_slug = slug;
+
+    let uri_str = format!(
+        "{}/sources/telegram/{slug}/",
+        configuration.base_path,
+        slug = crate::apis::urlencode(p_path_slug)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => {
+                return Err(Error::from(serde_json::Error::custom(
+                    "Received `text/plain` content type response that cannot be converted to `models::TelegramSource`",
+                )))
+            }
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!(
+                "Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSource`"
+            )))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Mixin to add a used_by endpoint to return a list of all objects using this object
+pub async fn sources_telegram_update(
+    configuration: &configuration::Configuration,
+    slug: &str,
+    telegram_source_request: models::TelegramSourceRequest,
+) -> Result<models::TelegramSource, Error<SourcesTelegramUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_slug = slug;
+    let p_body_telegram_source_request = telegram_source_request;
+
+    let uri_str = format!(
+        "{}/sources/telegram/{slug}/",
+        configuration.base_path,
+        slug = crate::apis::urlencode(p_path_slug)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_telegram_source_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => {
+                return Err(Error::from(serde_json::Error::custom(
+                    "Received `text/plain` content type response that cannot be converted to `models::TelegramSource`",
+                )))
+            }
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!(
+                "Received `{unknown_type}` content type response that cannot be converted to `models::TelegramSource`"
+            )))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn sources_telegram_used_by_list(
+    configuration: &configuration::Configuration,
+    slug: &str,
+) -> Result<Vec<models::UsedBy>, Error<SourcesTelegramUsedByListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_slug = slug;
+
+    let uri_str = format!(
+        "{}/sources/telegram/{slug}/used_by/",
+        configuration.base_path,
+        slug = crate::apis::urlencode(p_path_slug)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesTelegramUsedByListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
 /// User-source connection Viewset
 pub async fn sources_user_connections_all_destroy(
     configuration: &configuration::Configuration,
@@ -10213,6 +11217,379 @@ pub async fn sources_user_connections_saml_used_by_list(
     } else {
         let content = resp.text().await?;
         let entity: Option<SourcesUserConnectionsSamlUsedByListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_create(
+    configuration: &configuration::Configuration,
+    user_telegram_source_connection_request: models::UserTelegramSourceConnectionRequest,
+) -> Result<models::UserTelegramSourceConnection, Error<SourcesUserConnectionsTelegramCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_user_telegram_source_connection_request = user_telegram_source_connection_request;
+
+    let uri_str = format!("{}/sources/user_connections/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_user_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UserTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UserTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramCreateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_destroy(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<(), Error<SourcesUserConnectionsTelegramDestroyError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/user_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramDestroyError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_list(
+    configuration: &configuration::Configuration,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+    source__slug: Option<&str>,
+    user: Option<i32>,
+) -> Result<models::PaginatedUserTelegramSourceConnectionList, Error<SourcesUserConnectionsTelegramListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_ordering = ordering;
+    let p_query_page = page;
+    let p_query_page_size = page_size;
+    let p_query_search = search;
+    let p_query_source__slug = source__slug;
+    let p_query_user = user;
+
+    let uri_str = format!("{}/sources/user_connections/telegram/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref param_value) = p_query_ordering {
+        req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page {
+        req_builder = req_builder.query(&[("page", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page_size {
+        req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_search {
+        req_builder = req_builder.query(&[("search", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_source__slug {
+        req_builder = req_builder.query(&[("source__slug", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_user {
+        req_builder = req_builder.query(&[("user", &param_value.to_string())]);
+    }
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PaginatedUserTelegramSourceConnectionList`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PaginatedUserTelegramSourceConnectionList`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_partial_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    patched_user_telegram_source_connection_request: Option<models::PatchedUserTelegramSourceConnectionRequest>,
+) -> Result<models::UserTelegramSourceConnection, Error<SourcesUserConnectionsTelegramPartialUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+    let p_body_patched_user_telegram_source_connection_request = patched_user_telegram_source_connection_request;
+
+    let uri_str = format!(
+        "{}/sources/user_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_patched_user_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UserTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UserTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramPartialUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_retrieve(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<models::UserTelegramSourceConnection, Error<SourcesUserConnectionsTelegramRetrieveError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/user_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UserTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UserTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// User-source connection Viewset
+pub async fn sources_user_connections_telegram_update(
+    configuration: &configuration::Configuration,
+    id: i32,
+    user_telegram_source_connection_request: models::UserTelegramSourceConnectionRequest,
+) -> Result<models::UserTelegramSourceConnection, Error<SourcesUserConnectionsTelegramUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+    let p_body_user_telegram_source_connection_request = user_telegram_source_connection_request;
+
+    let uri_str = format!(
+        "{}/sources/user_connections/telegram/{id}/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_user_telegram_source_connection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::UserTelegramSourceConnection`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::UserTelegramSourceConnection`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn sources_user_connections_telegram_used_by_list(
+    configuration: &configuration::Configuration,
+    id: i32,
+) -> Result<Vec<models::UsedBy>, Error<SourcesUserConnectionsTelegramUsedByListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_id = id;
+
+    let uri_str = format!(
+        "{}/sources/user_connections/telegram/{id}/used_by/",
+        configuration.base_path,
+        id = p_path_id
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<SourcesUserConnectionsTelegramUsedByListError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,
