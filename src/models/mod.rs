@@ -332,6 +332,8 @@ pub mod geo_ip_policy_request;
 pub use self::geo_ip_policy_request::GeoIpPolicyRequest;
 pub mod geoip_binding_enum;
 pub use self::geoip_binding_enum::GeoipBindingEnum;
+pub mod global_task_status;
+pub use self::global_task_status::GlobalTaskStatus;
 pub mod google_workspace_provider;
 pub use self::google_workspace_provider::GoogleWorkspaceProvider;
 pub mod google_workspace_provider_group;

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**tasks_tasks_list**](TasksApi.md#tasks_tasks_list) | **GET** /tasks/tasks/ | 
 [**tasks_tasks_retrieve**](TasksApi.md#tasks_tasks_retrieve) | **GET** /tasks/tasks/{message_id}/ | 
 [**tasks_tasks_retry_create**](TasksApi.md#tasks_tasks_retry_create) | **POST** /tasks/tasks/{message_id}/retry/ | 
+[**tasks_tasks_status_retrieve**](TasksApi.md#tasks_tasks_status_retrieve) | **GET** /tasks/tasks/status/ | 
 [**tasks_workers_list**](TasksApi.md#tasks_workers_list) | **GET** /tasks/workers | 
 
 
@@ -253,6 +254,33 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## tasks_tasks_status_retrieve
+
+> models::GlobalTaskStatus tasks_tasks_status_retrieve()
+
+
+Global status summary for all tasks
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::GlobalTaskStatus**](GlobalTaskStatus.md)
 
 ### Authorization
 

@@ -176,6 +176,7 @@ docs/GenericError.md
 docs/GeoIpPolicy.md
 docs/GeoIpPolicyRequest.md
 docs/GeoipBindingEnum.md
+docs/GlobalTaskStatus.md
 docs/GoogleWorkspaceProvider.md
 docs/GoogleWorkspaceProviderGroup.md
 docs/GoogleWorkspaceProviderGroupRequest.md
@@ -984,6 +985,7 @@ src/models/generic_error.rs
 src/models/geo_ip_policy.rs
 src/models/geo_ip_policy_request.rs
 src/models/geoip_binding_enum.rs
+src/models/global_task_status.rs
 src/models/google_workspace_provider.rs
 src/models/google_workspace_provider_group.rs
 src/models/google_workspace_provider_group_request.rs
