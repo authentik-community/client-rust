@@ -6,6 +6,9 @@
 |---- | -----|
 | Queued | queued |
 | Consumed | consumed |
+| Preprocess | preprocess |
+| Running | running |
+| Postprocess | postprocess |
 | Rejected | rejected |
 | Done | done |
 

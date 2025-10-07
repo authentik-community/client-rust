@@ -4,6 +4,7 @@
 
 | Name | Value |
 |---- | -----|
+| AuthentikCommands | authentik.commands |
 | AuthentikTenants | authentik.tenants |
 | AuthentikTasks | authentik.tasks |
 | AuthentikAdmin | authentik.admin |

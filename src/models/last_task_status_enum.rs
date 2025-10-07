@@ -18,6 +18,12 @@ pub enum LastTaskStatusEnum {
     Queued,
     #[serde(rename = "consumed")]
     Consumed,
+    #[serde(rename = "preprocess")]
+    Preprocess,
+    #[serde(rename = "running")]
+    Running,
+    #[serde(rename = "postprocess")]
+    Postprocess,
     #[serde(rename = "rejected")]
     Rejected,
     #[serde(rename = "done")]
@@ -35,6 +41,9 @@ impl std::fmt::Display for LastTaskStatusEnum {
         match self {
             Self::Queued => write!(f, "queued"),
             Self::Consumed => write!(f, "consumed"),
+            Self::Preprocess => write!(f, "preprocess"),
+            Self::Running => write!(f, "running"),
+            Self::Postprocess => write!(f, "postprocess"),
             Self::Rejected => write!(f, "rejected"),
             Self::Done => write!(f, "done"),
             Self::Info => write!(f, "info"),

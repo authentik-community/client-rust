@@ -14,6 +14,8 @@ use serde::{Deserialize, Serialize};
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum AppEnum {
+    #[serde(rename = "authentik.commands")]
+    AuthentikCommands,
     #[serde(rename = "authentik.tenants")]
     AuthentikTenants,
     #[serde(rename = "authentik.tasks")]
@@ -159,6 +161,7 @@ pub enum AppEnum {
 impl std::fmt::Display for AppEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
+            Self::AuthentikCommands => write!(f, "authentik.commands"),
             Self::AuthentikTenants => write!(f, "authentik.tenants"),
             Self::AuthentikTasks => write!(f, "authentik.tasks"),
             Self::AuthentikAdmin => write!(f, "authentik.admin"),
@@ -243,6 +246,6 @@ impl std::fmt::Display for AppEnum {
 
 impl Default for AppEnum {
     fn default() -> AppEnum {
-        Self::AuthentikTenants
+        Self::AuthentikCommands
     }
 }
