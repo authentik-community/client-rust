@@ -891,7 +891,7 @@ Name | Type | Description  | Required | Notes
 
 ## rbac_roles_list
 
-> models::PaginatedRoleList rbac_roles_list(group__name, ordering, page, page_size, search)
+> models::PaginatedRoleList rbac_roles_list(name, ordering, page, page_size, search)
 
 
 Role viewset
@@ -901,7 +901,7 @@ Role viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**group__name** | Option<**String**> |  |  |
+**name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |

@@ -27,6 +27,17 @@ pub struct Task {
     /// Task last modified time
     #[serde(rename = "mtime", skip_serializing_if = "Option::is_none")]
     pub mtime: Option<String>,
+    /// Number of retries
+    #[serde(rename = "retries", skip_serializing_if = "Option::is_none")]
+    pub retries: Option<u64>,
+    /// Planned execution time
+    #[serde(
+        rename = "eta",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub eta: Option<Option<String>>,
     #[serde(rename = "rel_obj_app_label")]
     pub rel_obj_app_label: String,
     #[serde(rename = "rel_obj_model")]
@@ -67,6 +78,8 @@ impl Task {
             actor_name,
             state: None,
             mtime: None,
+            retries: None,
+            eta: None,
             rel_obj_app_label,
             rel_obj_model,
             rel_obj_id: None,

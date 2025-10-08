@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **actor_name** | **String** | Dramatiq actor name | 
 **state** | Option<[**models::StateEnum**](StateEnum.md)> | Task status | [optional]
 **mtime** | Option<**String**> | Task last modified time | [optional]
+**retries** | Option<**u64**> | Number of retries | [optional]
+**eta** | Option<**String**> | Planned execution time | [optional]
 **rel_obj_app_label** | **String** |  | [readonly]
 **rel_obj_model** | **String** |  | [readonly]
 **rel_obj_id** | Option<**String**> |  | [optional]

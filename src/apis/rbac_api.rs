@@ -1793,14 +1793,14 @@ pub async fn rbac_roles_destroy(
 /// Role viewset
 pub async fn rbac_roles_list(
     configuration: &configuration::Configuration,
-    group__name: Option<&str>,
+    name: Option<&str>,
     ordering: Option<&str>,
     page: Option<i32>,
     page_size: Option<i32>,
     search: Option<&str>,
 ) -> Result<models::PaginatedRoleList, Error<RbacRolesListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_group__name = group__name;
+    let p_query_name = name;
     let p_query_ordering = ordering;
     let p_query_page = page;
     let p_query_page_size = page_size;
@@ -1809,8 +1809,8 @@ pub async fn rbac_roles_list(
     let uri_str = format!("{}/rbac/roles/", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
-    if let Some(ref param_value) = p_query_group__name {
-        req_builder = req_builder.query(&[("group__name", &param_value.to_string())]);
+    if let Some(ref param_value) = p_query_name {
+        req_builder = req_builder.query(&[("name", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_ordering {
         req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
