@@ -35,8 +35,8 @@ pub struct Prompt {
     pub initial_value: Option<String>,
     #[serde(rename = "order", skip_serializing_if = "Option::is_none")]
     pub order: Option<i32>,
-    #[serde(rename = "promptstage_set", skip_serializing_if = "Option::is_none")]
-    pub promptstage_set: Option<Vec<models::Stage>>,
+    #[serde(rename = "prompt_stages_obj")]
+    pub prompt_stages_obj: Vec<models::PromptStage>,
     #[serde(rename = "sub_text", skip_serializing_if = "Option::is_none")]
     pub sub_text: Option<String>,
     #[serde(rename = "placeholder_expression", skip_serializing_if = "Option::is_none")]
@@ -53,6 +53,7 @@ impl Prompt {
         field_key: String,
         label: String,
         r#type: models::PromptTypeEnum,
+        prompt_stages_obj: Vec<models::PromptStage>,
     ) -> Prompt {
         Prompt {
             pk,
@@ -64,7 +65,7 @@ impl Prompt {
             placeholder: None,
             initial_value: None,
             order: None,
-            promptstage_set: None,
+            prompt_stages_obj,
             sub_text: None,
             placeholder_expression: None,
             initial_value_expression: None,

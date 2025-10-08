@@ -33,8 +33,6 @@ pub struct PromptRequest {
     pub initial_value: Option<String>,
     #[serde(rename = "order", skip_serializing_if = "Option::is_none")]
     pub order: Option<i32>,
-    #[serde(rename = "promptstage_set", skip_serializing_if = "Option::is_none")]
-    pub promptstage_set: Option<Vec<models::StageRequest>>,
     #[serde(rename = "sub_text", skip_serializing_if = "Option::is_none")]
     pub sub_text: Option<String>,
     #[serde(rename = "placeholder_expression", skip_serializing_if = "Option::is_none")]
@@ -55,7 +53,6 @@ impl PromptRequest {
             placeholder: None,
             initial_value: None,
             order: None,
-            promptstage_set: None,
             sub_text: None,
             placeholder_expression: None,
             initial_value_expression: None,

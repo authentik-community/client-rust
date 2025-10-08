@@ -573,7 +573,6 @@ docs/PatchedWebAuthnDeviceRequest.md
 docs/Permission.md
 docs/PermissionAssignRequest.md
 docs/PermissionAssignResult.md
-docs/PermissionRequest.md
 docs/PlexAuthenticationChallenge.md
 docs/PlexAuthenticationChallengeResponseRequest.md
 docs/PlexSource.md
@@ -586,7 +585,6 @@ docs/Policy.md
 docs/PolicyBinding.md
 docs/PolicyBindingRequest.md
 docs/PolicyEngineMode.md
-docs/PolicyRequest.md
 docs/PolicyTestRequest.md
 docs/PolicyTestResult.md
 docs/Prompt.md
@@ -605,7 +603,6 @@ docs/ProtocolEnum.md
 docs/Provider.md
 docs/ProviderEnum.md
 docs/ProviderModelEnum.md
-docs/ProviderRequest.md
 docs/ProviderTypeEnum.md
 docs/ProvidersApi.md
 docs/ProxyMode.md
@@ -674,7 +671,6 @@ docs/ScopeMapping.md
 docs/ScopeMappingRequest.md
 docs/SelectableStage.md
 docs/ServiceConnection.md
-docs/ServiceConnectionRequest.md
 docs/ServiceConnectionState.md
 docs/SessionEndChallenge.md
 docs/SessionUser.md
@@ -686,7 +682,6 @@ docs/SignatureAlgorithmEnum.md
 docs/SmsDevice.md
 docs/SmsDeviceRequest.md
 docs/Source.md
-docs/SourceRequest.md
 docs/SourceStage.md
 docs/SourceStageRequest.md
 docs/SourceType.md
@@ -698,7 +693,6 @@ docs/SsfProviderRequest.md
 docs/SsfStream.md
 docs/Stage.md
 docs/StagePrompt.md
-docs/StageRequest.md
 docs/StagesApi.md
 docs/StateEnum.md
 docs/StaticDevice.md
@@ -1380,7 +1374,6 @@ src/models/patched_web_authn_device_request.rs
 src/models/permission.rs
 src/models/permission_assign_request.rs
 src/models/permission_assign_result.rs
-src/models/permission_request.rs
 src/models/plex_authentication_challenge.rs
 src/models/plex_authentication_challenge_response_request.rs
 src/models/plex_source.rs
@@ -1392,7 +1385,6 @@ src/models/policy.rs
 src/models/policy_binding.rs
 src/models/policy_binding_request.rs
 src/models/policy_engine_mode.rs
-src/models/policy_request.rs
 src/models/policy_test_request.rs
 src/models/policy_test_result.rs
 src/models/prompt.rs
@@ -1410,7 +1402,6 @@ src/models/protocol_enum.rs
 src/models/provider.rs
 src/models/provider_enum.rs
 src/models/provider_model_enum.rs
-src/models/provider_request.rs
 src/models/provider_type_enum.rs
 src/models/proxy_mode.rs
 src/models/proxy_outpost_config.rs
@@ -1474,7 +1465,6 @@ src/models/scope_mapping.rs
 src/models/scope_mapping_request.rs
 src/models/selectable_stage.rs
 src/models/service_connection.rs
-src/models/service_connection_request.rs
 src/models/service_connection_state.rs
 src/models/session_end_challenge.rs
 src/models/session_user.rs
@@ -1486,7 +1476,6 @@ src/models/signature_algorithm_enum.rs
 src/models/sms_device.rs
 src/models/sms_device_request.rs
 src/models/source.rs
-src/models/source_request.rs
 src/models/source_stage.rs
 src/models/source_stage_request.rs
 src/models/source_type.rs
@@ -1496,7 +1485,6 @@ src/models/ssf_provider_request.rs
 src/models/ssf_stream.rs
 src/models/stage.rs
 src/models/stage_prompt.rs
-src/models/stage_request.rs
 src/models/state_enum.rs
 src/models/static_device.rs
 src/models/static_device_request.rs
