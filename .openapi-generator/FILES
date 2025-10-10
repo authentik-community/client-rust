@@ -207,6 +207,8 @@ docs/IdentificationChallenge.md
 docs/IdentificationChallengeResponseRequest.md
 docs/IdentificationStage.md
 docs/IdentificationStageRequest.md
+docs/IframeLogoutChallenge.md
+docs/IframeLogoutChallengeResponseRequest.md
 docs/ImpersonationRequest.md
 docs/InitialPermissions.md
 docs/InitialPermissionsModeEnum.md
@@ -264,6 +266,8 @@ docs/ModelRequest.md
 docs/MutualTlsStage.md
 docs/MutualTlsStageModeEnum.md
 docs/MutualTlsStageRequest.md
+docs/NativeLogoutChallenge.md
+docs/NativeLogoutChallengeResponseRequest.md
 docs/NetworkBindingEnum.md
 docs/NotConfiguredActionEnum.md
 docs/Notification.md
@@ -277,6 +281,7 @@ docs/NotificationTransportTest.md
 docs/NotificationWebhookMapping.md
 docs/NotificationWebhookMappingRequest.md
 docs/OAuth2Provider.md
+docs/OAuth2ProviderLogoutMethodEnum.md
 docs/OAuth2ProviderRequest.md
 docs/OAuth2ProviderSetupUrls.md
 docs/OAuthDeviceCodeChallenge.md
@@ -637,11 +642,13 @@ docs/RoleAssignedObjectPermission.md
 docs/RoleObjectPermission.md
 docs/RoleRequest.md
 docs/RootApi.md
+docs/SamlBindingsEnum.md
 docs/SamlMetadata.md
 docs/SamlNameIdPolicyEnum.md
 docs/SamlPropertyMapping.md
 docs/SamlPropertyMappingRequest.md
 docs/SamlProvider.md
+docs/SamlProviderLogoutMethodEnum.md
 docs/SamlProviderRequest.md
 docs/SamlSource.md
 docs/SamlSourcePropertyMapping.md
@@ -686,7 +693,6 @@ docs/SourceStage.md
 docs/SourceStageRequest.md
 docs/SourceType.md
 docs/SourcesApi.md
-docs/SpBindingEnum.md
 docs/SsfApi.md
 docs/SsfProvider.md
 docs/SsfProviderRequest.md
@@ -1010,6 +1016,8 @@ src/models/identification_challenge.rs
 src/models/identification_challenge_response_request.rs
 src/models/identification_stage.rs
 src/models/identification_stage_request.rs
+src/models/iframe_logout_challenge.rs
+src/models/iframe_logout_challenge_response_request.rs
 src/models/impersonation_request.rs
 src/models/initial_permissions.rs
 src/models/initial_permissions_mode_enum.rs
@@ -1067,6 +1075,8 @@ src/models/model_request.rs
 src/models/mutual_tls_stage.rs
 src/models/mutual_tls_stage_mode_enum.rs
 src/models/mutual_tls_stage_request.rs
+src/models/native_logout_challenge.rs
+src/models/native_logout_challenge_response_request.rs
 src/models/network_binding_enum.rs
 src/models/not_configured_action_enum.rs
 src/models/notification.rs
@@ -1080,6 +1090,7 @@ src/models/notification_transport_test.rs
 src/models/notification_webhook_mapping.rs
 src/models/notification_webhook_mapping_request.rs
 src/models/o_auth2_provider.rs
+src/models/o_auth2_provider_logout_method_enum.rs
 src/models/o_auth2_provider_request.rs
 src/models/o_auth2_provider_setup_urls.rs
 src/models/o_auth_device_code_challenge.rs
@@ -1432,11 +1443,13 @@ src/models/role.rs
 src/models/role_assigned_object_permission.rs
 src/models/role_object_permission.rs
 src/models/role_request.rs
+src/models/saml_bindings_enum.rs
 src/models/saml_metadata.rs
 src/models/saml_name_id_policy_enum.rs
 src/models/saml_property_mapping.rs
 src/models/saml_property_mapping_request.rs
 src/models/saml_provider.rs
+src/models/saml_provider_logout_method_enum.rs
 src/models/saml_provider_request.rs
 src/models/saml_source.rs
 src/models/saml_source_property_mapping.rs
@@ -1479,7 +1492,6 @@ src/models/source.rs
 src/models/source_stage.rs
 src/models/source_stage_request.rs
 src/models/source_type.rs
-src/models/sp_binding_enum.rs
 src/models/ssf_provider.rs
 src/models/ssf_provider_request.rs
 src/models/ssf_stream.rs

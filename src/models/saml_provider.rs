@@ -60,6 +60,9 @@ pub struct SamlProvider {
     pub meta_model_name: String,
     #[serde(rename = "acs_url")]
     pub acs_url: String,
+    /// Single Logout Service URL where the logout response should be sent.
+    #[serde(rename = "sls_url", skip_serializing_if = "Option::is_none")]
+    pub sls_url: Option<String>,
     /// Value of the audience restriction field of the assertion. When left empty, no audience restriction will be added.
     #[serde(rename = "audience", skip_serializing_if = "Option::is_none")]
     pub audience: Option<String>,
@@ -123,9 +126,17 @@ pub struct SamlProvider {
     pub sign_assertion: Option<bool>,
     #[serde(rename = "sign_response", skip_serializing_if = "Option::is_none")]
     pub sign_response: Option<bool>,
+    #[serde(rename = "sign_logout_request", skip_serializing_if = "Option::is_none")]
+    pub sign_logout_request: Option<bool>,
     /// This determines how authentik sends the response back to the Service Provider.
     #[serde(rename = "sp_binding", skip_serializing_if = "Option::is_none")]
-    pub sp_binding: Option<models::SpBindingEnum>,
+    pub sp_binding: Option<models::SamlBindingsEnum>,
+    /// This determines how authentik sends the logout response back to the Service Provider.
+    #[serde(rename = "sls_binding", skip_serializing_if = "Option::is_none")]
+    pub sls_binding: Option<models::SamlBindingsEnum>,
+    /// Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).
+    #[serde(rename = "logout_method", skip_serializing_if = "Option::is_none")]
+    pub logout_method: Option<models::SamlProviderLogoutMethodEnum>,
     /// Default relay_state value for IDP-initiated logins
     #[serde(rename = "default_relay_state", skip_serializing_if = "Option::is_none")]
     pub default_relay_state: Option<String>,
@@ -190,6 +201,7 @@ impl SamlProvider {
             verbose_name_plural,
             meta_model_name,
             acs_url,
+            sls_url: None,
             audience: None,
             issuer: None,
             assertion_valid_not_before: None,
@@ -204,7 +216,10 @@ impl SamlProvider {
             encryption_kp: None,
             sign_assertion: None,
             sign_response: None,
+            sign_logout_request: None,
             sp_binding: None,
+            sls_binding: None,
+            logout_method: None,
             default_relay_state: None,
             default_name_id_policy: None,
             url_download_metadata,

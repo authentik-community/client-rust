@@ -2732,7 +2732,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_list
 
-> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_response, signature_algorithm, signing_kp, sp_binding, verification_kp)
+> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
 
 
 SAMLProvider Viewset
@@ -2757,6 +2757,7 @@ Name | Type | Description  | Required | Notes
 **invalidation_flow** | Option<**uuid::Uuid**> |  |  |
 **is_backchannel** | Option<**bool**> |  |  |
 **issuer** | Option<**String**> |  |  |
+**logout_method** | Option<**String**> | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   |  |
 **name** | Option<**String**> |  |  |
 **name_id_mapping** | Option<**uuid::Uuid**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
@@ -2766,9 +2767,12 @@ Name | Type | Description  | Required | Notes
 **search** | Option<**String**> | A search term. |  |
 **session_valid_not_on_or_after** | Option<**String**> |  |  |
 **sign_assertion** | Option<**bool**> |  |  |
+**sign_logout_request** | Option<**bool**> |  |  |
 **sign_response** | Option<**bool**> |  |  |
 **signature_algorithm** | Option<**String**> |  |  |
 **signing_kp** | Option<**uuid::Uuid**> |  |  |
+**sls_binding** | Option<**String**> | This determines how authentik sends the logout response back to the Service Provider.   |  |
+**sls_url** | Option<**String**> |  |  |
 **sp_binding** | Option<**String**> | This determines how authentik sends the response back to the Service Provider.   |  |
 **verification_kp** | Option<**uuid::Uuid**> |  |  |
 

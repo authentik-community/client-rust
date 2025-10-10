@@ -48,6 +48,10 @@ pub enum ChallengeTypes {
     XakFlowFrame(models::FrameChallenge),
     #[serde(rename = "ak-stage-identification")]
     AkStageIdentification(models::IdentificationChallenge),
+    #[serde(rename = "ak-provider-iframe-logout")]
+    AkProviderIframeLogout(models::IframeLogoutChallenge),
+    #[serde(rename = "ak-provider-saml-native-logout")]
+    AkProviderSamlNativeLogout(models::NativeLogoutChallenge),
     #[serde(rename = "ak-provider-oauth2-device-code")]
     AkProviderOauth2DeviceCode(models::OAuthDeviceCodeChallenge),
     #[serde(rename = "ak-provider-oauth2-device-code-finish")]

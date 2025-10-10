@@ -13,24 +13,24 @@ use serde::{Deserialize, Serialize};
 
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum SpBindingEnum {
-    #[serde(rename = "redirect")]
-    Redirect,
-    #[serde(rename = "post")]
-    Post,
+pub enum OAuth2ProviderLogoutMethodEnum {
+    #[serde(rename = "backchannel")]
+    Backchannel,
+    #[serde(rename = "frontchannel")]
+    Frontchannel,
 }
 
-impl std::fmt::Display for SpBindingEnum {
+impl std::fmt::Display for OAuth2ProviderLogoutMethodEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Redirect => write!(f, "redirect"),
-            Self::Post => write!(f, "post"),
+            Self::Backchannel => write!(f, "backchannel"),
+            Self::Frontchannel => write!(f, "frontchannel"),
         }
     }
 }
 
-impl Default for SpBindingEnum {
-    fn default() -> SpBindingEnum {
-        Self::Redirect
+impl Default for OAuth2ProviderLogoutMethodEnum {
+    fn default() -> OAuth2ProviderLogoutMethodEnum {
+        Self::Backchannel
     }
 }

@@ -44,6 +44,10 @@ pub enum FlowChallengeResponseRequest {
     XakFlowFrame(models::FrameChallengeResponseRequest),
     #[serde(rename = "ak-stage-identification")]
     AkStageIdentification(models::IdentificationChallengeResponseRequest),
+    #[serde(rename = "ak-provider-iframe-logout")]
+    AkProviderIframeLogout(models::IframeLogoutChallengeResponseRequest),
+    #[serde(rename = "ak-provider-saml-native-logout")]
+    AkProviderSamlNativeLogout(models::NativeLogoutChallengeResponseRequest),
     #[serde(rename = "ak-provider-oauth2-device-code")]
     AkProviderOauth2DeviceCode(models::OAuthDeviceCodeChallengeResponseRequest),
     #[serde(rename = "ak-provider-oauth2-device-code-finish")]

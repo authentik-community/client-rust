@@ -5759,6 +5759,7 @@ pub async fn providers_saml_list(
     invalidation_flow: Option<&str>,
     is_backchannel: Option<bool>,
     issuer: Option<&str>,
+    logout_method: Option<&str>,
     name: Option<&str>,
     name_id_mapping: Option<&str>,
     ordering: Option<&str>,
@@ -5768,9 +5769,12 @@ pub async fn providers_saml_list(
     search: Option<&str>,
     session_valid_not_on_or_after: Option<&str>,
     sign_assertion: Option<bool>,
+    sign_logout_request: Option<bool>,
     sign_response: Option<bool>,
     signature_algorithm: Option<&str>,
     signing_kp: Option<&str>,
+    sls_binding: Option<&str>,
+    sls_url: Option<&str>,
     sp_binding: Option<&str>,
     verification_kp: Option<&str>,
 ) -> Result<models::PaginatedSamlProviderList, Error<ProvidersSamlListError>> {
@@ -5790,6 +5794,7 @@ pub async fn providers_saml_list(
     let p_query_invalidation_flow = invalidation_flow;
     let p_query_is_backchannel = is_backchannel;
     let p_query_issuer = issuer;
+    let p_query_logout_method = logout_method;
     let p_query_name = name;
     let p_query_name_id_mapping = name_id_mapping;
     let p_query_ordering = ordering;
@@ -5799,9 +5804,12 @@ pub async fn providers_saml_list(
     let p_query_search = search;
     let p_query_session_valid_not_on_or_after = session_valid_not_on_or_after;
     let p_query_sign_assertion = sign_assertion;
+    let p_query_sign_logout_request = sign_logout_request;
     let p_query_sign_response = sign_response;
     let p_query_signature_algorithm = signature_algorithm;
     let p_query_signing_kp = signing_kp;
+    let p_query_sls_binding = sls_binding;
+    let p_query_sls_url = sls_url;
     let p_query_sp_binding = sp_binding;
     let p_query_verification_kp = verification_kp;
 
@@ -5853,6 +5861,9 @@ pub async fn providers_saml_list(
     if let Some(ref param_value) = p_query_issuer {
         req_builder = req_builder.query(&[("issuer", &param_value.to_string())]);
     }
+    if let Some(ref param_value) = p_query_logout_method {
+        req_builder = req_builder.query(&[("logout_method", &param_value.to_string())]);
+    }
     if let Some(ref param_value) = p_query_name {
         req_builder = req_builder.query(&[("name", &param_value.to_string())]);
     }
@@ -5896,6 +5907,9 @@ pub async fn providers_saml_list(
     if let Some(ref param_value) = p_query_sign_assertion {
         req_builder = req_builder.query(&[("sign_assertion", &param_value.to_string())]);
     }
+    if let Some(ref param_value) = p_query_sign_logout_request {
+        req_builder = req_builder.query(&[("sign_logout_request", &param_value.to_string())]);
+    }
     if let Some(ref param_value) = p_query_sign_response {
         req_builder = req_builder.query(&[("sign_response", &param_value.to_string())]);
     }
@@ -5904,6 +5918,12 @@ pub async fn providers_saml_list(
     }
     if let Some(ref param_value) = p_query_signing_kp {
         req_builder = req_builder.query(&[("signing_kp", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_sls_binding {
+        req_builder = req_builder.query(&[("sls_binding", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_sls_url {
+        req_builder = req_builder.query(&[("sls_url", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sp_binding {
         req_builder = req_builder.query(&[("sp_binding", &param_value.to_string())]);

@@ -29,7 +29,8 @@ Name | Type | Description | Notes
 **signing_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to sign the tokens. | [optional]
 **encryption_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to encrypt the tokens. When set, tokens will be encrypted and returned as JWEs. | [optional]
 **redirect_uris** | [**Vec<models::RedirectUri>**](RedirectURI.md) |  | 
-**backchannel_logout_uri** | Option<**String**> |  | [optional]
+**logout_uri** | Option<**String**> |  | [optional]
+**logout_method** | Option<[**models::OAuth2ProviderLogoutMethodEnum**](OAuth2ProviderLogoutMethodEnum.md)> | Backchannel logs out with server to server calls. Frontchannel uses iframes in your browser | [optional]
 **sub_mode** | Option<[**models::SubModeEnum**](SubModeEnum.md)> | Configure what data should be used as unique User Identifier. For most cases, the default should be fine. | [optional]
 **issuer_mode** | Option<[**models::IssuerModeEnum**](IssuerModeEnum.md)> | Configure how the issuer field of the ID Token should be filled. | [optional]
 **jwt_federation_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]

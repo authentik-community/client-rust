@@ -72,8 +72,11 @@ pub struct OAuth2ProviderRequest {
     pub encryption_key: Option<Option<uuid::Uuid>>,
     #[serde(rename = "redirect_uris")]
     pub redirect_uris: Vec<models::RedirectUriRequest>,
-    #[serde(rename = "backchannel_logout_uri", skip_serializing_if = "Option::is_none")]
-    pub backchannel_logout_uri: Option<String>,
+    #[serde(rename = "logout_uri", skip_serializing_if = "Option::is_none")]
+    pub logout_uri: Option<String>,
+    /// Backchannel logs out with server to server calls. Frontchannel uses iframes in your browser
+    #[serde(rename = "logout_method", skip_serializing_if = "Option::is_none")]
+    pub logout_method: Option<models::OAuth2ProviderLogoutMethodEnum>,
     /// Configure what data should be used as unique User Identifier. For most cases, the default should be fine.
     #[serde(rename = "sub_mode", skip_serializing_if = "Option::is_none")]
     pub sub_mode: Option<models::SubModeEnum>,
@@ -111,7 +114,8 @@ impl OAuth2ProviderRequest {
             signing_key: None,
             encryption_key: None,
             redirect_uris,
-            backchannel_logout_uri: None,
+            logout_uri: None,
+            logout_method: None,
             sub_mode: None,
             issuer_mode: None,
             jwt_federation_sources: None,
