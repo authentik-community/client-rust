@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **rel_obj_model** | **String** |  | [readonly]
 **rel_obj_id** | Option<**String**> |  | [optional]
 **uid** | **String** |  | [readonly]
-**messages** | [**Vec<models::LogEvent>**](LogEvent.md) |  | 
-**previous_messages** | [**Vec<models::LogEvent>**](LogEvent.md) |  | 
+**logs** | [**Vec<models::LogEvent>**](LogEvent.md) |  | [readonly]
+**previous_logs** | [**Vec<models::LogEvent>**](LogEvent.md) |  | [readonly]
 **aggregated_status** | [**models::TaskAggregatedStatusEnum**](TaskAggregatedStatusEnum.md) |  | 
 **description** | Option<**String**> |  | [readonly]
 

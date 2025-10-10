@@ -51,10 +51,10 @@ pub struct Task {
     pub rel_obj_id: Option<Option<String>>,
     #[serde(rename = "uid")]
     pub uid: String,
-    #[serde(rename = "messages")]
-    pub messages: Vec<models::LogEvent>,
-    #[serde(rename = "previous_messages")]
-    pub previous_messages: Vec<models::LogEvent>,
+    #[serde(rename = "logs")]
+    pub logs: Vec<models::LogEvent>,
+    #[serde(rename = "previous_logs")]
+    pub previous_logs: Vec<models::LogEvent>,
     #[serde(rename = "aggregated_status")]
     pub aggregated_status: models::TaskAggregatedStatusEnum,
     #[serde(rename = "description", deserialize_with = "Option::deserialize")]
@@ -67,8 +67,8 @@ impl Task {
         rel_obj_app_label: String,
         rel_obj_model: String,
         uid: String,
-        messages: Vec<models::LogEvent>,
-        previous_messages: Vec<models::LogEvent>,
+        logs: Vec<models::LogEvent>,
+        previous_logs: Vec<models::LogEvent>,
         aggregated_status: models::TaskAggregatedStatusEnum,
         description: Option<String>,
     ) -> Task {
@@ -84,8 +84,8 @@ impl Task {
             rel_obj_model,
             rel_obj_id: None,
             uid,
-            messages,
-            previous_messages,
+            logs,
+            previous_logs,
             aggregated_status,
             description,
         }
