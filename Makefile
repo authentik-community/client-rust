@@ -20,7 +20,9 @@ diff:
 		/local/schema.yml
 	rm schema-old.yml
 	mv diff.test /tmp/diff.test
-	echo -e "Update API Client\n\n" > diff.test
+	echo "Update API Client" > diff.test
+	echo >> diff.test
+	echo >> diff.test
 	cat /tmp/diff.test >> diff.test
 
 build:
