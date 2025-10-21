@@ -578,6 +578,7 @@ docs/PatchedWebAuthnDeviceRequest.md
 docs/Permission.md
 docs/PermissionAssignRequest.md
 docs/PermissionAssignResult.md
+docs/PkceMethodEnum.md
 docs/PlexAuthenticationChallenge.md
 docs/PlexAuthenticationChallengeResponseRequest.md
 docs/PlexSource.md
@@ -595,6 +596,7 @@ docs/PolicyTestResult.md
 docs/Prompt.md
 docs/PromptChallenge.md
 docs/PromptChallengeResponseRequest.md
+docs/PromptChoice.md
 docs/PromptRequest.md
 docs/PromptStage.md
 docs/PromptStageRequest.md
@@ -1385,6 +1387,7 @@ src/models/patched_web_authn_device_request.rs
 src/models/permission.rs
 src/models/permission_assign_request.rs
 src/models/permission_assign_result.rs
+src/models/pkce_method_enum.rs
 src/models/plex_authentication_challenge.rs
 src/models/plex_authentication_challenge_response_request.rs
 src/models/plex_source.rs
@@ -1401,6 +1404,7 @@ src/models/policy_test_result.rs
 src/models/prompt.rs
 src/models/prompt_challenge.rs
 src/models/prompt_challenge_response_request.rs
+src/models/prompt_choice.rs
 src/models/prompt_request.rs
 src/models/prompt_stage.rs
 src/models/prompt_stage_request.rs

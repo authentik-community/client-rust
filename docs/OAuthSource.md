@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **authorization_url** | Option<**String**> | URL the user is redirect to to conest the flow. | [optional]
 **access_token_url** | Option<**String**> | URL used by authentik to retrieve tokens. | [optional]
 **profile_url** | Option<**String**> | URL used by authentik to get user information. | [optional]
+**pkce** | Option<[**models::PkceMethodEnum**](PKCEMethodEnum.md)> |  | [optional]
 **consumer_key** | **String** |  | 
 **callback_url** | **String** | Get OAuth Callback URL | [readonly]
 **additional_scopes** | Option<**String**> |  | [optional]

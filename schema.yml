@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: authentik
-  version: 2025.10.0-rc1
+  version: 2025.10.0-rc3
   description: Making authentication simple.
   contact:
     email: hello@goauthentik.io
@@ -39737,6 +39737,8 @@ components:
           nullable: true
           description: URL used by authentik to get user information.
           maxLength: 255
+        pkce:
+          $ref: '#/components/schemas/PKCEMethodEnum'
         consumer_key:
           type: string
         callback_url:
@@ -39916,6 +39918,8 @@ components:
           nullable: true
           description: URL used by authentik to get user information.
           maxLength: 255
+        pkce:
+          $ref: '#/components/schemas/PKCEMethodEnum'
         consumer_key:
           type: string
           minLength: 1
@@ -40163,6 +40167,12 @@ components:
       - ldap
       - radius
       - rac
+      type: string
+    PKCEMethodEnum:
+      enum:
+      - none
+      - plain
+      - S256
       type: string
     PaginatedApplicationEntitlementList:
       type: object
@@ -44709,6 +44719,8 @@ components:
           nullable: true
           description: URL used by authentik to get user information.
           maxLength: 255
+        pkce:
+          $ref: '#/components/schemas/PKCEMethodEnum'
         consumer_key:
           type: string
           minLength: 1
@@ -46914,6 +46926,17 @@ components:
           minLength: 1
           default: ak-stage-prompt
       additionalProperties: {}
+    PromptChoice:
+      type: object
+      description: Serializer for a single Choice field
+      properties:
+        value:
+          type: string
+        label:
+          type: string
+      required:
+      - label
+      - value
     PromptRequest:
       type: object
       description: Prompt Serializer
@@ -50608,7 +50631,7 @@ components:
         choices:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/PromptChoice'
           nullable: true
       required:
       - choices
