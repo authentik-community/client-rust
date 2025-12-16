@@ -11,8 +11,11 @@
 | AuthentikApi | authentik.api |
 | AuthentikCore | authentik.core |
 | AuthentikCrypto | authentik.crypto |
+| AuthentikEndpoints | authentik.endpoints |
+| AuthentikEndpointsConnectorsAgent | authentik.endpoints.connectors.agent |
 | AuthentikEnterprise | authentik.enterprise |
 | AuthentikEvents | authentik.events |
+| AuthentikAdminFiles | authentik.admin.files |
 | AuthentikFlows | authentik.flows |
 | AuthentikOutposts | authentik.outposts |
 | AuthentikPoliciesDummy | authentik.policies.dummy |
@@ -65,12 +68,14 @@
 | AuthentikBrands | authentik.brands |
 | AuthentikBlueprints | authentik.blueprints |
 | AuthentikEnterpriseAudit | authentik.enterprise.audit |
+| AuthentikEnterpriseEndpointsConnectorsAgent | authentik.enterprise.endpoints.connectors.agent |
 | AuthentikEnterprisePoliciesUniquePassword | authentik.enterprise.policies.unique_password |
 | AuthentikEnterpriseProvidersGoogleWorkspace | authentik.enterprise.providers.google_workspace |
 | AuthentikEnterpriseProvidersMicrosoftEntra | authentik.enterprise.providers.microsoft_entra |
 | AuthentikEnterpriseProvidersRadius | authentik.enterprise.providers.radius |
 | AuthentikEnterpriseProvidersScim | authentik.enterprise.providers.scim |
 | AuthentikEnterpriseProvidersSsf | authentik.enterprise.providers.ssf |
+| AuthentikEnterpriseReports | authentik.enterprise.reports |
 | AuthentikEnterpriseSearch | authentik.enterprise.search |
 | AuthentikEnterpriseStagesAuthenticatorEndpointGdtc | authentik.enterprise.stages.authenticator_endpoint_gdtc |
 | AuthentikEnterpriseStagesMtls | authentik.enterprise.stages.mtls |

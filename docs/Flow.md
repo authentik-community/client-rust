@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **slug** | **String** | Visible in the URL. | 
 **title** | **String** | Shown as the Title in Flow pages. | 
 **designation** | [**models::FlowDesignationEnum**](FlowDesignationEnum.md) | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik. | 
-**background** | **String** | Get the URL to the background image. If the name is /static or starts with http it is returned as-is | [readonly]
+**background** | Option<**String**> | Background shown during execution | [optional]
+**background_url** | **String** | Get the URL to the background image | [readonly]
 **stages** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | [readonly]
 **policies** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | [readonly]
 **cache_count** | **i32** | Get count of cached flows | [readonly]

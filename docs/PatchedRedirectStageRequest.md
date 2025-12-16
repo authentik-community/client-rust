@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
 **keep_context** | Option<**bool**> |  | [optional]
 **mode** | Option<[**models::RedirectStageModeEnum**](RedirectStageModeEnum.md)> |  | [optional]
 **target_static** | Option<**String**> |  | [optional]

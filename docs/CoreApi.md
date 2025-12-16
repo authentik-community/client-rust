@@ -17,8 +17,6 @@ Method | HTTP request | Description
 [**core_applications_list**](CoreApi.md#core_applications_list) | **GET** /core/applications/ | 
 [**core_applications_partial_update**](CoreApi.md#core_applications_partial_update) | **PATCH** /core/applications/{slug}/ | 
 [**core_applications_retrieve**](CoreApi.md#core_applications_retrieve) | **GET** /core/applications/{slug}/ | 
-[**core_applications_set_icon_create**](CoreApi.md#core_applications_set_icon_create) | **POST** /core/applications/{slug}/set_icon/ | 
-[**core_applications_set_icon_url_create**](CoreApi.md#core_applications_set_icon_url_create) | **POST** /core/applications/{slug}/set_icon_url/ | 
 [**core_applications_update**](CoreApi.md#core_applications_update) | **PUT** /core/applications/{slug}/ | 
 [**core_applications_used_by_list**](CoreApi.md#core_applications_used_by_list) | **GET** /core/applications/{slug}/used_by/ | 
 [**core_authenticated_sessions_destroy**](CoreApi.md#core_authenticated_sessions_destroy) | **DELETE** /core/authenticated_sessions/{uuid}/ | 
@@ -58,6 +56,7 @@ Method | HTTP request | Description
 [**core_user_consent_used_by_list**](CoreApi.md#core_user_consent_used_by_list) | **GET** /core/user_consent/{id}/used_by/ | 
 [**core_users_create**](CoreApi.md#core_users_create) | **POST** /core/users/ | 
 [**core_users_destroy**](CoreApi.md#core_users_destroy) | **DELETE** /core/users/{id}/ | 
+[**core_users_export_create**](CoreApi.md#core_users_export_create) | **POST** /core/users/export/ | 
 [**core_users_impersonate_create**](CoreApi.md#core_users_impersonate_create) | **POST** /core/users/{id}/impersonate/ | 
 [**core_users_impersonate_end_retrieve**](CoreApi.md#core_users_impersonate_end_retrieve) | **GET** /core/users/impersonate_end/ | 
 [**core_users_list**](CoreApi.md#core_users_list) | **GET** /core/users/ | 
@@ -481,69 +480,6 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## core_applications_set_icon_create
-
-> core_applications_set_icon_create(slug, file, clear)
-
-
-Set application icon
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file** | Option<**std::path::PathBuf**> |  |  |
-**clear** | Option<**bool**> |  |  |[default to false]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## core_applications_set_icon_url_create
-
-> core_applications_set_icon_url_create(slug, file_path_request)
-
-
-Set application icon (as URL)
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file_path_request** | [**FilePathRequest**](FilePathRequest.md) |  | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1086,7 +1022,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_list
 
-> models::PaginatedGroupList core_groups_list(attributes, include_children, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
+> models::PaginatedGroupList core_groups_list(attributes, include_children, include_parents, include_users, is_superuser, members_by_pk, members_by_username, name, ordering, page, page_size, search)
 
 
 Group Viewset
@@ -1098,6 +1034,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **attributes** | Option<**String**> | Attributes |  |
 **include_children** | Option<**bool**> |  |  |[default to false]
+**include_parents** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 **is_superuser** | Option<**bool**> |  |  |
 **members_by_pk** | Option<[**Vec<i32>**](i32.md)> |  |  |
@@ -1188,7 +1125,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_groups_retrieve
 
-> models::Group core_groups_retrieve(group_uuid, include_children, include_users)
+> models::Group core_groups_retrieve(group_uuid, include_children, include_parents, include_users)
 
 
 Group Viewset
@@ -1200,6 +1137,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **group_uuid** | **uuid::Uuid** | A UUID string identifying this Group. | [required] |
 **include_children** | Option<**bool**> |  |  |[default to false]
+**include_parents** | Option<**bool**> |  |  |[default to false]
 **include_users** | Option<**bool**> |  |  |[default to true]
 
 ### Return type
@@ -1777,6 +1715,57 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## core_users_export_create
+
+> models::DataExport core_users_export_create(attributes, date_joined, date_joined__gt, date_joined__lt, email, groups_by_name, groups_by_pk, is_active, is_superuser, last_updated, last_updated__gt, last_updated__lt, name, ordering, path, path_startswith, roles_by_name, roles_by_pk, search, r#type, username, uuid)
+
+
+Create a data export for this data type. Note that the export is generated asynchronously: this method returns a `DataExport` object that will initially have `completed=false` as well as the permanent URL to that object in the `Location` header. You can poll that URL until `completed=true`, at which point the `file_url` property will contain a URL to download
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**attributes** | Option<**String**> | Attributes |  |
+**date_joined** | Option<**String**> |  |  |
+**date_joined__gt** | Option<**String**> |  |  |
+**date_joined__lt** | Option<**String**> |  |  |
+**email** | Option<**String**> |  |  |
+**groups_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
+**groups_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**is_active** | Option<**bool**> |  |  |
+**is_superuser** | Option<**bool**> |  |  |
+**last_updated** | Option<**String**> |  |  |
+**last_updated__gt** | Option<**String**> |  |  |
+**last_updated__lt** | Option<**String**> |  |  |
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**path** | Option<**String**> |  |  |
+**path_startswith** | Option<**String**> |  |  |
+**roles_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
+**roles_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**search** | Option<**String**> | A search term. |  |
+**r#type** | Option<[**Vec<String>**](String.md)> |  |  |
+**username** | Option<**String**> |  |  |
+**uuid** | Option<**uuid::Uuid**> |  |  |
+
+### Return type
+
+[**models::DataExport**](DataExport.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## core_users_impersonate_create
 
 > core_users_impersonate_create(id, impersonation_request)
@@ -1837,7 +1826,7 @@ This endpoint does not need any parameter.
 
 ## core_users_list
 
-> models::PaginatedUserList core_users_list(attributes, date_joined, date_joined__gt, date_joined__lt, email, groups_by_name, groups_by_pk, include_groups, is_active, is_superuser, last_updated, last_updated__gt, last_updated__lt, name, ordering, page, page_size, path, path_startswith, search, r#type, username, uuid)
+> models::PaginatedUserList core_users_list(attributes, date_joined, date_joined__gt, date_joined__lt, email, groups_by_name, groups_by_pk, include_groups, include_roles, is_active, is_superuser, last_updated, last_updated__gt, last_updated__lt, name, ordering, page, page_size, path, path_startswith, roles_by_name, roles_by_pk, search, r#type, username, uuid)
 
 
 User Viewset
@@ -1855,6 +1844,7 @@ Name | Type | Description  | Required | Notes
 **groups_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
 **groups_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **include_groups** | Option<**bool**> |  |  |[default to true]
+**include_roles** | Option<**bool**> |  |  |[default to true]
 **is_active** | Option<**bool**> |  |  |
 **is_superuser** | Option<**bool**> |  |  |
 **last_updated** | Option<**String**> |  |  |
@@ -1866,6 +1856,8 @@ Name | Type | Description  | Required | Notes
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **path** | Option<**String**> |  |  |
 **path_startswith** | Option<**String**> |  |  |
+**roles_by_name** | Option<[**Vec<String>**](String.md)> |  |  |
+**roles_by_pk** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **r#type** | Option<[**Vec<String>**](String.md)> |  |  |
 **username** | Option<**String**> |  |  |

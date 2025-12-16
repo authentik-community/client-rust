@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **is_superuser** | **bool** |  | [readonly]
 **groups** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **groups_obj** | Option<[**Vec<models::PartialGroup>**](PartialGroup.md)> |  | [readonly]
+**roles** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**roles_obj** | Option<[**Vec<models::Role>**](Role.md)> |  | [readonly]
 **email** | Option<**String**> |  | [optional]
 **avatar** | **String** | User's avatar, either a http/https URL or a data URI | [readonly]
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]

@@ -5,6 +5,10 @@ All URIs are relative to */api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**admin_apps_list**](AdminApi.md#admin_apps_list) | **GET** /admin/apps/ | 
+[**admin_file_create**](AdminApi.md#admin_file_create) | **POST** /admin/file/ | 
+[**admin_file_destroy**](AdminApi.md#admin_file_destroy) | **DELETE** /admin/file/ | 
+[**admin_file_list**](AdminApi.md#admin_file_list) | **GET** /admin/file/ | 
+[**admin_file_used_by_list**](AdminApi.md#admin_file_used_by_list) | **GET** /admin/file/used_by/ | 
 [**admin_models_list**](AdminApi.md#admin_models_list) | **GET** /admin/models/ | 
 [**admin_settings_partial_update**](AdminApi.md#admin_settings_partial_update) | **PATCH** /admin/settings/ | 
 [**admin_settings_retrieve**](AdminApi.md#admin_settings_retrieve) | **GET** /admin/settings/ | 
@@ -31,6 +35,129 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**Vec<models::App>**](App.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_file_create
+
+> admin_file_create(file, name, usage)
+
+
+Upload file to storage backend.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**file** | **std::path::PathBuf** |  | [required] |
+**name** | Option<**String**> |  |  |
+**usage** | Option<**String**> |  |  |[default to media]
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_file_destroy
+
+> admin_file_destroy(name, usage)
+
+
+Delete file from storage backend.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**usage** | Option<**String**> |  |  |[default to media]
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_file_list
+
+> Vec<models::FileList> admin_file_list(manageable_only, search, usage)
+
+
+List files from storage backend.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**manageable_only** | Option<**bool**> |  |  |[default to false]
+**search** | Option<**String**> | A search term. |  |
+**usage** | Option<**String**> |  |  |[default to media]
+
+### Return type
+
+[**Vec<models::FileList>**](FileList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## admin_file_used_by_list
+
+> Vec<models::UsedBy> admin_file_used_by_list(name)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
 
 ### Authorization
 

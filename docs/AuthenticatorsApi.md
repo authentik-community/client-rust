@@ -494,7 +494,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_admin_endpoint_create
 
-> models::EndpointDevice authenticators_admin_endpoint_create(endpoint_device_request)
+> models::GoogleEndpointDevice authenticators_admin_endpoint_create(google_endpoint_device_request)
 
 
 Viewset for Endpoint authenticator devices (for admins)
@@ -504,11 +504,11 @@ Viewset for Endpoint authenticator devices (for admins)
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md) |  | [required] |
+**google_endpoint_device_request** | [**GoogleEndpointDeviceRequest**](GoogleEndpointDeviceRequest.md) |  | [required] |
 
 ### Return type
 
-[**models::EndpointDevice**](EndpointDevice.md)
+[**models::GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_admin_endpoint_list
 
-> models::PaginatedEndpointDeviceList authenticators_admin_endpoint_list(name, ordering, page, page_size, search)
+> models::PaginatedGoogleEndpointDeviceList authenticators_admin_endpoint_list(name, ordering, page, page_size, search)
 
 
 Viewset for Endpoint authenticator devices (for admins)
@@ -572,7 +572,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+[**models::PaginatedGoogleEndpointDeviceList**](PaginatedGoogleEndpointDeviceList.md)
 
 ### Authorization
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_admin_endpoint_partial_update
 
-> models::EndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_endpoint_device_request)
+> models::GoogleEndpointDevice authenticators_admin_endpoint_partial_update(uuid, patched_google_endpoint_device_request)
 
 
 Viewset for Endpoint authenticator devices (for admins)
@@ -599,11 +599,11 @@ Viewset for Endpoint authenticator devices (for admins)
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
-**patched_endpoint_device_request** | Option<[**PatchedEndpointDeviceRequest**](PatchedEndpointDeviceRequest.md)> |  |  |
+**patched_google_endpoint_device_request** | Option<[**PatchedGoogleEndpointDeviceRequest**](PatchedGoogleEndpointDeviceRequest.md)> |  |  |
 
 ### Return type
 
-[**models::EndpointDevice**](EndpointDevice.md)
+[**models::GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_admin_endpoint_retrieve
 
-> models::EndpointDevice authenticators_admin_endpoint_retrieve(uuid)
+> models::GoogleEndpointDevice authenticators_admin_endpoint_retrieve(uuid)
 
 
 Viewset for Endpoint authenticator devices (for admins)
@@ -633,7 +633,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::EndpointDevice**](EndpointDevice.md)
+[**models::GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_admin_endpoint_update
 
-> models::EndpointDevice authenticators_admin_endpoint_update(uuid, endpoint_device_request)
+> models::GoogleEndpointDevice authenticators_admin_endpoint_update(uuid, google_endpoint_device_request)
 
 
 Viewset for Endpoint authenticator devices (for admins)
@@ -660,11 +660,11 @@ Viewset for Endpoint authenticator devices (for admins)
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Device. | [required] |
-**endpoint_device_request** | [**EndpointDeviceRequest**](EndpointDeviceRequest.md) |  | [required] |
+**google_endpoint_device_request** | [**GoogleEndpointDeviceRequest**](GoogleEndpointDeviceRequest.md) |  | [required] |
 
 ### Return type
 
-[**models::EndpointDevice**](EndpointDevice.md)
+[**models::GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 
@@ -1823,7 +1823,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_endpoint_list
 
-> models::PaginatedEndpointDeviceList authenticators_endpoint_list(name, ordering, page, page_size, search)
+> models::PaginatedGoogleEndpointDeviceList authenticators_endpoint_list(name, ordering, page, page_size, search)
 
 
 Viewset for Endpoint authenticator devices
@@ -1841,7 +1841,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::PaginatedEndpointDeviceList**](PaginatedEndpointDeviceList.md)
+[**models::PaginatedGoogleEndpointDeviceList**](PaginatedGoogleEndpointDeviceList.md)
 
 ### Authorization
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Required | Notes
 
 ## authenticators_endpoint_retrieve
 
-> models::EndpointDevice authenticators_endpoint_retrieve(uuid)
+> models::GoogleEndpointDevice authenticators_endpoint_retrieve(uuid)
 
 
 Viewset for Endpoint authenticator devices
@@ -1871,7 +1871,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::EndpointDevice**](EndpointDevice.md)
+[**models::GoogleEndpointDevice**](GoogleEndpointDevice.md)
 
 ### Authorization
 

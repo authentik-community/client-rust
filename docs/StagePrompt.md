@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **initial_value** | **String** |  | 
 **order** | **i32** |  | 
 **sub_text** | **String** |  | 
-**choices** | Option<**Vec<String>**> |  | 
+**choices** | Option<[**Vec<models::PromptChoice>**](PromptChoice.md)> |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

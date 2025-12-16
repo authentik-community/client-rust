@@ -2699,7 +2699,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_import_metadata_create
 
-> providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+> models::SamlProvider providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
 
 
 Create provider from SAML Metadata
@@ -2716,7 +2716,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**models::SamlProvider**](SAMLProvider.md)
 
 ### Authorization
 

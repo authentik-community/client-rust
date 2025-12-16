@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
-**flow_set** | Option<[**Vec<models::FlowSet>**](FlowSet.md)> |  | [optional]
+**flow_set** | [**Vec<models::FlowSet>**](FlowSet.md) |  | [readonly]
 **user_creation_mode** | Option<[**models::UserCreationModeEnum**](UserCreationModeEnum.md)> |  | [optional]
 **create_users_as_inactive** | Option<**bool**> | When set, newly created users are inactive and cannot login. | [optional]
 **create_users_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optionally add newly created users to this group. | [optional]

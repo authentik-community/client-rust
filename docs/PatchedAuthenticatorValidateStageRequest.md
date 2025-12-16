@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
 **not_configured_action** | Option<[**models::NotConfiguredActionEnum**](NotConfiguredActionEnum.md)> |  | [optional]
 **device_classes** | Option<[**Vec<models::DeviceClassesEnum>**](DeviceClassesEnum.md)> | Device classes which can be used to authenticate | [optional]
 **configuration_stages** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> | Stages used to configure Authenticator when user doesn't have any compatible devices. After this configuration Stage passes, the user is not prompted again. | [optional]

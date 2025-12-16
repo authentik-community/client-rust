@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
 **user_creation_mode** | Option<[**models::UserCreationModeEnum**](UserCreationModeEnum.md)> |  | [optional]
 **create_users_as_inactive** | Option<**bool**> | When set, newly created users are inactive and cannot login. | [optional]
 **create_users_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optionally add newly created users to this group. | [optional]

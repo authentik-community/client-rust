@@ -4,8 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
-**name** | Option<**String**> | The human-readable name of this device. | [optional]
+**device_uuid** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**name** | Option<**String**> |  | [optional]
+**access_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**access_group_obj** | Option<[**models::DeviceAccessGroupRequest**](DeviceAccessGroupRequest.md)> |  | [optional]
+**expiring** | Option<**bool**> |  | [optional]
+**expires** | Option<**String**> |  | [optional]
+**attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
-**flow_set** | Option<[**Vec<models::FlowSet>**](FlowSet.md)> |  | [optional]
+**flow_set** | [**Vec<models::FlowSet>**](FlowSet.md) |  | [readonly]
 **not_configured_action** | Option<[**models::NotConfiguredActionEnum**](NotConfiguredActionEnum.md)> |  | [optional]
 **device_classes** | Option<[**Vec<models::DeviceClassesEnum>**](DeviceClassesEnum.md)> | Device classes which can be used to authenticate | [optional]
 **configuration_stages** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> | Stages used to configure Authenticator when user doesn't have any compatible devices. After this configuration Stage passes, the user is not prompted again. | [optional]

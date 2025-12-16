@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **impersonation_require_reason** | Option<**bool**> | Require administrators to provide a reason for impersonating a user. | [optional]
 **default_token_duration** | Option<**String**> | Default token duration | [optional]
 **default_token_length** | Option<**u32**> | Default token length | [optional]
+**pagination_default_page_size** | Option<**u32**> | Default page size for API responses, if no size was requested. | [optional]
+**pagination_max_page_size** | Option<**u32**> | Maximum page size | [optional]
 **flags** | Option<[**models::PatchedSettingsRequestFlags**](PatchedSettingsRequest_flags.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

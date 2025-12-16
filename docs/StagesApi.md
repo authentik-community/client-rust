@@ -107,6 +107,13 @@ Method | HTTP request | Description
 [**stages_email_templates_list**](StagesApi.md#stages_email_templates_list) | **GET** /stages/email/templates/ | 
 [**stages_email_update**](StagesApi.md#stages_email_update) | **PUT** /stages/email/{stage_uuid}/ | 
 [**stages_email_used_by_list**](StagesApi.md#stages_email_used_by_list) | **GET** /stages/email/{stage_uuid}/used_by/ | 
+[**stages_endpoints_create**](StagesApi.md#stages_endpoints_create) | **POST** /stages/endpoints/ | 
+[**stages_endpoints_destroy**](StagesApi.md#stages_endpoints_destroy) | **DELETE** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_list**](StagesApi.md#stages_endpoints_list) | **GET** /stages/endpoints/ | 
+[**stages_endpoints_partial_update**](StagesApi.md#stages_endpoints_partial_update) | **PATCH** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_retrieve**](StagesApi.md#stages_endpoints_retrieve) | **GET** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_update**](StagesApi.md#stages_endpoints_update) | **PUT** /stages/endpoints/{stage_uuid}/ | 
+[**stages_endpoints_used_by_list**](StagesApi.md#stages_endpoints_used_by_list) | **GET** /stages/endpoints/{stage_uuid}/used_by/ | 
 [**stages_identification_create**](StagesApi.md#stages_identification_create) | **POST** /stages/identification/ | 
 [**stages_identification_destroy**](StagesApi.md#stages_identification_destroy) | **DELETE** /stages/identification/{stage_uuid}/ | 
 [**stages_identification_list**](StagesApi.md#stages_identification_list) | **GET** /stages/identification/ | 
@@ -3441,6 +3448,222 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## stages_endpoints_create
+
+> models::EndpointStage stages_endpoints_create(endpoint_stage_request)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_destroy
+
+> stages_endpoints_destroy(stage_uuid)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Stage. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_list
+
+> models::PaginatedEndpointStageList stages_endpoints_list(name, ordering, page, page_size, search)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedEndpointStageList**](PaginatedEndpointStageList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_partial_update
+
+> models::EndpointStage stages_endpoints_partial_update(stage_uuid, patched_endpoint_stage_request)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Stage. | [required] |
+**patched_endpoint_stage_request** | Option<[**PatchedEndpointStageRequest**](PatchedEndpointStageRequest.md)> |  |  |
+
+### Return type
+
+[**models::EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_retrieve
+
+> models::EndpointStage stages_endpoints_retrieve(stage_uuid)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Stage. | [required] |
+
+### Return type
+
+[**models::EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_update
+
+> models::EndpointStage stages_endpoints_update(stage_uuid, endpoint_stage_request)
+
+
+EndpointStage Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Stage. | [required] |
+**endpoint_stage_request** | [**EndpointStageRequest**](EndpointStageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::EndpointStage**](EndpointStage.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## stages_endpoints_used_by_list
+
+> Vec<models::UsedBy> stages_endpoints_used_by_list(stage_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**stage_uuid** | **uuid::Uuid** | A UUID string identifying this Endpoint Stage. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## stages_identification_create
 
 > models::IdentificationStage stages_identification_create(identification_stage_request)
@@ -3503,7 +3726,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_identification_list
 
-> models::PaginatedIdentificationStageList stages_identification_list(captcha_stage, case_insensitive_matching, enrollment_flow, name, ordering, page, page_size, password_stage, passwordless_flow, recovery_flow, search, show_matched_user, show_source_labels)
+> models::PaginatedIdentificationStageList stages_identification_list(captcha_stage, case_insensitive_matching, enrollment_flow, name, ordering, page, page_size, password_stage, passwordless_flow, recovery_flow, search, show_matched_user, show_source_labels, webauthn_stage)
 
 
 IdentificationStage Viewset
@@ -3526,6 +3749,7 @@ Name | Type | Description  | Required | Notes
 **search** | Option<**String**> | A search term. |  |
 **show_matched_user** | Option<**bool**> |  |  |
 **show_source_labels** | Option<**bool**> |  |  |
+**webauthn_stage** | Option<**uuid::Uuid**> |  |  |
 
 ### Return type
 

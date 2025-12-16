@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **slug** | Option<**String**> | Visible in the URL. | [optional]
 **title** | Option<**String**> | Shown as the Title in Flow pages. | [optional]
 **designation** | Option<[**models::FlowDesignationEnum**](FlowDesignationEnum.md)> | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik. | [optional]
+**background** | Option<**String**> | Background shown during execution | [optional]
 **policy_engine_mode** | Option<[**models::PolicyEngineMode**](PolicyEngineMode.md)> |  | [optional]
 **compatibility_mode** | Option<**bool**> | Enable compatibility mode, increases compatibility with password managers on mobile devices. | [optional]
 **layout** | Option<[**models::FlowLayoutEnum**](FlowLayoutEnum.md)> |  | [optional]

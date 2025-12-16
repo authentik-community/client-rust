@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [readonly]
 **is_superuser** | **bool** |  | [readonly]
 **groups** | [**Vec<models::UserSelfGroups>**](UserSelfGroups.md) |  | [readonly]
+**roles** | [**Vec<models::UserSelfRoles>**](UserSelfRoles.md) |  | [readonly]
 **email** | Option<**String**> |  | [optional]
 **avatar** | **String** | User's avatar, either a http/https URL or a data URI | [readonly]
 **uid** | **String** |  | [readonly]

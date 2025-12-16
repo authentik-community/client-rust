@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**events_events_actions_list**](EventsApi.md#events_events_actions_list) | **GET** /events/events/actions/ | 
 [**events_events_create**](EventsApi.md#events_events_create) | **POST** /events/events/ | 
 [**events_events_destroy**](EventsApi.md#events_events_destroy) | **DELETE** /events/events/{event_uuid}/ | 
+[**events_events_export_create**](EventsApi.md#events_events_export_create) | **POST** /events/events/export/ | 
 [**events_events_list**](EventsApi.md#events_events_list) | **GET** /events/events/ | 
 [**events_events_partial_update**](EventsApi.md#events_events_partial_update) | **PATCH** /events/events/{event_uuid}/ | 
 [**events_events_retrieve**](EventsApi.md#events_events_retrieve) | **GET** /events/events/{event_uuid}/ | 
@@ -112,6 +113,46 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
  (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## events_events_export_create
+
+> models::DataExport events_events_export_create(action, actions, brand_name, client_ip, context_authorized_app, context_model_app, context_model_name, context_model_pk, ordering, search, username)
+
+
+Create a data export for this data type. Note that the export is generated asynchronously: this method returns a `DataExport` object that will initially have `completed=false` as well as the permanent URL to that object in the `Location` header. You can poll that URL until `completed=true`, at which point the `file_url` property will contain a URL to download
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**action** | Option<**String**> |  |  |
+**actions** | Option<[**Vec<String>**](String.md)> |  |  |
+**brand_name** | Option<**String**> | Brand name |  |
+**client_ip** | Option<**String**> |  |  |
+**context_authorized_app** | Option<**String**> | Context Authorized application |  |
+**context_model_app** | Option<**String**> | Context Model App |  |
+**context_model_name** | Option<**String**> | Context Model Name |  |
+**context_model_pk** | Option<**String**> | Context Model Primary Key |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**search** | Option<**String**> | A search term. |  |
+**username** | Option<**String**> | Username |  |
+
+### Return type
+
+[**models::DataExport**](DataExport.md)
 
 ### Authorization
 

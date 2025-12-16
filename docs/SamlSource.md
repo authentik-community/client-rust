@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** | Source's display Name. | 
 **slug** | **String** | Internal source name, used in URLs. | 
 **enabled** | Option<**bool**> |  | [optional]
+**promoted** | Option<**bool**> | When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon. | [optional]
 **authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow to use when authenticating existing users. | [optional]
 **enrollment_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow to use when enrolling new users. | [optional]
 **user_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
@@ -20,7 +21,8 @@ Name | Type | Description | Notes
 **user_matching_mode** | Option<[**models::UserMatchingModeEnum**](UserMatchingModeEnum.md)> | How the source determines if an existing user should be authenticated or a new user enrolled. | [optional]
 **managed** | Option<**String**> | Objects that are managed by authentik. These objects are created and updated automatically. This flag only indicates that an object can be overwritten by migrations. You can still modify the objects via the API, but expect changes to be overwritten in a later update. | [readonly]
 **user_path_template** | Option<**String**> |  | [optional]
-**icon** | **String** |  | [readonly]
+**icon** | Option<**String**> |  | [optional]
+**icon_url** | **String** |  | [readonly]
 **group_matching_mode** | Option<[**models::GroupMatchingModeEnum**](GroupMatchingModeEnum.md)> | How the source determines if an existing group should be used or a new group created. | [optional]
 **pre_authentication_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used before authentication. | 
 **issuer** | Option<**String**> | Also known as Entity ID. Defaults the Metadata URL. | [optional]

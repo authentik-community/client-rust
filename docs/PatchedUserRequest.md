@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **is_active** | Option<**bool**> | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional]
 **last_login** | Option<**String**> |  | [optional]
 **groups** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**roles** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **email** | Option<**String**> |  | [optional]
 **attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
 **path** | Option<**String**> |  | [optional]

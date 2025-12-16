@@ -30,6 +30,7 @@
 | ModelDeleted | model_deleted |
 | EmailSent | email_sent |
 | UpdateAvailable | update_available |
+| ExportReady | export_ready |
 | Custom | custom_ |
 
 

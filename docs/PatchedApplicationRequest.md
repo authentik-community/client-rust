@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **backchannel_providers** | Option<**Vec<i32>**> |  | [optional]
 **open_in_new_tab** | Option<**bool**> | Open launch URL in a new browser tab or window. | [optional]
 **meta_launch_url** | Option<**String**> |  | [optional]
+**meta_icon** | Option<**String**> |  | [optional]
 **meta_description** | Option<**String**> |  | [optional]
 **meta_publisher** | Option<**String**> |  | [optional]
 **policy_engine_mode** | Option<[**models::PolicyEngineMode**](PolicyEngineMode.md)> |  | [optional]

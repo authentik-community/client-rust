@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**mode** | Option<[**models::InitialPermissionsModeEnum**](InitialPermissionsModeEnum.md)> |  | [optional]
 **role** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
 **permissions** | Option<**Vec<i32>**> |  | [optional]
 

@@ -11,6 +11,12 @@
 | AuthentikCoreApplicationentitlement | authentik_core.applicationentitlement |
 | AuthentikCoreToken | authentik_core.token |
 | AuthentikCryptoCertificatekeypair | authentik_crypto.certificatekeypair |
+| AuthentikEndpointsDeviceuserbinding | authentik_endpoints.deviceuserbinding |
+| AuthentikEndpointsDeviceaccessgroup | authentik_endpoints.deviceaccessgroup |
+| AuthentikEndpointsEndpointstage | authentik_endpoints.endpointstage |
+| AuthentikEndpointsConnectorsAgentAgentconnector | authentik_endpoints_connectors_agent.agentconnector |
+| AuthentikEndpointsConnectorsAgentAgentdeviceuserbinding | authentik_endpoints_connectors_agent.agentdeviceuserbinding |
+| AuthentikEndpointsConnectorsAgentEnrollmenttoken | authentik_endpoints_connectors_agent.enrollmenttoken |
 | AuthentikEnterpriseLicense | authentik_enterprise.license |
 | AuthentikEventsEvent | authentik_events.event |
 | AuthentikEventsNotificationtransport | authentik_events.notificationtransport |
@@ -109,6 +115,7 @@
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovider | authentik_providers_microsoft_entra.microsoftentraprovider |
 | AuthentikProvidersMicrosoftEntraMicrosoftentraprovidermapping | authentik_providers_microsoft_entra.microsoftentraprovidermapping |
 | AuthentikProvidersSsfSsfprovider | authentik_providers_ssf.ssfprovider |
+| AuthentikReportsDataexport | authentik_reports.dataexport |
 | AuthentikStagesAuthenticatorEndpointGdtcAuthenticatorendpointgdtcstage | authentik_stages_authenticator_endpoint_gdtc.authenticatorendpointgdtcstage |
 | AuthentikStagesMtlsMutualtlsstage | authentik_stages_mtls.mutualtlsstage |
 | AuthentikStagesSourceSourcestage | authentik_stages_source.sourcestage |
