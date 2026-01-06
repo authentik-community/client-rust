@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
-**requested_by** | [**models::RequestedBy**](RequestedBy.md) |  | [readonly]
+**requested_by** | [**models::PartialUser**](PartialUser.md) |  | [readonly]
 **requested_on** | **String** |  | [readonly]
 **content_type** | [**models::ContentType**](ContentType.md) |  | [readonly]
 **query_params** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 

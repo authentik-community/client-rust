@@ -694,7 +694,6 @@ docs/ReportsApi.md
 docs/Reputation.md
 docs/ReputationPolicy.md
 docs/ReputationPolicyRequest.md
-docs/RequestedBy.md
 docs/ResidentKeyRequirementEnum.md
 docs/Role.md
 docs/RoleAssignedObjectPermission.md
@@ -1561,7 +1560,6 @@ src/models/related_group.rs
 src/models/reputation.rs
 src/models/reputation_policy.rs
 src/models/reputation_policy_request.rs
-src/models/requested_by.rs
 src/models/resident_key_requirement_enum.rs
 src/models/role.rs
 src/models/role_assigned_object_permission.rs

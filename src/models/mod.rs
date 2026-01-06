@@ -1348,8 +1348,6 @@ pub mod reputation_policy;
 pub use self::reputation_policy::ReputationPolicy;
 pub mod reputation_policy_request;
 pub use self::reputation_policy_request::ReputationPolicyRequest;
-pub mod requested_by;
-pub use self::requested_by::RequestedBy;
 pub mod resident_key_requirement_enum;
 pub use self::resident_key_requirement_enum::ResidentKeyRequirementEnum;
 pub mod role;

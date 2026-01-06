@@ -537,7 +537,7 @@ Name | Type | Description  | Required | Notes
 
 ## rbac_roles_list
 
-> models::PaginatedRoleList rbac_roles_list(managed, managed__isnull, name, ordering, page, page_size, search, users)
+> models::PaginatedRoleList rbac_roles_list(ak_groups, inherited, managed, managed__isnull, name, ordering, page, page_size, search, users)
 
 
 Role viewset
@@ -547,6 +547,8 @@ Role viewset
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**ak_groups** | Option<**uuid::Uuid**> |  |  |
+**inherited** | Option<**bool**> | Include inherited roles (requires users or ak_groups filter) |  |
 **managed** | Option<[**Vec<String>**](String.md)> |  |  |
 **managed__isnull** | Option<**bool**> |  |  |
 **name** | Option<**String**> |  |  |
@@ -554,7 +556,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **search** | Option<**String**> | A search term. |  |
-**users** | Option<[**Vec<i32>**](i32.md)> |  |  |
+**users** | Option<**i32**> |  |  |
 
 ### Return type
 
