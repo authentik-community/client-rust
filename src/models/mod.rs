@@ -534,6 +534,8 @@ pub mod license_forecast;
 pub use self::license_forecast::LicenseForecast;
 pub mod license_request;
 pub use self::license_request::LicenseRequest;
+pub mod license_status_enum;
+pub use self::license_status_enum::LicenseStatusEnum;
 pub mod license_summary;
 pub use self::license_summary::LicenseSummary;
 pub mod license_summary_status_enum;

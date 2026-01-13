@@ -278,6 +278,7 @@ docs/License.md
 docs/LicenseFlagsEnum.md
 docs/LicenseForecast.md
 docs/LicenseRequest.md
+docs/LicenseStatusEnum.md
 docs/LicenseSummary.md
 docs/LicenseSummaryStatusEnum.md
 docs/Link.md
@@ -1152,6 +1153,7 @@ src/models/license.rs
 src/models/license_flags_enum.rs
 src/models/license_forecast.rs
 src/models/license_request.rs
+src/models/license_status_enum.rs
 src/models/license_summary.rs
 src/models/license_summary_status_enum.rs
 src/models/link.rs
