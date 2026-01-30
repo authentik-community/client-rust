@@ -1528,6 +1528,8 @@ pub mod tenant_recovery_key_response;
 pub use self::tenant_recovery_key_response::TenantRecoveryKeyResponse;
 pub mod tenant_request;
 pub use self::tenant_request::TenantRequest;
+pub mod themed_urls;
+pub use self::themed_urls::ThemedUrls;
 pub mod token;
 pub use self::token::Token;
 pub mod token_model;

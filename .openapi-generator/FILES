@@ -791,6 +791,7 @@ docs/TenantRecoveryKeyRequestRequest.md
 docs/TenantRecoveryKeyResponse.md
 docs/TenantRequest.md
 docs/TenantsApi.md
+docs/ThemedUrls.md
 docs/Token.md
 docs/TokenModel.md
 docs/TokenRequest.md
@@ -1651,6 +1652,7 @@ src/models/tenant_admin_group_request_request.rs
 src/models/tenant_recovery_key_request_request.rs
 src/models/tenant_recovery_key_response.rs
 src/models/tenant_request.rs
+src/models/themed_urls.rs
 src/models/token.rs
 src/models/token_model.rs
 src/models/token_request.rs

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **user_path_template** | Option<**String**> |  | [optional]
 **icon** | Option<**String**> |  | [optional]
 **icon_url** | Option<**String**> |  | [readonly]
+**icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **bot_username** | **String** | Telegram bot username | 
 **request_message_access** | Option<**bool**> | Request access to send messages from your bot. | [optional]
 **pre_authentication_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used before authentication. | 

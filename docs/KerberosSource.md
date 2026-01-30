@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **user_path_template** | Option<**String**> |  | [optional]
 **icon** | Option<**String**> |  | [optional]
 **icon_url** | **String** |  | [readonly]
+**icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **group_matching_mode** | Option<[**models::GroupMatchingModeEnum**](GroupMatchingModeEnum.md)> | How the source determines if an existing group should be used or a new group created. | [optional]
 **realm** | **String** | Kerberos realm | 
 **krb5_conf** | Option<**String**> | Custom krb5.conf to use. Uses the system one by default | [optional]

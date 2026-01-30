@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **user_path_template** | Option<**String**> |  | [optional]
 **icon** | Option<**String**> |  | [optional]
 **icon_url** | Option<**String**> | Get the URL to the source icon | [readonly]
+**icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

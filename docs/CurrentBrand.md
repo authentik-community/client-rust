@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **matched_domain** | **String** |  | 
 **branding_title** | **String** |  | 
 **branding_logo** | **String** |  | 
+**branding_logo_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **branding_favicon** | **String** |  | 
+**branding_favicon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **branding_custom_css** | **String** |  | 
 **ui_footer_links** | [**Vec<models::FooterLink>**](FooterLink.md) |  | [readonly]
 **ui_theme** | [**models::UiThemeEnum**](UiThemeEnum.md) |  | [readonly][default to Automatic]

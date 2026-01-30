@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **user_path_template** | Option<**String**> |  | [optional]
 **icon** | Option<**String**> |  | [optional]
 **icon_url** | **String** |  | [readonly]
+**icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **server_uri** | **String** |  | 
 **peer_certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optionally verify the LDAP Server's Certificate against the CA Chain in this keypair. | [optional]
 **client_certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Client certificate to authenticate against the LDAP Server's Certificate. | [optional]

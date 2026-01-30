@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **meta_launch_url** | Option<**String**> |  | [optional]
 **meta_icon** | Option<**String**> |  | [optional]
 **meta_icon_url** | Option<**String**> | Get the URL to the App Icon image | [readonly]
+**meta_icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **meta_description** | Option<**String**> |  | [optional]
 **meta_publisher** | Option<**String**> |  | [optional]
 **policy_engine_mode** | Option<[**models::PolicyEngineMode**](PolicyEngineMode.md)> |  | [optional]
