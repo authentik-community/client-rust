@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**policy** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
-**group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**policy** | Option<**uuid::Uuid**> |  | [optional]
+**group** | Option<**uuid::Uuid**> |  | [optional]
 **user** | Option<**i32**> |  | [optional]
-**target** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**target** | Option<**uuid::Uuid**> |  | [optional]
 **negate** | Option<**bool**> | Negates the outcome of the policy. Messages are unaffected. | [optional]
 **enabled** | Option<**bool**> |  | [optional]
 **order** | Option<**i32**> |  | [optional]

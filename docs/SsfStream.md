@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **provider** | **i32** |  | 
 **provider_obj** | [**models::SsfProvider**](SSFProvider.md) |  | [readonly]
 **delivery_method** | [**models::DeliveryMethodEnum**](DeliveryMethodEnum.md) |  | 

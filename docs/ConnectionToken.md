@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**pk** | Option<**uuid::Uuid**> |  | [optional]
 **provider** | **i32** |  | 
 **provider_obj** | [**models::RacProvider**](RACProvider.md) |  | [readonly]
-**endpoint** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**endpoint** | **uuid::Uuid** |  | 
 **endpoint_obj** | [**models::Endpoint**](Endpoint.md) |  | [readonly]
 **user** | [**models::PartialUser**](PartialUser.md) |  | [readonly]
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **is_active** | Option<**bool**> | Designates whether this user should be treated as active. Unselect this instead of deleting accounts. | [optional]
 **last_login** | Option<**String**> |  | [optional]
 **email** | Option<**String**> |  | [optional]
-**attributes** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
+**attributes** | Option<**std::collections::HashMap<String, serde_json::Value>**> |  | [optional]
 **uid** | **String** |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

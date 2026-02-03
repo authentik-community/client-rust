@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**id** | **uuid::Uuid** |  | [readonly]
 **identifier** | Option<**String**> | Unique schedule identifier | [readonly]
 **uid** | **String** |  | [readonly]
 **actor_name** | **String** | Dramatiq actor to call | [readonly]

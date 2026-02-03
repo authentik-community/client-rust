@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
-**authorization_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used when authorizing this provider. | 
-**invalidation_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used ending the session from a provider. | 
-**property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**authentication_flow** | Option<**uuid::Uuid**> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
+**authorization_flow** | **uuid::Uuid** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **uuid::Uuid** | Flow used ending the session from a provider. | 
+**property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **base_dn** | Option<**String**> | DN under which objects are accessible. | [optional]
-**certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**certificate** | Option<**uuid::Uuid**> |  | [optional]
 **tls_server_name** | Option<**String**> |  | [optional]
 **uid_start_number** | Option<**i32**> | The start for uidNumbers, this number is added to the user.pk to make sure that the numbers aren't too low for POSIX users. Default is 2000 to ensure that we don't collide with local users uidNumber | [optional]
 **gid_start_number** | Option<**i32**> | The start for gidNumbers, this number is added to a number generated from the group.pk to make sure that the numbers aren't too low for POSIX groups. Default is 4000 to ensure that we don't collide with local groups or users primary groups gidNumber | [optional]

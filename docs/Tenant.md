@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_uuid** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**tenant_uuid** | **uuid::Uuid** |  | [readonly]
 **schema_name** | **String** |  | 
 **name** | **String** |  | 
 **ready** | Option<**bool**> |  | [optional]

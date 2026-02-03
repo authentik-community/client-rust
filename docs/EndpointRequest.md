@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **provider** | **i32** |  | 
 **protocol** | [**models::ProtocolEnum**](ProtocolEnum.md) |  | 
 **host** | **String** |  | 
-**settings** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
-**property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**settings** | Option<**std::collections::HashMap<String, serde_json::Value>**> |  | [optional]
+**property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **auth_mode** | [**models::EndpointAuthModeEnum**](EndpointAuthModeEnum.md) |  | 
 **maximum_connections** | Option<**i32**> |  | [optional]
 

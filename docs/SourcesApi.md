@@ -7,8 +7,6 @@ Method | HTTP request | Description
 [**sources_all_destroy**](SourcesApi.md#sources_all_destroy) | **DELETE** /sources/all/{slug}/ | 
 [**sources_all_list**](SourcesApi.md#sources_all_list) | **GET** /sources/all/ | 
 [**sources_all_retrieve**](SourcesApi.md#sources_all_retrieve) | **GET** /sources/all/{slug}/ | 
-[**sources_all_set_icon_create**](SourcesApi.md#sources_all_set_icon_create) | **POST** /sources/all/{slug}/set_icon/ | 
-[**sources_all_set_icon_url_create**](SourcesApi.md#sources_all_set_icon_url_create) | **POST** /sources/all/{slug}/set_icon_url/ | 
 [**sources_all_types_list**](SourcesApi.md#sources_all_types_list) | **GET** /sources/all/types/ | 
 [**sources_all_used_by_list**](SourcesApi.md#sources_all_used_by_list) | **GET** /sources/all/{slug}/used_by/ | 
 [**sources_all_user_settings_list**](SourcesApi.md#sources_all_user_settings_list) | **GET** /sources/all/user_settings/ | 
@@ -123,6 +121,7 @@ Method | HTTP request | Description
 [**sources_scim_users_retrieve**](SourcesApi.md#sources_scim_users_retrieve) | **GET** /sources/scim_users/{id}/ | 
 [**sources_scim_users_update**](SourcesApi.md#sources_scim_users_update) | **PUT** /sources/scim_users/{id}/ | 
 [**sources_scim_users_used_by_list**](SourcesApi.md#sources_scim_users_used_by_list) | **GET** /sources/scim_users/{id}/used_by/ | 
+[**sources_telegram_connect_user_create**](SourcesApi.md#sources_telegram_connect_user_create) | **POST** /sources/telegram/{slug}/connect_user/ | 
 [**sources_telegram_create**](SourcesApi.md#sources_telegram_create) | **POST** /sources/telegram/ | 
 [**sources_telegram_destroy**](SourcesApi.md#sources_telegram_destroy) | **DELETE** /sources/telegram/{slug}/ | 
 [**sources_telegram_list**](SourcesApi.md#sources_telegram_list) | **GET** /sources/telegram/ | 
@@ -273,69 +272,6 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## sources_all_set_icon_create
-
-> sources_all_set_icon_create(slug, file, clear)
-
-
-Set source icon
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file** | Option<**std::path::PathBuf**> |  |  |
-**clear** | Option<**bool**> |  |  |[default to false]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## sources_all_set_icon_url_create
-
-> sources_all_set_icon_url_create(slug, file_path_request)
-
-
-Set source icon (as URL)
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file_path_request** | [**FilePathRequest**](FilePathRequest.md) |  | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2281,7 +2217,7 @@ Name | Type | Description  | Required | Notes
 **enabled** | Option<**bool**> |  |  |
 **group_membership_field** | Option<**String**> |  |  |
 **group_object_filter** | Option<**String**> |  |  |
-**group_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**group_property_mappings** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **lookup_groups_from_user** | Option<**bool**> |  |  |
 **name** | Option<**String**> |  |  |
 **object_uniqueness_field** | Option<**String**> |  |  |
@@ -2302,7 +2238,7 @@ Name | Type | Description  | Required | Notes
 **sync_users_password** | Option<**bool**> |  |  |
 **user_membership_attribute** | Option<**String**> |  |  |
 **user_object_filter** | Option<**String**> |  |  |
-**user_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**user_property_mappings** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 
 ### Return type
 
@@ -3939,6 +3875,37 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sources_telegram_connect_user_create
+
+> models::UserTelegramSourceConnection sources_telegram_connect_user_create(slug, telegram_auth_request)
+
+
+Mixin to add a used_by endpoint to return a list of all objects using this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**slug** | **String** |  | [required] |
+**telegram_auth_request** | [**TelegramAuthRequest**](TelegramAuthRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UserTelegramSourceConnection**](UserTelegramSourceConnection.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

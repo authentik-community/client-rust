@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**pk** | Option<**uuid::Uuid**> |  | [optional]
 **identifier** | **String** |  | 
 **ip** | **String** |  | 
-**ip_geo_data** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
-**ip_asn_data** | Option<[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)> |  | [optional]
+**ip_geo_data** | Option<**std::collections::HashMap<String, serde_json::Value>**> |  | [optional]
+**ip_asn_data** | Option<**std::collections::HashMap<String, serde_json::Value>**> |  | [optional]
 **score** | Option<**i64**> |  | [optional]
 **updated** | **String** |  | [readonly]
 

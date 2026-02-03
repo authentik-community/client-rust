@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **name** | **String** | Source's display Name. | 
 **slug** | **String** | Internal source name, used in URLs. | 
 **enabled** | Option<**bool**> |  | [optional]
-**authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow to use when authenticating existing users. | [optional]
-**enrollment_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow to use when enrolling new users. | [optional]
-**user_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**group_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**promoted** | Option<**bool**> | When enabled, this source will be displayed as a prominent button on the login page, instead of a small icon. | [optional]
+**authentication_flow** | Option<**uuid::Uuid**> | Flow to use when authenticating existing users. | [optional]
+**enrollment_flow** | Option<**uuid::Uuid**> | Flow to use when enrolling new users. | [optional]
+**user_property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
+**group_property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **component** | **String** | Get object component so that we know how to edit the object | [readonly]
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
@@ -20,10 +21,12 @@ Name | Type | Description | Notes
 **user_matching_mode** | Option<[**models::UserMatchingModeEnum**](UserMatchingModeEnum.md)> | How the source determines if an existing user should be authenticated or a new user enrolled. | [optional]
 **managed** | Option<**String**> | Objects that are managed by authentik. These objects are created and updated automatically. This flag only indicates that an object can be overwritten by migrations. You can still modify the objects via the API, but expect changes to be overwritten in a later update. | [readonly]
 **user_path_template** | Option<**String**> |  | [optional]
-**icon** | **String** |  | [readonly]
+**icon** | Option<**String**> |  | [optional]
+**icon_url** | **String** |  | [readonly]
+**icon_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
 **server_uri** | **String** |  | 
-**peer_certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optionally verify the LDAP Server's Certificate against the CA Chain in this keypair. | [optional]
-**client_certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Client certificate to authenticate against the LDAP Server's Certificate. | [optional]
+**peer_certificate** | Option<**uuid::Uuid**> | Optionally verify the LDAP Server's Certificate against the CA Chain in this keypair. | [optional]
+**client_certificate** | Option<**uuid::Uuid**> | Client certificate to authenticate against the LDAP Server's Certificate. | [optional]
 **bind_cn** | Option<**String**> |  | [optional]
 **start_tls** | Option<**bool**> |  | [optional]
 **sni** | Option<**bool**> |  | [optional]
@@ -39,10 +42,11 @@ Name | Type | Description | Notes
 **sync_users** | Option<**bool**> |  | [optional]
 **sync_users_password** | Option<**bool**> | When a user changes their password, sync it back to LDAP. This can only be enabled on a single LDAP source. | [optional]
 **sync_groups** | Option<**bool**> |  | [optional]
-**sync_parent_group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
-**connectivity** | Option<[**std::collections::HashMap<String, std::collections::HashMap<String, String>>**](std::collections::HashMap.md)> | Get cached source connectivity | [readonly]
+**sync_parent_group** | Option<**uuid::Uuid**> |  | [optional]
+**connectivity** | Option<**std::collections::HashMap<String, std::collections::HashMap<String, String>>**> | Get cached source connectivity | [readonly]
 **lookup_groups_from_user** | Option<**bool**> | Lookup group membership based on a user attribute instead of a group attribute. This allows nested group resolution on systems like FreeIPA and Active Directory | [optional]
 **delete_not_found_objects** | Option<**bool**> | Delete authentik users and groups which were previously supplied by this source, but are now missing from it. | [optional]
+**sync_outgoing_trigger_mode** | Option<[**models::SyncOutgoingTriggerModeEnum**](SyncOutgoingTriggerModeEnum.md)> | When to trigger sync for outgoing providers | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

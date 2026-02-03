@@ -25,11 +25,13 @@
 | SystemTaskException | system_task_exception |
 | SystemException | system_exception |
 | ConfigurationError | configuration_error |
+| ConfigurationWarning | configuration_warning |
 | ModelCreated | model_created |
 | ModelUpdated | model_updated |
 | ModelDeleted | model_deleted |
 | EmailSent | email_sent |
 | UpdateAvailable | update_available |
+| ExportReady | export_ready |
 | Custom | custom_ |
 
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
-**policybindingmodel_ptr_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
-**target** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
-**stage** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**pk** | **uuid::Uuid** |  | [readonly]
+**policybindingmodel_ptr_id** | **uuid::Uuid** |  | [readonly]
+**target** | **uuid::Uuid** |  | 
+**stage** | **uuid::Uuid** |  | 
 **stage_obj** | [**models::Stage**](Stage.md) |  | [readonly]
 **evaluate_on_plan** | Option<**bool**> | Evaluate policies during the Flow planning process. | [optional]
 **re_evaluate_policies** | Option<**bool**> | Evaluate policies when the Stage is presented to the user. | [optional]

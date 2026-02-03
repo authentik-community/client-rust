@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **response_errors** | Option<[**std::collections::HashMap<String, Vec<models::ErrorDetail>>**](Vec.md)> |  | [optional]
 **pending_user** | **String** |  | 
 **pending_user_avatar** | **String** |  | 
-**registration** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 
+**registration** | **std::collections::HashMap<String, serde_json::Value>** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

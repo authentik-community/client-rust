@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **name** | **String** |  | 
 **expression** | **String** |  | 
 

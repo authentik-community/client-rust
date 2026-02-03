@@ -120,6 +120,15 @@ Method | HTTP request | Description
 [**providers_ssf_retrieve**](ProvidersApi.md#providers_ssf_retrieve) | **GET** /providers/ssf/{id}/ | 
 [**providers_ssf_update**](ProvidersApi.md#providers_ssf_update) | **PUT** /providers/ssf/{id}/ | 
 [**providers_ssf_used_by_list**](ProvidersApi.md#providers_ssf_used_by_list) | **GET** /providers/ssf/{id}/used_by/ | 
+[**providers_wsfed_create**](ProvidersApi.md#providers_wsfed_create) | **POST** /providers/wsfed/ | 
+[**providers_wsfed_destroy**](ProvidersApi.md#providers_wsfed_destroy) | **DELETE** /providers/wsfed/{id}/ | 
+[**providers_wsfed_list**](ProvidersApi.md#providers_wsfed_list) | **GET** /providers/wsfed/ | 
+[**providers_wsfed_metadata_retrieve**](ProvidersApi.md#providers_wsfed_metadata_retrieve) | **GET** /providers/wsfed/{id}/metadata/ | 
+[**providers_wsfed_partial_update**](ProvidersApi.md#providers_wsfed_partial_update) | **PATCH** /providers/wsfed/{id}/ | 
+[**providers_wsfed_preview_user_retrieve**](ProvidersApi.md#providers_wsfed_preview_user_retrieve) | **GET** /providers/wsfed/{id}/preview_user/ | 
+[**providers_wsfed_retrieve**](ProvidersApi.md#providers_wsfed_retrieve) | **GET** /providers/wsfed/{id}/ | 
+[**providers_wsfed_update**](ProvidersApi.md#providers_wsfed_update) | **PUT** /providers/wsfed/{id}/ | 
+[**providers_wsfed_used_by_list**](ProvidersApi.md#providers_wsfed_used_by_list) | **GET** /providers/wsfed/{id}/used_by/ | 
 
 
 
@@ -1766,7 +1775,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
-**property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**property_mappings** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **refresh_token_validity** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **signing_key** | Option<**uuid::Uuid**> |  |  |
@@ -2059,7 +2068,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
-**property_mappings__iexact** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**property_mappings__iexact** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **skip_path_regex__iexact** | Option<**String**> |  |  |
 
@@ -2699,7 +2708,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_import_metadata_create
 
-> providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
+> models::SamlProvider providers_saml_import_metadata_create(name, authorization_flow, invalidation_flow, file)
 
 
 Create provider from SAML Metadata
@@ -2716,7 +2725,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**models::SamlProvider**](SAMLProvider.md)
 
 ### Authorization
 
@@ -2763,7 +2772,7 @@ Name | Type | Description  | Required | Notes
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
-**property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**property_mappings** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **session_valid_not_on_or_after** | Option<**String**> |  |  |
 **sign_assertion** | Option<**bool**> |  |  |
@@ -3195,7 +3204,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_scim_list
 
-> models::PaginatedScimProviderList providers_scim_list(exclude_users_service_account, filter_group, name, ordering, page, page_size, search, url)
+> models::PaginatedScimProviderList providers_scim_list(exclude_users_service_account, group_filters, name, ordering, page, page_size, search, url)
 
 
 SCIMProvider Viewset
@@ -3206,7 +3215,7 @@ SCIMProvider Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **exclude_users_service_account** | Option<**bool**> |  |  |
-**filter_group** | Option<**uuid::Uuid**> |  |  |
+**group_filters** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
@@ -3769,6 +3778,313 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this Shared Signals Framework Provider. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_create
+
+> models::WsFederationProvider providers_wsfed_create(ws_federation_provider_request)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**ws_federation_provider_request** | [**WsFederationProviderRequest**](WsFederationProviderRequest.md) |  | [required] |
+
+### Return type
+
+[**models::WsFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_destroy
+
+> providers_wsfed_destroy(id)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_list
+
+> models::PaginatedWsFederationProviderList providers_wsfed_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**acs_url** | Option<**String**> |  |  |
+**assertion_valid_not_before** | Option<**String**> |  |  |
+**assertion_valid_not_on_or_after** | Option<**String**> |  |  |
+**audience** | Option<**String**> |  |  |
+**authentication_flow** | Option<**uuid::Uuid**> |  |  |
+**authn_context_class_ref_mapping** | Option<**uuid::Uuid**> |  |  |
+**authorization_flow** | Option<**uuid::Uuid**> |  |  |
+**backchannel_application** | Option<**uuid::Uuid**> |  |  |
+**default_name_id_policy** | Option<**String**> |  |  |
+**default_relay_state** | Option<**String**> |  |  |
+**digest_algorithm** | Option<**String**> |  |  |
+**encryption_kp** | Option<**uuid::Uuid**> |  |  |
+**invalidation_flow** | Option<**uuid::Uuid**> |  |  |
+**is_backchannel** | Option<**bool**> |  |  |
+**issuer** | Option<**String**> |  |  |
+**logout_method** | Option<**String**> | Method to use for logout. Front-channel iframe loads all logout URLs simultaneously in hidden iframes. Front-channel native uses your active browser tab to send post requests and redirect to providers. Back-channel sends logout requests directly from the server without user interaction (requires POST SLS binding).   |  |
+**name** | Option<**String**> |  |  |
+**name_id_mapping** | Option<**uuid::Uuid**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**property_mappings** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
+**search** | Option<**String**> | A search term. |  |
+**session_valid_not_on_or_after** | Option<**String**> |  |  |
+**sign_assertion** | Option<**bool**> |  |  |
+**sign_logout_request** | Option<**bool**> |  |  |
+**sign_response** | Option<**bool**> |  |  |
+**signature_algorithm** | Option<**String**> |  |  |
+**signing_kp** | Option<**uuid::Uuid**> |  |  |
+**sls_binding** | Option<**String**> | This determines how authentik sends the logout response back to the Service Provider.   |  |
+**sls_url** | Option<**String**> |  |  |
+**sp_binding** | Option<**String**> | This determines how authentik sends the response back to the Service Provider.   |  |
+**verification_kp** | Option<**uuid::Uuid**> |  |  |
+
+### Return type
+
+[**models::PaginatedWsFederationProviderList**](PaginatedWSFederationProviderList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_metadata_retrieve
+
+> models::SamlMetadata providers_wsfed_metadata_retrieve(id, download, force_binding)
+
+
+Return metadata as XML string
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+**download** | Option<**bool**> |  |  |
+**force_binding** | Option<**String**> | Optionally force the metadata to only include one binding. |  |
+
+### Return type
+
+[**models::SamlMetadata**](SAMLMetadata.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_partial_update
+
+> models::WsFederationProvider providers_wsfed_partial_update(id, patched_ws_federation_provider_request)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+**patched_ws_federation_provider_request** | Option<[**PatchedWsFederationProviderRequest**](PatchedWsFederationProviderRequest.md)> |  |  |
+
+### Return type
+
+[**models::WsFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_preview_user_retrieve
+
+> models::PropertyMappingPreview providers_wsfed_preview_user_retrieve(id, for_user)
+
+
+Preview user data for provider
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+**for_user** | Option<**i32**> |  |  |
+
+### Return type
+
+[**models::PropertyMappingPreview**](PropertyMappingPreview.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_retrieve
+
+> models::WsFederationProvider providers_wsfed_retrieve(id)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+
+### Return type
+
+[**models::WsFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_update
+
+> models::WsFederationProvider providers_wsfed_update(id, ws_federation_provider_request)
+
+
+WSFederationProvider Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
+**ws_federation_provider_request** | [**WsFederationProviderRequest**](WsFederationProviderRequest.md) |  | [required] |
+
+### Return type
+
+[**models::WsFederationProvider**](WSFederationProvider.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## providers_wsfed_used_by_list
+
+> Vec<models::UsedBy> providers_wsfed_used_by_list(id)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **i32** | A unique integer value identifying this WS-Federation Provider. | [required] |
 
 ### Return type
 

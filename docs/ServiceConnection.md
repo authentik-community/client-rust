@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **name** | **String** |  | 
 **local** | Option<**bool**> | If enabled, use the local connection. Required Docker socket/Kubernetes Integration | [optional]
 **component** | **String** | Return component used to edit this object | [readonly]

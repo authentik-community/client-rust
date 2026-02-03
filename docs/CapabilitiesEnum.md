@@ -5,6 +5,7 @@
 | Name | Value |
 |---- | -----|
 | CanSaveMedia | can_save_media |
+| CanSaveReports | can_save_reports |
 | CanGeoIp | can_geo_ip |
 | CanAsn | can_asn |
 | CanImpersonate | can_impersonate |

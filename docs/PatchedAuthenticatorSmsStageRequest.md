@@ -5,8 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
-**configure_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional]
+**configure_flow** | Option<**uuid::Uuid**> | Flow used by an authenticated user to configure this Stage. If empty, user will not be able to configure this stage. | [optional]
 **friendly_name** | Option<**String**> |  | [optional]
 **provider** | Option<[**models::ProviderEnum**](ProviderEnum.md)> |  | [optional]
 **from_number** | Option<**String**> |  | [optional]
@@ -15,7 +14,7 @@ Name | Type | Description | Notes
 **auth_password** | Option<**String**> |  | [optional]
 **auth_type** | Option<[**models::AuthTypeEnum**](AuthTypeEnum.md)> |  | [optional]
 **verify_only** | Option<**bool**> | When enabled, the Phone number is only used during enrollment to verify the users authenticity. Only a hash of the phone number is saved to ensure it is not reused in the future. | [optional]
-**mapping** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Optionally modify the payload being sent to custom providers. | [optional]
+**mapping** | Option<**uuid::Uuid**> | Optionally modify the payload being sent to custom providers. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

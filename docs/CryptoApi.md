@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## crypto_certificatekeypairs_list
 
-> models::PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key, include_details, managed, name, ordering, page, page_size, search)
+> models::PaginatedCertificateKeyPairList crypto_certificatekeypairs_list(has_key, key_type, managed, name, ordering, page, page_size, search)
 
 
 CertificateKeyPair Viewset
@@ -120,7 +120,7 @@ CertificateKeyPair Viewset
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **has_key** | Option<**bool**> | Only return certificate-key pairs with keys |  |
-**include_details** | Option<**bool**> |  |  |[default to true]
+**key_type** | Option<[**Vec<String>**](String.md)> | Filter by key algorithm type (RSA, EC, DSA, etc). Can be specified multiple times (e.g. '?key_type=rsa&key_type=ec') |  |
 **managed** | Option<**String**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |

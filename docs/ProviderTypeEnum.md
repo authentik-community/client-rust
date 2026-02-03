@@ -17,8 +17,10 @@
 | Okta | okta |
 | Patreon | patreon |
 | Reddit | reddit |
+| Slack | slack |
 | Twitch | twitch |
 | Twitter | twitter |
+| Wechat | wechat |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

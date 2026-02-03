@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **name** | **String** | Source's display Name. | 
 **slug** | **String** | Internal source name, used in URLs. | 
 **enabled** | Option<**bool**> |  | [optional]
-**user_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
-**group_property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**user_property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
+**group_property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **component** | **String** | Get object component so that we know how to edit the object | [readonly]
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]

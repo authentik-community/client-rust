@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hyperlink** | Option<**String**> |  | [optional]
+**hyperlink_label** | Option<**String**> |  | [optional]
 **event** | Option<[**models::EventRequest**](EventRequest.md)> |  | [optional]
 **seen** | Option<**bool**> |  | [optional]
 

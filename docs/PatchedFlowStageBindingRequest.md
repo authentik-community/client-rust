@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
-**stage** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**target** | Option<**uuid::Uuid**> |  | [optional]
+**stage** | Option<**uuid::Uuid**> |  | [optional]
 **evaluate_on_plan** | Option<**bool**> | Evaluate policies during the Flow planning process. | [optional]
 **re_evaluate_policies** | Option<**bool**> | Evaluate policies when the Stage is presented to the user. | [optional]
 **order** | Option<**i32**> |  | [optional]

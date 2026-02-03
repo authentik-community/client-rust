@@ -25,8 +25,6 @@ Method | HTTP request | Description
 [**flows_instances_list**](FlowsApi.md#flows_instances_list) | **GET** /flows/instances/ | 
 [**flows_instances_partial_update**](FlowsApi.md#flows_instances_partial_update) | **PATCH** /flows/instances/{slug}/ | 
 [**flows_instances_retrieve**](FlowsApi.md#flows_instances_retrieve) | **GET** /flows/instances/{slug}/ | 
-[**flows_instances_set_background_create**](FlowsApi.md#flows_instances_set_background_create) | **POST** /flows/instances/{slug}/set_background/ | 
-[**flows_instances_set_background_url_create**](FlowsApi.md#flows_instances_set_background_url_create) | **POST** /flows/instances/{slug}/set_background_url/ | 
 [**flows_instances_update**](FlowsApi.md#flows_instances_update) | **PUT** /flows/instances/{slug}/ | 
 [**flows_instances_used_by_list**](FlowsApi.md#flows_instances_used_by_list) | **GET** /flows/instances/{slug}/used_by/ | 
 
@@ -112,7 +110,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **pbm_uuid** | Option<**uuid::Uuid**> |  |  |
-**policies** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**policies** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **policy_engine_mode** | Option<**String**> |  |  |
 **re_evaluate_policies** | Option<**bool**> |  |  |
 **search** | Option<**String**> | A search term. |  |
@@ -679,69 +677,6 @@ Name | Type | Description  | Required | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## flows_instances_set_background_create
-
-> flows_instances_set_background_create(slug, file, clear)
-
-
-Set Flow background
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file** | Option<**std::path::PathBuf**> |  |  |
-**clear** | Option<**bool**> |  |  |[default to false]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## flows_instances_set_background_url_create
-
-> flows_instances_set_background_url_create(slug, file_path_request)
-
-
-Set Flow background (as URL)
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**slug** | **String** |  | [required] |
-**file_path_request** | [**FilePathRequest**](FilePathRequest.md) |  | [required] |
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[authentik](../README.md#authentik)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | Option<**String**> |  | [optional]
-**signing_key** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Key used to sign the SSF Events. | [optional]
+**signing_key** | Option<**uuid::Uuid**> | Key used to sign the SSF Events. | [optional]
 **oidc_auth_providers** | Option<**Vec<i32>**> |  | [optional]
 **event_retention** | Option<**String**> |  | [optional]
 

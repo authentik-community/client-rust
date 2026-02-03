@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 
+**application** | **std::collections::HashMap<String, serde_json::Value>** |  | 
 **counted_events** | **i32** |  | 
 **unique_users** | **i32** |  | 
 

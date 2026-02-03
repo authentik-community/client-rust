@@ -147,7 +147,7 @@ Name | Type | Description  | Required | Notes
 **name__iexact** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
 **providers__isnull** | Option<**bool**> |  |  |
-**providers_by_pk** | Option<[**Vec<i32>**](i32.md)> |  |  |
+**providers_by_pk** | Option<[**Vec<i32>**](I32.md)> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **service_connection__name__icontains** | Option<**String**> |  |  |
 **service_connection__name__iexact** | Option<**String**> |  |  |
@@ -188,7 +188,7 @@ Name | Type | Description  | Required | Notes
 **page** | Option<**i32**> | A page number within the paginated result set. |  |
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **providers__isnull** | Option<**bool**> |  |  |
-**providers_by_pk** | Option<[**Vec<i32>**](i32.md)> |  |  |
+**providers_by_pk** | Option<[**Vec<i32>**](I32.md)> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **service_connection__name__icontains** | Option<**String**> |  |  |
 **service_connection__name__iexact** | Option<**String**> |  |  |

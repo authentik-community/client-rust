@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **severity** | [**models::SeverityEnum**](SeverityEnum.md) |  | [readonly]
 **body** | **String** |  | [readonly]
+**hyperlink** | Option<**String**> |  | [optional]
+**hyperlink_label** | Option<**String**> |  | [optional]
 **created** | **String** |  | [readonly]
 **event** | Option<[**models::Event**](Event.md)> |  | [optional]
 **seen** | Option<**bool**> |  | [optional]

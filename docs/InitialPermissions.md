@@ -6,8 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **i32** |  | [readonly]
 **name** | **String** |  | 
-**mode** | [**models::InitialPermissionsModeEnum**](InitialPermissionsModeEnum.md) |  | 
-**role** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**role** | **uuid::Uuid** |  | 
 **permissions** | Option<**Vec<i32>**> |  | [optional]
 **permissions_obj** | [**Vec<models::Permission>**](Permission.md) |  | [readonly]
 

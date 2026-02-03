@@ -401,7 +401,7 @@ Name | Type | Description  | Required | Notes
 **policy__isnull** | Option<**bool**> |  |  |
 **search** | Option<**String**> | A search term. |  |
 **target** | Option<**uuid::Uuid**> |  |  |
-**target_in** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  |  |
+**target_in** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
 **timeout** | Option<**i32**> |  |  |
 
 ### Return type

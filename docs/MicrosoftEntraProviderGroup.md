@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**id** | **uuid::Uuid** |  | [readonly]
 **microsoft_id** | **String** |  | 
-**group** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**group** | **uuid::Uuid** |  | 
 **group_obj** | [**models::PartialGroup**](PartialGroup.md) |  | [readonly]
 **provider** | **i32** |  | 
-**attributes** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | [readonly]
+**attributes** | **std::collections::HashMap<String, serde_json::Value>** |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

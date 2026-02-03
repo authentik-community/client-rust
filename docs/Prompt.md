@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
 **name** | **String** |  | 
 **field_key** | **String** | Name of the form field, also used to store the value | 
 **label** | **String** |  | 

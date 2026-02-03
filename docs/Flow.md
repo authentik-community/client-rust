@@ -4,15 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
-**policybindingmodel_ptr_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**pk** | **uuid::Uuid** |  | [readonly]
+**policybindingmodel_ptr_id** | **uuid::Uuid** |  | [readonly]
 **name** | **String** |  | 
 **slug** | **String** | Visible in the URL. | 
 **title** | **String** | Shown as the Title in Flow pages. | 
 **designation** | [**models::FlowDesignationEnum**](FlowDesignationEnum.md) | Decides what this Flow is used for. For example, the Authentication flow is redirect to when an un-authenticated user visits authentik. | 
-**background** | **String** | Get the URL to the background image. If the name is /static or starts with http it is returned as-is | [readonly]
-**stages** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | [readonly]
-**policies** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | [readonly]
+**background** | Option<**String**> | Background shown during execution | [optional]
+**background_url** | **String** | Get the URL to the background image | [readonly]
+**background_themed_urls** | Option<[**models::ThemedUrls**](ThemedUrls.md)> |  | [readonly]
+**stages** | **Vec<uuid::Uuid>** |  | [readonly]
+**policies** | **Vec<uuid::Uuid>** |  | [readonly]
 **cache_count** | **i32** | Get count of cached flows | [readonly]
 **policy_engine_mode** | Option<[**models::PolicyEngineMode**](PolicyEngineMode.md)> |  | [optional]
 **compatibility_mode** | Option<**bool**> | Enable compatibility mode, increases compatibility with password managers on mobile devices. | [optional]

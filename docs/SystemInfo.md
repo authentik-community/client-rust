@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **http_headers** | **std::collections::HashMap<String, String>** | Get HTTP Request headers | [readonly]
 **http_host** | **String** | Get HTTP host | [readonly]
 **http_is_secure** | **bool** | Get HTTP Secure flag | [readonly]
-**runtime** | [**models::SystemInfoRuntime**](SystemInfo_runtime.md) |  | 
+**runtime** | [**models::SystemInfoRuntime**](SystemInfoRuntime.md) |  | 
 **brand** | **String** | Currently active brand | [readonly]
 **server_time** | **String** | Current server time | [readonly]
 **embedded_outpost_disabled** | **bool** | Whether the embedded outpost is disabled | [readonly]

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pk** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
-**policy** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
-**group** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**pk** | **uuid::Uuid** |  | [readonly]
+**policy** | Option<**uuid::Uuid**> |  | [optional]
+**group** | Option<**uuid::Uuid**> |  | [optional]
 **user** | Option<**i32**> |  | [optional]
 **policy_obj** | [**models::Policy**](Policy.md) |  | [readonly]
 **group_obj** | [**models::PartialGroup**](PartialGroup.md) |  | [readonly]
 **user_obj** | [**models::PartialUser**](PartialUser.md) |  | [readonly]
-**target** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**target** | **uuid::Uuid** |  | 
 **negate** | Option<**bool**> | Negates the outcome of the policy. Messages are unaffected. | [optional]
 **enabled** | Option<**bool**> |  | [optional]
 **order** | **i32** |  | 

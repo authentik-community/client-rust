@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **i32** |  | 
-**source** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**source** | **uuid::Uuid** |  | 
 **identifier** | **String** |  | 
 **plex_token** | **String** |  | 
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | **i32** |  | 
-**source** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
+**source** | **uuid::Uuid** |  | 
 **identifier** | **String** |  | 
 **access_token** | Option<**String**> |  | [optional]
 **expires** | Option<**String**> |  | [optional]

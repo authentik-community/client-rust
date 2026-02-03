@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pk** | **i32** |  | [readonly]
 **name** | **String** |  | 
-**authentication_flow** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
-**authorization_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used when authorizing this provider. | 
-**invalidation_flow** | [**uuid::Uuid**](uuid::Uuid.md) | Flow used ending the session from a provider. | 
-**property_mappings** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**authentication_flow** | Option<**uuid::Uuid**> | Flow used for authentication when the associated application is accessed by an un-authenticated user. | [optional]
+**authorization_flow** | **uuid::Uuid** | Flow used when authorizing this provider. | 
+**invalidation_flow** | **uuid::Uuid** | Flow used ending the session from a provider. | 
+**property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **component** | **String** | Get object component so that we know how to edit the object | [readonly]
-**assigned_application_slug** | **String** | Internal application name, used in URLs. | [readonly]
-**assigned_application_name** | **String** | Application's display Name. | [readonly]
-**assigned_backchannel_application_slug** | **String** | Internal application name, used in URLs. | [readonly]
-**assigned_backchannel_application_name** | **String** | Application's display Name. | [readonly]
+**assigned_application_slug** | Option<**String**> | Internal application name, used in URLs. | [readonly]
+**assigned_application_name** | Option<**String**> | Application's display Name. | [readonly]
+**assigned_backchannel_application_slug** | Option<**String**> | Internal application name, used in URLs. | [readonly]
+**assigned_backchannel_application_name** | Option<**String**> | Application's display Name. | [readonly]
 **verbose_name** | **String** | Return object's verbose_name | [readonly]
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **internal_host** | Option<**String**> |  | [optional]
 **external_host** | **String** |  | 
 **internal_host_ssl_validation** | Option<**bool**> | Validate SSL Certificates of upstream servers | [optional]
-**certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**certificate** | Option<**uuid::Uuid**> |  | [optional]
 **skip_path_regex** | Option<**String**> | Regular expressions for which authentication is not required. Each new line is interpreted as a new Regular Expression. | [optional]
 **basic_auth_enabled** | Option<**bool**> | Set a custom HTTP-Basic Authentication header based on values from authentik. | [optional]
 **basic_auth_password_attribute** | Option<**String**> | User/Group Attribute used for the password part of the HTTP-Basic Header. | [optional]
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **intercept_header_auth** | Option<**bool**> | When enabled, this provider will intercept the authorization header and authenticate requests based on its value. | [optional]
 **redirect_uris** | [**Vec<models::RedirectUri>**](RedirectURI.md) |  | [readonly]
 **cookie_domain** | Option<**String**> |  | [optional]
-**jwt_federation_sources** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**jwt_federation_sources** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **jwt_federation_providers** | Option<**Vec<i32>**> |  | [optional]
 **access_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **refresh_token_validity** | Option<**String**> | Tokens not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]

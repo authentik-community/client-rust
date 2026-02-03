@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
 **mode** | Option<[**models::ConsentStageModeEnum**](ConsentStageModeEnum.md)> |  | [optional]
 **consent_expire_in** | Option<**String**> | Offset after which consent expires. (Format: hours=1;minutes=2;seconds=3). | [optional]
 

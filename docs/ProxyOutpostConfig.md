@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **client_secret** | Option<**String**> |  | [optional]
 **oidc_configuration** | [**models::OpenIdConnectConfiguration**](OpenIDConnectConfiguration.md) |  | [readonly]
 **cookie_secret** | Option<**String**> |  | [optional]
-**certificate** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**certificate** | Option<**uuid::Uuid**> |  | [optional]
 **skip_path_regex** | Option<**String**> | Regular expressions for which authentication is not required. Each new line is interpreted as a new Regular Expression. | [optional]
 **basic_auth_enabled** | Option<**bool**> | Set a custom HTTP-Basic Authentication header based on values from authentik. | [optional]
 **basic_auth_password_attribute** | Option<**String**> | User/Group Attribute used for the password part of the HTTP-Basic Header. | [optional]

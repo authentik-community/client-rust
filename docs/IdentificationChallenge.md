@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **component** | Option<**String**> |  | [optional][default to ak-stage-identification]
 **response_errors** | Option<[**std::collections::HashMap<String, Vec<models::ErrorDetail>>**](Vec.md)> |  | [optional]
 **user_fields** | Option<**Vec<String>**> |  | 
+**pending_user_identifier** | Option<**String**> |  | [optional]
 **password_fields** | **bool** |  | 
 **allow_show_password** | Option<**bool**> |  | [optional][default to false]
 **application_pre** | Option<**String**> |  | [optional]
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **sources** | Option<[**Vec<models::LoginSource>**](LoginSource.md)> |  | [optional]
 **show_source_labels** | **bool** |  | 
 **enable_remember_me** | Option<**bool**> |  | [optional][default to true]
+**passkey_challenge** | Option<**std::collections::HashMap<String, serde_json::Value>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

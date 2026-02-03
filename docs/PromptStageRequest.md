@@ -5,9 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**flow_set** | Option<[**Vec<models::FlowSetRequest>**](FlowSetRequest.md)> |  | [optional]
-**fields** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) |  | 
-**validation_policies** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
+**fields** | **Vec<uuid::Uuid>** |  | 
+**validation_policies** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

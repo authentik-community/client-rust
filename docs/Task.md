@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> |  | [optional]
+**message_id** | Option<**uuid::Uuid**> |  | [optional]
 **queue_name** | Option<**String**> | Queue name | [optional]
 **actor_name** | **String** | Dramatiq actor name | 
 **state** | Option<[**models::StateEnum**](StateEnum.md)> | Task status | [optional]

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**license_uuid** | [**uuid::Uuid**](uuid::Uuid.md) |  | [readonly]
+**license_uuid** | **uuid::Uuid** |  | [readonly]
 **name** | **String** |  | [readonly]
 **key** | **String** |  | 
 **expiry** | **String** |  | [readonly]
