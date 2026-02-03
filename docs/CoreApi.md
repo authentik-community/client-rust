@@ -2010,7 +2010,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_users_recovery_create
 
-> models::Link core_users_recovery_create(id)
+> models::Link core_users_recovery_create(id, user_recovery_link_request)
 
 
 Create a temporary link that a user can use to recover their account
@@ -2021,6 +2021,7 @@ Create a temporary link that a user can use to recover their account
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **i32** | A unique integer value identifying this User. | [required] |
+**user_recovery_link_request** | Option<[**UserRecoveryLinkRequest**](UserRecoveryLinkRequest.md)> |  |  |
 
 ### Return type
 
@@ -2032,7 +2033,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2040,7 +2041,7 @@ Name | Type | Description  | Required | Notes
 
 ## core_users_recovery_email_create
 
-> core_users_recovery_email_create(email_stage, id)
+> core_users_recovery_email_create(id, user_recovery_email_request)
 
 
 Send an email with a temporary link that a user can use to recover their account
@@ -2050,8 +2051,8 @@ Send an email with a temporary link that a user can use to recover their account
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**email_stage** | **String** |  | [required] |
 **id** | **i32** | A unique integer value identifying this User. | [required] |
+**user_recovery_email_request** | [**UserRecoveryEmailRequest**](UserRecoveryEmailRequest.md) |  | [required] |
 
 ### Return type
 
@@ -2063,7 +2064,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

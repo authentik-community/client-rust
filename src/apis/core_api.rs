@@ -4566,9 +4566,11 @@ pub async fn core_users_paths_retrieve(
 pub async fn core_users_recovery_create(
     configuration: &configuration::Configuration,
     id: i32,
+    user_recovery_link_request: Option<models::UserRecoveryLinkRequest>,
 ) -> Result<models::Link, Error<CoreUsersRecoveryCreateError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;
+    let p_body_user_recovery_link_request = user_recovery_link_request;
 
     let uri_str = format!("{}/core/users/{id}/recovery/", configuration.base_path, id = p_path_id);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -4579,6 +4581,7 @@ pub async fn core_users_recovery_create(
     if let Some(ref token) = configuration.bearer_access_token {
         req_builder = req_builder.bearer_auth(token.to_owned());
     };
+    req_builder = req_builder.json(&p_body_user_recovery_link_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -4620,12 +4623,12 @@ pub async fn core_users_recovery_create(
 /// Send an email with a temporary link that a user can use to recover their account
 pub async fn core_users_recovery_email_create(
     configuration: &configuration::Configuration,
-    email_stage: &str,
     id: i32,
+    user_recovery_email_request: models::UserRecoveryEmailRequest,
 ) -> Result<(), Error<CoreUsersRecoveryEmailCreateError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_email_stage = email_stage;
     let p_path_id = id;
+    let p_body_user_recovery_email_request = user_recovery_email_request;
 
     let uri_str = format!(
         "{}/core/users/{id}/recovery_email/",
@@ -4634,13 +4637,13 @@ pub async fn core_users_recovery_email_create(
     );
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
-    req_builder = req_builder.query(&[("email_stage", &p_query_email_stage.to_string())]);
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
     if let Some(ref token) = configuration.bearer_access_token {
         req_builder = req_builder.bearer_auth(token.to_owned());
     };
+    req_builder = req_builder.json(&p_body_user_recovery_email_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

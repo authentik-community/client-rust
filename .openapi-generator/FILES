@@ -841,6 +841,8 @@ docs/UserPasswordSetRequest.md
 docs/UserPath.md
 docs/UserPlexSourceConnection.md
 docs/UserPlexSourceConnectionRequest.md
+docs/UserRecoveryEmailRequest.md
+docs/UserRecoveryLinkRequest.md
 docs/UserRequest.md
 docs/UserSamlSourceConnection.md
 docs/UserSamlSourceConnectionRequest.md
@@ -1712,6 +1714,8 @@ src/models/user_password_set_request.rs
 src/models/user_path.rs
 src/models/user_plex_source_connection.rs
 src/models/user_plex_source_connection_request.rs
+src/models/user_recovery_email_request.rs
+src/models/user_recovery_link_request.rs
 src/models/user_request.rs
 src/models/user_saml_source_connection.rs
 src/models/user_saml_source_connection_request.rs
