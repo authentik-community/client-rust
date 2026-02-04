@@ -24,6 +24,10 @@ pub enum ContextualFlowInfoLayoutEnum {
     SidebarLeft,
     #[serde(rename = "sidebar_right")]
     SidebarRight,
+    #[serde(rename = "sidebar_left_frame_background")]
+    SidebarLeftFrameBackground,
+    #[serde(rename = "sidebar_right_frame_background")]
+    SidebarRightFrameBackground,
 }
 
 impl std::fmt::Display for ContextualFlowInfoLayoutEnum {
@@ -34,6 +38,8 @@ impl std::fmt::Display for ContextualFlowInfoLayoutEnum {
             Self::ContentRight => write!(f, "content_right"),
             Self::SidebarLeft => write!(f, "sidebar_left"),
             Self::SidebarRight => write!(f, "sidebar_right"),
+            Self::SidebarLeftFrameBackground => write!(f, "sidebar_left_frame_background"),
+            Self::SidebarRightFrameBackground => write!(f, "sidebar_right_frame_background"),
         }
     }
 }
