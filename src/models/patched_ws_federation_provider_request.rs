@@ -34,6 +34,8 @@ pub struct PatchedWsFederationProviderRequest {
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "reply_url", skip_serializing_if = "Option::is_none")]
     pub reply_url: Option<String>,
+    #[serde(rename = "wtrealm", skip_serializing_if = "Option::is_none")]
+    pub wtrealm: Option<String>,
     /// Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).
     #[serde(rename = "assertion_valid_not_before", skip_serializing_if = "Option::is_none")]
     pub assertion_valid_not_before: Option<String>,
@@ -97,6 +99,7 @@ impl PatchedWsFederationProviderRequest {
             invalidation_flow: None,
             property_mappings: None,
             reply_url: None,
+            wtrealm: None,
             assertion_valid_not_before: None,
             assertion_valid_not_on_or_after: None,
             session_valid_not_on_or_after: None,

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **invalidation_flow** | **uuid::Uuid** | Flow used ending the session from a provider. | 
 **property_mappings** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **reply_url** | **String** |  | 
+**wtrealm** | **String** |  | 
 **assertion_valid_not_before** | Option<**String**> | Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3). | [optional]
 **assertion_valid_not_on_or_after** | Option<**String**> | Assertion not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **session_valid_not_on_or_after** | Option<**String**> | Session not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]

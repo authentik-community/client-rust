@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **verbose_name_plural** | **String** | Return object's plural verbose_name | [readonly]
 **meta_model_name** | **String** | Return internal model name | [readonly]
 **reply_url** | **String** |  | 
+**wtrealm** | **String** |  | 
 **assertion_valid_not_before** | Option<**String**> | Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3). | [optional]
 **assertion_valid_not_on_or_after** | Option<**String**> | Assertion not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
 **session_valid_not_on_or_after** | Option<**String**> | Session not valid on or after current time + this value (Format: hours=1;minutes=2;seconds=3). | [optional]
@@ -33,7 +34,6 @@ Name | Type | Description | Notes
 **default_name_id_policy** | Option<[**models::SamlNameIdPolicyEnum**](SAMLNameIDPolicyEnum.md)> |  | [optional]
 **url_download_metadata** | **String** | Get metadata download URL | [readonly]
 **url_wsfed** | **String** | Get WS-Fed url | [readonly]
-**wtrealm** | **String** |  | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

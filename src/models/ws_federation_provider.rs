@@ -66,6 +66,8 @@ pub struct WsFederationProvider {
     pub meta_model_name: String,
     #[serde(rename = "reply_url")]
     pub reply_url: String,
+    #[serde(rename = "wtrealm")]
+    pub wtrealm: String,
     /// Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).
     #[serde(rename = "assertion_valid_not_before", skip_serializing_if = "Option::is_none")]
     pub assertion_valid_not_before: Option<String>,
@@ -123,8 +125,6 @@ pub struct WsFederationProvider {
     /// Get WS-Fed url
     #[serde(rename = "url_wsfed")]
     pub url_wsfed: String,
-    #[serde(rename = "wtrealm")]
-    pub wtrealm: String,
 }
 
 impl WsFederationProvider {
@@ -143,9 +143,9 @@ impl WsFederationProvider {
         verbose_name_plural: String,
         meta_model_name: String,
         reply_url: String,
+        wtrealm: String,
         url_download_metadata: String,
         url_wsfed: String,
-        wtrealm: String,
     ) -> WsFederationProvider {
         WsFederationProvider {
             pk,
@@ -163,6 +163,7 @@ impl WsFederationProvider {
             verbose_name_plural,
             meta_model_name,
             reply_url,
+            wtrealm,
             assertion_valid_not_before: None,
             assertion_valid_not_on_or_after: None,
             session_valid_not_on_or_after: None,
@@ -177,7 +178,6 @@ impl WsFederationProvider {
             default_name_id_policy: None,
             url_download_metadata,
             url_wsfed,
-            wtrealm,
         }
     }
 }

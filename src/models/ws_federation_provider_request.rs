@@ -34,6 +34,8 @@ pub struct WsFederationProviderRequest {
     pub property_mappings: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "reply_url")]
     pub reply_url: String,
+    #[serde(rename = "wtrealm")]
+    pub wtrealm: String,
     /// Assertion valid not before current time + this value (Format: hours=-1;minutes=-2;seconds=-3).
     #[serde(rename = "assertion_valid_not_before", skip_serializing_if = "Option::is_none")]
     pub assertion_valid_not_before: Option<String>,
@@ -94,6 +96,7 @@ impl WsFederationProviderRequest {
         authorization_flow: uuid::Uuid,
         invalidation_flow: uuid::Uuid,
         reply_url: String,
+        wtrealm: String,
     ) -> WsFederationProviderRequest {
         WsFederationProviderRequest {
             name,
@@ -102,6 +105,7 @@ impl WsFederationProviderRequest {
             invalidation_flow,
             property_mappings: None,
             reply_url,
+            wtrealm,
             assertion_valid_not_before: None,
             assertion_valid_not_on_or_after: None,
             session_valid_not_on_or_after: None,
