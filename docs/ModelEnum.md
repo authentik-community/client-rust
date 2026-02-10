@@ -110,6 +110,9 @@
 | AuthentikBrandsBrand | authentik_brands.brand |
 | AuthentikBlueprintsBlueprintinstance | authentik_blueprints.blueprintinstance |
 | AuthentikEndpointsConnectorsFleetFleetconnector | authentik_endpoints_connectors_fleet.fleetconnector |
+| AuthentikLifecycleLifecyclerule | authentik_lifecycle.lifecyclerule |
+| AuthentikLifecycleLifecycleiteration | authentik_lifecycle.lifecycleiteration |
+| AuthentikLifecycleReview | authentik_lifecycle.review |
 | AuthentikPoliciesUniquePasswordUniquepasswordpolicy | authentik_policies_unique_password.uniquepasswordpolicy |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovider | authentik_providers_google_workspace.googleworkspaceprovider |
 | AuthentikProvidersGoogleWorkspaceGoogleworkspaceprovidermapping | authentik_providers_google_workspace.googleworkspaceprovidermapping |

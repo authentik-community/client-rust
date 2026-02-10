@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **message_id** | Option<**uuid::Uuid**> |  | [optional]
 **queue_name** | Option<**String**> | Queue name | [optional]
 **actor_name** | **String** | Dramatiq actor name | 
-**state** | Option<[**models::StateEnum**](StateEnum.md)> | Task status | [optional]
+**state** | Option<[**models::TaskStateEnum**](TaskStateEnum.md)> | Task status | [optional]
 **mtime** | Option<**String**> | Task last modified time | [optional]
 **retries** | Option<**u64**> | Number of retries | [optional]
 **eta** | Option<**String**> | Planned execution time | [optional]

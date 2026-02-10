@@ -32,6 +32,10 @@
 | EmailSent | email_sent |
 | UpdateAvailable | update_available |
 | ExportReady | export_ready |
+| ReviewInitiated | review_initiated |
+| ReviewOverdue | review_overdue |
+| ReviewAttested | review_attested |
+| ReviewCompleted | review_completed |
 | Custom | custom_ |
 
 

@@ -70,6 +70,14 @@ pub enum EventActions {
     UpdateAvailable,
     #[serde(rename = "export_ready")]
     ExportReady,
+    #[serde(rename = "review_initiated")]
+    ReviewInitiated,
+    #[serde(rename = "review_overdue")]
+    ReviewOverdue,
+    #[serde(rename = "review_attested")]
+    ReviewAttested,
+    #[serde(rename = "review_completed")]
+    ReviewCompleted,
     #[serde(rename = "custom_")]
     Custom,
 }
@@ -105,6 +113,10 @@ impl std::fmt::Display for EventActions {
             Self::EmailSent => write!(f, "email_sent"),
             Self::UpdateAvailable => write!(f, "update_available"),
             Self::ExportReady => write!(f, "export_ready"),
+            Self::ReviewInitiated => write!(f, "review_initiated"),
+            Self::ReviewOverdue => write!(f, "review_overdue"),
+            Self::ReviewAttested => write!(f, "review_attested"),
+            Self::ReviewCompleted => write!(f, "review_completed"),
             Self::Custom => write!(f, "custom_"),
         }
     }

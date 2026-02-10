@@ -23,7 +23,7 @@ pub struct Task {
     pub actor_name: String,
     /// Task status
     #[serde(rename = "state", skip_serializing_if = "Option::is_none")]
-    pub state: Option<models::StateEnum>,
+    pub state: Option<models::TaskStateEnum>,
     /// Task last modified time
     #[serde(rename = "mtime", skip_serializing_if = "Option::is_none")]
     pub mtime: Option<String>,

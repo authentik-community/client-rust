@@ -124,6 +124,7 @@ pub mod endpoints_api;
 pub mod enterprise_api;
 pub mod events_api;
 pub mod flows_api;
+pub mod lifecycle_api;
 pub mod managed_api;
 pub mod oauth2_api;
 pub mod outposts_api;

@@ -226,6 +226,12 @@ pub enum ModelEnum {
     AuthentikBlueprintsBlueprintinstance,
     #[serde(rename = "authentik_endpoints_connectors_fleet.fleetconnector")]
     AuthentikEndpointsConnectorsFleetFleetconnector,
+    #[serde(rename = "authentik_lifecycle.lifecyclerule")]
+    AuthentikLifecycleLifecyclerule,
+    #[serde(rename = "authentik_lifecycle.lifecycleiteration")]
+    AuthentikLifecycleLifecycleiteration,
+    #[serde(rename = "authentik_lifecycle.review")]
+    AuthentikLifecycleReview,
     #[serde(rename = "authentik_policies_unique_password.uniquepasswordpolicy")]
     AuthentikPoliciesUniquePasswordUniquepasswordpolicy,
     #[serde(rename = "authentik_providers_google_workspace.googleworkspaceprovider")]
@@ -443,6 +449,9 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikEndpointsConnectorsFleetFleetconnector => {
                 write!(f, "authentik_endpoints_connectors_fleet.fleetconnector")
             }
+            Self::AuthentikLifecycleLifecyclerule => write!(f, "authentik_lifecycle.lifecyclerule"),
+            Self::AuthentikLifecycleLifecycleiteration => write!(f, "authentik_lifecycle.lifecycleiteration"),
+            Self::AuthentikLifecycleReview => write!(f, "authentik_lifecycle.review"),
             Self::AuthentikPoliciesUniquePasswordUniquepasswordpolicy => {
                 write!(f, "authentik_policies_unique_password.uniquepasswordpolicy")
             }

@@ -101,6 +101,7 @@ docs/ConsentStage.md
 docs/ConsentStageModeEnum.md
 docs/ConsentStageRequest.md
 docs/ContentType.md
+docs/ContentTypeEnum.md
 docs/ContextualFlowInfo.md
 docs/ContextualFlowInfoLayoutEnum.md
 docs/CoreApi.md
@@ -284,6 +285,12 @@ docs/LicenseRequest.md
 docs/LicenseStatusEnum.md
 docs/LicenseSummary.md
 docs/LicenseSummaryStatusEnum.md
+docs/LifecycleApi.md
+docs/LifecycleIteration.md
+docs/LifecycleIterationRequest.md
+docs/LifecycleIterationStateEnum.md
+docs/LifecycleRule.md
+docs/LifecycleRuleRequest.md
 docs/Link.md
 docs/LogEvent.md
 docs/LogLevelEnum.md
@@ -415,6 +422,8 @@ docs/PaginatedLdapProviderList.md
 docs/PaginatedLdapSourceList.md
 docs/PaginatedLdapSourcePropertyMappingList.md
 docs/PaginatedLicenseList.md
+docs/PaginatedLifecycleIterationList.md
+docs/PaginatedLifecycleRuleList.md
 docs/PaginatedMicrosoftEntraProviderGroupList.md
 docs/PaginatedMicrosoftEntraProviderList.md
 docs/PaginatedMicrosoftEntraProviderMappingList.md
@@ -569,6 +578,7 @@ docs/PatchedLdapProviderRequest.md
 docs/PatchedLdapSourcePropertyMappingRequest.md
 docs/PatchedLdapSourceRequest.md
 docs/PatchedLicenseRequest.md
+docs/PatchedLifecycleRuleRequest.md
 docs/PatchedMicrosoftEntraProviderMappingRequest.md
 docs/PatchedMicrosoftEntraProviderRequest.md
 docs/PatchedMutualTlsStageRequest.md
@@ -703,6 +713,10 @@ docs/Reputation.md
 docs/ReputationPolicy.md
 docs/ReputationPolicyRequest.md
 docs/ResidentKeyRequirementEnum.md
+docs/Review.md
+docs/ReviewRequest.md
+docs/ReviewerGroup.md
+docs/ReviewerUser.md
 docs/Role.md
 docs/RoleAssignedObjectPermission.md
 docs/RoleModelPermission.md
@@ -770,7 +784,6 @@ docs/Stage.md
 docs/StageModeEnum.md
 docs/StagePrompt.md
 docs/StagesApi.md
-docs/StateEnum.md
 docs/StaticDevice.md
 docs/StaticDeviceRequest.md
 docs/StaticDeviceToken.md
@@ -784,6 +797,7 @@ docs/SystemInfo.md
 docs/SystemInfoRuntime.md
 docs/Task.md
 docs/TaskAggregatedStatusEnum.md
+docs/TaskStateEnum.md
 docs/TasksApi.md
 docs/TelegramAuthRequest.md
 docs/TelegramChallengeResponseRequest.md
@@ -880,6 +894,7 @@ src/apis/endpoints_api.rs
 src/apis/enterprise_api.rs
 src/apis/events_api.rs
 src/apis/flows_api.rs
+src/apis/lifecycle_api.rs
 src/apis/managed_api.rs
 src/apis/mod.rs
 src/apis/oauth2_api.rs
@@ -995,6 +1010,7 @@ src/models/consent_stage.rs
 src/models/consent_stage_mode_enum.rs
 src/models/consent_stage_request.rs
 src/models/content_type.rs
+src/models/content_type_enum.rs
 src/models/contextual_flow_info.rs
 src/models/contextual_flow_info_layout_enum.rs
 src/models/country_code_enum.rs
@@ -1172,6 +1188,11 @@ src/models/license_request.rs
 src/models/license_status_enum.rs
 src/models/license_summary.rs
 src/models/license_summary_status_enum.rs
+src/models/lifecycle_iteration.rs
+src/models/lifecycle_iteration_request.rs
+src/models/lifecycle_iteration_state_enum.rs
+src/models/lifecycle_rule.rs
+src/models/lifecycle_rule_request.rs
 src/models/link.rs
 src/models/log_event.rs
 src/models/log_level_enum.rs
@@ -1301,6 +1322,8 @@ src/models/paginated_ldap_provider_list.rs
 src/models/paginated_ldap_source_list.rs
 src/models/paginated_ldap_source_property_mapping_list.rs
 src/models/paginated_license_list.rs
+src/models/paginated_lifecycle_iteration_list.rs
+src/models/paginated_lifecycle_rule_list.rs
 src/models/paginated_microsoft_entra_provider_group_list.rs
 src/models/paginated_microsoft_entra_provider_list.rs
 src/models/paginated_microsoft_entra_provider_mapping_list.rs
@@ -1455,6 +1478,7 @@ src/models/patched_ldap_provider_request.rs
 src/models/patched_ldap_source_property_mapping_request.rs
 src/models/patched_ldap_source_request.rs
 src/models/patched_license_request.rs
+src/models/patched_lifecycle_rule_request.rs
 src/models/patched_microsoft_entra_provider_mapping_request.rs
 src/models/patched_microsoft_entra_provider_request.rs
 src/models/patched_mutual_tls_stage_request.rs
@@ -1583,6 +1607,10 @@ src/models/reputation.rs
 src/models/reputation_policy.rs
 src/models/reputation_policy_request.rs
 src/models/resident_key_requirement_enum.rs
+src/models/review.rs
+src/models/review_request.rs
+src/models/reviewer_group.rs
+src/models/reviewer_user.rs
 src/models/role.rs
 src/models/role_assigned_object_permission.rs
 src/models/role_model_permission.rs
@@ -1645,7 +1673,6 @@ src/models/ssf_stream.rs
 src/models/stage.rs
 src/models/stage_mode_enum.rs
 src/models/stage_prompt.rs
-src/models/state_enum.rs
 src/models/static_device.rs
 src/models/static_device_request.rs
 src/models/static_device_token.rs
@@ -1659,6 +1686,7 @@ src/models/system_info.rs
 src/models/system_info_runtime.rs
 src/models/task.rs
 src/models/task_aggregated_status_enum.rs
+src/models/task_state_enum.rs
 src/models/telegram_auth_request.rs
 src/models/telegram_challenge_response_request.rs
 src/models/telegram_login_challenge.rs

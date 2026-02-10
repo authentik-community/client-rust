@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 ///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum StateEnum {
+pub enum TaskStateEnum {
     #[serde(rename = "queued")]
     Queued,
     #[serde(rename = "consumed")]
@@ -30,7 +30,7 @@ pub enum StateEnum {
     Done,
 }
 
-impl std::fmt::Display for StateEnum {
+impl std::fmt::Display for TaskStateEnum {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::Queued => write!(f, "queued"),
@@ -44,8 +44,8 @@ impl std::fmt::Display for StateEnum {
     }
 }
 
-impl Default for StateEnum {
-    fn default() -> StateEnum {
+impl Default for TaskStateEnum {
+    fn default() -> TaskStateEnum {
         Self::Queued
     }
 }
