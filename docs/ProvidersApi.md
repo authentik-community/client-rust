@@ -2741,7 +2741,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_saml_list
 
-> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
+> models::PaginatedSamlProviderList providers_saml_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_logout_response, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
 
 
 SAMLProvider Viewset
@@ -2777,6 +2777,7 @@ Name | Type | Description  | Required | Notes
 **session_valid_not_on_or_after** | Option<**String**> |  |  |
 **sign_assertion** | Option<**bool**> |  |  |
 **sign_logout_request** | Option<**bool**> |  |  |
+**sign_logout_response** | Option<**bool**> |  |  |
 **sign_response** | Option<**bool**> |  |  |
 **signature_algorithm** | Option<**String**> |  |  |
 **signing_kp** | Option<**uuid::Uuid**> |  |  |
@@ -3857,7 +3858,7 @@ Name | Type | Description  | Required | Notes
 
 ## providers_wsfed_list
 
-> models::PaginatedWsFederationProviderList providers_wsfed_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
+> models::PaginatedWsFederationProviderList providers_wsfed_list(acs_url, assertion_valid_not_before, assertion_valid_not_on_or_after, audience, authentication_flow, authn_context_class_ref_mapping, authorization_flow, backchannel_application, default_name_id_policy, default_relay_state, digest_algorithm, encryption_kp, invalidation_flow, is_backchannel, issuer, logout_method, name, name_id_mapping, ordering, page, page_size, property_mappings, search, session_valid_not_on_or_after, sign_assertion, sign_logout_request, sign_logout_response, sign_response, signature_algorithm, signing_kp, sls_binding, sls_url, sp_binding, verification_kp)
 
 
 WSFederationProvider Viewset
@@ -3893,6 +3894,7 @@ Name | Type | Description  | Required | Notes
 **session_valid_not_on_or_after** | Option<**String**> |  |  |
 **sign_assertion** | Option<**bool**> |  |  |
 **sign_logout_request** | Option<**bool**> |  |  |
+**sign_logout_response** | Option<**bool**> |  |  |
 **sign_response** | Option<**bool**> |  |  |
 **signature_algorithm** | Option<**String**> |  |  |
 **signing_kp** | Option<**uuid::Uuid**> |  |  |

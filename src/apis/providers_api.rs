@@ -5878,6 +5878,7 @@ pub async fn providers_saml_list(
     session_valid_not_on_or_after: Option<&str>,
     sign_assertion: Option<bool>,
     sign_logout_request: Option<bool>,
+    sign_logout_response: Option<bool>,
     sign_response: Option<bool>,
     signature_algorithm: Option<&str>,
     signing_kp: Option<&str>,
@@ -5913,6 +5914,7 @@ pub async fn providers_saml_list(
     let p_query_session_valid_not_on_or_after = session_valid_not_on_or_after;
     let p_query_sign_assertion = sign_assertion;
     let p_query_sign_logout_request = sign_logout_request;
+    let p_query_sign_logout_response = sign_logout_response;
     let p_query_sign_response = sign_response;
     let p_query_signature_algorithm = signature_algorithm;
     let p_query_signing_kp = signing_kp;
@@ -6017,6 +6019,9 @@ pub async fn providers_saml_list(
     }
     if let Some(ref param_value) = p_query_sign_logout_request {
         req_builder = req_builder.query(&[("sign_logout_request", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_sign_logout_response {
+        req_builder = req_builder.query(&[("sign_logout_response", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sign_response {
         req_builder = req_builder.query(&[("sign_response", &param_value.to_string())]);
@@ -7976,6 +7981,7 @@ pub async fn providers_wsfed_list(
     session_valid_not_on_or_after: Option<&str>,
     sign_assertion: Option<bool>,
     sign_logout_request: Option<bool>,
+    sign_logout_response: Option<bool>,
     sign_response: Option<bool>,
     signature_algorithm: Option<&str>,
     signing_kp: Option<&str>,
@@ -8011,6 +8017,7 @@ pub async fn providers_wsfed_list(
     let p_query_session_valid_not_on_or_after = session_valid_not_on_or_after;
     let p_query_sign_assertion = sign_assertion;
     let p_query_sign_logout_request = sign_logout_request;
+    let p_query_sign_logout_response = sign_logout_response;
     let p_query_sign_response = sign_response;
     let p_query_signature_algorithm = signature_algorithm;
     let p_query_signing_kp = signing_kp;
@@ -8115,6 +8122,9 @@ pub async fn providers_wsfed_list(
     }
     if let Some(ref param_value) = p_query_sign_logout_request {
         req_builder = req_builder.query(&[("sign_logout_request", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_sign_logout_response {
+        req_builder = req_builder.query(&[("sign_logout_response", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sign_response {
         req_builder = req_builder.query(&[("sign_response", &param_value.to_string())]);

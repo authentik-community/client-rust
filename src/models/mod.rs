@@ -568,6 +568,8 @@ pub mod login_challenge_types;
 pub use self::login_challenge_types::LoginChallengeTypes;
 pub mod login_source;
 pub use self::login_source::LoginSource;
+pub mod logout_url;
+pub use self::logout_url::LogoutUrl;
 pub mod matching_mode_enum;
 pub use self::matching_mode_enum::MatchingModeEnum;
 pub mod mdm_config_request;

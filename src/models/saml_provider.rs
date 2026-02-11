@@ -134,6 +134,8 @@ pub struct SamlProvider {
     pub sign_response: Option<bool>,
     #[serde(rename = "sign_logout_request", skip_serializing_if = "Option::is_none")]
     pub sign_logout_request: Option<bool>,
+    #[serde(rename = "sign_logout_response", skip_serializing_if = "Option::is_none")]
+    pub sign_logout_response: Option<bool>,
     /// This determines how authentik sends the response back to the Service Provider.
     #[serde(rename = "sp_binding", skip_serializing_if = "Option::is_none")]
     pub sp_binding: Option<models::SamlBindingsEnum>,
@@ -223,6 +225,7 @@ impl SamlProvider {
             sign_assertion: None,
             sign_response: None,
             sign_logout_request: None,
+            sign_logout_response: None,
             sp_binding: None,
             sls_binding: None,
             logout_method: None,

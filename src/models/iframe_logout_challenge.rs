@@ -21,7 +21,7 @@ pub struct IframeLogoutChallenge {
     #[serde(rename = "response_errors", skip_serializing_if = "Option::is_none")]
     pub response_errors: Option<std::collections::HashMap<String, Vec<models::ErrorDetail>>>,
     #[serde(rename = "logout_urls", skip_serializing_if = "Option::is_none")]
-    pub logout_urls: Option<Vec<std::collections::HashMap<String, serde_json::Value>>>,
+    pub logout_urls: Option<Vec<models::LogoutUrl>>,
 }
 
 impl IframeLogoutChallenge {

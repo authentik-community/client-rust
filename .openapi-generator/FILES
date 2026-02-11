@@ -296,6 +296,7 @@ docs/LogEvent.md
 docs/LogLevelEnum.md
 docs/LoginChallengeTypes.md
 docs/LoginSource.md
+docs/LogoutUrl.md
 docs/ManagedApi.md
 docs/MatchingModeEnum.md
 docs/MdmConfigRequest.md
@@ -1198,6 +1199,7 @@ src/models/log_event.rs
 src/models/log_level_enum.rs
 src/models/login_challenge_types.rs
 src/models/login_source.rs
+src/models/logout_url.rs
 src/models/matching_mode_enum.rs
 src/models/mdm_config_request.rs
 src/models/mdm_config_response.rs
