@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **providers** | **Vec<i32>** |  | 
 **providers_obj** | [**Vec<models::Provider>**](Provider.md) |  | [readonly]
 **service_connection** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Select Service-Connection authentik should use to manage this outpost. Leave empty if authentik should not handle the deployment. | [optional]
-**service_connection_obj** | [**models::ServiceConnection**](ServiceConnection.md) |  | [readonly]
+**service_connection_obj** | Option<[**models::ServiceConnection**](ServiceConnection.md)> |  | [readonly]
 **refresh_interval_s** | **i32** |  | [readonly]
 **token_identifier** | **String** | Get Token identifier | [readonly]
 **config** | [**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md) |  | 
