@@ -256,6 +256,7 @@ docs/IntentEnum.md
 docs/InvalidResponseActionEnum.md
 docs/Invitation.md
 docs/InvitationRequest.md
+docs/InvitationSendEmailRequest.md
 docs/InvitationStage.md
 docs/InvitationStageRequest.md
 docs/IssuerModeEnum.md
@@ -1160,6 +1161,7 @@ src/models/intent_enum.rs
 src/models/invalid_response_action_enum.rs
 src/models/invitation.rs
 src/models/invitation_request.rs
+src/models/invitation_send_email_request.rs
 src/models/invitation_stage.rs
 src/models/invitation_stage_request.rs
 src/models/issuer_mode_enum.rs

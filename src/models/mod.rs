@@ -490,6 +490,8 @@ pub mod invitation;
 pub use self::invitation::Invitation;
 pub mod invitation_request;
 pub use self::invitation_request::InvitationRequest;
+pub mod invitation_send_email_request;
+pub use self::invitation_send_email_request::InvitationSendEmailRequest;
 pub mod invitation_stage;
 pub use self::invitation_stage::InvitationStage;
 pub mod invitation_stage_request;

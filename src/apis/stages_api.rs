@@ -1111,6 +1111,15 @@ pub enum StagesInvitationInvitationsRetrieveError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`stages_invitation_invitations_send_email_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StagesInvitationInvitationsSendEmailCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`stages_invitation_invitations_update`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -8865,6 +8874,49 @@ pub async fn stages_invitation_invitations_retrieve(
     } else {
         let content = resp.text().await?;
         let entity: Option<StagesInvitationInvitationsRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Send invitation link via email to one or more addresses
+pub async fn stages_invitation_invitations_send_email_create(
+    configuration: &configuration::Configuration,
+    invite_uuid: &str,
+    invitation_send_email_request: models::InvitationSendEmailRequest,
+) -> Result<(), Error<StagesInvitationInvitationsSendEmailCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_invite_uuid = invite_uuid;
+    let p_body_invitation_send_email_request = invitation_send_email_request;
+
+    let uri_str = format!(
+        "{}/stages/invitation/invitations/{invite_uuid}/send_email/",
+        configuration.base_path,
+        invite_uuid = crate::apis::urlencode(p_path_invite_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_invitation_send_email_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<StagesInvitationInvitationsSendEmailCreateError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,
