@@ -41,7 +41,7 @@ pub struct GeoIpPolicy {
     #[serde(rename = "countries")]
     pub countries: Vec<models::CountryCodeEnum>,
     #[serde(rename = "countries_obj")]
-    pub countries_obj: Vec<models::DetailedCountryField>,
+    pub countries_obj: Vec<models::GeoIpPolicyCountriesObjInner>,
     #[serde(rename = "check_history_distance", skip_serializing_if = "Option::is_none")]
     pub check_history_distance: Option<bool>,
     #[serde(rename = "history_max_distance_km", skip_serializing_if = "Option::is_none")]
@@ -67,7 +67,7 @@ impl GeoIpPolicy {
         meta_model_name: String,
         bound_to: i32,
         countries: Vec<models::CountryCodeEnum>,
-        countries_obj: Vec<models::DetailedCountryField>,
+        countries_obj: Vec<models::GeoIpPolicyCountriesObjInner>,
     ) -> GeoIpPolicy {
         GeoIpPolicy {
             pk,

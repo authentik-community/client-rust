@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **bound_to** | **i32** | Return objects policy is bound to | [readonly]
 **asns** | Option<**Vec<i32>**> |  | [optional]
 **countries** | [**Vec<models::CountryCodeEnum>**](CountryCodeEnum.md) |  | 
-**countries_obj** | [**Vec<models::DetailedCountryField>**](DetailedCountryField.md) |  | [readonly]
+**countries_obj** | [**Vec<models::GeoIpPolicyCountriesObjInner>**](GeoIPPolicyCountriesObjInner.md) |  | [readonly]
 **check_history_distance** | Option<**bool**> |  | [optional]
 **history_max_distance_km** | Option<**u64**> |  | [optional]
 **distance_tolerance_km** | Option<**u32**> |  | [optional]

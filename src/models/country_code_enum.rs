@@ -116,8 +116,6 @@ pub enum CountryCodeEnum {
     Km,
     #[serde(rename = "CG")]
     Cg,
-    #[serde(rename = "CD")]
-    Cd,
     #[serde(rename = "CK")]
     Ck,
     #[serde(rename = "CR")]
@@ -134,6 +132,8 @@ pub enum CountryCodeEnum {
     Cy,
     #[serde(rename = "CZ")]
     Cz,
+    #[serde(rename = "CD")]
+    Cd,
     #[serde(rename = "DK")]
     Dk,
     #[serde(rename = "DJ")]
@@ -210,8 +210,6 @@ pub enum CountryCodeEnum {
     Ht,
     #[serde(rename = "HM")]
     Hm,
-    #[serde(rename = "VA")]
-    Va,
     #[serde(rename = "HN")]
     Hn,
     #[serde(rename = "HK")]
@@ -494,6 +492,8 @@ pub enum CountryCodeEnum {
     Uz,
     #[serde(rename = "VU")]
     Vu,
+    #[serde(rename = "VA")]
+    Va,
     #[serde(rename = "VE")]
     Ve,
     #[serde(rename = "VN")]
@@ -568,7 +568,6 @@ impl std::fmt::Display for CountryCodeEnum {
             Self::Co => write!(f, "CO"),
             Self::Km => write!(f, "KM"),
             Self::Cg => write!(f, "CG"),
-            Self::Cd => write!(f, "CD"),
             Self::Ck => write!(f, "CK"),
             Self::Cr => write!(f, "CR"),
             Self::Ci => write!(f, "CI"),
@@ -577,6 +576,7 @@ impl std::fmt::Display for CountryCodeEnum {
             Self::Cw => write!(f, "CW"),
             Self::Cy => write!(f, "CY"),
             Self::Cz => write!(f, "CZ"),
+            Self::Cd => write!(f, "CD"),
             Self::Dk => write!(f, "DK"),
             Self::Dj => write!(f, "DJ"),
             Self::Dm => write!(f, "DM"),
@@ -615,7 +615,6 @@ impl std::fmt::Display for CountryCodeEnum {
             Self::Gy => write!(f, "GY"),
             Self::Ht => write!(f, "HT"),
             Self::Hm => write!(f, "HM"),
-            Self::Va => write!(f, "VA"),
             Self::Hn => write!(f, "HN"),
             Self::Hk => write!(f, "HK"),
             Self::Hu => write!(f, "HU"),
@@ -757,6 +756,7 @@ impl std::fmt::Display for CountryCodeEnum {
             Self::Uy => write!(f, "UY"),
             Self::Uz => write!(f, "UZ"),
             Self::Vu => write!(f, "VU"),
+            Self::Va => write!(f, "VA"),
             Self::Ve => write!(f, "VE"),
             Self::Vn => write!(f, "VN"),
             Self::Vg => write!(f, "VG"),

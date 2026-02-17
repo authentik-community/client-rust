@@ -55,7 +55,6 @@
 | Co | CO |
 | Km | KM |
 | Cg | CG |
-| Cd | CD |
 | Ck | CK |
 | Cr | CR |
 | Ci | CI |
@@ -64,6 +63,7 @@
 | Cw | CW |
 | Cy | CY |
 | Cz | CZ |
+| Cd | CD |
 | Dk | DK |
 | Dj | DJ |
 | Dm | DM |
@@ -102,7 +102,6 @@
 | Gy | GY |
 | Ht | HT |
 | Hm | HM |
-| Va | VA |
 | Hn | HN |
 | Hk | HK |
 | Hu | HU |
@@ -244,6 +243,7 @@
 | Uy | UY |
 | Uz | UZ |
 | Vu | VU |
+| Va | VA |
 | Ve | VE |
 | Vn | VN |
 | Vg | VG |

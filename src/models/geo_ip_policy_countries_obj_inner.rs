@@ -12,15 +12,15 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct DetailedCountryField {
+pub struct GeoIpPolicyCountriesObjInner {
     #[serde(rename = "code")]
-    pub code: models::CountryCodeEnum,
+    pub code: String,
     #[serde(rename = "name")]
     pub name: String,
 }
 
-impl DetailedCountryField {
-    pub fn new(code: models::CountryCodeEnum, name: String) -> DetailedCountryField {
-        DetailedCountryField { code, name }
+impl GeoIpPolicyCountriesObjInner {
+    pub fn new(code: String, name: String) -> GeoIpPolicyCountriesObjInner {
+        GeoIpPolicyCountriesObjInner { code, name }
     }
 }
