@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **password_fields** | **bool** |  | 
 **allow_show_password** | Option<**bool**> |  | [optional][default to false]
 **application_pre** | Option<**String**> |  | [optional]
+**application_pre_launch** | Option<**String**> |  | [optional]
 **flow_designation** | [**models::FlowDesignationEnum**](FlowDesignationEnum.md) |  | 
 **captcha_stage** | Option<[**models::CaptchaChallenge**](CaptchaChallenge.md)> |  | [optional]
 **enroll_url** | Option<**String**> |  | [optional]

@@ -17,6 +17,8 @@ pub struct PatchedSettingsRequestFlags {
     pub enterprise_audit_include_expanded_diff: bool,
     #[serde(rename = "policies_buffered_access_view")]
     pub policies_buffered_access_view: bool,
+    #[serde(rename = "flows_continuous_login")]
+    pub flows_continuous_login: bool,
     #[serde(rename = "flows_refresh_others")]
     pub flows_refresh_others: bool,
 }
@@ -25,11 +27,13 @@ impl PatchedSettingsRequestFlags {
     pub fn new(
         enterprise_audit_include_expanded_diff: bool,
         policies_buffered_access_view: bool,
+        flows_continuous_login: bool,
         flows_refresh_others: bool,
     ) -> PatchedSettingsRequestFlags {
         PatchedSettingsRequestFlags {
             enterprise_audit_include_expanded_diff,
             policies_buffered_access_view,
+            flows_continuous_login,
             flows_refresh_others,
         }
     }
