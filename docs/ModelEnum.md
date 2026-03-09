@@ -110,6 +110,7 @@
 | AuthentikBrandsBrand | authentik_brands.brand |
 | AuthentikBlueprintsBlueprintinstance | authentik_blueprints.blueprintinstance |
 | AuthentikEndpointsConnectorsFleetFleetconnector | authentik_endpoints_connectors_fleet.fleetconnector |
+| AuthentikEndpointsConnectorsGoogleChromeGooglechromeconnector | authentik_endpoints_connectors_google_chrome.googlechromeconnector |
 | AuthentikLifecycleLifecyclerule | authentik_lifecycle.lifecyclerule |
 | AuthentikLifecycleLifecycleiteration | authentik_lifecycle.lifecycleiteration |
 | AuthentikLifecycleReview | authentik_lifecycle.review |

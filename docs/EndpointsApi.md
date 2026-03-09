@@ -60,6 +60,13 @@ Method | HTTP request | Description
 [**endpoints_fleet_connectors_retrieve**](EndpointsApi.md#endpoints_fleet_connectors_retrieve) | **GET** /endpoints/fleet/connectors/{connector_uuid}/ | 
 [**endpoints_fleet_connectors_update**](EndpointsApi.md#endpoints_fleet_connectors_update) | **PUT** /endpoints/fleet/connectors/{connector_uuid}/ | 
 [**endpoints_fleet_connectors_used_by_list**](EndpointsApi.md#endpoints_fleet_connectors_used_by_list) | **GET** /endpoints/fleet/connectors/{connector_uuid}/used_by/ | 
+[**endpoints_google_chrome_connectors_create**](EndpointsApi.md#endpoints_google_chrome_connectors_create) | **POST** /endpoints/google_chrome/connectors/ | 
+[**endpoints_google_chrome_connectors_destroy**](EndpointsApi.md#endpoints_google_chrome_connectors_destroy) | **DELETE** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_list**](EndpointsApi.md#endpoints_google_chrome_connectors_list) | **GET** /endpoints/google_chrome/connectors/ | 
+[**endpoints_google_chrome_connectors_partial_update**](EndpointsApi.md#endpoints_google_chrome_connectors_partial_update) | **PATCH** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_retrieve**](EndpointsApi.md#endpoints_google_chrome_connectors_retrieve) | **GET** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_update**](EndpointsApi.md#endpoints_google_chrome_connectors_update) | **PUT** /endpoints/google_chrome/connectors/{connector_uuid}/ | 
+[**endpoints_google_chrome_connectors_used_by_list**](EndpointsApi.md#endpoints_google_chrome_connectors_used_by_list) | **GET** /endpoints/google_chrome/connectors/{connector_uuid}/used_by/ | 
 
 
 
@@ -1760,6 +1767,222 @@ Get a list of all objects that use this object
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **connector_uuid** | **uuid::Uuid** | A UUID string identifying this Fleet Connector. | [required] |
+
+### Return type
+
+[**Vec<models::UsedBy>**](UsedBy.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_create
+
+> models::GoogleChromeConnector endpoints_google_chrome_connectors_create(google_chrome_connector_request)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**google_chrome_connector_request** | [**GoogleChromeConnectorRequest**](GoogleChromeConnectorRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_destroy
+
+> endpoints_google_chrome_connectors_destroy(connector_uuid)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**connector_uuid** | **uuid::Uuid** | A UUID string identifying this Google Device Trust Connector. | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_list
+
+> models::PaginatedGoogleChromeConnectorList endpoints_google_chrome_connectors_list(name, ordering, page, page_size, search)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | Option<**String**> |  |  |
+**ordering** | Option<**String**> | Which field to use when ordering the results. |  |
+**page** | Option<**i32**> | A page number within the paginated result set. |  |
+**page_size** | Option<**i32**> | Number of results to return per page. |  |
+**search** | Option<**String**> | A search term. |  |
+
+### Return type
+
+[**models::PaginatedGoogleChromeConnectorList**](PaginatedGoogleChromeConnectorList.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_partial_update
+
+> models::GoogleChromeConnector endpoints_google_chrome_connectors_partial_update(connector_uuid, patched_google_chrome_connector_request)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**connector_uuid** | **uuid::Uuid** | A UUID string identifying this Google Device Trust Connector. | [required] |
+**patched_google_chrome_connector_request** | Option<[**PatchedGoogleChromeConnectorRequest**](PatchedGoogleChromeConnectorRequest.md)> |  |  |
+
+### Return type
+
+[**models::GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_retrieve
+
+> models::GoogleChromeConnector endpoints_google_chrome_connectors_retrieve(connector_uuid)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**connector_uuid** | **uuid::Uuid** | A UUID string identifying this Google Device Trust Connector. | [required] |
+
+### Return type
+
+[**models::GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_update
+
+> models::GoogleChromeConnector endpoints_google_chrome_connectors_update(connector_uuid, google_chrome_connector_request)
+
+
+GoogleChromeConnector Viewset
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**connector_uuid** | **uuid::Uuid** | A UUID string identifying this Google Device Trust Connector. | [required] |
+**google_chrome_connector_request** | [**GoogleChromeConnectorRequest**](GoogleChromeConnectorRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GoogleChromeConnector**](GoogleChromeConnector.md)
+
+### Authorization
+
+[authentik](../README.md#authentik)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## endpoints_google_chrome_connectors_used_by_list
+
+> Vec<models::UsedBy> endpoints_google_chrome_connectors_used_by_list(connector_uuid)
+
+
+Get a list of all objects that use this object
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**connector_uuid** | **uuid::Uuid** | A UUID string identifying this Google Device Trust Connector. | [required] |
 
 ### Return type
 

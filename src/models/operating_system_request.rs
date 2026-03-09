@@ -22,18 +22,18 @@ pub struct OperatingSystemRequest {
     /// Operating System version, must always be the version number but may contain build name
     #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
-    #[serde(rename = "arch")]
-    pub arch: String,
+    #[serde(rename = "arch", skip_serializing_if = "Option::is_none")]
+    pub arch: Option<String>,
 }
 
 impl OperatingSystemRequest {
     /// For example: {\"family\":\"linux\",\"name\":\"Ubuntu\",\"version\":\"24.04.3 LTS (Noble Numbat)\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"windows\",\"name\":\"Server 2022 Datacenter\",\"version\":\"10.0.20348.4405\",\"arch\":\"amd64\"} {\"family\": \"mac_os\", \"name\": \"\", \"version\": \"26.2\", \"arch\": \"arm64\"}
-    pub fn new(family: models::DeviceFactsOsFamily, arch: String) -> OperatingSystemRequest {
+    pub fn new(family: models::DeviceFactsOsFamily) -> OperatingSystemRequest {
         OperatingSystemRequest {
             family,
             name: None,
             version: None,
-            arch,
+            arch: None,
         }
     }
 }

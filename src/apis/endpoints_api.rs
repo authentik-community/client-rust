@@ -519,6 +519,69 @@ pub enum EndpointsFleetConnectorsUsedByListError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_create`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsCreateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_destroy`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsDestroyError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_partial_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsPartialUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_retrieve`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsRetrieveError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_update`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsUpdateError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`endpoints_google_chrome_connectors_used_by_list`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum EndpointsGoogleChromeConnectorsUsedByListError {
+    Status400(models::ValidationError),
+    Status403(models::GenericError),
+    UnknownValue(serde_json::Value),
+}
+
 /// Mixin to add a used_by endpoint to return a list of all objects using this object
 pub async fn endpoints_agents_connectors_agent_config_retrieve(
     configuration: &configuration::Configuration,
@@ -3549,6 +3612,374 @@ pub async fn endpoints_fleet_connectors_used_by_list(
     } else {
         let content = resp.text().await?;
         let entity: Option<EndpointsFleetConnectorsUsedByListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_create(
+    configuration: &configuration::Configuration,
+    google_chrome_connector_request: models::GoogleChromeConnectorRequest,
+) -> Result<models::GoogleChromeConnector, Error<EndpointsGoogleChromeConnectorsCreateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_google_chrome_connector_request = google_chrome_connector_request;
+
+    let uri_str = format!("{}/endpoints/google_chrome/connectors/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_google_chrome_connector_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GoogleChromeConnector`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GoogleChromeConnector`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsCreateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_destroy(
+    configuration: &configuration::Configuration,
+    connector_uuid: &str,
+) -> Result<(), Error<EndpointsGoogleChromeConnectorsDestroyError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_connector_uuid = connector_uuid;
+
+    let uri_str = format!(
+        "{}/endpoints/google_chrome/connectors/{connector_uuid}/",
+        configuration.base_path,
+        connector_uuid = crate::apis::urlencode(p_path_connector_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsDestroyError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_list(
+    configuration: &configuration::Configuration,
+    name: Option<&str>,
+    ordering: Option<&str>,
+    page: Option<i32>,
+    page_size: Option<i32>,
+    search: Option<&str>,
+) -> Result<models::PaginatedGoogleChromeConnectorList, Error<EndpointsGoogleChromeConnectorsListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_query_name = name;
+    let p_query_ordering = ordering;
+    let p_query_page = page;
+    let p_query_page_size = page_size;
+    let p_query_search = search;
+
+    let uri_str = format!("{}/endpoints/google_chrome/connectors/", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref param_value) = p_query_name {
+        req_builder = req_builder.query(&[("name", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_ordering {
+        req_builder = req_builder.query(&[("ordering", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page {
+        req_builder = req_builder.query(&[("page", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_page_size {
+        req_builder = req_builder.query(&[("page_size", &param_value.to_string())]);
+    }
+    if let Some(ref param_value) = p_query_search {
+        req_builder = req_builder.query(&[("search", &param_value.to_string())]);
+    }
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PaginatedGoogleChromeConnectorList`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PaginatedGoogleChromeConnectorList`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsListError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_partial_update(
+    configuration: &configuration::Configuration,
+    connector_uuid: &str,
+    patched_google_chrome_connector_request: Option<models::PatchedGoogleChromeConnectorRequest>,
+) -> Result<models::GoogleChromeConnector, Error<EndpointsGoogleChromeConnectorsPartialUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_connector_uuid = connector_uuid;
+    let p_body_patched_google_chrome_connector_request = patched_google_chrome_connector_request;
+
+    let uri_str = format!(
+        "{}/endpoints/google_chrome/connectors/{connector_uuid}/",
+        configuration.base_path,
+        connector_uuid = crate::apis::urlencode(p_path_connector_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_patched_google_chrome_connector_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GoogleChromeConnector`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GoogleChromeConnector`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsPartialUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_retrieve(
+    configuration: &configuration::Configuration,
+    connector_uuid: &str,
+) -> Result<models::GoogleChromeConnector, Error<EndpointsGoogleChromeConnectorsRetrieveError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_connector_uuid = connector_uuid;
+
+    let uri_str = format!(
+        "{}/endpoints/google_chrome/connectors/{connector_uuid}/",
+        configuration.base_path,
+        connector_uuid = crate::apis::urlencode(p_path_connector_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GoogleChromeConnector`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GoogleChromeConnector`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsRetrieveError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// GoogleChromeConnector Viewset
+pub async fn endpoints_google_chrome_connectors_update(
+    configuration: &configuration::Configuration,
+    connector_uuid: &str,
+    google_chrome_connector_request: models::GoogleChromeConnectorRequest,
+) -> Result<models::GoogleChromeConnector, Error<EndpointsGoogleChromeConnectorsUpdateError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_connector_uuid = connector_uuid;
+    let p_body_google_chrome_connector_request = google_chrome_connector_request;
+
+    let uri_str = format!(
+        "{}/endpoints/google_chrome/connectors/{connector_uuid}/",
+        configuration.base_path,
+        connector_uuid = crate::apis::urlencode(p_path_connector_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    req_builder = req_builder.json(&p_body_google_chrome_connector_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GoogleChromeConnector`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GoogleChromeConnector`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsUpdateError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent {
+            status,
+            content,
+            entity,
+        }))
+    }
+}
+
+/// Get a list of all objects that use this object
+pub async fn endpoints_google_chrome_connectors_used_by_list(
+    configuration: &configuration::Configuration,
+    connector_uuid: &str,
+) -> Result<Vec<models::UsedBy>, Error<EndpointsGoogleChromeConnectorsUsedByListError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_connector_uuid = connector_uuid;
+
+    let uri_str = format!(
+        "{}/endpoints/google_chrome/connectors/{connector_uuid}/used_by/",
+        configuration.base_path,
+        connector_uuid = crate::apis::urlencode(p_path_connector_uuid)
+    );
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.bearer_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::UsedBy&gt;`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<EndpointsGoogleChromeConnectorsUsedByListError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent {
             status,
             content,

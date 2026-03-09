@@ -70,6 +70,7 @@
 | AuthentikEnterpriseAudit | authentik.enterprise.audit |
 | AuthentikEnterpriseEndpointsConnectorsAgent | authentik.enterprise.endpoints.connectors.agent |
 | AuthentikEnterpriseEndpointsConnectorsFleet | authentik.enterprise.endpoints.connectors.fleet |
+| AuthentikEnterpriseEndpointsConnectorsGoogleChrome | authentik.enterprise.endpoints.connectors.google_chrome |
 | AuthentikEnterpriseLifecycle | authentik.enterprise.lifecycle |
 | AuthentikEnterprisePoliciesUniquePassword | authentik.enterprise.policies.unique_password |
 | AuthentikEnterpriseProvidersGoogleWorkspace | authentik.enterprise.providers.google_workspace |

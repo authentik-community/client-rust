@@ -226,6 +226,8 @@ pub enum ModelEnum {
     AuthentikBlueprintsBlueprintinstance,
     #[serde(rename = "authentik_endpoints_connectors_fleet.fleetconnector")]
     AuthentikEndpointsConnectorsFleetFleetconnector,
+    #[serde(rename = "authentik_endpoints_connectors_google_chrome.googlechromeconnector")]
+    AuthentikEndpointsConnectorsGoogleChromeGooglechromeconnector,
     #[serde(rename = "authentik_lifecycle.lifecyclerule")]
     AuthentikLifecycleLifecyclerule,
     #[serde(rename = "authentik_lifecycle.lifecycleiteration")]
@@ -448,6 +450,9 @@ impl std::fmt::Display for ModelEnum {
             Self::AuthentikBlueprintsBlueprintinstance => write!(f, "authentik_blueprints.blueprintinstance"),
             Self::AuthentikEndpointsConnectorsFleetFleetconnector => {
                 write!(f, "authentik_endpoints_connectors_fleet.fleetconnector")
+            }
+            Self::AuthentikEndpointsConnectorsGoogleChromeGooglechromeconnector => {
+                write!(f, "authentik_endpoints_connectors_google_chrome.googlechromeconnector")
             }
             Self::AuthentikLifecycleLifecyclerule => write!(f, "authentik_lifecycle.lifecyclerule"),
             Self::AuthentikLifecycleLifecycleiteration => write!(f, "authentik_lifecycle.lifecycleiteration"),
