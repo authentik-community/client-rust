@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **configuration_stages** | Option<**Vec<uuid::Uuid>**> | Stages used to configure Authenticator when user doesn't have any compatible devices. After this configuration Stage passes, the user is not prompted again. | [optional]
 **last_auth_threshold** | Option<**String**> | If any of the user's device has been used within this threshold, this stage will be skipped | [optional]
 **webauthn_user_verification** | Option<[**models::UserVerificationEnum**](UserVerificationEnum.md)> | Enforce user verification for WebAuthn devices. | [optional]
+**webauthn_hints** | Option<[**Vec<models::WebAuthnHintEnum>**](WebAuthnHintEnum.md)> |  | [optional]
 **webauthn_allowed_device_types** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **webauthn_allowed_device_types_obj** | [**Vec<models::WebAuthnDeviceType>**](WebAuthnDeviceType.md) |  | [readonly]
 

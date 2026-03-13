@@ -5318,7 +5318,6 @@ pub async fn stages_authenticator_webauthn_list(
     authenticator_attachment: Option<&str>,
     configure_flow: Option<&str>,
     device_type_restrictions: Option<Vec<uuid::Uuid>>,
-    friendly_name: Option<&str>,
     max_attempts: Option<i32>,
     name: Option<&str>,
     ordering: Option<&str>,
@@ -5326,14 +5325,12 @@ pub async fn stages_authenticator_webauthn_list(
     page_size: Option<i32>,
     resident_key_requirement: Option<&str>,
     search: Option<&str>,
-    stage_uuid: Option<&str>,
     user_verification: Option<&str>,
 ) -> Result<models::PaginatedAuthenticatorWebAuthnStageList, Error<StagesAuthenticatorWebauthnListError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_authenticator_attachment = authenticator_attachment;
     let p_query_configure_flow = configure_flow;
     let p_query_device_type_restrictions = device_type_restrictions;
-    let p_query_friendly_name = friendly_name;
     let p_query_max_attempts = max_attempts;
     let p_query_name = name;
     let p_query_ordering = ordering;
@@ -5341,7 +5338,6 @@ pub async fn stages_authenticator_webauthn_list(
     let p_query_page_size = page_size;
     let p_query_resident_key_requirement = resident_key_requirement;
     let p_query_search = search;
-    let p_query_stage_uuid = stage_uuid;
     let p_query_user_verification = user_verification;
 
     let uri_str = format!("{}/stages/authenticator/webauthn/", configuration.base_path);
@@ -5372,9 +5368,6 @@ pub async fn stages_authenticator_webauthn_list(
             )]),
         };
     }
-    if let Some(ref param_value) = p_query_friendly_name {
-        req_builder = req_builder.query(&[("friendly_name", &param_value.to_string())]);
-    }
     if let Some(ref param_value) = p_query_max_attempts {
         req_builder = req_builder.query(&[("max_attempts", &param_value.to_string())]);
     }
@@ -5395,9 +5388,6 @@ pub async fn stages_authenticator_webauthn_list(
     }
     if let Some(ref param_value) = p_query_search {
         req_builder = req_builder.query(&[("search", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_stage_uuid {
-        req_builder = req_builder.query(&[("stage_uuid", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_user_verification {
         req_builder = req_builder.query(&[("user_verification", &param_value.to_string())]);

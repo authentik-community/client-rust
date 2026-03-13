@@ -46,6 +46,8 @@ pub struct AuthenticatorValidateStage {
     /// Enforce user verification for WebAuthn devices.
     #[serde(rename = "webauthn_user_verification", skip_serializing_if = "Option::is_none")]
     pub webauthn_user_verification: Option<models::UserVerificationEnum>,
+    #[serde(rename = "webauthn_hints", skip_serializing_if = "Option::is_none")]
+    pub webauthn_hints: Option<Vec<models::WebAuthnHintEnum>>,
     #[serde(rename = "webauthn_allowed_device_types", skip_serializing_if = "Option::is_none")]
     pub webauthn_allowed_device_types: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "webauthn_allowed_device_types_obj")]
@@ -77,6 +79,7 @@ impl AuthenticatorValidateStage {
             configuration_stages: None,
             last_auth_threshold: None,
             webauthn_user_verification: None,
+            webauthn_hints: None,
             webauthn_allowed_device_types: None,
             webauthn_allowed_device_types_obj,
         }

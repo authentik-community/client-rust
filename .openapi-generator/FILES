@@ -887,6 +887,7 @@ docs/VersionHistory.md
 docs/WebAuthnDevice.md
 docs/WebAuthnDeviceRequest.md
 docs/WebAuthnDeviceType.md
+docs/WebAuthnHintEnum.md
 docs/Worker.md
 docs/WsFederationProvider.md
 docs/WsFederationProviderRequest.md
@@ -1780,6 +1781,7 @@ src/models/version_history.rs
 src/models/web_authn_device.rs
 src/models/web_authn_device_request.rs
 src/models/web_authn_device_type.rs
+src/models/web_authn_hint_enum.rs
 src/models/worker.rs
 src/models/ws_federation_provider.rs
 src/models/ws_federation_provider_request.rs

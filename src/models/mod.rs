@@ -1718,6 +1718,8 @@ pub mod web_authn_device_request;
 pub use self::web_authn_device_request::WebAuthnDeviceRequest;
 pub mod web_authn_device_type;
 pub use self::web_authn_device_type::WebAuthnDeviceType;
+pub mod web_authn_hint_enum;
+pub use self::web_authn_hint_enum::WebAuthnHintEnum;
 pub mod worker;
 pub use self::worker::Worker;
 pub mod ws_federation_provider;

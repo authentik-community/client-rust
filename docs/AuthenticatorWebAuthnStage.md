@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **user_verification** | Option<[**models::UserVerificationEnum**](UserVerificationEnum.md)> |  | [optional]
 **authenticator_attachment** | Option<[**models::AuthenticatorAttachmentEnum**](AuthenticatorAttachmentEnum.md)> |  | [optional]
 **resident_key_requirement** | Option<[**models::ResidentKeyRequirementEnum**](ResidentKeyRequirementEnum.md)> |  | [optional]
+**hints** | Option<[**Vec<models::WebAuthnHintEnum>**](WebAuthnHintEnum.md)> |  | [optional]
 **device_type_restrictions** | Option<**Vec<uuid::Uuid>**> |  | [optional]
 **device_type_restrictions_obj** | [**Vec<models::WebAuthnDeviceType>**](WebAuthnDeviceType.md) |  | [readonly]
 **max_attempts** | Option<**u32**> |  | [optional]

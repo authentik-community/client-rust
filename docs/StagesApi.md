@@ -2160,7 +2160,7 @@ Name | Type | Description  | Required | Notes
 
 ## stages_authenticator_webauthn_list
 
-> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, friendly_name, max_attempts, name, ordering, page, page_size, resident_key_requirement, search, stage_uuid, user_verification)
+> models::PaginatedAuthenticatorWebAuthnStageList stages_authenticator_webauthn_list(authenticator_attachment, configure_flow, device_type_restrictions, max_attempts, name, ordering, page, page_size, resident_key_requirement, search, user_verification)
 
 
 AuthenticatorWebAuthnStage Viewset
@@ -2173,7 +2173,6 @@ Name | Type | Description  | Required | Notes
 **authenticator_attachment** | Option<**String**> |  |  |
 **configure_flow** | Option<**uuid::Uuid**> |  |  |
 **device_type_restrictions** | Option<[**Vec<uuid::Uuid>**](Uuid__Uuid.md)> |  |  |
-**friendly_name** | Option<**String**> |  |  |
 **max_attempts** | Option<**i32**> |  |  |
 **name** | Option<**String**> |  |  |
 **ordering** | Option<**String**> | Which field to use when ordering the results. |  |
@@ -2181,7 +2180,6 @@ Name | Type | Description  | Required | Notes
 **page_size** | Option<**i32**> | Number of results to return per page. |  |
 **resident_key_requirement** | Option<**String**> |  |  |
 **search** | Option<**String**> | A search term. |  |
-**stage_uuid** | Option<**uuid::Uuid**> |  |  |
 **user_verification** | Option<**String**> |  |  |
 
 ### Return type
