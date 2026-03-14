@@ -20,6 +20,14 @@ pub struct NotificationTransportRequest {
     pub mode: Option<models::NotificationTransportModeEnum>,
     #[serde(rename = "webhook_url", skip_serializing_if = "Option::is_none")]
     pub webhook_url: Option<String>,
+    /// When set, the selected ceritifcate is used to validate the certificate of the webhook server.
+    #[serde(
+        rename = "webhook_ca",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub webhook_ca: Option<Option<uuid::Uuid>>,
     /// Customize the body of the request. Mapping should return data that is JSON-serializable.
     #[serde(
         rename = "webhook_mapping_body",
@@ -52,6 +60,7 @@ impl NotificationTransportRequest {
             name,
             mode: None,
             webhook_url: None,
+            webhook_ca: None,
             webhook_mapping_body: None,
             webhook_mapping_headers: None,
             email_subject_prefix: None,

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **mode** | Option<[**models::NotificationTransportModeEnum**](NotificationTransportModeEnum.md)> |  | [optional]
 **mode_verbose** | **String** | Return selected mode with a UI Label | [readonly]
 **webhook_url** | Option<**String**> |  | [optional]
+**webhook_ca** | Option<**uuid::Uuid**> | When set, the selected ceritifcate is used to validate the certificate of the webhook server. | [optional]
 **webhook_mapping_body** | Option<**uuid::Uuid**> | Customize the body of the request. Mapping should return data that is JSON-serializable. | [optional]
 **webhook_mapping_headers** | Option<**uuid::Uuid**> | Configure additional headers to be sent. Mapping should return a dictionary of key-value pairs | [optional]
 **email_subject_prefix** | Option<**String**> |  | [optional]
