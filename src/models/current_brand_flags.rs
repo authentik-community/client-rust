@@ -15,8 +15,6 @@ use serde::{Deserialize, Serialize};
 pub struct CurrentBrandFlags {
     #[serde(rename = "enterprise_audit_include_expanded_diff")]
     pub enterprise_audit_include_expanded_diff: bool,
-    #[serde(rename = "policies_buffered_access_view")]
-    pub policies_buffered_access_view: bool,
     #[serde(rename = "flows_continuous_login")]
     pub flows_continuous_login: bool,
     #[serde(rename = "flows_refresh_others")]
@@ -26,13 +24,11 @@ pub struct CurrentBrandFlags {
 impl CurrentBrandFlags {
     pub fn new(
         enterprise_audit_include_expanded_diff: bool,
-        policies_buffered_access_view: bool,
         flows_continuous_login: bool,
         flows_refresh_others: bool,
     ) -> CurrentBrandFlags {
         CurrentBrandFlags {
             enterprise_audit_include_expanded_diff,
-            policies_buffered_access_view,
             flows_continuous_login,
             flows_refresh_others,
         }
