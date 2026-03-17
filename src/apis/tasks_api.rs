@@ -685,7 +685,7 @@ pub async fn tasks_tasks_status_retrieve(
 pub async fn tasks_workers_list(
     configuration: &configuration::Configuration,
 ) -> Result<Vec<models::Worker>, Error<TasksWorkersListError>> {
-    let uri_str = format!("{}/tasks/workers", configuration.base_path);
+    let uri_str = format!("{}/tasks/workers/", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
