@@ -1,0 +1,33 @@
+---
+name: CI - Main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup rust
+        uses: actions-rust-lang/setup-rust-toolchain@150fca883cd4034361b621bd4e6a9d34e5143606 # v1.15.4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v5
+        with:
+          path: client-rust
+      - name: Fetch schema
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          repository: goauthentik/authentik
+          ref: main
+          path: authentik
+          sparse-checkout: |
+            schema.yml
+          sparse-checkout-cone-mode: false
+      - name: Generate API client
+        working-directory: client-rust
+        run: |
+          make build version=0.0.0
