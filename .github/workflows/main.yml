@@ -30,4 +30,5 @@ jobs:
       - name: Generate API client
         working-directory: client-rust
         run: |
+          cp ../authentik/schema.yml .
           make build version=0.0.0
