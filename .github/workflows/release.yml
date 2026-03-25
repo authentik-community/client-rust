@@ -103,7 +103,7 @@ jobs:
           git push origin "$branch"
           git push --tags
           cargo publish
-          gh release create "$tag" --latest --title "$version" --notes "See https://github.com/goauthentik/authentik/releases/tag/version/$version"
+          gh release create "$tag" --latest --title "$version" --notes "See https://github.com/goauthentik/authentik/releases/tag/$tag"
         env:
           GH_TOKEN: "${{ steps.app-token.outputs.token }}"
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
