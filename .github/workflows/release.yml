@@ -1,5 +1,5 @@
 ---
-name: Stable release
+name: Release
 
 on:
   workflow_dispatch:
